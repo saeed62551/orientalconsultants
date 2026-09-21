@@ -1,0 +1,100 @@
+{
+  "frequency": "thrice-daily",
+  "slots": [
+    "08:00 AFT",
+    "14:00 AFT",
+    "20:00 AFT"
+  ],
+  "lastSync": "2026-09-21T09:33:30.000Z",
+  "total": 8,
+  "tenders": [
+    {
+      "id": "DAB-RFP-2026-088",
+      "org": "Da Afghanistan Bank (DAB - Central Bank)",
+      "title": "Annual External Statutory Audit & Compliance Review of National Banking Operations (ISA 700/800)",
+      "location": "Kabul HQ • Central Bank Directorate",
+      "type": "audit",
+      "locationCode": "kabul",
+      "compliance": "ISA 700/800 & IFRS Statutory Compliance",
+      "deadline": "06 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "MOF-RFP-TAX-2026",
+      "org": "Ministry of Finance (MoF) / Afghanistan Revenue Department",
+      "title": "Technical Assistance & Consulting for Nationwide Corporate Tax Compliance, BRT Modernization & Audit",
+      "location": "Kabul HQ & Major Regional Customs Hubs",
+      "type": "consulting",
+      "locationCode": "provinces",
+      "compliance": "Afghan Tax Law & MoF Clearances",
+      "deadline": "12 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "UNICEF-AFG-RFP-2026-44",
+      "org": "UNICEF Afghanistan",
+      "title": "Third-Party Monitoring (TPM) & Educational Supply Chain Verification in Hard-to-Reach Districts",
+      "location": "Kabul, Kandahar, Herat, Balkh (18 Provinces)",
+      "type": "tpm",
+      "locationCode": "provinces",
+      "compliance": "KoBoToolbox & Field Data Integrity",
+      "deadline": "15 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "DABS-TND-2026-302",
+      "org": "Da Afghanistan Breshna Sherkat (DABS)",
+      "title": "Procurement & Turnkey Installation of High-Voltage SCADA Automation & Grid Sensors",
+      "location": "Kabul & Nangarhar Substations",
+      "type": "works",
+      "locationCode": "provinces",
+      "compliance": "IEC 61850 Grid Substation Standards",
+      "deadline": "19 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "AFTEL-RFP-2026-051",
+      "org": "Afghan Telecom / Ministry of Communications & IT (MCIT)",
+      "title": "Supply, Deployment & Migration of Enterprise Cloud Infrastructure, Microsoft 365 & Data Protection",
+      "location": "Kabul Central Data Center",
+      "type": "ict",
+      "locationCode": "kabul",
+      "compliance": "Microsoft 365 & Cloud Tier-3 Security",
+      "deadline": "23 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "KM-RFP-2026-104",
+      "org": "Kabul Municipality (شاروالی کابل)",
+      "title": "Feasibility Study, Architectural Engineering & Urban Drainage Infrastructure Development",
+      "location": "Kabul Urban Districts 1–15",
+      "type": "works",
+      "locationCode": "kabul",
+      "compliance": "Urban Planning & Hydraulic Civil Engineering",
+      "deadline": "27 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "IFRC-AFG-RFQ-2026-19",
+      "org": "International Federation of Red Cross (IFRC)",
+      "title": "Supply & Countrywide Logistics of Emergency Winterization Shelter Kits & Non-Food Items (NFIs)",
+      "location": "Kabul, Herat & Kunduz Warehouses",
+      "type": "goods",
+      "locationCode": "provinces",
+      "compliance": "Sphere Project & Humanitarian Standards",
+      "deadline": "30 Oct 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    },
+    {
+      "id": "DAC-AUD-2026-02",
+      "org": "DACAAR Afghanistan",
+      "title": "Multi-Year Fixed Assets Inventory Barcoding, QR Tagging & Physical Verification Services",
+      "location": "Kabul HQ & 24 Provincial Field Stations",
+      "type": "audit",
+      "locationCode": "provinces",
+      "compliance": "Fixed Assets Registry & QR Barcoding",
+      "deadline": "02 Nov 2026",
+      "viewUrl": "https://www.afghantenders.com/"
+    }
+  ]
+}

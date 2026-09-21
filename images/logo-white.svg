@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 92" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Glowing Drop Shadow Filter for Dark Background -->
+    <filter id="darkGlow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0284c7" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="textGlowWhite" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#38bdf8" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Blue Disc Gradients -->
+    <radialGradient id="blueDiscGradDark" cx="38%" cy="34%" r="68%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="30%" stop-color="#0284c7"/>
+      <stop offset="70%" stop-color="#034b9e"/>
+      <stop offset="100%" stop-color="#011938"/>
+    </radialGradient>
+
+    <linearGradient id="blueRimGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="35%" stop-color="#0ea5e9"/>
+      <stop offset="75%" stop-color="#034b9e"/>
+      <stop offset="100%" stop-color="#00142b"/>
+    </linearGradient>
+
+    <!-- Metallic Chrome C Gradients -->
+    <linearGradient id="chromeFaceDark" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#f8fafc"/>
+      <stop offset="65%" stop-color="#e2e8f0"/>
+      <stop offset="85%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+
+    <linearGradient id="chromeBevelDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#cbd5e1"/>
+      <stop offset="80%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Text Gradients for Dark Mode/Footer -->
+    <linearGradient id="textWhiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#f8fafc"/>
+      <stop offset="75%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+
+    <linearGradient id="swooshGradDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#38bdf8" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="1"/>
+      <stop offset="85%" stop-color="#0ea5e9" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="swooshShineDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#bae6fd" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ==================== 3D EMBLEM (O & C) ==================== -->
+  <g transform="translate(6, 4)" filter="url(#darkGlow)">
+    <!-- Outer Beveled 3D Disc Base (O) -->
+    <circle cx="40" cy="40" r="38" fill="url(#blueRimGradDark)" />
+    
+    <!-- Outer Rim Inner Shadow/Bevel Depth -->
+    <circle cx="39.5" cy="40" r="35.5" fill="#000e24" opacity="0.7" />
+    
+    <!-- Main Disc Spherical Surface with Rich Blue Radial Glow -->
+    <circle cx="39" cy="39" r="34.5" fill="url(#blueDiscGradDark)" />
+    
+    <!-- Glossy Specular Crescent on Top Rim of Blue Disc -->
+    <path d="M 12 36 A 34 34 0 0 1 66 22 A 34 31 0 0 0 16 38 Z" fill="#ffffff" opacity="0.3" />
+
+    <!-- 3D Beveled Chrome/White 'C' Interlocking Structure -->
+    <!-- C Bevel Depth/Extrusion -->
+    <path d="M 49 14 
+             A 27 27 0 0 0 21 39
+             A 27 27 0 0 0 49 66
+             L 49 53
+             A 15 15 0 0 1 35 39
+             A 15 15 0 0 1 49 27
+             Z" 
+          fill="url(#chromeBevelDark)" />
+
+    <!-- C Chrome Front Face (Glossy Metallic Silver-White) -->
+    <path d="M 48 15.5 
+             A 25.5 25.5 0 0 0 22.5 39.5
+             A 25.5 25.5 0 0 0 48 64.5
+             L 48 53
+             A 14 14 0 0 1 36.5 39.5
+             A 14 14 0 0 1 48 26
+             Z" 
+          fill="url(#chromeFaceDark)" />
+
+    <!-- C Top Edge Specular Reflection -->
+    <path d="M 33 21
+             A 25.5 25.5 0 0 1 48 16
+             L 48 18
+             A 23.5 23.5 0 0 0 35 23
+             Z" 
+          fill="#ffffff" opacity="0.95" />
+  </g>
+
+  <!-- ==================== TYPOGRAPHY: ORIENTAL CONSULTANTS ==================== -->
+  <g transform="translate(94, 0)">
+    <!-- Ambient Blue Shadow for Luminous Contrast -->
+    <text x="0" y="47" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="28" 
+          font-weight="800" 
+          font-style="italic" 
+          letter-spacing="-0.5px" 
+          fill="#0284c7" 
+          opacity="0.6"
+          filter="url(#textGlowWhite)">
+      Oriental Consultants
+    </text>
+
+    <!-- Main Front Face with Polished White-Silver Gradient -->
+    <text x="0" y="46" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="28" 
+          font-weight="800" 
+          font-style="italic" 
+          letter-spacing="-0.5px" 
+          fill="url(#textWhiteGrad)"
+          filter="url(#textGlowWhite)">
+      Oriental Consultants
+    </text>
+
+    <!-- Specular Highlight on Letters -->
+    <text x="0" y="45.2" 
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+          font-size="28" 
+          font-weight="800" 
+          font-style="italic" 
+          letter-spacing="-0.5px" 
+          fill="#ffffff" 
+          opacity="0.4">
+      Oriental Consultants
+    </text>
+
+    <!-- ==================== SHINING HORIZONTAL SWOOSH ==================== -->
+    <!-- Glowing Base Swoosh -->
+    <path d="M 0 54 Q 140 49 276 54 Q 140 52 0 54 Z" 
+          fill="url(#swooshGradDark)" 
+          filter="url(#textGlowWhite)" />
+    <!-- Bright Center Shine -->
+    <path d="M 30 53.8 Q 140 50 250 53.8 Q 140 51.5 30 53.8 Z" 
+          fill="url(#swooshShineDark)" />
+
+    <!-- ==================== TAGLINE: SIMPLIFYING SOLUTIONS ==================== -->
+    <g transform="translate(36, 73)">
+      <!-- Tagline Ambient Shadow -->
+      <text x="0" y="1" 
+            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+            font-size="14.5" 
+            font-weight="700" 
+            font-style="italic" 
+            letter-spacing="0.2px" 
+            fill="#000000" 
+            opacity="0.5">
+        Simplifying Solutions
+      </text>
+
+      <!-- Tagline Vibrant Orange Text with High Contrast -->
+      <text x="0" y="0" 
+            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+            font-size="14.5" 
+            font-weight="700" 
+            font-style="italic" 
+            letter-spacing="0.2px" 
+            fill="#fb923c">
+        Simplifying Solutions
+      </text>
+    </g>
+  </g>
+</svg>

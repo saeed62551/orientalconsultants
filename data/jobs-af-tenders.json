@@ -1,0 +1,89 @@
+{
+  "frequency": "thrice-daily",
+  "slots": [
+    "08:00 AFT",
+    "14:00 AFT",
+    "20:00 AFT"
+  ],
+  "lastSync": "2026-09-21T09:33:30.000Z",
+  "total": 7,
+  "tenders": [
+    {
+      "id": "NET-AFG-TND-2026-042",
+      "org": "NETLINKS / Private Enterprise Hub",
+      "title": "Supply, Delivery & Deployment of Enterprise Data Center Servers & Network Hardware",
+      "location": "Kabul Central Hub",
+      "type": "goods",
+      "locationCode": "kabul",
+      "compliance": "Tier-3 Data Center Specification",
+      "deadline": "04 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    },
+    {
+      "id": "DABS-RFP-2026-118",
+      "org": "Da Afghanistan Breshna Sherkat (DABS)",
+      "title": "Consultancy Services for Statutory Financial Audit, Asset Valuation & Barcoding",
+      "location": "Kabul HQ & 14 Provincial Stations",
+      "type": "consulting",
+      "locationCode": "provinces",
+      "compliance": "ISA 700 Compliant Audit & QR Asset Barcoding",
+      "deadline": "07 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    },
+    {
+      "id": "AFTEL-PROC-2026-079",
+      "org": "Afghan Telecom / MCIT",
+      "title": "Procurement of Fiber Optic Cable Accessories & Optical Line Terminals (OLT)",
+      "location": "Kabul, Herat, Balkh & Kandahar",
+      "type": "goods",
+      "locationCode": "provinces",
+      "compliance": "ITU-T Standard Compliance",
+      "deadline": "10 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    },
+    {
+      "id": "AWCC-FIN-2026-031",
+      "org": "Afghan Wireless Communication Company (AWCC)",
+      "title": "Provision of Annual Corporate Tax Advisory, Withholding Reviews & BRT Reconciliation",
+      "location": "Kabul Corporate HQ",
+      "type": "consulting",
+      "locationCode": "kabul",
+      "compliance": "MoF Tax Law Compliance",
+      "deadline": "14 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    },
+    {
+      "id": "ICRC-KBL-TND-884",
+      "org": "International Committee of the Red Cross (ICRC)",
+      "title": "Long-Term Agreement (LTA) for Emergency Medical Equipment & Hospital Supplies",
+      "location": "Kabul Logistic Warehouse",
+      "type": "goods",
+      "locationCode": "kabul",
+      "compliance": "WHO-GMP Certified Pharmaceuticals & Equipment",
+      "deadline": "17 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    },
+    {
+      "id": "KM-QC-2026-055",
+      "org": "Kabul Municipality / Urban Development Directorate",
+      "title": "Third-Party Quality Assurance, Structural Testing & Construction Supervision",
+      "location": "Kabul Urban Districts",
+      "type": "works",
+      "locationCode": "kabul",
+      "compliance": "Civil Engineering Testing & Laboratory Standards",
+      "deadline": "21 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    },
+    {
+      "id": "MOHE-SOLAR-2026-017",
+      "org": "Ministry of Higher Education / Campus Green Initiative",
+      "title": "Design, Supply, Installation & Commissioning of 250kW Hybrid Solar PV Systems",
+      "location": "Kabul University Campus",
+      "type": "works",
+      "locationCode": "kabul",
+      "compliance": "Tier-1 Solar Panels & Lithium Battery Storage",
+      "deadline": "26 Oct 2026",
+      "viewUrl": "https://jobs.af/tenders"
+    }
+  ]
+}

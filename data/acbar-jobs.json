@@ -1,0 +1,122 @@
+{
+  "frequency": "thrice-daily",
+  "slots": [
+    "08:00 AFT",
+    "14:00 AFT",
+    "20:00 AFT"
+  ],
+  "lastSync": "2026-09-21T09:33:30.000Z",
+  "total": 10,
+  "jobs": [
+    {
+      "id": "CARE-AFG-2026-084",
+      "title": "Senior Internal Auditor & Compliance Lead",
+      "org": "CARE International",
+      "location": "Kabul HQ, Afghanistan",
+      "sector": "audit",
+      "locationCode": "kabul",
+      "type": "Full-Time • 5+ Years Experience",
+      "closingDate": "28 Sep 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "NRC-KBL-992",
+      "title": "Third-Party Monitoring (TPM) Field Coordinator",
+      "org": "Norwegian Refugee Council (NRC)",
+      "location": "Kabul / Central Provinces",
+      "sector": "tpm",
+      "locationCode": "kabul",
+      "type": "Full-Time • KoBoToolbox / Field Audits",
+      "closingDate": "30 Sep 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "ACTED-MZR-441",
+      "title": "Provincial Finance & Statutory Compliance Officer",
+      "org": "ACTED Afghanistan",
+      "location": "Mazar-e-Sharif (Balkh)",
+      "sector": "audit",
+      "locationCode": "balkh",
+      "type": "Full-Time • Tax & MoF Clearance",
+      "closingDate": "03 Oct 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "IRC-KBL-819",
+      "title": "Enterprise ERP & Cloud Database Specialist (Odoo / Google Workspace)",
+      "org": "International Rescue Committee (IRC)",
+      "location": "Kabul HQ",
+      "sector": "ict",
+      "locationCode": "kabul",
+      "type": "Full-Time • Cloud Administration",
+      "closingDate": "05 Oct 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "DAC-HRT-204",
+      "title": "Senior Proposal Development & Grants Manager",
+      "org": "DACAAR",
+      "location": "Herat Regional Office",
+      "sector": "prog",
+      "locationCode": "herat",
+      "type": "Full-Time • Donor Reporting & EOI",
+      "closingDate": "08 Oct 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "SCI-KBL-311",
+      "title": "Procurement & Fixed Assets Barcoding Lead",
+      "org": "Save the Children",
+      "location": "Kabul Logistics Hub",
+      "sector": "log",
+      "locationCode": "kabul",
+      "type": "Full-Time • Asset Physical Verification",
+      "closingDate": "10 Oct 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "DRC-KDH-552",
+      "title": "Monitoring, Evaluation & Learning (MEL) Specialist",
+      "org": "Danish Refugee Council (DRC)",
+      "location": "Kandahar Hub",
+      "sector": "prog",
+      "locationCode": "kandahar",
+      "type": "Full-Time • Mixed Method Assessments",
+      "closingDate": "12 Oct 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "HN-JAL-109",
+      "title": "Healthcare Grants Financial Accountant",
+      "org": "HealthNet TPO",
+      "location": "Jalalabad (Nangarhar)",
+      "sector": "health",
+      "locationCode": "jalalabad",
+      "type": "Full-Time • Multi-Donor Grant Auditing",
+      "closingDate": "15 Oct 2026",
+      "applyUrl": "https://www.acbar.org/en/jobs"
+    },
+    {
+      "id": "OC-STAT-2026-09",
+      "title": "Senior Statutory Auditor (ISA 700 / 800 Specialist)",
+      "org": "Oriental Consultants Afghanistan (PrimeGlobal Member)",
+      "location": "Kabul HQ / Karte 3",
+      "sector": "audit",
+      "locationCode": "kabul",
+      "type": "Full-Time • ACCA / CA / CPA Required",
+      "closingDate": "18 Oct 2026",
+      "applyUrl": "https://www.ocafghan.com/careers.html"
+    },
+    {
+      "id": "OC-ERP-2026-04",
+      "title": "Senior Odoo ERP & Python Technical Consultant",
+      "org": "Oriental Consultants Afghanistan",
+      "location": "Kabul HQ & Remote",
+      "sector": "ict",
+      "locationCode": "kabul",
+      "type": "Full-Time / Remote • Odoo 17/18 Deployment",
+      "closingDate": "20 Oct 2026",
+      "applyUrl": "https://www.ocafghan.com/careers.html"
+    }
+  ]
+}

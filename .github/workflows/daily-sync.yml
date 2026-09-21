@@ -1,0 +1,30 @@
+name: Thrice-Daily Jobs & RFPs Portal Sync
+
+on:
+  schedule:
+    # Runs thrice daily: 03:30, 09:30, 15:30 UTC (08:00 AM, 02:00 PM, 08:00 PM Kabul Time / AFT UTC+4:30)
+    - cron: '30 3,9,15 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  sync-portals:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Afghanistan Portals Automated Sync
+        run: node scripts/sync-jobs-portals.js
+
+      - name: Commit & Push Synced Data (If Changes Detected)
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Daily Sync]"
+          git add data/*.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync: Daily Jobs & RFP portals update [$(date -u +'%Y-%m-%d %H:%M UTC')]" && git push)
