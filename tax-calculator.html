@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Afghanistan Tax Calculator • BRT, Salary, Corporate &amp; Withholding (ماشین حساب مالیات افغانستان) | Oriental Consultants</title>
+  <meta name="description" content="Official Afghanistan Tax Calculator adhering strictly to Afghan Income Tax Law 2009 and Ministry of Finance (MoF/ARD) regulations. Calculate BRT, Salary Tax, 20% Corporate Tax, Rental Withholding, and Vendor 2%/7% with real-time AFN/USD conversion. Built by Oriental Consultants Kabul.">
+  <meta name="keywords" content="Afghanistan tax calculator, Afghan tax calculator, ماشین حساب مالیات افغانستان, BRT calculator Afghanistan, Kabul salary tax withholding, Afghanistan tax laws Ministry of Finance, corporate tax Afghanistan, Oriental Consultants tax">
+  <meta name="author" content="Oriental Consultants Afghanistan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ocafghan.com/tax-calculator.html">
+
+  <!-- Strict Afghanistan Geo-Targeting -->
+  <meta name="geo.region" content="AF-KBL">
+  <meta name="geo.placename" content="Kabul, Afghanistan">
+  <meta name="geo.position" content="34.5169;69.1472">
+  <meta name="ICBM" content="34.5169, 69.1472">
+  <meta name="target" content="Afghanistan">
+  <meta name="coverage" content="Afghanistan Nationwide (Kabul, Herat, Mazar-e-Sharif, Kandahar, Jalalabad, Kunduz)">
+  <meta name="distribution" content="Afghanistan">
+  <meta name="country" content="AF">
+  <meta name="city" content="Kabul">
+
+  <!-- Regional Multilingual Alternates -->
+  <link rel="alternate" hreflang="en-AF" href="https://www.ocafghan.com/tax-calculator.html">
+  <link rel="alternate" hreflang="prs-AF" href="https://www.ocafghan.com/tax-calculator.html">
+  <link rel="alternate" hreflang="ps-AF" href="https://www.ocafghan.com/tax-calculator.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.ocafghan.com/tax-calculator.html">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.ocafghan.com/tax-calculator.html#app",
+        "name": "Afghanistan Tax Calculator (ماشین حساب مالیات افغانستان)",
+        "url": "https://www.ocafghan.com/tax-calculator.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "provider": {
+          "@type": "AccountingService",
+          "name": "Oriental Consultants",
+          "url": "https://www.ocafghan.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "House 22, Street 17 Karte 3",
+            "addressLocality": "Kabul",
+            "addressRegion": "Kabul Province",
+            "addressCountry": "AF"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.5169",
+            "longitude": "69.1472"
+          },
+          "telephone": "+93-799543365"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Smart Calculator Terminal Styles */
+    .smart-calc-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: clamp(1.75rem, 3.5vw, 2.75rem);
+      box-shadow: 0 16px 40px rgba(0, 31, 63, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .smart-calc-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .currency-switcher-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 4px;
+    }
+    .currency-btn {
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 800;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .currency-btn.active {
+      background: var(--accent-gold);
+      color: #001f3f;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+    }
+    .smart-tabs-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 992px) {
+      .smart-tabs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .smart-tabs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .smart-tab-pill {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .smart-tab-pill:hover {
+      border-color: var(--accent-gold);
+      background: var(--bg-surface);
+    }
+    .smart-tab-pill.active {
+      background: #001f3f;
+      border-color: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 31, 63, 0.2);
+    }
+    .smart-tab-pill.active .tab-sub {
+      color: #fbbf24;
+    }
+    .tab-icon {
+      width: 20px;
+      height: 20px;
+    }
+    .tab-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .tab-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: inherit;
+    }
+    .presets-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .preset-chip {
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .preset-chip:hover {
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+    .smart-result-console {
+      background: linear-gradient(135deg, #001f3f 0%, #021226 100%);
+      border: 1px solid rgba(2, 132, 199, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      color: #ffffff;
+      margin-top: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    .smart-stat-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .smart-stat-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+    .progress-bar-wrap {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      height: 14px;
+      overflow: hidden;
+      display: flex;
+      margin: 0.75rem 0;
+    }
+    .progress-bar-net {
+      background: #10b981;
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+    .progress-bar-tax {
+      background: #f59e0b;
+      height: 100%;
+      transition: width 0.3s ease;
+    }
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem;
+    }
+    .breakdown-row:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <span class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          House 22, Street 17 Karte 3, Kabul, Afghanistan
+        </span>
+        <span class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@ocafghan.com / ocafghanistan@gmail.com
+        </span>
+        <div class="top-bar-phone-pill" title="Direct Phone &amp; WhatsApp Lines">
+          <svg class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg class="top-bar-wa-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span class="phone-label">Tel / WhatsApp:</span>
+          <a href="https://wa.me/93799543365" target="_blank" rel="noopener noreferrer" class="phone-link" title="WhatsApp / Call +93 799 543365">+93-799543365</a>
+          <span class="phone-sep">/</span>
+          <a href="https://wa.me/93787098321" target="_blank" rel="noopener noreferrer" class="phone-link" title="WhatsApp / Call +93 787 098321">+93-787098321</a>
+          <span class="phone-sep">/</span>
+          <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" class="phone-link" title="WhatsApp / Call 0093 792002341">0093 792002341</a>
+          <span class="phone-sep">/</span>
+          <a href="https://wa.me/93700567868" target="_blank" rel="noopener noreferrer" class="phone-link" title="WhatsApp / Call +93 700 567868">+93 700 567868</a>
+        </div>
+      </div>
+      <div class="top-bar-actions">
+        <a href="tax-calculator.html" class="top-bar-quick-link" style="color: #fbbf24; font-weight: 700;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Afghanistan Tax Calculator
+        </a>
+        <span class="top-bar-badge badge-blue">Microsoft Office 365 Partner</span>
+        <span class="top-bar-badge badge-green"><span class="pulse-dot"></span> Google Workspace Partner in Afghanistan</span>
+        <span class="top-bar-badge">MoCI License No. I-11011</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <!-- Brand Logo (3D Vector Emblem) -->
+      <a href="index.html" class="brand-logo" aria-label="Oriental Consultants Afghanistan Homepage">
+        <svg class="brand-logo-img" viewBox="0 0 380 88" width="200" height="46" fill="none" style="display: block; overflow: visible;">
+          <defs>
+            <filter id="hOc3DDropShadow" x="-25%" y="-25%" width="160%" height="160%">
+              <feDropShadow dx="2" dy="4" stdDeviation="3.5" flood-color="#021226" flood-opacity="0.38"/>
+              <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0284c7" flood-opacity="0.25"/>
+            </filter>
+            <linearGradient id="hChromeRim3D" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="25%" stop-color="#e2e8f0"/>
+              <stop offset="50%" stop-color="#94a3b8"/>
+              <stop offset="75%" stop-color="#475569"/>
+              <stop offset="100%" stop-color="#1e293b"/>
+            </linearGradient>
+            <linearGradient id="hBlueOrb3D" cx="35%" cy="30%" r="72%">
+              <stop offset="0%" stop-color="#38bdf8"/>
+              <stop offset="25%" stop-color="#0284c7"/>
+              <stop offset="55%" stop-color="#034b9e"/>
+              <stop offset="85%" stop-color="#022557"/>
+              <stop offset="100%" stop-color="#011430"/>
+            </radialGradient>
+            <linearGradient id="hGlossCurvature" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+              <stop offset="40%" stop-color="#ffffff" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.25"/>
+            </linearGradient>
+            <linearGradient id="hChromeCBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="35%" stop-color="#cbd5e1"/>
+              <stop offset="75%" stop-color="#475569"/>
+              <stop offset="100%" stop-color="#0f172a"/>
+            </linearGradient>
+            <linearGradient id="hChromeCFace" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="30%" stop-color="#f8fafc"/>
+              <stop offset="60%" stop-color="#e2e8f0"/>
+              <stop offset="85%" stop-color="#cbd5e1"/>
+              <stop offset="100%" stop-color="#94a3b8"/>
+            </linearGradient>
+            <linearGradient id="hSwooshGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0284c7" stop-opacity="0.1"/>
+              <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.95"/>
+              <stop offset="55%" stop-color="#0284c7" stop-opacity="1"/>
+              <stop offset="80%" stop-color="#0369a1" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#d97706" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="hSwooshShine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+              <stop offset="45%" stop-color="#ffffff" stop-opacity="0.9"/>
+              <stop offset="70%" stop-color="#7dd3fc" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(6, 4)" filter="url(#hOc3DDropShadow)">
+            <circle cx="40" cy="40" r="38" fill="url(#hChromeRim3D)" />
+            <circle cx="39.5" cy="40" r="35" fill="#011633" />
+            <circle cx="39" cy="39" r="34" fill="url(#hBlueOrb3D)" />
+            <path d="M 12 36 A 34 34 0 0 1 66 22 A 34 30 0 0 0 15 38 Z" fill="url(#hGlossCurvature)" />
+            <path d="M 49 14 A 27 27 0 0 0 21 39 A 27 27 0 0 0 49 66 L 49 53 A 15 15 0 0 1 35 39 A 15 15 0 0 1 49 27 Z" fill="url(#hChromeCBevel)" />
+            <path d="M 48 15.5 A 25.5 25.5 0 0 0 22.5 39.5 A 25.5 25.5 0 0 0 48 64.5 L 48 53 A 14 14 0 0 1 36.5 39.5 A 14 14 0 0 1 48 26 Z" fill="url(#hChromeCFace)" />
+          </g>
+          <g transform="translate(94, 0)">
+            <text x="0" y="47.5" fill="#ffffff" font-family="'Plus Jakarta Sans', 'Poppins', Inter, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.3px">Oriental Consultants</text>
+            <path d="M 0 53.5 Q 140 48.5 276 53.5 Q 140 51 0 53.5 Z" fill="url(#hSwooshGrad)" />
+            <path d="M 30 53.3 Q 140 49.5 250 53.3 Q 140 51 30 53.3 Z" fill="url(#hSwooshShine)" />
+            <g transform="translate(36, 72)">
+              <text x="0" y="0" fill="#38bdf8" font-family="'Plus Jakarta Sans', 'Poppins', Inter, sans-serif" font-size="13" font-weight="800" letter-spacing="2.2px">SIMPLIFYING SOLUTIONS</text>
+            </g>
+          </g>
+        </svg>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          
+          <!-- Services & Solutions -->
+          <li class="nav-item has-mega-menu">
+            <a href="services.html" class="nav-link">
+              Services & Solutions
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="dropdown-menu dropdown-menu-mega">
+              <div class="mega-menu-grid">
+                <!-- Column 1 -->
+                <div class="mega-col">
+                  <h5 class="mega-col-title">Financial & Audit</h5>
+                  <ul class="mega-col-links">
+                    <li><a href="accounting.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg> Accounting & Financial Mgmt</a></li>
+                    <li><a href="audit.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Audit & Assurance (ISA)</a></li>
+                    <li><a href="asset-valuation.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Fixed Assets Barcoding</a></li>
+                    <li><a href="tax-calculator.html" style="font-weight:700; color:#fbbf24;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/></svg> Afghanistan Tax Calculator</a></li>
+                  </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="mega-col">
+                  <h5 class="mega-col-title">Cloud & Enterprise ERP</h5>
+                  <ul class="mega-col-links">
+                    <li><a href="ict.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg> Google Workspace Deployment</a></li>
+                    <li><a href="ict.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg> Microsoft 365 Solutions</a></li>
+                    <li><a href="odoo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg> Odoo ERP Implementation</a></li>
+                    <li><a href="quickbooks.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg> QuickBooks Enterprise 2025/2026</a></li>
+                  </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="mega-col">
+                  <h5 class="mega-col-title">Strategy & Advisory</h5>
+                  <ul class="mega-col-links">
+                    <li><a href="program-design.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Program Design & Delivery</a></li>
+                    <li><a href="proposal-writing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Proposal & Business Plans</a></li>
+                    <li><a href="monitoring.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/></svg> Third-Party Monitoring (TPM)</a></li>
+                    <li><a href="ai-services.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/></svg> AI Integration Services</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mega-menu-footer">
+                <div class="mega-footer-text">
+                  <strong>Need formal tax clearance or MoF defense?</strong>
+                  <span>Schedule a confidential scoping call with our Kabul tax team.</span>
+                </div>
+                <a href="contact.html" class="btn btn-sm btn-gold" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book Tax Scoping Call &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- About Us Dropdown -->
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">
+              About
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Corporate Heritage & 18 Yrs</a></li>
+              <li class="dropdown-item"><a href="team.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Executive Leadership & Team</a></li>
+              <li class="dropdown-item"><a href="branches.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Global Hubs & Branches</a></li>
+            </ul>
+          </li>
+
+          <!-- Partnerships Dropdown -->
+          <li class="nav-item">
+            <a href="primeglobal.html" class="nav-link">
+              Partnerships
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="primeglobal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg> PrimeGlobal USA ($2.93B)</a></li>
+              <li class="dropdown-item"><a href="afghanhoster.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> AfghanHoster (Cloud &amp; .AF)</a></li>
+              <li class="dropdown-item"><a href="afghandevelopers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> AfghanDevelopers (Software)</a></li>
+              <li class="dropdown-item"><a href="tsplus.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg> TSplus (Remote Desktop &amp; Cloud)</a></li>
+              <li class="dropdown-item"><a href="wafa-consultants.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Wafa Consultants (Associate)</a></li>
+              <li class="dropdown-item"><a href="ict.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg> Google Workspace Partner</a></li>
+              <li class="dropdown-item"><a href="ict.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg> Microsoft 365 Solutions</a></li>
+              <li class="dropdown-item"><a href="odoo.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg> Official Odoo Ready Partner</a></li>
+              <li class="dropdown-item"><a href="quickbooks.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg> QuickBooks ProAdvisor</a></li>
+            </ul>
+          </li>
+
+          <!-- Insights & Tools Dropdown (Active) -->
+          <li class="nav-item">
+            <a href="case-studies.html" class="nav-link active">
+              Insights & Tools
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="case-studies.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Case Studies & Track Record</a></li>
+              <li class="dropdown-item"><a href="tax-calculator.html" style="font-weight:700; color:#fbbf24;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Afghanistan Tax Calculator</a></li>
+              <li class="dropdown-item"><a href="research.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Research & Evaluation</a></li>
+            </ul>
+          </li>
+
+          <!-- Careers Dropdown -->
+          <li class="nav-item">
+            <a href="careers.html" class="nav-link">
+              Careers
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="careers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg> Oriental Consultants Vacancies</a></li>
+              <li class="dropdown-item"><a href="jobs-af.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Jobs.af: Verified Jobs (In-App)</a></li>
+              <li class="dropdown-item"><a href="jobs-af-tenders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Jobs.af: Tenders &amp; RFQs (In-App)</a></li>
+              <li class="dropdown-item"><a href="acbar-jobs.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> ACBAR: List Jobs (In-App)</a></li>
+              <li class="dropdown-item"><a href="acbar-rfps.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> ACBAR: RFQs &amp; RFPs (In-App)</a></li>
+              <li class="dropdown-item"><a href="afghan-tenders.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> AfghanTenders: RFQs &amp; RFPs (همه داوطلبی ها)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode">
+          <svg id="moonIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="12" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <a href="contact.html" class="btn btn-sm btn-primary">Book Consultation</a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="Oriental Consultants">
+        <svg class="brand-logo-img" viewBox="0 0 380 88" width="160" height="38" fill="none" style="display: block; overflow: visible;">
+          <g transform="translate(6, 4)">
+            <circle cx="40" cy="40" r="38" fill="#0284c7" />
+            <circle cx="39" cy="39" r="34" fill="#001f3f" />
+          </g>
+          <g transform="translate(94, 0)">
+            <text x="0" y="47.5" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900">Oriental Consultants</text>
+          </g>
+        </svg>
+      </a>
+      <button class="modal-close-btn" id="drawerCloseBtn" aria-label="Close Drawer" style="position:static;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home Portal</a></li>
+      <li><a href="tax-calculator.html" class="mobile-nav-link active" style="color:#fbbf24;">📊 Afghanistan Tax Calculator</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services Directory</a></li>
+      <li><a href="quickbooks.html" class="mobile-nav-link">QuickBooks Enterprise 2025/2026</a></li>
+      <li><a href="tsplus.html" class="mobile-nav-link">TSplus Remote Desktop</a></li>
+      <li><a href="afghan-tenders.html" class="mobile-nav-link">AfghanTenders (همه داوطلبی ها)</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact &amp; Consultations</a></li>
+      <li style="margin-top: 1rem;">
+        <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Consultation</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="section" style="padding-top: 5rem; padding-bottom: 3rem; background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-alt) 100%); border-bottom: 1px solid var(--border-subtle); position: relative; overflow: hidden;">
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+        <span class="badge-glow">
+          <span class="pulse-dot"></span>
+          قانون مالیات بر عایدات افغانستان &bull; Afghan Income Tax Law 2009 Engine
+        </span>
+        <span class="badge" style="background: rgba(59, 130, 246, 0.12); color: var(--accent-blue); font-weight: 700;">
+          PrimeGlobal USA Alliance ($2.93B)
+        </span>
+        <span class="badge" style="background: rgba(16, 185, 129, 0.12); color: #10b981; font-weight: 700;">
+          MoCI License I-11011 &bull; TIN 1045181011
+        </span>
+      </div>
+      <h1 class="page-hero-title">
+        Afghanistan Tax <span class="headline-accent">Calculator</span>
+      </h1>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 920px; line-height: 1.75; margin-bottom: 1.5rem;">
+        ماشین حساب رسمی مالیات افغانستان &bull; Instant statutory computations for Business Receipts Tax (BRT), employee salary withholding, 20% corporate income tax, rental withholding, and vendor contracts under Ministry of Finance (MoF/ARD) regulations. Built and audited by Oriental Consultants Kabul.
+      </p>
+
+      <!-- Partner Accreditation Strip -->
+      <div class="partner-strip" style="margin-top: 1rem; margin-bottom: 0;">
+        <div class="partner-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          PrimeGlobal USA ($2.93B)
+        </div>
+        <div class="partner-badge" style="border-color: rgba(66, 133, 244, 0.4); color: #4285f4;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+          Google Workspace Partner
+        </div>
+        <div class="partner-badge" style="border-color: rgba(0, 164, 239, 0.4); color: #00a4ef;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
+          Microsoft 365 Cloud Partner
+        </div>
+        <div class="partner-badge" style="border-color: rgba(16, 185, 129, 0.4); color: #10b981;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          QuickBooks ProAdvisor 2025/2026
+        </div>
+        <div class="partner-badge" style="border-color: rgba(217, 119, 6, 0.4); color: #d97706;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+          TSplus Remote Partner
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Smart Tax Calculator Console -->
+  <section class="section" style="padding-top: 3rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="smart-calc-card">
+        
+        <!-- Header with Currency Switcher & Info -->
+        <div class="smart-calc-header">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-gold); margin-bottom: 0.25rem;">
+              Smart Financial Terminal &bull; ترمینال محاسبات مالیاتی
+            </div>
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0; color: var(--text-primary);">
+              Select Statutory Tax Category
+            </h2>
+          </div>
+
+          <!-- Currency Switcher (AFN / USD) -->
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary);">Currency:</span>
+            <div class="currency-switcher-wrap">
+              <button type="button" class="currency-btn active" id="curAFN" onclick="setCurrency('AFN')">
+                <span>AFN (افغانی)</span>
+              </button>
+              <button type="button" class="currency-btn" id="curUSD" onclick="setCurrency('USD')">
+                <span>USD ($)</span>
+              </button>
+            </div>
+            <span id="rateNotice" style="font-size: 0.72rem; color: var(--text-muted);">(1 USD = 70.50 AFN)</span>
+          </div>
+        </div>
+
+        <!-- 5 Category Tabs -->
+        <div class="smart-tabs-grid">
+          <div class="smart-tab-pill active" id="tabBRT" onclick="switchSmartTax('brt')">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span class="tab-title">1. BRT Tax</span>
+            <span class="tab-sub">معاملات انتفاعی (2%-10%)</span>
+          </div>
+          <div class="smart-tab-pill" id="tabSalary" onclick="switchSmartTax('salary')">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="tab-title">2. Salary Tax</span>
+            <span class="tab-sub">مالیات معاشات (Art. 46)</span>
+          </div>
+          <div class="smart-tab-pill" id="tabCorp" onclick="switchSmartTax('corp')">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v14M21 7v14M6 7V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3M9 11h2M13 11h2M9 15h2M13 15h2"/></svg>
+            <span class="tab-title">3. Corporate 20%</span>
+            <span class="tab-sub">مالیات شرکت‌ها (Art. 4)</span>
+          </div>
+          <div class="smart-tab-pill" id="tabRent" onclick="switchSmartTax('rent')">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            <span class="tab-title">4. Rent Tax</span>
+            <span class="tab-sub">مالیات کرایه (10%-15%)</span>
+          </div>
+          <div class="smart-tab-pill" id="tabVendor" onclick="switchSmartTax('vendor')">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span class="tab-title">5. Vendor 2%/7%</span>
+            <span class="tab-sub">قراردادها (Art. 72)</span>
+          </div>
+        </div>
+
+        <!-- 1. BRT Input Panel -->
+        <div id="panelBRT">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="calcRevenue">
+                Gross Quarterly Revenue (<span class="currency-label">AFN</span>) &bull; عواید ناخالص ربعوار
+              </label>
+              <input type="number" id="calcRevenue" class="form-input" placeholder="e.g. 500000" value="500000" oninput="runTaxCalculation()">
+              <div class="presets-row">
+                <span style="font-size:0.75rem; color:var(--text-muted);">Quick Presets:</span>
+                <span class="preset-chip" onclick="setPreset('calcRevenue', 250000)">250K</span>
+                <span class="preset-chip" onclick="setPreset('calcRevenue', 500000)">500K</span>
+                <span class="preset-chip" onclick="setPreset('calcRevenue', 1500000)">1.5M</span>
+                <span class="preset-chip" onclick="setPreset('calcRevenue', 5000000)">5M</span>
+                <span class="preset-chip" onclick="setPreset('calcRevenue', 10000000)">10M</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="calcCategory">
+                Business Activity &bull; نوعیت فعالیت و نرخ مالیات (Article 64)
+              </label>
+              <select id="calcCategory" class="form-select" onchange="runTaxCalculation()">
+                <option value="0.02">Professional Services / Consulting &bull; خدمات مسلکی و مشورتی (2%)</option>
+                <option value="0.04">General Commercial Goods &amp; Retail &bull; واردات و فروش اموال (4%)</option>
+                <option value="0.05">Hospitality / Hotels &amp; Restaurants &bull; هوتل‌ها و رستورانت‌ها (5%)</option>
+                <option value="0.10">Telecommunications &amp; Luxury Goods &bull; مخابرات و خدمات خاص (10%)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Salary Input Panel -->
+        <div id="panelSalary" style="display: none;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="calcSalary">
+                Gross Monthly Salary (<span class="currency-label">AFN</span>) &bull; معاش ناخالص ماهوار
+              </label>
+              <input type="number" id="calcSalary" class="form-input" placeholder="e.g. 45000" value="45000" oninput="runTaxCalculation()">
+              <div class="presets-row">
+                <span style="font-size:0.75rem; color:var(--text-muted);">Quick Presets:</span>
+                <span class="preset-chip" onclick="setPreset('calcSalary', 15000)">15,000</span>
+                <span class="preset-chip" onclick="setPreset('calcSalary', 35000)">35,000</span>
+                <span class="preset-chip" onclick="setPreset('calcSalary', 50000)">50,000</span>
+                <span class="preset-chip" onclick="setPreset('calcSalary', 100000)">100,000</span>
+                <span class="preset-chip" onclick="setPreset('calcSalary', 180000)">180,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Corporate Input Panel -->
+        <div id="panelCorp" style="display: none;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="calcCorpRevenue">
+                Annual Gross Revenue (<span class="currency-label">AFN</span>) &bull; مجموع عواید سالانه
+              </label>
+              <input type="number" id="calcCorpRevenue" class="form-input" placeholder="e.g. 10000000" value="10000000" oninput="runTaxCalculation()">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="calcCorpExpenses">
+                Allowable Expenses &amp; Depreciation (<span class="currency-label">AFN</span>) &bull; مصارف قابل مجرا
+              </label>
+              <input type="number" id="calcCorpExpenses" class="form-input" placeholder="e.g. 7000000" value="7000000" oninput="runTaxCalculation()">
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Rent Input Panel -->
+        <div id="panelRent" style="display: none;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="calcRent">
+                Monthly Gross Rent (<span class="currency-label">AFN</span>) &bull; کرایه ناخالص ماهوار
+              </label>
+              <input type="number" id="calcRent" class="form-input" placeholder="e.g. 80000" value="80000" oninput="runTaxCalculation()">
+              <div class="presets-row">
+                <span style="font-size:0.75rem; color:var(--text-muted);">Quick Presets:</span>
+                <span class="preset-chip" onclick="setPreset('calcRent', 10000)">10,000</span>
+                <span class="preset-chip" onclick="setPreset('calcRent', 40000)">40,000</span>
+                <span class="preset-chip" onclick="setPreset('calcRent', 80000)">80,000</span>
+                <span class="preset-chip" onclick="setPreset('calcRent', 120000)">120,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Vendor Contract Panel -->
+        <div id="panelVendor" style="display: none;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="calcContract">
+                Contract Invoice Value (<span class="currency-label">AFN</span>) &bull; ارزش بل قرارداد
+              </label>
+              <input type="number" id="calcContract" class="form-input" placeholder="e.g. 500000" value="500000" oninput="runTaxCalculation()">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="calcVendorLicense">
+                Vendor Licensing Status &bull; وضعیت جواز قراردادی (Article 72)
+              </label>
+              <select id="calcVendorLicense" class="form-select" onchange="runTaxCalculation()">
+                <option value="0.02">Valid Business License (AISA / MoCI) &bull; دارای جواز معتبر (2%)</option>
+                <option value="0.07">Unlicensed Vendor / Sole Trader &bull; بدون جواز فعالیت (7%)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Dynamic Result Console -->
+        <div class="smart-result-console">
+          <div class="smart-stat-grid">
+            <div>
+              <div style="font-size: 0.82rem; text-transform: uppercase; color: #94a3b8; font-weight: 700; letter-spacing: 1px;" id="resultTitle">
+                Statutory Tax Payable &bull; مالیات قابل تادیه
+              </div>
+              <div id="statTaxPayable" style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; color: #fbbf24; margin: 0.35rem 0;">
+                10,000 AFN
+              </div>
+              <div style="font-size: 0.85rem; color: #93c5fd;" id="statBasis">
+                Statutory Basis: Afghan Income Tax Law 2009, Article 64
+              </div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md); padding: 1.25rem;">
+              <div style="font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;" id="netLabel">
+                Net Disbursed / Take-Home
+              </div>
+              <div id="statNetPayable" style="font-size: 1.65rem; font-weight: 800; color: #10b981; margin: 0.25rem 0;">
+                490,000 AFN
+              </div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;">
+                After deduction of statutory tax
+              </div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md); padding: 1.25rem;">
+              <div style="font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; font-weight: 700;">
+                Effective Tax Rate &bull; نرخ موثر
+              </div>
+              <div id="statEffectiveRate" style="font-size: 1.65rem; font-weight: 800; color: #38bdf8; margin: 0.25rem 0;">
+                2.00%
+              </div>
+              <div style="font-size: 0.8rem; color: #cbd5e1;" id="statDeadline">
+                Filing: Within 15 Days of Quarter End
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Breakdown Proportion Bar -->
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.78rem; color: #cbd5e1;">
+              <span>Net Share: <strong id="netBarLabel" style="color:#10b981;">98.0%</strong></span>
+              <span>Tax Share: <strong id="taxBarLabel" style="color:#fbbf24;">2.0%</strong></span>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-net" id="progressBarNet" style="width: 98%;"></div>
+              <div class="progress-bar-tax" id="progressBarTax" style="width: 2%;"></div>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Progressive Calculation Breakdown Box -->
+          <div id="progressiveBreakdownBox" style="display:none; background: rgba(0, 0, 0, 0.25); border-radius: var(--radius-md); padding: 1rem; margin-top: 1.25rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="font-size: 0.8rem; font-weight: 800; color: #fbbf24; text-transform: uppercase; margin-bottom: 0.5rem;">
+              Step-by-Step Statutory Progressive Calculation (Article 46):
+            </div>
+            <div id="progressiveBreakdownContent"></div>
+          </div>
+
+          <!-- Action Buttons (Print & Copy) -->
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="font-size: 0.8rem; color: #94a3b8;">
+              Official assessment verified by Oriental Consultants Afghanistan (PrimeGlobal Member Firm).
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+              <button type="button" class="btn btn-sm btn-outline" onclick="copyTaxSummary()" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.35);" id="copyBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align:middle;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy Summary</span>
+              </button>
+              <button type="button" class="btn btn-sm btn-gold" onclick="window.print()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px; vertical-align:middle;"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                <span>Print Official Challan Slip</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal & MoF Tax Defense Advisory Bento -->
+  <section class="section" style="background: var(--bg-alt);">
+    <div class="container">
+      <div style="text-align: center; max-width: 750px; margin: 0 auto 3rem;">
+        <span class="badge badge-gold" style="margin-bottom: 0.75rem;">Statutory Advisory</span>
+        <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); font-weight: 800; letter-spacing: -0.01em;">
+          Official MoF Tax Clearance &amp; Legal Defense
+        </h2>
+        <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 1.05rem;">
+          Oriental Consultants represents corporate entities, NGOs, and international contractors before the Afghanistan Revenue Department (ARD), Large Taxpayers Office (LTO), and Medium Taxpayers Office (MTO).
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-col-3" style="border-top: 4px solid var(--accent-gold);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 0.5rem;">01. BRT Filings</div>
+          <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Quarterly Return Filing</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            Accurate quarterly BRT calculation, Challan generation, electronic submission to ARD, and payment ledger reconciliation to avoid 10% late-filing fines.
+          </p>
+        </div>
+
+        <div class="bento-card bento-col-3" style="border-top: 4px solid var(--accent-blue);">
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-blue); margin-bottom: 0.5rem;">02. Annual Clearance</div>
+          <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Annual Tax Clearance Certificate</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            Full reconciliation of annual financial statements, submission to MoF/LTO/MTO, and securing formal Tax Clearance Certificates required for MoCI license renewals.
+          </p>
+        </div>
+
+        <div class="bento-card bento-col-3" style="border-top: 4px solid #10b981;">
+          <div style="font-size: 1.5rem; font-weight: 800; color: #10b981; margin-bottom: 0.5rem;">03. Donor Exemption</div>
+          <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Bilateral Tax Exemptions</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            Guiding international NGOs, UN agencies, and bilateral contractors through tax exemption agreements, diplomatic protocols, and tax refund claims.
+          </p>
+        </div>
+
+        <div class="bento-card bento-col-3" style="border-top: 4px solid #a855f7;">
+          <div style="font-size: 1.5rem; font-weight: 800; color: #a855f7; margin-bottom: 0.5rem;">04. Penalty Defense</div>
+          <h4 style="font-weight: 700; margin-bottom: 0.5rem;">Dispute Resolution &amp; Defense</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+            Statutory defense against arbitrary tax assessments, penalty relief applications, and representation before MoF tax dispute resolution boards led by Sayyed ul Abrar.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="contact.html" class="btn btn-primary">
+          Schedule Confidential Tax Review with Senior Partner Sayyed ul Abrar &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-top">
+      <div class="footer-col footer-col-brand">
+        <a href="index.html" class="brand-logo" aria-label="Oriental Consultants Afghanistan">
+          <svg class="brand-logo-img" viewBox="0 0 380 88" width="190" height="44" fill="none" style="display: block; overflow: visible;">
+            <g transform="translate(6, 4)">
+              <circle cx="40" cy="40" r="38" fill="#0284c7" />
+              <circle cx="39" cy="39" r="34" fill="#001f3f" />
+            </g>
+            <g transform="translate(94, 0)">
+              <text x="0" y="47.5" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900">Oriental Consultants</text>
+              <text x="0" y="72" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800">SIMPLIFYING SOLUTIONS</text>
+            </g>
+          </svg>
+        </a>
+        <p class="footer-desc" style="margin-top: 1rem;">
+          Oriental Consultants Afghanistan (Est. 2006-2007, MoCI License I-11011, TIN 1045181011). Member firm of PrimeGlobal USA ($2.93B revenue). Delivering institutional statutory audit, accounting, and tax compliance across Afghanistan.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Practice Areas</h4>
+        <ul class="footer-links">
+          <li><a href="accounting.html">Accounting &amp; Financial Mgmt</a></li>
+          <li><a href="audit.html">Audit &amp; Assurance (ISA)</a></li>
+          <li><a href="tax-calculator.html" style="color:#fbbf24; font-weight:700;">Afghanistan Tax Calculator</a></li>
+          <li><a href="quickbooks.html">QuickBooks Enterprise 2025/2026</a></li>
+          <li><a href="tsplus.html">TSplus Remote Desktop</a></li>
+          <li><a href="odoo.html">Odoo ERP Implementation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Portals &amp; Tenders</h4>
+        <ul class="footer-links">
+          <li><a href="afghan-tenders.html">AfghanTenders (همه داوطلبی ها)</a></li>
+          <li><a href="acbar-rfps.html">ACBAR: RFQs &amp; RFPs</a></li>
+          <li><a href="jobs-af-tenders.html">Jobs.af Tenders &amp; Procurement</a></li>
+          <li><a href="acbar-jobs.html">ACBAR Jobs Portal</a></li>
+          <li><a href="jobs-af.html">Jobs.af Verified Jobs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Headquarters</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>House 22, Street 17, Karte 3, Kabul, Afghanistan</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@ocafghan.com">info@ocafghan.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="https://wa.me/93799543365" target="_blank" rel="noopener noreferrer">+93-799543365 / +93-787098321</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Visitor Counter Widget Container -->
+    <div class="container" style="padding-top: 1.5rem; padding-bottom: 0.5rem; display: flex; justify-content: center;">
+      <div class="visitor-counter-widget" id="visitorCounterWidget">
+        <div class="visitor-counter-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span>Total Visits: <strong id="vcTotalVisits">148,620</strong></span>
+        </div>
+        <div class="visitor-counter-sep"></div>
+        <div class="visitor-counter-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Today: <strong id="vcTodayVisits">385</strong></span>
+        </div>
+        <div class="visitor-counter-sep"></div>
+        <div class="visitor-counter-item online">
+          <span class="visitor-pulse-dot"></span>
+          <span>Online: <strong id="vcOnlineNow">19</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2006 &ndash; 2026 Oriental Consultants Afghanistan. All rights reserved.</p>
+        <p class="footer-license">Ministry of Commerce &amp; Industry License: I-11011 &bull; TIN: 1045181011</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky CTAs (Our Network on Left, Get a quote on Right) -->
+  <a href="branches.html" class="floating-network-btn" aria-label="Our Network" title="Global Presence &amp; Regional Hubs">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span>Our Network</span>
+  </a>
+  <a href="contact.html" class="floating-quote-btn" aria-label="Get a Quote" title="Get a Quote &bull; Free Scoping Consultation">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span>Get a Quote</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/visitor-counter.js"></script>
+
+  <!-- Smart Afghanistan Tax Calculator Engine -->
+  <script>
+    let activeTaxType = 'brt';
+    let currentCurrency = 'AFN';
+    const USD_EXCHANGE_RATE = 70.50; // Official DAB rate ~70.50 AFN per USD
+
+    function setCurrency(cur) {
+      currentCurrency = cur;
+      document.getElementById('curAFN').classList.toggle('active', cur === 'AFN');
+      document.getElementById('curUSD').classList.toggle('active', cur === 'USD');
+      
+      document.querySelectorAll('.currency-label').forEach(el => {
+        el.textContent = cur;
+      });
+
+      runTaxCalculation();
+    }
+
+    function switchSmartTax(type) {
+      activeTaxType = type;
+      ['tabBRT', 'tabSalary', 'tabCorp', 'tabRent', 'tabVendor'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+      ['panelBRT', 'panelSalary', 'panelCorp', 'panelRent', 'panelVendor'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+
+      const tabEl = document.getElementById('tab' + type.charAt(0).toUpperCase() + type.slice(1));
+      const panelEl = document.getElementById('panel' + type.charAt(0).toUpperCase() + type.slice(1));
+      if (tabEl) tabEl.classList.add('active');
+      if (panelEl) panelEl.style.display = 'block';
+
+      runTaxCalculation();
+    }
+
+    function setPreset(inputId, val) {
+      const input = document.getElementById(inputId);
+      if (input) {
+        input.value = currentCurrency === 'USD' ? Math.round(val / USD_EXCHANGE_RATE) : val;
+        runTaxCalculation();
+      }
+    }
+
+    function formatVal(amount) {
+      const rounded = Math.round(amount);
+      return rounded.toLocaleString() + ' ' + currentCurrency;
+    }
+
+    function runTaxCalculation() {
+      const progressiveBox = document.getElementById('progressiveBreakdownBox');
+      progressiveBox.style.display = 'none';
+
+      if (activeTaxType === 'brt') {
+        const rawRev = parseFloat(document.getElementById('calcRevenue').value) || 0;
+        const rate = parseFloat(document.getElementById('calcCategory').value) || 0.02;
+        const tax = rawRev * rate;
+        const net = Math.max(0, rawRev - tax);
+        const effRate = rawRev > 0 ? ((tax / rawRev) * 100).toFixed(2) : '0.00';
+
+        document.getElementById('resultTitle').textContent = 'Quarterly BRT Tax Payable • مالیات بر معاملات انتفاعی';
+        document.getElementById('statTaxPayable').textContent = formatVal(tax);
+        document.getElementById('statBasis').textContent = `Statutory Basis: Afghan Income Tax Law 2009, Article 64 (${(rate * 100)}% Statutory Rate)`;
+        document.getElementById('netLabel').textContent = 'Net Revenue Retained • عواید خالص بعد از وضع مالیات';
+        document.getElementById('statNetPayable').textContent = formatVal(net);
+        document.getElementById('statEffectiveRate').textContent = effRate + '%';
+        document.getElementById('statDeadline').textContent = 'Deadline: Within 15 Days of Quarter End';
+
+        updateProportion(rawRev, net, tax);
+
+      } else if (activeTaxType === 'salary') {
+        const rawSalary = parseFloat(document.getElementById('calcSalary').value) || 0;
+        // Convert to AFN for bracket calculation if in USD
+        const salaryAFN = currentCurrency === 'USD' ? (rawSalary * USD_EXCHANGE_RATE) : rawSalary;
+        let taxAFN = 0;
+        let b1 = 0, b2 = 0, b3 = 0, b4 = 0;
+
+        if (salaryAFN <= 5000) {
+          taxAFN = 0;
+        } else if (salaryAFN <= 12500) {
+          b2 = (salaryAFN - 5000) * 0.02;
+          taxAFN = b2;
+        } else if (salaryAFN <= 100000) {
+          b2 = 150; // (12500-5000)*0.02
+          b3 = (salaryAFN - 12500) * 0.10;
+          taxAFN = b2 + b3;
+        } else {
+          b2 = 150;
+          b3 = 8750; // (100000-12500)*0.10
+          b4 = (salaryAFN - 100000) * 0.20;
+          taxAFN = b2 + b3 + b4;
+        }
+
+        const tax = currentCurrency === 'USD' ? (taxAFN / USD_EXCHANGE_RATE) : taxAFN;
+        const net = Math.max(0, rawSalary - tax);
+        const effRate = rawSalary > 0 ? ((tax / rawSalary) * 100).toFixed(2) : '0.00';
+
+        document.getElementById('resultTitle').textContent = 'Monthly Salary Tax Withholding • مالیات معاش ماهوار';
+        document.getElementById('statTaxPayable').textContent = formatVal(tax);
+        document.getElementById('statBasis').textContent = 'Statutory Basis: Afghan Income Tax Law 2009, Article 46 (Progressive Brackets)';
+        document.getElementById('netLabel').textContent = 'Net Employee Take-Home • خالص قابل پرداخت به کارمند';
+        document.getElementById('statNetPayable').textContent = formatVal(net);
+        document.getElementById('statEffectiveRate').textContent = effRate + '%';
+        document.getElementById('statDeadline').textContent = 'Deposit with MoF: Within 10 Days of Month End';
+
+        updateProportion(rawSalary, net, tax);
+
+        // Show progressive breakdown
+        progressiveBox.style.display = 'block';
+        const b2Val = currentCurrency === 'USD' ? (b2 / USD_EXCHANGE_RATE) : b2;
+        const b3Val = currentCurrency === 'USD' ? (b3 / USD_EXCHANGE_RATE) : b3;
+        const b4Val = currentCurrency === 'USD' ? (b4 / USD_EXCHANGE_RATE) : b4;
+
+        document.getElementById('progressiveBreakdownContent').innerHTML = `
+          <div class="breakdown-row"><span>Bracket 1: 0 – 5,000 AFN (0% Exempt)</span><strong>${formatVal(0)}</strong></div>
+          <div class="breakdown-row"><span>Bracket 2: 5,001 – 12,500 AFN (2% on excess)</span><strong>${formatVal(b2Val)}</strong></div>
+          <div class="breakdown-row"><span>Bracket 3: 12,501 – 100,000 AFN (10% on excess)</span><strong>${formatVal(b3Val)}</strong></div>
+          <div class="breakdown-row"><span>Bracket 4: Over 100,000 AFN (20% on excess)</span><strong>${formatVal(b4Val)}</strong></div>
+          <div class="breakdown-row" style="color:#fbbf24; font-weight:800;"><span>Total Monthly Withholding</span><span>${formatVal(tax)}</span></div>
+        `;
+
+      } else if (activeTaxType === 'corp') {
+        const rawRev = parseFloat(document.getElementById('calcCorpRevenue').value) || 0;
+        const rawExp = parseFloat(document.getElementById('calcCorpExpenses').value) || 0;
+        const profit = Math.max(0, rawRev - rawExp);
+        const tax = profit * 0.20;
+        const net = profit - tax;
+        const effRate = rawRev > 0 ? ((tax / rawRev) * 100).toFixed(2) : '0.00';
+
+        document.getElementById('resultTitle').textContent = 'Annual Corporate Income Tax (20%) • مالیات عایداتی شرکت';
+        document.getElementById('statTaxPayable').textContent = formatVal(tax);
+        document.getElementById('statBasis').textContent = 'Statutory Basis: Afghan Income Tax Law 2009, Article 4 (20% on Net Taxable Profit)';
+        document.getElementById('netLabel').textContent = 'Net Retained Profit • مفاد خالص بعد از مالیات';
+        document.getElementById('statNetPayable').textContent = formatVal(net);
+        document.getElementById('statEffectiveRate').textContent = effRate + '% of Gross';
+        document.getElementById('statDeadline').textContent = 'Filing: By end of 3rd Month of Next Fiscal Year';
+
+        updateProportion(rawRev, rawRev - tax, tax);
+
+      } else if (activeTaxType === 'rent') {
+        const rawRent = parseFloat(document.getElementById('calcRent').value) || 0;
+        const rentAFN = currentCurrency === 'USD' ? (rawRent * USD_EXCHANGE_RATE) : rawRent;
+        let taxAFN = 0;
+
+        if (rentAFN <= 10000) {
+          taxAFN = 0;
+        } else if (rentAFN <= 100000) {
+          taxAFN = rentAFN * 0.10;
+        } else {
+          taxAFN = rentAFN * 0.15;
+        }
+
+        const tax = currentCurrency === 'USD' ? (taxAFN / USD_EXCHANGE_RATE) : taxAFN;
+        const net = Math.max(0, rawRent - tax);
+        const effRate = rawRent > 0 ? ((tax / rawRent) * 100).toFixed(2) : '0.00';
+
+        document.getElementById('resultTitle').textContent = 'Monthly Rent Withholding Tax • مالیات بر کرایه جایداد';
+        document.getElementById('statTaxPayable').textContent = formatVal(tax);
+        document.getElementById('statBasis').textContent = 'Statutory Basis: Afghan Income Tax Law 2009, Article 58 (10% / 15% Withholding)';
+        document.getElementById('netLabel').textContent = 'Net Disbursed to Landlord • خالص قابل پرداخت به مالک جایداد';
+        document.getElementById('statNetPayable').textContent = formatVal(net);
+        document.getElementById('statEffectiveRate').textContent = effRate + '%';
+        document.getElementById('statDeadline').textContent = 'Deposit with MoF: Within 10 Days of Payment';
+
+        updateProportion(rawRent, net, tax);
+
+      } else if (activeTaxType === 'vendor') {
+        const rawContract = parseFloat(document.getElementById('calcContract').value) || 0;
+        const rate = parseFloat(document.getElementById('calcVendorLicense').value) || 0.02;
+        const tax = rawContract * rate;
+        const net = Math.max(0, rawContract - tax);
+        const effRate = (rate * 100).toFixed(2);
+
+        document.getElementById('resultTitle').textContent = 'Vendor Contract Withholding Tax • مالیات موضوعی قراردادها';
+        document.getElementById('statTaxPayable').textContent = formatVal(tax);
+        document.getElementById('statBasis').textContent = `Statutory Basis: Afghan Income Tax Law 2009, Article 72 (${(rate * 100)}% Contractor Withholding)`;
+        document.getElementById('netLabel').textContent = 'Net Paid to Contractor • خالص قابل تادیه به قراردادی';
+        document.getElementById('statNetPayable').textContent = formatVal(net);
+        document.getElementById('statEffectiveRate').textContent = effRate + '%';
+        document.getElementById('statDeadline').textContent = 'Remit to MoF: Within 10 Days of Payment';
+
+        updateProportion(rawContract, net, tax);
+      }
+    }
+
+    function updateProportion(total, net, tax) {
+      if (total <= 0) {
+        document.getElementById('progressBarNet').style.width = '100%';
+        document.getElementById('progressBarTax').style.width = '0%';
+        document.getElementById('netBarLabel').textContent = '100.0%';
+        document.getElementById('taxBarLabel').textContent = '0.0%';
+        return;
+      }
+      const netPct = Math.max(0, Math.min(100, (net / total) * 100));
+      const taxPct = Math.max(0, Math.min(100, (tax / total) * 100));
+
+      document.getElementById('progressBarNet').style.width = netPct.toFixed(1) + '%';
+      document.getElementById('progressBarTax').style.width = taxPct.toFixed(1) + '%';
+      document.getElementById('netBarLabel').textContent = netPct.toFixed(1) + '%';
+      document.getElementById('taxBarLabel').textContent = taxPct.toFixed(1) + '%';
+    }
+
+    function copyTaxSummary() {
+      const title = document.getElementById('resultTitle').textContent.trim();
+      const tax = document.getElementById('statTaxPayable').textContent.trim();
+      const net = document.getElementById('statNetPayable').textContent.trim();
+      const basis = document.getElementById('statBasis').textContent.trim();
+      const text = `Afghanistan Tax Calculation [Oriental Consultants]:\nCategory: ${title}\nTax Payable: ${tax}\nNet Amount: ${net}\nBasis: ${basis}\nTIN: 1045181011 | MoCI: I-11011`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<span>✓ Copied!</span>';
+        setTimeout(() => { btn.innerHTML = original; }, 2000);
+      });
+    }
+
+    // Initialize on ready
+    document.addEventListener('DOMContentLoaded', () => {
+      runTaxCalculation();
+    });
+  </script>
+</body>
+</html>
