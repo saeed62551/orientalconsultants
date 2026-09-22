@@ -1,0 +1,12 @@
+# robots.txt for Oriental Consultants (https://www.ocafghan.com)
+# Kabul, Afghanistan Headquarters
+
+User-agent: *
+Allow: /
+
+# Disallow internal data and script directories from crawling
+Disallow: /scripts/
+Disallow: /data/
+
+# Canonical Sitemap URL
+Sitemap: https://www.ocafghan.com/sitemap.xml
