@@ -777,7 +777,6 @@
             <ul class="dropdown-menu">
               <li class="dropdown-item">
                 <a href="domains.html" style="color: #38bdf8; font-weight: 700;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Domain Search (.AF &amp; Global)</a>
-
               </li>
               <li class="dropdown-item"><a href="ict.html">Google Workspace Deployment</a></li>
               <li class="dropdown-item"><a href="microsoft-365.html">Microsoft 365 Solutions</a></li>
@@ -823,7 +822,6 @@
     <ul class="mobile-nav-links">
       <li><a href="index.html" class="mobile-nav-link">Home Portal</a></li>
       <li><a href="domains.html" class="mobile-nav-link active" style="color: #38bdf8; font-weight: 800;">🔍 Domain Search (.AF &amp; Global)</a></li>
-      <li><a href="#portal" onclick="switchPortalTab('manage');" class="mobile-nav-link" style="color: #38bdf8; font-weight: 800;">⚙️ Domain Customer Portal &amp; DNS</a></li>
       <li><a href="ict.html" class="mobile-nav-link">ICT &amp; Google Workspace</a></li>
       <li><a href="microsoft-365.html" class="mobile-nav-link">Microsoft 365 Afghanistan</a></li>
       <li><a href="afghanhoster.html" class="mobile-nav-link">AfghanHoster (.AF Registrar)</a></li>
@@ -921,61 +919,111 @@
           <div id="mainDomainSearchResults" style="display: none; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.15);"></div>
 
           <!-- ==========================================================================
-               DOMAIN CUSTOMER PORTAL & DNS CONSOLE (EMBEDDED UNDER SEARCH BAR)
+               HOSTINGER-GRADE DOMAIN CUSTOMER PORTAL & DNS CONSOLE (hPanel STYLE)
                ========================================================================== -->
-          <div id="portal" style="margin-top: 2rem; padding-top: 1.75rem; border-top: 1.5px solid rgba(56, 189, 248, 0.35); scroll-margin-top: 90px;">
+          <div id="portal" class="hostinger-portal-wrapper">
             
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-              <span class="badge" style="background: rgba(56, 189, 248, 0.2); color: #7dd3fc; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                Client Area &bull; Domain Management &bull; Live DNS Zone Editor
-              </span>
-              <h2 style="font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; margin: 0.4rem 0 0.25rem; color: #fff;">
-                Domain Customer Portal &amp; <span style="background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">DNS Console</span>
-              </h2>
-              <p style="color: #94a3b8; font-size: 0.92rem; max-width: 650px; margin: 0 auto;">
-                Manage your registered Afghan &amp; global domains, configure live DNS zone records (Google Workspace, M365), renewals, and official AFN invoices.
-              </p>
-
-              <!-- Portal Tabs Switcher -->
-              <div class="portal-nav-tabs" role="tablist">
-                <button type="button" class="portal-tab-btn active" id="tabBtnManage" onclick="switchPortalTab('manage')" role="tab" aria-selected="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                  Manage My Domains &amp; DNS
-                </button>
-                <button type="button" class="portal-tab-btn" id="tabBtnRegister" onclick="switchPortalTab('register')" role="tab" aria-selected="false">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-                  Register New Domain Wizard
-                </button>
+            <!-- Hostinger Header & Live Edge Status -->
+            <div class="hostinger-portal-header">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.25rem;">
+                <div>
+                  <div class="hostinger-portal-badge">
+                    <span class="hostinger-pulse-dot"></span>
+                    hPanel Domain Control Hub &bull; Anycast Edge DNS
+                  </div>
+                  <h2 class="hostinger-title">
+                    Domain Customer Portal &amp; <span class="gradient-text">DNS Console</span>
+                  </h2>
+                  <p class="hostinger-subtitle">
+                    Self-service domain administration, real-time Anycast DNS zone propagation, 1-click Google Workspace &amp; M365 presets, and official Afghan MoF tax receipts.
+                  </p>
+                </div>
+                <div style="text-align: right; display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-end;">
+                  <span style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.28rem 0.75rem; border-radius: 9999px; background: rgba(0, 176, 144, 0.15); border: 1px solid rgba(0, 176, 144, 0.35); color: #00b090; font-size: 0.75rem; font-weight: 800;">
+                    <span style="width: 7px; height: 7px; border-radius: 50%; background: #00b090; box-shadow: 0 0 8px #00b090;"></span>
+                    Anycast Edge: Online (Kabul Node)
+                  </span>
+                  <span style="font-size: 0.74rem; color: #94a3b8;">
+                    Latency: <strong style="color: #00e5ff;">12ms</strong> &bull; Anycast Edge: <strong style="color: #c4b5fd;">200+ PoPs</strong>
+                  </span>
+                </div>
               </div>
             </div>
 
-            <!-- PANEL 1: DOMAIN MANAGEMENT & DNS (ACTIVE BY DEFAULT) -->
-            <div id="portalPanelManage" class="portal-panel active">
-              
-              <!-- Sub-tabs for management -->
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;">
-                <button type="button" class="btn btn-sm btn-primary" id="mTabBtnDomains" onclick="switchManageSubTab('domains')" style="background: #0284c7; font-size: 0.82rem; padding: 0.45rem 1rem;">
-                  🌐 My Active Domains
-                </button>
-                <button type="button" class="btn btn-sm btn-outline" id="mTabBtnDns" onclick="switchManageSubTab('dns')" style="font-size: 0.82rem; padding: 0.45rem 1rem; color: #fff; border-color: rgba(255,255,255,0.25);">
-                  ⚡ DNS Zone Editor
-                </button>
-                <button type="button" class="btn btn-sm btn-outline" id="mTabBtnInvoices" onclick="switchManageSubTab('invoices')" style="font-size: 0.82rem; padding: 0.45rem 1rem; color: #fff; border-color: rgba(255,255,255,0.25);">
-                  📄 Invoices &amp; AFN Banking
-                </button>
-                <button type="button" class="btn btn-sm btn-outline" id="mTabBtnWhois" onclick="switchManageSubTab('whois')" style="font-size: 0.82rem; padding: 0.45rem 1rem; color: #fff; border-color: rgba(255,255,255,0.25);">
-                  🔒 WHOIS Privacy
-                </button>
+            <!-- Hostinger Quick Stats Grid -->
+            <div class="hostinger-stats-grid">
+              <div class="hostinger-stat-card">
+                <div class="hostinger-stat-icon">🌐</div>
+                <div>
+                  <div class="hostinger-stat-title">Active Domains</div>
+                  <div class="hostinger-stat-value"><span id="statActiveDomainsCount">2 Domains</span></div>
+                </div>
               </div>
+              <div class="hostinger-stat-card">
+                <div class="hostinger-stat-icon" style="color: #c084fc; background: rgba(168, 85, 247, 0.16); border-color: rgba(168, 85, 247, 0.35);">⚡</div>
+                <div>
+                  <div class="hostinger-stat-title">DNS Health</div>
+                  <div class="hostinger-stat-value" style="color: #00e5ff;">Anycast Active</div>
+                </div>
+              </div>
+              <div class="hostinger-stat-card">
+                <div class="hostinger-stat-icon" style="color: #00b090; background: rgba(0, 176, 144, 0.16); border-color: rgba(0, 176, 144, 0.35);">🛡️</div>
+                <div>
+                  <div class="hostinger-stat-title">WHOIS Privacy</div>
+                  <div class="hostinger-stat-value"><span id="statWhoisText" style="color: #00b090;">Shielded</span></div>
+                </div>
+              </div>
+              <div class="hostinger-stat-card">
+                <div class="hostinger-stat-icon" style="color: #fbbf24; background: rgba(245, 158, 11, 0.16); border-color: rgba(245, 158, 11, 0.35);">🧾</div>
+                <div>
+                  <div class="hostinger-stat-title">Afghan Invoicing</div>
+                  <div class="hostinger-stat-value" style="color: #fbbf24;">AFN &amp; USD Tax Rec.</div>
+                </div>
+              </div>
+            </div>
 
-              <!-- SUB-TAB 1: MY ACTIVE DOMAINS -->
-              <div id="mSubTabDomains">
+            <!-- Hostinger Segmented Navigation Bar -->
+            <div class="hostinger-nav-container" role="tablist">
+              <button type="button" class="hostinger-nav-pill active" id="tabBtnDomains" onclick="switchHostingerTab('domains')" role="tab" aria-selected="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span>My Domains</span>
+                <span class="pill-counter" id="hCountDomains">2</span>
+              </button>
+              <button type="button" class="hostinger-nav-pill" id="tabBtnDns" onclick="switchHostingerTab('dns')" role="tab" aria-selected="false">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>DNS Zone Manager</span>
+                <span class="pill-counter" id="hCountDns">5</span>
+              </button>
+              <button type="button" class="hostinger-nav-pill cta-register" id="tabBtnRegister" onclick="switchHostingerTab('register')" role="tab" aria-selected="false">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                <span>Register New Domain</span>
+              </button>
+              <button type="button" class="hostinger-nav-pill" id="tabBtnInvoices" onclick="switchHostingerTab('invoices')" role="tab" aria-selected="false">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Invoices &amp; AFN Banking</span>
+              </button>
+              <button type="button" class="hostinger-nav-pill" id="tabBtnWhois" onclick="switchHostingerTab('whois')" role="tab" aria-selected="false">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>WHOIS &amp; Security</span>
+              </button>
+            </div>
+
+            <!-- Hostinger Body Content Container -->
+            <div class="hostinger-portal-body">
+              
+              <!-- TAB 1: MY ACTIVE DOMAINS -->
+              <div id="hTabContentDomains" class="hostinger-tab-content active">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
-                  <div>
-                    <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0; color: #fff;">Registered Domains in Your Account</h3>
-                    <span style="font-size: 0.82rem; color: #94a3b8;">Active ccTLDs under Afghan accreditation &amp; global registrars.</span>
+                  <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; flex: 1; min-width: 260px;">
+                    <input type="text" id="domainSearchFilterInput" oninput="filterClientDomains(this.value)" placeholder="🔍 Search domains by name or extension..." class="form-control-custom" style="max-width: 340px; padding: 0.55rem 0.85rem; font-size: 0.85rem; border-color: rgba(255,255,255,0.12);">
+                    <div style="display: flex; gap: 0.35rem; align-items: center;">
+                      <button type="button" onclick="filterByTld('all')" class="btn btn-sm btn-outline" style="font-size: 0.74rem; padding: 0.3rem 0.65rem; color: #fff; border-color: rgba(255,255,255,0.2);">All</button>
+                      <button type="button" onclick="filterByTld('.af')" class="btn btn-sm btn-outline" style="font-size: 0.74rem; padding: 0.3rem 0.65rem; color: #38bdf8; border-color: rgba(56,189,248,0.3);">.af</button>
+                      <button type="button" onclick="filterByTld('.ngo')" class="btn btn-sm btn-outline" style="font-size: 0.74rem; padding: 0.3rem 0.65rem; color: #34d399; border-color: rgba(52,211,153,0.3);">.ngo</button>
+                      <button type="button" onclick="filterByTld('.com')" class="btn btn-sm btn-outline" style="font-size: 0.74rem; padding: 0.3rem 0.65rem; color: #c084fc; border-color: rgba(192,132,252,0.3);">.com</button>
+                    </div>
                   </div>
-                  <button type="button" onclick="promptAddDomainToConsole()" class="btn btn-sm btn-outline" style="border-color: #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.82rem; background: rgba(56, 189, 248, 0.1);">
+                  <button type="button" onclick="promptAddDomainToConsole()" class="hostinger-btn-primary" style="font-size: 0.8rem; padding: 0.55rem 1rem;">
                     + Add Existing Domain to Console
                   </button>
                 </div>
@@ -985,69 +1033,123 @@
                 </div>
               </div>
 
-              <!-- SUB-TAB 2: DNS ZONE EDITOR -->
-              <div id="mSubTabDns" style="display: none;">
-                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
-                  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+              <!-- TAB 2: DNS ZONE EDITOR -->
+              <div id="hTabContentDns" class="hostinger-tab-content">
+                <div style="background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  
+                  <!-- Zone Switcher Header -->
+                  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 1rem;">
                     <div>
-                      <h3 style="font-size: 1.2rem; font-weight: 900; margin-bottom: 0.25rem; color: #fff;">
-                        DNS Records Manager: <span id="activeDnsDomainName" style="color: #38bdf8;">yourcompany.af</span>
-                      </h3>
-                      <span style="font-size: 0.82rem; color: #94a3b8;">Authoritative Nameservers: ns1.ocafghan.com / ns2.ocafghan.com</span>
+                      <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #94a3b8; font-weight: 700;">Active DNS Zone:</span>
+                        <select id="dnsDomainSelector" onchange="changeDnsActiveDomain(this.value)" class="form-control-custom" style="width: auto; padding: 0.4rem 0.85rem; font-size: 0.88rem; font-weight: 800; color: #00e5ff; border-color: rgba(0,229,255,0.4);">
+                          <option value="yourcompany.af">yourcompany.af</option>
+                          <option value="afghanhope.ngo">afghanhope.ngo</option>
+                        </select>
+                        <span id="activeDnsDomainName" style="display: none;">yourcompany.af</span>
+                      </div>
+                      <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.35rem;">
+                        Authoritative Nameservers: <code style="color: #00e5ff; font-weight: 700;">ns1.ocafghan.com</code> &bull; <code style="color: #00e5ff; font-weight: 700;">ns2.ocafghan.com</code>
+                      </div>
                     </div>
-                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                      <button type="button" onclick="applyPresetDns('google')" class="btn btn-sm btn-outline" style="font-size: 0.78rem; border-color: #38bdf8; color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
-                        + Google Workspace Preset
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: #00b090; font-weight: 800; background: rgba(0,176,144,0.12); padding: 0.35rem 0.75rem; border-radius: 9999px; border: 1px solid rgba(0,176,144,0.3);">
+                      <span>✓</span>
+                      <span>Anycast Live Sync Across Afghanistan</span>
+                    </div>
+                  </div>
+
+                  <!-- 1-Click Integration Presets (Hostinger Feature) -->
+                  <div style="margin-bottom: 1.5rem;">
+                    <div style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 0.65rem;">
+                      1-Click DNS Integration Presets:
+                    </div>
+                    <div class="hostinger-preset-grid">
+                      <button type="button" onclick="applyPresetDns('google')" class="hostinger-preset-card">
+                        <div class="hostinger-preset-icon" style="background: rgba(66, 133, 244, 0.15); color: #4285f4; border: 1px solid rgba(66, 133, 244, 0.35);">G</div>
+                        <div>
+                          <span class="preset-title">Google Workspace</span>
+                          <span class="preset-sub">Auto MX, SPF &amp; DKIM</span>
+                        </div>
                       </button>
-                      <button type="button" onclick="applyPresetDns('microsoft')" class="btn btn-sm btn-outline" style="font-size: 0.78rem; border-color: #38bdf8; color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
-                        + Microsoft 365 Preset
+                      <button type="button" onclick="applyPresetDns('microsoft')" class="hostinger-preset-card">
+                        <div class="hostinger-preset-icon" style="background: rgba(242, 80, 34, 0.15); color: #f25022; border: 1px solid rgba(242, 80, 34, 0.35);">M</div>
+                        <div>
+                          <span class="preset-title">Microsoft 365</span>
+                          <span class="preset-sub">Exchange &amp; Autodiscover</span>
+                        </div>
+                      </button>
+                      <button type="button" onclick="applyPresetDns('tsplus')" class="hostinger-preset-card">
+                        <div class="hostinger-preset-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35);">T</div>
+                        <div>
+                          <span class="preset-title">TSplus Cloud</span>
+                          <span class="preset-sub">Remote Desktop Cloud</span>
+                        </div>
+                      </button>
+                      <button type="button" onclick="applyPresetDns('odoo')" class="hostinger-preset-card">
+                        <div class="hostinger-preset-icon" style="background: rgba(0, 176, 144, 0.15); color: #00b090; border: 1px solid rgba(0, 176, 144, 0.35);">O</div>
+                        <div>
+                          <span class="preset-title">Odoo ERP</span>
+                          <span class="preset-sub">Enterprise Portal CNAME</span>
+                        </div>
                       </button>
                     </div>
                   </div>
 
                   <!-- Add Record Inline Form -->
-                  <form onsubmit="handleAddNewDnsRecord(event); return false;" style="display: grid; grid-template-columns: 1fr 1.5fr 2fr 1fr auto; gap: 0.5rem; align-items: end; background: rgba(0, 0, 0, 0.25); padding: 1rem; border-radius: 8px; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.08);">
+                  <form onsubmit="handleAddNewDnsRecord(event); return false;" style="display: grid; grid-template-columns: 1fr 1.5fr 2fr 1fr auto; gap: 0.65rem; align-items: end; background: rgba(0, 0, 0, 0.32); padding: 1.15rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.08);">
                     <div>
-                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">Type</label>
-                      <select id="dnsNewType" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;">
+                      <label style="font-size: 0.74rem; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 0.3rem; text-transform: uppercase;">Type</label>
+                      <select id="dnsNewType" class="form-control-custom" style="padding: 0.55rem; font-size: 0.85rem;">
                         <option value="A">A (IPv4)</option>
-                        <option value="CNAME">CNAME</option>
+                        <option value="CNAME">CNAME (Alias)</option>
                         <option value="MX">MX (Mail)</option>
-                        <option value="TXT">TXT (SPF/DKIM)</option>
+                        <option value="TXT">TXT (SPF / DKIM)</option>
                         <option value="NS">NS (Nameserver)</option>
                       </select>
                     </div>
                     <div>
-                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">Host Name</label>
-                      <input type="text" id="dnsNewHost" placeholder="@ or mail" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;" required>
+                      <label style="font-size: 0.74rem; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 0.3rem; text-transform: uppercase;">Host Name</label>
+                      <input type="text" id="dnsNewHost" placeholder="@ or mail or www" class="form-control-custom" style="padding: 0.55rem; font-size: 0.85rem;" required>
                     </div>
                     <div>
-                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">Destination / Value</label>
-                      <input type="text" id="dnsNewValue" placeholder="192.168.1.1 or mail.google.com" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;" required>
+                      <label style="font-size: 0.74rem; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 0.3rem; text-transform: uppercase;">Points To / Destination</label>
+                      <input type="text" id="dnsNewValue" placeholder="185.199.108.153 or ghs.googlehosted.com" class="form-control-custom" style="padding: 0.55rem; font-size: 0.85rem;" required>
                     </div>
                     <div>
-                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">TTL</label>
-                      <select id="dnsNewTtl" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;">
-                        <option value="3600">1 Hour</option>
+                      <label style="font-size: 0.74rem; font-weight: 800; color: #94a3b8; display: block; margin-bottom: 0.3rem; text-transform: uppercase;">TTL</label>
+                      <select id="dnsNewTtl" class="form-control-custom" style="padding: 0.55rem; font-size: 0.85rem;">
+                        <option value="300">5 Mins (Fast)</option>
                         <option value="1800">30 Mins</option>
-                        <option value="300">5 Mins</option>
+                        <option value="3600" selected>1 Hour (Default)</option>
+                        <option value="14400">4 Hours</option>
                       </select>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="padding: 0.55rem 1rem; font-size: 0.85rem; height: 38px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 800; border: none; border-radius: 6px; cursor: pointer;">
+                    <button type="submit" class="hostinger-btn-primary" style="padding: 0.65rem 1.25rem; font-size: 0.85rem; height: 42px; border-radius: 8px;">
                       Add Record
                     </button>
                   </form>
 
+                  <!-- Filter Pills for Records Table -->
+                  <div style="display: flex; gap: 0.4rem; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap;">
+                    <span style="font-size: 0.75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; margin-right: 0.35rem;">Filter Records:</span>
+                    <button type="button" onclick="filterDnsRecordType('ALL')" class="btn btn-sm btn-outline active" style="font-size: 0.72rem; padding: 0.25rem 0.6rem; color: #fff; border-color: rgba(255,255,255,0.25);">All Records</button>
+                    <button type="button" onclick="filterDnsRecordType('A')" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 0.25rem 0.6rem; color: #00e5ff; border-color: rgba(0,229,255,0.3);">A</button>
+                    <button type="button" onclick="filterDnsRecordType('CNAME')" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 0.25rem 0.6rem; color: #c084fc; border-color: rgba(192,132,252,0.3);">CNAME</button>
+                    <button type="button" onclick="filterDnsRecordType('MX')" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 0.25rem 0.6rem; color: #00b090; border-color: rgba(0,176,144,0.3);">MX</button>
+                    <button type="button" onclick="filterDnsRecordType('TXT')" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 0.25rem 0.6rem; color: #fbbf24; border-color: rgba(245,158,11,0.3);">TXT</button>
+                    <button type="button" onclick="filterDnsRecordType('NS')" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 0.25rem 0.6rem; color: #818cf8; border-color: rgba(129,140,248,0.3);">NS</button>
+                  </div>
+
                   <!-- DNS Records Table -->
                   <div style="overflow-x: auto;">
-                    <table class="dns-table">
+                    <table class="hostinger-dns-table">
                       <thead>
                         <tr>
-                          <th>Record Type</th>
-                          <th>Host / Name</th>
-                          <th>Value / Points To</th>
-                          <th>TTL</th>
-                          <th>Action</th>
+                          <th style="width: 130px;">Record Type</th>
+                          <th style="width: 180px;">Host / Name</th>
+                          <th>Points To / Value</th>
+                          <th style="width: 110px;">TTL</th>
+                          <th style="width: 90px; text-align: right;">Action</th>
                         </tr>
                       </thead>
                       <tbody id="dnsRecordsTableBody">
@@ -1056,50 +1158,248 @@
                     </table>
                   </div>
 
-                  <div style="margin-top: 1rem; font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-                    <span>Need custom SRV, CAA, or reverse DNS? Contact Technical Desk: <a href="https://wa.me/93792002341" style="color: #38bdf8; font-weight: 700;">0093 792 002341</a></span>
-                    <span style="color: #34d399; font-weight: 700;">✓ Instant Zone Sync across Kabul Nodes</span>
+                  <div style="margin-top: 1.15rem; font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                    <span>Need specialized SRV, CAA, or reverse DNS delegations? Contact Technical NOC Desk: <a href="https://wa.me/93792002341" style="color: #00e5ff; font-weight: 700; text-decoration: none;">0093 792 002341</a></span>
+                    <span style="color: #00b090; font-weight: 700;">✓ Instant Zone Sync Across Kabul Anycast Nodes</span>
                   </div>
                 </div>
               </div>
 
-              <!-- SUB-TAB 3: INVOICES & AFN BANKING -->
-              <div id="mSubTabInvoices" style="display: none;">
-                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
-                  <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.35rem; color: #fff;">Official Afghan Invoices &amp; Banking Details</h3>
+              <!-- TAB 3: REGISTER NEW DOMAIN WIZARD -->
+              <div id="hTabContentRegister" class="hostinger-tab-content">
+                <div style="background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.75rem; margin-bottom: 1.5rem;">
+                  
+                  <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div>
+                      <h3 style="font-size: 1.35rem; font-weight: 900; margin-bottom: 0.3rem; color: #fff;">
+                        Domain Registration &amp; Transfer Wizard
+                      </h3>
+                      <p style="color: #94a3b8; font-size: 0.88rem; margin: 0;">
+                        Direct registry order via official .AF partner. Fast-track activation with official MoF receipts in AFN &amp; USD.
+                      </p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <span class="badge" style="background: rgba(103, 61, 230, 0.2); color: #c4b5fd; font-weight: 800; font-size: 0.75rem; border: 1px solid rgba(103,61,230,0.35);">
+                        ⚡ 10-Minute Rapid Provisioning
+                      </span>
+                    </div>
+                  </div>
+
+                  <form id="domainRegistrationForm" onsubmit="handlePortalRegistration(event); return false;">
+                    
+                    <!-- STEP 1: Domain & Extension -->
+                    <div style="margin-bottom: 1.75rem;">
+                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                        <span class="wizard-step-badge">1</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Choose Domain Name &amp; Extension</h4>
+                      </div>
+
+                      <div style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 0.75rem;">
+                        <div class="form-group-custom" style="margin-bottom: 0;">
+                          <label for="regDomainName">Domain Keyword (without extension) *</label>
+                          <input type="text" id="regDomainName" required placeholder="e.g. pamircloud, kabulbiz, afghanhope" class="form-control-custom" oninput="updateRegistrationPreview()">
+                        </div>
+                        <div class="form-group-custom" style="margin-bottom: 0;">
+                          <label for="regDomainExt">Extension (TLD) *</label>
+                          <select id="regDomainExt" class="form-control-custom" onchange="updateRegistrationPreview()">
+                            <option value=".af">.af ($45 / 3,150 AFN)</option>
+                            <option value=".com.af">.com.af ($35 / 2,450 AFN)</option>
+                            <option value=".org.af">.org.af ($35 / 2,450 AFN)</option>
+                            <option value=".ngo">.ngo ($39 / 2,730 AFN)</option>
+                            <option value=".com">.com ($14 / 980 AFN)</option>
+                            <option value=".info">.info ($12 / 840 AFN)</option>
+                            <option value=".ai">.ai ($79 / 5,530 AFN)</option>
+                            <option value=".io">.io ($49 / 3,430 AFN)</option>
+                            <option value=".net">.net ($15 / 1,050 AFN)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <!-- Registration Period with Discount Badges -->
+                      <div style="margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                        <span style="font-size: 0.82rem; font-weight: 700; color: #94a3b8;">Registration Term:</span>
+                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                          <input type="radio" name="regPeriod" value="1" checked onchange="updateRegistrationPreview()"> 1 Year
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                          <input type="radio" name="regPeriod" value="2" onchange="updateRegistrationPreview()"> 2 Years <span style="color: #00e5ff; font-weight: 800; font-size: 0.72rem;">(Save 5%)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                          <input type="radio" name="regPeriod" value="3" onchange="updateRegistrationPreview()"> 3 Years <span style="color: #00e5ff; font-weight: 800; font-size: 0.72rem;">(Save 8%)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                          <input type="radio" name="regPeriod" value="5" onchange="updateRegistrationPreview()"> 5 Years <span style="color: #00b090; font-weight: 800; font-size: 0.72rem;">(Save 12%)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- STEP 2: Registrant Organization Details -->
+                    <div style="margin-bottom: 1.75rem;">
+                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                        <span class="wizard-step-badge">2</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Registrant &amp; Organization Profile</h4>
+                      </div>
+
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem;">
+                        <div class="form-group-custom">
+                          <label for="regOrgName">Organization / Business / Brand Name *</label>
+                          <input type="text" id="regOrgName" required placeholder="e.g. Pamir Logistics Ltd" class="form-control-custom">
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regLicenseNo">Business License (Jawaz) / Tazkira No.</label>
+                          <input type="text" id="regLicenseNo" placeholder="Required for .com.af &amp; .ngo" class="form-control-custom">
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regContactPerson">Authorized Contact Person *</label>
+                          <input type="text" id="regContactPerson" required placeholder="Full Name" class="form-control-custom">
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regEmail">Corporate / Personal Email *</label>
+                          <input type="email" id="regEmail" required placeholder="name@domain.com" class="form-control-custom">
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regPhone">WhatsApp / Mobile Phone *</label>
+                          <input type="tel" id="regPhone" required placeholder="e.g. 0093 787 881808" class="form-control-custom">
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regCity">City &amp; Province in Afghanistan *</label>
+                          <select id="regCity" class="form-control-custom">
+                            <option value="Kabul">Kabul</option>
+                            <option value="Herat">Herat</option>
+                            <option value="Mazar-i-Sharif">Mazar-i-Sharif (Balkh)</option>
+                            <option value="Kandahar">Kandahar</option>
+                            <option value="Jalalabad">Jalalabad (Nangarhar)</option>
+                            <option value="Kunduz">Kunduz</option>
+                            <option value="Ghazni">Ghazni</option>
+                            <option value="Badakhshan">Badakhshan</option>
+                            <option value="Other">Other Afghan Province</option>
+                            <option value="International">Outside Afghanistan</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- STEP 3: DNS & Cloud Integration -->
+                    <div style="margin-bottom: 1.75rem;">
+                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                        <span class="wizard-step-badge">3</span>
+                        <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Nameserver &amp; DNS Configuration</h4>
+                      </div>
+
+                      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="default" checked style="margin-top: 0.25rem;">
+                          <div>
+                            <strong style="color: #fff; font-size: 0.92rem;">Oriental Consultants Anycast Cloud DNS (Recommended • Free)</strong>
+                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.15rem;">
+                              Free full DNS zone editor, 99.99% uptime SLA, and real-time propagation across Kabul fiber nodes (ns1.ocafghan.com / ns2.ocafghan.com).
+                            </div>
+                          </div>
+                        </label>
+
+                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="google" style="margin-top: 0.25rem;">
+                          <div>
+                            <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Google Workspace Afghanistan</strong>
+                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.15rem;">
+                              Automatically configures MX, SPF, and DKIM verification records for your official Google business email accounts.
+                            </div>
+                          </div>
+                        </label>
+
+                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="microsoft" style="margin-top: 0.25rem;">
+                          <div>
+                            <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Microsoft 365 &amp; Office 365</strong>
+                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.15rem;">
+                              Automatically provisions Exchange Online MX records, Autodiscover, and Intune mobile enterprise records.
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- STEP 4: Hostinger-Style Order Summary Box -->
+                    <div style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(103, 61, 230, 0.12) 0%, rgba(0, 0, 0, 0.35) 100%); padding: 1.35rem; border-radius: 12px; border: 1.5px solid rgba(103, 61, 230, 0.35);">
+                      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.85rem;">
+                        <div>
+                          <span style="font-size: 0.74rem; font-weight: 800; color: #00e5ff; text-transform: uppercase; letter-spacing: 0.05em;">Order Summary</span>
+                          <div id="previewDomainName" style="font-size: 1.35rem; font-weight: 900; color: #fff;">
+                            yourdomain.af
+                          </div>
+                        </div>
+                        <div style="text-align: right;">
+                          <div id="previewTotalPriceUsd" style="font-size: 1.6rem; font-weight: 900; color: #00e5ff;">
+                            $45.00
+                          </div>
+                          <div id="previewTotalPriceAfn" style="font-size: 0.85rem; font-weight: 800; color: #fbbf24;">
+                            Approx. 3,150 AFN
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: #94a3b8;">
+                        <span style="color: #00b090; font-weight: 700;">✓ Free DNS Zone Editor &amp; DDoS Shield ($0.00)</span>
+                        <span style="color: #00b090; font-weight: 700;">✓ Free WHOIS Privacy Guard ($0.00)</span>
+                        <span style="color: #c4b5fd; font-weight: 700;">✓ Statutory MoF Tax Receipt in AFN &amp; USD</span>
+                      </div>
+                    </div>
+
+                    <!-- Action Buttons: WhatsApp Instant & AFN Bank Invoice -->
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                      <button type="submit" style="flex: 1.5; min-width: 240px; background: #25d366; color: #075e54; font-weight: 900; font-size: 0.95rem; border: none; padding: 0.85rem 1.25rem; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); font-family: inherit;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        <span>Submit Order via WhatsApp (0093 787 881808)</span>
+                      </button>
+
+                      <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 200px; background: transparent; border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800; font-size: 0.88rem; padding: 0.85rem 1.15rem; border-radius: 10px; cursor: pointer; font-family: inherit;">
+                        Request Official AFN Bank Invoice &rarr;
+                      </button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+
+              <!-- TAB 4: INVOICES & AFN BANKING -->
+              <div id="hTabContentInvoices" class="hostinger-tab-content">
+                <div style="background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.35rem; color: #fff;">
+                    Official Afghan Banking &amp; Statutory Tax Invoices
+                  </h3>
                   <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 1.25rem;">
-                    All domains registered with Oriental Consultants are issued with statutory tax receipts and Ministry of Finance (MoF) compliant invoices.
+                    All domains registered through Oriental Consultants receive verified statutory invoices compliant with Afghanistan Ministry of Finance (MoF) regulations. TIN: <strong style="color: #fbbf24;">1045181011</strong>.
                   </p>
 
                   <!-- Afghan Bank Transfer Desk -->
-                  <div style="background: rgba(0, 0, 0, 0.3); padding: 1.25rem; border-radius: 10px; border-left: 4px solid #f59e0b; margin-bottom: 1.25rem;">
+                  <div style="background: rgba(0, 0, 0, 0.32); padding: 1.25rem; border-radius: 12px; border-left: 4px solid #f59e0b; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.06);">
                     <h4 style="font-size: 1.05rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.5rem;">
-                      🏦 Local Bank Payment Methods in Afghanistan
+                      🏦 Verified Afghan Bank Transfer Accounts
                     </h4>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.85rem; margin-top: 0.75rem; color: #e2e8f0;">
-                      <div>
-                        <strong style="color: #38bdf8;">Kabul Bank (کابل بانک)</strong><br>
+                      <div style="background: rgba(255,255,255,0.025); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+                        <strong style="color: #00e5ff;">Kabul Bank (کابل بانک)</strong><br>
                         Account Title: Oriental Consultants Ltd<br>
                         Currency: AFN &amp; USD Accepted<br>
-                        Branch: Main Branch, Kabul
+                        Branch: Main Corporate Branch, Kabul
                       </div>
-                      <div>
-                        <strong style="color: #38bdf8;">Azizi Bank (عزیزی بانک)</strong><br>
+                      <div style="background: rgba(255,255,255,0.025); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+                        <strong style="color: #00e5ff;">Azizi Bank (عزیزی بانک)</strong><br>
                         Account Title: Oriental Consultants Afghanistan<br>
                         Currency: AFN &amp; USD Accepted<br>
                         Branch: Karte 3 Branch, Kabul
                       </div>
-                      <div>
-                        <strong style="color: #38bdf8;">Cash / Hawala &amp; Office Visit</strong><br>
+                      <div style="background: rgba(255,255,255,0.025); padding: 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06);">
+                        <strong style="color: #00e5ff;">Cash / Hawala / Office Desk</strong><br>
                         Headquarters: House 22, Street 17 Karte 3, Kabul<br>
-                        WhatsApp Receipt Desk: <a href="https://wa.me/93700567868" style="color: #38bdf8; font-weight: 700;">0093 700 567868</a>
+                        WhatsApp Invoicing: <a href="https://wa.me/93700567868" style="color: #00e5ff; font-weight: 700; text-decoration: none;">0093 700 567868</a>
                       </div>
                     </div>
                   </div>
 
                   <!-- Invoices Table -->
                   <div style="overflow-x: auto;">
-                    <table class="dns-table">
+                    <table class="hostinger-dns-table">
                       <thead>
                         <tr>
                           <th>Invoice No.</th>
@@ -1107,7 +1407,7 @@
                           <th>Amount (USD / AFN)</th>
                           <th>Due Date</th>
                           <th>Status</th>
-                          <th>Receipt</th>
+                          <th style="text-align: right;">Receipt</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -1116,8 +1416,8 @@
                           <td>yourcompany.af (1 Year Registration)</td>
                           <td>$45.00 / 3,150 AFN</td>
                           <td>Immediate</td>
-                          <td><span class="table-badge badge-cname">Paid / Active</span></td>
-                          <td><button type="button" onclick="alert('Downloading Official Receipt for INV-2026-0841...')" class="btn btn-sm btn-outline" style="font-size: 0.75rem; color: #38bdf8; border-color: rgba(56,189,248,0.4);">Download PDF</button></td>
+                          <td><span class="hostinger-status-active">Paid &amp; Active</span></td>
+                          <td style="text-align: right;"><button type="button" onclick="alert('Downloading Official MoF Tax Receipt for INV-2026-0841...')" class="hostinger-btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">Download PDF</button></td>
                         </tr>
                       </tbody>
                     </table>
@@ -1125,223 +1425,35 @@
                 </div>
               </div>
 
-              <!-- SUB-TAB 4: WHOIS PRIVACY -->
-              <div id="mSubTabWhois" style="display: none;">
-                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
-                  <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.35rem; color: #fff;">WHOIS Privacy &amp; Anti-Spam Masking</h3>
-                  <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 1.25rem;">
-                    Keep your corporate email, Kabul phone number, and physical office location shielded from automated web scrapers.
-                  </p>
-
-                  <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0, 0, 0, 0.25); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
-                    <div>
-                      <strong style="color: #fff; font-size: 0.98rem; display: block;">WHOIS Privacy Protection Shield</strong>
-                      <div style="font-size: 0.82rem; color: #94a3b8;">
-                        Status: <span id="whoisStatusBadge" style="color: #34d399; font-weight: 800;">ACTIVE (Masked)</span>
-                      </div>
-                    </div>
-                    <button type="button" onclick="toggleWhoisShield()" class="btn btn-sm btn-outline" id="btnToggleWhois" style="border-color: #38bdf8; color: #38bdf8; font-size: 0.82rem;">
-                      Toggle Shield
-                    </button>
-                  </div>
-
-                  <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6;">
-                    Note: Under ATRA regulations in Afghanistan, national government (.gov.af) and official non-profit (.ngo / .org.af) domains maintain verified registry records at the central registry while public web queries remain masked.
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- PANEL 2: INTERACTIVE 4-STEP DOMAIN REGISTRATION WIZARD -->
-            <div id="portalPanelRegister" class="portal-panel">
-              <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; padding: 1.75rem; margin-bottom: 1.5rem;">
-                
-                <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 1.5rem;">
-                  <h3 style="font-size: 1.35rem; font-weight: 900; margin-bottom: 0.3rem; color: #fff;">
-                    Domain Registration Desk (Afghanistan)
+              <!-- TAB 5: WHOIS & SECURITY -->
+              <div id="hTabContentWhois" class="hostinger-tab-content">
+                <div style="background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.35rem; color: #fff;">
+                    WHOIS Privacy Shield &amp; Registry Masking
                   </h3>
-                  <p style="color: #94a3b8; font-size: 0.88rem; margin: 0;">
-                    Complete this official registration order. Our Kabul registrar desk activates .AF domains with local AFN and USD invoicing.
+                  <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 1.25rem;">
+                    Shield your organization's administrative emails, Kabul mobile numbers, and physical office addresses from automated telemarketers, spammers, and malicious domain crawlers.
                   </p>
+
+                  <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0, 0, 0, 0.32); padding: 1.25rem 1.5rem; border-radius: 12px; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem; border: 1px solid rgba(255,255,255,0.06);">
+                    <div>
+                      <strong style="color: #fff; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">WHOIS Privacy Protection Guard</strong>
+                      <div style="font-size: 0.82rem; color: #94a3b8;">
+                        Current Shield Status: <span id="whoisStatusBadge" style="color: #00b090; font-weight: 800;">ACTIVE (Masked)</span>
+                      </div>
+                    </div>
+                    <button type="button" onclick="toggleWhoisShield()" class="hostinger-btn-secondary" id="btnToggleWhois" style="border-color: rgba(103, 61, 230, 0.5); color: #c4b5fd;">
+                      Toggle Privacy Shield
+                    </button>
+                  </div>
+
+                  <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6; background: rgba(255, 255, 255, 0.02); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                    <strong style="color: #fff;">Afghanistan ATRA Registry Compliance:</strong> Under Afghanistan Telecommunications Regulatory Authority (ATRA) standards, governmental (.gov.af) and licensed non-profit (.ngo / .org.af) domains maintain verified registry records at the central registry while public query interfaces mask direct executive contact details.
+                  </div>
                 </div>
-
-                <form id="domainRegistrationForm" onsubmit="handlePortalRegistration(event); return false;">
-                  
-                  <!-- STEP 1: Domain & Extension -->
-                  <div style="margin-bottom: 1.75rem;">
-                    <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
-                      <span class="wizard-step-badge">1</span>
-                      <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Select Domain Name &amp; Extension</h4>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 0.75rem;">
-                      <div class="form-group-custom" style="margin-bottom: 0;">
-                        <label for="regDomainName">Domain Name (without extension) *</label>
-                        <input type="text" id="regDomainName" required placeholder="e.g. mycompany, kabulbank, afghanhope" class="form-control-custom" oninput="updateRegistrationPreview()">
-                      </div>
-                      <div class="form-group-custom" style="margin-bottom: 0;">
-                        <label for="regDomainExt">Extension (TLD) *</label>
-                        <select id="regDomainExt" class="form-control-custom" onchange="updateRegistrationPreview()">
-                          <option value=".af">.af ($45 / 3,150 AFN)</option>
-                          <option value=".com.af">.com.af ($35 / 2,450 AFN)</option>
-                          <option value=".org.af">.org.af ($35 / 2,450 AFN)</option>
-                          <option value=".ngo">.ngo ($39 / 2,730 AFN)</option>
-                          <option value=".com">.com ($14 / 980 AFN)</option>
-                          <option value=".info">.info ($12 / 840 AFN)</option>
-                          <option value=".ai">.ai ($79 / 5,530 AFN)</option>
-                          <option value=".io">.io ($49 / 3,430 AFN)</option>
-                          <option value=".net">.net ($15 / 1,050 AFN)</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <!-- Registration Period -->
-                    <div style="margin-top: 0.85rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-                      <span style="font-size: 0.82rem; font-weight: 700; color: #94a3b8;">Registration Period:</span>
-                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
-                        <input type="radio" name="regPeriod" value="1" checked onchange="updateRegistrationPreview()"> 1 Year
-                      </label>
-                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
-                        <input type="radio" name="regPeriod" value="2" onchange="updateRegistrationPreview()"> 2 Years (Save 5%)
-                      </label>
-                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
-                        <input type="radio" name="regPeriod" value="3" onchange="updateRegistrationPreview()"> 3 Years (Save 8%)
-                      </label>
-                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
-                        <input type="radio" name="regPeriod" value="5" onchange="updateRegistrationPreview()"> 5 Years (Save 12%)
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- STEP 2: Registrant Organization Details -->
-                  <div style="margin-bottom: 1.75rem;">
-                    <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
-                      <span class="wizard-step-badge">2</span>
-                      <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Registrant &amp; Organization Details</h4>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem;">
-                      <div class="form-group-custom">
-                        <label for="regOrgName">Organization / Business / Brand Name *</label>
-                        <input type="text" id="regOrgName" required placeholder="e.g. Pamir Logistics Ltd" class="form-control-custom">
-                      </div>
-                      <div class="form-group-custom">
-                        <label for="regLicenseNo">Business License (Jawaz) / Tazkira No.</label>
-                        <input type="text" id="regLicenseNo" placeholder="Required for .com.af & .ngo" class="form-control-custom">
-                      </div>
-                      <div class="form-group-custom">
-                        <label for="regContactPerson">Authorized Contact Person *</label>
-                        <input type="text" id="regContactPerson" required placeholder="Full Name" class="form-control-custom">
-                      </div>
-                      <div class="form-group-custom">
-                        <label for="regEmail">Corporate / Personal Email *</label>
-                        <input type="email" id="regEmail" required placeholder="name@domain.com" class="form-control-custom">
-                      </div>
-                      <div class="form-group-custom">
-                        <label for="regPhone">WhatsApp / Mobile Phone *</label>
-                        <input type="tel" id="regPhone" required placeholder="e.g. 0093 787 881808" class="form-control-custom">
-                      </div>
-                      <div class="form-group-custom">
-                        <label for="regCity">City &amp; Province in Afghanistan *</label>
-                        <select id="regCity" class="form-control-custom">
-                          <option value="Kabul">Kabul</option>
-                          <option value="Herat">Herat</option>
-                          <option value="Mazar-i-Sharif">Mazar-i-Sharif (Balkh)</option>
-                          <option value="Kandahar">Kandahar</option>
-                          <option value="Jalalabad">Jalalabad (Nangarhar)</option>
-                          <option value="Kunduz">Kunduz</option>
-                          <option value="Ghazni">Ghazni</option>
-                          <option value="Badakhshan">Badakhshan</option>
-                          <option value="Other">Other Afghan Province</option>
-                          <option value="International">Outside Afghanistan</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- STEP 3: DNS & Cloud Integration -->
-                  <div style="margin-bottom: 1.75rem;">
-                    <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
-                      <span class="wizard-step-badge">3</span>
-                      <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">DNS &amp; Nameserver Setup</h4>
-                    </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-                      <label style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.85rem 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                        <input type="radio" name="regDnsChoice" value="default" checked style="margin-top: 0.25rem;">
-                        <div>
-                          <strong style="color: #fff; font-size: 0.92rem;">Oriental Consultants NVMe Cloud DNS (Recommended)</strong>
-                          <div style="font-size: 0.8rem; color: #94a3b8;">
-                            Free DNS zone editor, 99.99% uptime, and instant propagation across Afghanistan. (ns1.ocafghan.com / ns2.ocafghan.com)
-                          </div>
-                        </div>
-                      </label>
-
-                      <label style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.85rem 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                        <input type="radio" name="regDnsChoice" value="google" style="margin-top: 0.25rem;">
-                        <div>
-                          <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Google Workspace Afghanistan</strong>
-                          <div style="font-size: 0.8rem; color: #94a3b8;">
-                            Automatically configure MX, SPF, and DKIM verification records for your Google business email.
-                          </div>
-                        </div>
-                      </label>
-
-                      <label style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.85rem 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                        <input type="radio" name="regDnsChoice" value="microsoft" style="margin-top: 0.25rem;">
-                        <div>
-                          <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Microsoft 365 &amp; Office 365</strong>
-                          <div style="font-size: 0.8rem; color: #94a3b8;">
-                            Automatically configure Exchange Online MX records, Autodiscover, and Intune mobile records.
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- STEP 4: Billing Currency & Live Total -->
-                  <div style="margin-bottom: 1.5rem; background: rgba(0, 0, 0, 0.35); padding: 1.25rem; border-radius: 10px; border: 1.5px solid rgba(56, 189, 248, 0.3);">
-                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
-                      <div>
-                        <span style="font-size: 0.78rem; font-weight: 800; color: #38bdf8; text-transform: uppercase;">Order Summary</span>
-                        <div id="previewDomainName" style="font-size: 1.25rem; font-weight: 900; color: #fff;">
-                          yourdomain.af
-                        </div>
-                      </div>
-                      <div style="text-align: right;">
-                        <div id="previewTotalPriceUsd" style="font-size: 1.5rem; font-weight: 900; color: #38bdf8;">
-                          $45.00
-                        </div>
-                        <div id="previewTotalPriceAfn" style="font-size: 0.85rem; font-weight: 800; color: #fbbf24;">
-                          Approx. 3,150 AFN
-                        </div>
-                      </div>
-                    </div>
-
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: #94a3b8;">
-                      <span>✓ Free DNS Zone Editor Included</span>
-                      <span>✓ Free WHOIS Privacy Guard Included</span>
-                      <span>✓ Invoicing in AFN &amp; USD</span>
-                    </div>
-                  </div>
-
-                  <!-- Action Buttons: WhatsApp Instant & AFN Bank Invoice -->
-                  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                    <button type="submit" style="flex: 1.5; min-width: 240px; background: #25d366; color: #075e54; font-weight: 900; font-size: 1rem; border: none; padding: 0.85rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                      <span>Submit Order to WhatsApp (0093 787 881808)</span>
-                    </button>
-
-                    <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 200px; background: transparent; border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800; font-size: 0.9rem; padding: 0.85rem 1.15rem; border-radius: 8px; cursor: pointer;">
-                      Request AFN Bank Invoice &rarr;
-                    </button>
-                  </div>
-
-                </form>
               </div>
-            </div>
 
+            </div>
           </div>
 
           <!-- Quick WhatsApp Hotline Strip -->
