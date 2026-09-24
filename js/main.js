@@ -829,7 +829,7 @@ const OC_DOMAIN_REGISTRY = [
   { tld: '.af', name: 'Afghanistan Official ccTLD', category: 'National Premier', retailPrice: 55, salePrice: 45, priceAfn: 3150, popular: true, desc: 'Highest authority national domain for Afghanistan commercial & public entities.' },
   { tld: '.com.af', name: 'Commercial Afghanistan', category: 'Afghan Business', retailPrice: 45, salePrice: 35, priceAfn: 2450, popular: true, desc: 'Recognized standard for registered corporations & trade in Afghanistan.' },
   { tld: '.org.af', name: 'Afghan Organizations', category: 'Afghan Non-Profit', retailPrice: 45, salePrice: 35, priceAfn: 2450, popular: true, desc: 'Designated for Afghan non-profits, foundations & civil society associations.' },
-  { tld: '.ngo', name: 'Non-Governmental Organization', category: 'Humanitarian & INGO', retailPrice: 50, salePrice: 39, priceAfn: 2730, popular: true, desc: 'Verified international & local humanitarian organizations operating in Afghanistan.' },
+  { tld: '.ngo', name: '.ngo Humanitarian & Non-Profit', category: 'OC • AfghanHoster • AfghanDevelopers', retailPrice: 50, salePrice: 39, priceAfn: 2730, popular: true, desc: 'Verified NGO ecosystem powered by Oriental Consultants (MoEc Verification & Statutory MoF AFN/USD Invoicing TIN: 1045181011), AfghanHoster (NVMe Cloud & Anycast DNS), and AfghanDevelopers (Software house) (Custom NGO Web Portals & M&E Dashboards).' },
   { tld: '.com', name: 'Commercial Worldwide', category: 'Global Business', retailPrice: 18, salePrice: 14, priceAfn: 980, popular: true, desc: 'The most trusted universal global domain for international commerce.' },
   { tld: '.info', name: 'Information & Media', category: 'News & Media', retailPrice: 18, salePrice: 12, priceAfn: 840, popular: false, desc: 'Ideal for informational portals, educational guides, publications & directories.' },
   { tld: '.ai', name: 'Artificial Intelligence', category: 'Next-Gen Tech', retailPrice: 99, salePrice: 79, priceAfn: 5530, popular: true, desc: 'The gold standard domain for AI development, machine learning & automation.' },
@@ -881,7 +881,9 @@ function renderDomainResultCards(cleanName, targetTld) {
 
   list.forEach(item => {
     const fullDomain = `${cleanName}${item.tld}`;
-    const waText = encodeURIComponent(`Hello Oriental Consultants, I want to register the domain: ${fullDomain} at your lowest price ($${item.salePrice}/yr or ${item.priceAfn} AFN). Please send activation details.`);
+    const waText = item.tld === '.ngo'
+      ? encodeURIComponent(`Hello Oriental Consultants, AfghanHoster & AfghanDevelopers, I want to register the .ngo domain: ${fullDomain} ($${item.salePrice}/yr or ${item.priceAfn} AFN). We need MoEc registration, cloud hosting, and non-profit portal solutions.`)
+      : encodeURIComponent(`Hello Oriental Consultants, I want to register the domain: ${fullDomain} at your lowest price ($${item.salePrice}/yr or ${item.priceAfn} AFN). Please send activation details.`);
     const waUrl = `https://wa.me/93787881808?text=${waText}`;
 
     html += `
@@ -896,6 +898,11 @@ function renderDomainResultCards(cleanName, targetTld) {
           <div style="font-size: 1.15rem; font-weight: 900; color: #fff; margin-bottom: 0.2rem; word-break: break-all;">
             ${fullDomain}
           </div>
+          ${item.tld === '.ngo' ? `
+            <div style="background: rgba(0, 176, 144, 0.12); border: 1px solid rgba(0, 176, 144, 0.35); border-radius: 6px; padding: 0.4rem 0.6rem; margin-bottom: 0.65rem; font-size: 0.73rem; color: #a7f3d0; line-height: 1.4;">
+              🤝 <strong>Tri-Pillar Feed:</strong> Oriental Consultants (MoEc &amp; Tax) &bull; AfghanHoster (Cloud &amp; DNS) &bull; AfghanDevelopers (Software house) (NGO Portals)
+            </div>
+          ` : ''}
           <div style="font-size: 0.76rem; color: #94a3b8; margin-bottom: 0.75rem; line-height: 1.4;">
             ${item.desc}
           </div>

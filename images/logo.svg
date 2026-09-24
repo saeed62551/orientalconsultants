@@ -1,5 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 92" width="100%" height="100%" fill="none">
   <defs>
+    <!-- Embedded Modern Typography & Adaptive Color Styling -->
+    <style>
+      .logo-title {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 27px;
+        font-weight: 800;
+        letter-spacing: -0.25px;
+        fill: #001f3f;
+      }
+      .logo-tagline {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 12.5px;
+        font-weight: 800;
+        letter-spacing: 2.4px;
+        fill: #ea580c;
+        text-transform: uppercase;
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-title {
+          fill: #ffffff !important;
+        }
+        .logo-tagline {
+          fill: #fbbf24 !important;
+        }
+      }
+    </style>
+
     <!-- Drop Shadow Filter for 3D Emblem -->
     <filter id="ocDropShadow" x="-20%" y="-20%" width="150%" height="150%">
       <feDropShadow dx="2" dy="4" stdDeviation="3.5" flood-color="#071630" flood-opacity="0.38"/>
@@ -8,10 +35,6 @@
 
     <filter id="cBevelShadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="1.5" dy="2" stdDeviation="1.5" flood-color="#021f4a" flood-opacity="0.5"/>
-    </filter>
-
-    <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#0284c7" flood-opacity="0.3"/>
     </filter>
 
     <!-- Blue Disc Gradients -->
@@ -51,26 +74,19 @@
       <stop offset="100%" stop-color="#f1f5f9"/>
     </linearGradient>
 
-    <!-- Text Gradients -->
-    <linearGradient id="textBlueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0284c7"/>
-      <stop offset="45%" stop-color="#0369a1"/>
-      <stop offset="80%" stop-color="#1e40af"/>
-      <stop offset="100%" stop-color="#172554"/>
-    </linearGradient>
-
+    <!-- Shining Swoosh Gradients -->
     <linearGradient id="swooshGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0284c7" stop-opacity="0.1"/>
-      <stop offset="30%" stop-color="#38bdf8" stop-opacity="0.9"/>
-      <stop offset="60%" stop-color="#0284c7" stop-opacity="1"/>
-      <stop offset="85%" stop-color="#0369a1" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#0284c7" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#0369a1" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0"/>
     </linearGradient>
 
     <linearGradient id="swooshShine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.85"/>
-      <stop offset="70%" stop-color="#7dd3fc" stop-opacity="0.5"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#7dd3fc" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
   </defs>
@@ -132,74 +148,16 @@
 
   <!-- ==================== TYPOGRAPHY: ORIENTAL CONSULTANTS ==================== -->
   <g transform="translate(94, 0)">
-    <!-- 3D Shadow for "Oriental Consultants" -->
-    <text x="0" y="47.5" 
-          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-          font-size="28" 
-          font-weight="800" 
-          font-style="italic" 
-          letter-spacing="-0.5px" 
-          fill="#071b3b" 
-          opacity="0.35">
-      Oriental Consultants
-    </text>
+    <!-- Crystal-Clear Executive Brand Title -->
+    <text x="0" y="46.5" class="logo-title">Oriental Consultants</text>
 
-    <!-- Main Front Face with Cerulean-to-Sapphire Gradient -->
-    <text x="0" y="46" 
-          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-          font-size="28" 
-          font-weight="800" 
-          font-style="italic" 
-          letter-spacing="-0.5px" 
-          fill="url(#textBlueGrad)"
-          filter="url(#textGlow)">
-      Oriental Consultants
-    </text>
+    <!-- Shining Horizontal Swoosh Accent Line -->
+    <path d="M 0 53.5 Q 135 48.5 270 53.5 Q 135 51 0 53.5 Z" fill="url(#swooshGrad)" />
+    <path d="M 28 53.3 Q 135 49.5 242 53.3 Q 135 51 28 53.3 Z" fill="url(#swooshShine)" />
 
-    <!-- Specular Top Rim Highlight on Letters -->
-    <text x="0" y="45.3" 
-          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-          font-size="28" 
-          font-weight="800" 
-          font-style="italic" 
-          letter-spacing="-0.5px" 
-          fill="#ffffff" 
-          opacity="0.28">
-      Oriental Consultants
-    </text>
-
-    <!-- ==================== SHINING HORIZONTAL SWOOSH ==================== -->
-    <!-- Base Swoosh -->
-    <path d="M 0 54 Q 140 49 276 54 Q 140 52 0 54 Z" 
-          fill="url(#swooshGrad)" />
-    <!-- Glowing Center Shine Accent -->
-    <path d="M 30 53.8 Q 140 50 250 53.8 Q 140 51.5 30 53.8 Z" 
-          fill="url(#swooshShine)" />
-
-    <!-- ==================== TAGLINE: SIMPLIFYING SOLUTIONS ==================== -->
-    <g transform="translate(36, 73)">
-      <!-- Tagline Subtle Depth -->
-      <text x="0" y="1" 
-            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-            font-size="14.5" 
-            font-weight="700" 
-            font-style="italic" 
-            letter-spacing="0.2px" 
-            fill="#7c2d12" 
-            opacity="0.25">
-        Simplifying Solutions
-      </text>
-
-      <!-- Tagline Vibrant Orange Text -->
-      <text x="0" y="0" 
-            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-            font-size="14.5" 
-            font-weight="700" 
-            font-style="italic" 
-            letter-spacing="0.2px" 
-            fill="#ea580c">
-        Simplifying Solutions
-      </text>
+    <!-- High-Contrast Tagline: SIMPLIFYING SOLUTIONS -->
+    <g transform="translate(28, 72)">
+      <text x="0" y="0" class="logo-tagline">SIMPLIFYING SOLUTIONS</text>
     </g>
   </g>
 </svg>

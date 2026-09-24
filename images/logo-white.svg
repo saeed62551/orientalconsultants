@@ -6,11 +6,6 @@
       <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
 
-    <filter id="textGlowWhite" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#38bdf8" flood-opacity="0.6"/>
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.7"/>
-    </filter>
-
     <!-- Blue Disc Gradients -->
     <radialGradient id="blueDiscGradDark" cx="38%" cy="34%" r="68%">
       <stop offset="0%" stop-color="#38bdf8"/>
@@ -42,14 +37,7 @@
       <stop offset="100%" stop-color="#1e293b"/>
     </linearGradient>
 
-    <!-- Text Gradients for Dark Mode/Footer -->
-    <linearGradient id="textWhiteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="45%" stop-color="#f8fafc"/>
-      <stop offset="75%" stop-color="#e2e8f0"/>
-      <stop offset="100%" stop-color="#93c5fd"/>
-    </linearGradient>
-
+    <!-- Shining Swoosh Gradients -->
     <linearGradient id="swooshGradDark" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
       <stop offset="30%" stop-color="#38bdf8" stop-opacity="1"/>
@@ -112,75 +100,29 @@
 
   <!-- ==================== TYPOGRAPHY: ORIENTAL CONSULTANTS ==================== -->
   <g transform="translate(94, 0)">
-    <!-- Ambient Blue Shadow for Luminous Contrast -->
-    <text x="0" y="47" 
-          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-          font-size="28" 
+    <!-- Razor-Sharp Pure White Title for Dark Surfaces -->
+    <text x="0" y="46.5" 
+          font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="27" 
           font-weight="800" 
-          font-style="italic" 
-          letter-spacing="-0.5px" 
-          fill="#0284c7" 
-          opacity="0.6"
-          filter="url(#textGlowWhite)">
+          letter-spacing="-0.25px" 
+          fill="#ffffff">
       Oriental Consultants
     </text>
 
-    <!-- Main Front Face with Polished White-Silver Gradient -->
-    <text x="0" y="46" 
-          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-          font-size="28" 
-          font-weight="800" 
-          font-style="italic" 
-          letter-spacing="-0.5px" 
-          fill="url(#textWhiteGrad)"
-          filter="url(#textGlowWhite)">
-      Oriental Consultants
-    </text>
+    <!-- Glowing Horizontal Swoosh Line -->
+    <path d="M 0 53.5 Q 135 48.5 270 53.5 Q 135 51 0 53.5 Z" fill="url(#swooshGradDark)" />
+    <path d="M 28 53.3 Q 135 49.5 242 53.3 Q 135 51 28 53.3 Z" fill="url(#swooshShineDark)" />
 
-    <!-- Specular Highlight on Letters -->
-    <text x="0" y="45.2" 
-          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-          font-size="28" 
-          font-weight="800" 
-          font-style="italic" 
-          letter-spacing="-0.5px" 
-          fill="#ffffff" 
-          opacity="0.4">
-      Oriental Consultants
-    </text>
-
-    <!-- ==================== SHINING HORIZONTAL SWOOSH ==================== -->
-    <!-- Glowing Base Swoosh -->
-    <path d="M 0 54 Q 140 49 276 54 Q 140 52 0 54 Z" 
-          fill="url(#swooshGradDark)" 
-          filter="url(#textGlowWhite)" />
-    <!-- Bright Center Shine -->
-    <path d="M 30 53.8 Q 140 50 250 53.8 Q 140 51.5 30 53.8 Z" 
-          fill="url(#swooshShineDark)" />
-
-    <!-- ==================== TAGLINE: SIMPLIFYING SOLUTIONS ==================== -->
-    <g transform="translate(36, 73)">
-      <!-- Tagline Ambient Shadow -->
-      <text x="0" y="1" 
-            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-            font-size="14.5" 
-            font-weight="700" 
-            font-style="italic" 
-            letter-spacing="0.2px" 
-            fill="#000000" 
-            opacity="0.5">
-        Simplifying Solutions
-      </text>
-
-      <!-- Tagline Vibrant Orange Text with High Contrast -->
+    <!-- High-Legibility Golden Tagline: SIMPLIFYING SOLUTIONS -->
+    <g transform="translate(28, 72)">
       <text x="0" y="0" 
-            font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
-            font-size="14.5" 
-            font-weight="700" 
-            font-style="italic" 
-            letter-spacing="0.2px" 
-            fill="#fb923c">
-        Simplifying Solutions
+            font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="12.5" 
+            font-weight="800" 
+            letter-spacing="2.4px" 
+            fill="#fbbf24">
+        SIMPLIFYING SOLUTIONS
       </text>
     </g>
   </g>
