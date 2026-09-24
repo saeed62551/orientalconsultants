@@ -250,12 +250,16 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- 25. Executive Leadership & Team -->
+  <!-- 25. Executive Leadership & Team (Sayed Ullabrar) -->
   <url>
     <loc>https://ocafghan.com/team.html</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/team.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/team.html"/>
   </url>
 
   <!-- 26. Global Hubs & Afghan Provincial Branches -->
@@ -330,12 +334,15 @@
     <priority>0.70</priority>
   </url>
 
-  <!-- 35. Legacy QuickBooks Page -->
+  <!-- 35. Certified QuickBooks ProAdvisor & Authorized Partner in Afghanistan (Sayed Ullabrar) -->
   <url>
     <loc>https://ocafghan.com/quickbooks.html</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/quickbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/quickbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/quickbooks.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/quickbooks.html"/>
   </url>
-
 </urlset>
