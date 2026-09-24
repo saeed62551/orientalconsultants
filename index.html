@@ -142,17 +142,13 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
           KuickBok Desktop Hosting with TSplus
         </a>
-        <a href="domains.html" class="top-bar-quick-link" style="color: #38bdf8; font-weight: 800;" title="Search &amp; Register Domains in Afghanistan (.af, .com.af, .ngo, .com, .ai, .io)">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Domain Search (.AF)
-        </a>
-        <a href="domain-portal.html?tab=manage" class="top-bar-quick-link" style="color: #34d399; font-weight: 800;" title="Manage Domain DNS, Nameservers, Renewals &amp; Invoices">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Manage Domains (DNS &amp; Portal)
-        </a>
         <a href="tax-calculator.html" class="top-bar-quick-link">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           Tax Calculator
+        </a>
+        <a href="domain-portal.html?tab=manage" class="top-bar-portal-btn" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 9999px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 10px rgba(56, 189, 248, 0.45);" title="Customer Portal &bull; Manage Domains, DNS Zone Editor &amp; Renewals">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Customer Portal</span>
         </a>
       </div>
     </div>
@@ -259,8 +255,6 @@
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-          <li class="nav-item"><a href="domains.html" class="nav-link" style="color: #38bdf8; font-weight: 800;">Domain Search</a></li>
-          <li class="nav-item"><a href="domain-portal.html?tab=manage" class="nav-link" style="color: #34d399; font-weight: 800;" title="Manage Domain DNS, Nameservers, Renewals &amp; Invoices">Customer Portal</a></li>
           
           <!-- Services & Solutions (3-Column Mega Menu) -->
           <li class="nav-item has-mega-menu">
@@ -557,62 +551,8 @@
               <div class="showcase-corner-accent-1"></div>
               <div class="showcase-corner-accent-2"></div>
 
-              <!-- Slide 1: Premium Domain Search & .AF Registrar (Active Main Slide) -->
-              <div class="service-slide active" data-slide="0" role="tabpanel" aria-label="Premium Domains — slide 1 of 5">
-                <div class="slide-tag">Official .AF Registrar Partner</div>
-                <div class="slide-icon-box" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1); color: #38bdf8;">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <div class="slide-title">Premium <span class="bright">Domains</span></div>
-                <div class="slide-subtitle">.af &bull; .com.af &bull; .org &bull; .ngo &bull; .com &bull; .info &bull; .ai &bull; .io</div>
-                <div class="slide-divider"></div>
-                <p class="slide-desc" style="margin-bottom: 0.85rem; font-size: 0.88rem;">
-                  Official accredited Afghan domain registrar. Fast-track activation, full DNS control, WHOIS privacy &amp; local AFN billing.
-                </p>
-
-                <!-- In-Slide Domain Search Widget -->
-                <div class="slide-domain-search" style="margin-bottom: 0.75rem;">
-                  <form onsubmit="handleSlideDomainSearch(event, 'slideDomainInput', 'slideDomainExt', 'slideDomainResults'); return false;" style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
-                    <div style="display: flex; flex: 1; min-width: 170px; background: rgba(255, 255, 255, 0.08); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 6px; overflow: hidden;">
-                      <input type="text" id="slideDomainInput" placeholder="Domain name (e.g. mycompany)" style="flex: 1; background: transparent; border: none; padding: 0.55rem 0.65rem; color: #fff; font-size: 0.82rem; outline: none; font-family: inherit;">
-                      <select id="slideDomainExt" style="background: rgba(2, 18, 38, 0.95); border: none; border-left: 1px solid rgba(255, 255, 255, 0.2); color: #38bdf8; font-weight: 800; padding: 0.55rem 0.4rem; font-size: 0.78rem; cursor: pointer; outline: none;">
-                        <option value=".af">.af ($45)</option>
-                        <option value=".com.af">.com.af ($35)</option>
-                        <option value=".org.af">.org.af ($35)</option>
-                        <option value=".ngo">.ngo ($39)</option>
-                        <option value=".com">.com ($14)</option>
-                        <option value=".info">.info ($12)</option>
-                        <option value=".ai">.ai ($79)</option>
-                        <option value=".io">.io ($49)</option>
-                        <option value=".net">.net ($15)</option>
-                      </select>
-                    </div>
-                    <button type="submit" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; border: none; padding: 0.55rem 0.85rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.25rem;">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                      Search
-                    </button>
-                  </form>
-                  <div id="slideDomainResults" style="min-height: 20px;"></div>
-                </div>
-
-                <!-- TLD Quick Price Chips -->
-                <div style="display: flex; gap: 0.3rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                  <span style="font-size: 0.7rem; padding: 0.15rem 0.4rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 4px; color: #7dd3fc; font-weight: 700;">.af $45/yr</span>
-                  <span style="font-size: 0.7rem; padding: 0.15rem 0.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; color: #fff;">.com.af $35</span>
-                  <span style="font-size: 0.7rem; padding: 0.15rem 0.4rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 4px; color: #6ee7b7;">.ngo $39</span>
-                  <span style="font-size: 0.7rem; padding: 0.15rem 0.4rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; color: #fff;">.com $14</span>
-                  <span style="font-size: 0.7rem; padding: 0.15rem 0.4rem; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 4px; color: #d8b4fe;">.ai $79</span>
-                  <span style="font-size: 0.7rem; padding: 0.15rem 0.4rem; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 4px; color: #fde68a;">.io $49</span>
-                </div>
-
-                <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20domain%20in%20Afghanistan." target="_blank" rel="noopener noreferrer" class="slide-cta" style="margin-top: auto;">
-                  <span>Instant WhatsApp Order: 0093 787 881808</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-              </div>
-
-              <!-- Slide 2: KuickBok -->
-              <div class="service-slide" data-slide="1" role="tabpanel" aria-label="KuickBok — slide 2 of 5">
+              <!-- Slide 1: KuickBok (Active Main Slide) -->
+              <div class="service-slide active" data-slide="0" role="tabpanel" aria-label="KuickBok — slide 1 of 5">
                 <div class="slide-tag">Strategic Partner</div>
                 <div class="slide-icon-box">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -639,8 +579,8 @@
                 </a>
               </div>
 
-              <!-- Slide 3: Google Workspace -->
-              <div class="service-slide" data-slide="2" role="tabpanel" aria-label="Google Workspace — slide 3 of 5">
+              <!-- Slide 2: Google Workspace -->
+              <div class="service-slide" data-slide="1" role="tabpanel" aria-label="Google Workspace — slide 2 of 5">
                 <div class="slide-tag">Cloud Productivity</div>
                 <div class="slide-icon-box">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
@@ -667,8 +607,8 @@
                 </a>
               </div>
 
-              <!-- Slide 4: Microsoft Office 365 (Productivity Suite) -->
-              <div class="service-slide" data-slide="3" role="tabpanel" aria-label="Microsoft Office 365 — slide 4 of 5">
+              <!-- Slide 3: Microsoft Office 365 (Productivity Suite) -->
+              <div class="service-slide" data-slide="2" role="tabpanel" aria-label="Microsoft Office 365 — slide 3 of 5">
                 <div class="slide-tag">
                   <span class="slide-tag-dot"></span>
                   Productivity Suite &middot; Cloud Enterprise
@@ -722,8 +662,8 @@
                 </a>
               </div>
 
-              <!-- Slide 5: Odoo ERP -->
-              <div class="service-slide" data-slide="4" role="tabpanel" aria-label="Odoo ERP — slide 5 of 5">
+              <!-- Slide 4: Odoo ERP -->
+              <div class="service-slide" data-slide="3" role="tabpanel" aria-label="Odoo ERP — slide 4 of 5">
                 <div class="slide-tag">Integrated ERP</div>
                 <div class="slide-icon-box">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
@@ -750,6 +690,42 @@
                 </a>
               </div>
 
+              <!-- Slide 5: Premium Domains (.AF & Global Registrar) -->
+              <div class="service-slide" data-slide="4" role="tabpanel" aria-label="Premium Domains — slide 5 of 5">
+                <div class="slide-tag">Official .AF Registrar Partner</div>
+                <div class="slide-icon-box" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1); color: #38bdf8;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="slide-title">Premium <span class="bright">Domains</span></div>
+                <div class="slide-subtitle">.af &bull; .com.af &bull; .org.af &bull; .ngo &bull; .com &bull; .ai &bull; .io</div>
+                <div class="slide-divider"></div>
+                <p class="slide-desc">
+                  Official accredited Afghan domain registrar. Fast-track activation, full DNS zone control, WHOIS privacy protection, and local billing in Afghani (AFN) &amp; USD.
+                </p>
+                <div class="slide-stats-grid slide-stats-4col">
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">$45</div>
+                    <div class="slide-stat-lbl">.af / year</div>
+                  </div>
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">$35</div>
+                    <div class="slide-stat-lbl">.com.af / year</div>
+                  </div>
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">$39</div>
+                    <div class="slide-stat-lbl">.ngo / year</div>
+                  </div>
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">AFN / USD</div>
+                    <div class="slide-stat-lbl">Local Billing</div>
+                  </div>
+                </div>
+                <a href="domains.html" class="slide-cta">
+                  <span>Explore Domain Registration &amp; Pricing</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
               <!-- Carousel Navigation Arrows -->
               <button class="showcase-nav-btn showcase-prev" id="showcasePrevBtn" aria-label="Previous Slide">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
@@ -760,18 +736,16 @@
 
               <!-- Carousel Dynamic Indicators -->
               <div class="showcase-indicators" role="tablist" aria-label="Choose Slide">
-                <button class="indicator-pill active" data-slide-to="0" role="tab" aria-selected="true" aria-label="Go to Premium Domain Search &amp; .AF Registrar"></button>
-                <button class="indicator-pill" data-slide-to="1" role="tab" aria-selected="false" aria-label="Go to KuickBok"></button>
-                <button class="indicator-pill" data-slide-to="2" role="tab" aria-selected="false" aria-label="Go to Google Workspace"></button>
-                <button class="indicator-pill" data-slide-to="3" role="tab" aria-selected="false" aria-label="Go to Microsoft Office 365"></button>
-                <button class="indicator-pill" data-slide-to="4" role="tab" aria-selected="false" aria-label="Go to Odoo ERP"></button>
+                <button class="indicator-pill active" data-slide-to="0" role="tab" aria-selected="true" aria-label="Go to KuickBok"></button>
+                <button class="indicator-pill" data-slide-to="1" role="tab" aria-selected="false" aria-label="Go to Google Workspace"></button>
+                <button class="indicator-pill" data-slide-to="2" role="tab" aria-selected="false" aria-label="Go to Microsoft Office 365"></button>
+                <button class="indicator-pill" data-slide-to="3" role="tab" aria-selected="false" aria-label="Go to Odoo ERP"></button>
+                <button class="indicator-pill" data-slide-to="4" role="tab" aria-selected="false" aria-label="Go to Premium Domains &amp; .AF Registrar"></button>
               </div>
             </div>
           </div>
 
         </div>
-      </div>
-    </section>
       </div>
     </section>
 

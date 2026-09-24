@@ -177,6 +177,145 @@
       gap: 1rem;
       box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
     }
+
+    /* Embedded Domain Customer Portal & DNS Console Styles */
+    .portal-nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.35rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      margin: 1.25rem auto 1.5rem;
+      max-width: 580px;
+    }
+    .portal-tab-btn {
+      flex: 1;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.92rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #94a3b8;
+      background: transparent;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .portal-tab-btn.active {
+      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+      color: #011633;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    }
+    .portal-panel {
+      display: none;
+    }
+    .portal-panel.active {
+      display: block;
+      animation: fadeInPortal 0.25s ease-out;
+    }
+    @keyframes fadeInPortal {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .wizard-step-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #0284c7;
+      color: #fff;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+    }
+    .form-group-custom {
+      margin-bottom: 1.25rem;
+    }
+    .form-group-custom label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: #fff;
+    }
+    .form-control-custom {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+    .form-control-custom:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+    .form-control-custom option {
+      background: #011633;
+      color: #fff;
+    }
+    .dns-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 1rem;
+    }
+    .dns-table th, .dns-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    .dns-table th {
+      background: rgba(255, 255, 255, 0.06);
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    .dns-table td {
+      color: #e2e8f0;
+    }
+    .table-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .badge-a { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+    .badge-cname { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .badge-mx { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+    .badge-txt { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .badge-ns { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+    .client-domain-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      margin-bottom: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    .client-domain-row:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.15);
+    }
   </style>
 </head>
 <body>
@@ -207,13 +346,9 @@
       <div class="top-bar-actions">
         <span class="top-bar-badge badge-blue"><span class="pulse-dot"></span> Official .AF Registrar Partner</span>
         <span class="top-bar-badge badge-green">AFN &amp; USD Local Invoicing</span>
-        <a href="domains.html" class="top-bar-quick-link" style="color: #38bdf8; font-weight: 800;">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Domain Search (.AF)
-        </a>
-        <a href="domain-portal.html?tab=manage" class="top-bar-quick-link" style="color: #34d399; font-weight: 800;" title="Manage Domain DNS, Nameservers, Renewals &amp; Invoices">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          Manage Domains (DNS &amp; Portal)
+        <a href="domain-portal.html?tab=manage" class="top-bar-portal-btn" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 9999px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 10px rgba(56, 189, 248, 0.45);" title="Customer Portal &bull; Manage Domains, DNS Zone Editor &amp; Renewals">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Customer Portal</span>
         </a>
       </div>
     </div>
@@ -230,8 +365,22 @@
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="domains.html" class="nav-link active" style="color: #38bdf8; font-weight: 800;">Domain Search</a></li>
-          <li class="nav-item"><a href="domain-portal.html?tab=manage" class="nav-link" style="color: #34d399; font-weight: 800;" title="Manage Domain DNS, Nameservers, Renewals &amp; Invoices">Customer Portal</a></li>
+          <li class="nav-item has-dropdown">
+            <a href="services.html" class="nav-link active">
+              Services &amp; Solutions
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="domains.html" style="color: #38bdf8; font-weight: 700;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Domain Search (.AF &amp; Global)</a></li>
+              <li class="dropdown-item"><a href="domain-portal.html?tab=manage" style="color: #34d399; font-weight: 700;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Domain Customer Portal &amp; DNS</a></li>
+              <li class="dropdown-item"><a href="ict.html">Google Workspace Deployment</a></li>
+              <li class="dropdown-item"><a href="microsoft-365.html">Microsoft 365 Solutions</a></li>
+              <li class="dropdown-item"><a href="accounting.html">Accounting &amp; Financial Mgmt</a></li>
+              <li class="dropdown-item"><a href="audit.html">Audit &amp; Assurance (ISA)</a></li>
+              <li class="dropdown-item"><a href="quickbooks.html">KuickBok Enterprise 2025/2026</a></li>
+              <li class="dropdown-item"><a href="odoo.html">Odoo ERP Implementation</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a href="ict.html" class="nav-link">Google Workspace</a></li>
           <li class="nav-item"><a href="microsoft-365.html" class="nav-link">Microsoft 365</a></li>
           <li class="nav-item"><a href="afghanhoster.html" class="nav-link">Hosting &amp; .AF</a></li>
@@ -301,12 +450,6 @@
           Search &amp; Register Premium Domains in <span style="background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Afghanistan</span>
         </h1>
 
-        <div style="margin-bottom: 1.5rem;">
-          <a href="domain-portal.html?tab=manage" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #7dd3fc; font-weight: 800; font-size: 0.92rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.4rem 0.9rem; border-radius: 6px; text-decoration: none;">
-            <span>⚡ Existing Customer? Open Domain Portal &amp; DNS Zone Editor &rarr;</span>
-          </a>
-        </div>
-
         <p style="font-size: 1.1rem; color: #94a3b8; max-width: 760px; margin: 0 auto 2.5rem; line-height: 1.6;">
           Fast-track activation for <strong style="color: #fff;">.af</strong>, <strong style="color: #fff;">.com.af</strong>, <strong style="color: #fff;">.org.af</strong>, <strong style="color: #fff;">.ngo</strong>, <strong style="color: #fff;">.com</strong>, <strong style="color: #fff;">.ai</strong>, <strong style="color: #fff;">.io</strong>. Slashed competitor rates with local billing in Afghani (AFN) &amp; USD.
         </p>
@@ -370,6 +513,430 @@
 
           <!-- Live Results Output Box -->
           <div id="mainDomainSearchResults" style="display: none; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.15);"></div>
+
+          <!-- ==========================================================================
+               DOMAIN CUSTOMER PORTAL & DNS CONSOLE (EMBEDDED UNDER SEARCH BAR)
+               ========================================================================== -->
+          <div id="portal" style="margin-top: 2rem; padding-top: 1.75rem; border-top: 1.5px solid rgba(56, 189, 248, 0.35); scroll-margin-top: 90px;">
+            
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <span class="badge" style="background: rgba(56, 189, 248, 0.2); color: #7dd3fc; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                Client Area &bull; Domain Management &bull; Live DNS Zone Editor
+              </span>
+              <h2 style="font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; margin: 0.4rem 0 0.25rem; color: #fff;">
+                Domain Customer Portal &amp; <span style="background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">DNS Console</span>
+              </h2>
+              <p style="color: #94a3b8; font-size: 0.92rem; max-width: 650px; margin: 0 auto;">
+                Manage your registered Afghan &amp; global domains, configure live DNS zone records (Google Workspace, M365), renewals, and official AFN invoices.
+              </p>
+
+              <!-- Portal Tabs Switcher -->
+              <div class="portal-nav-tabs" role="tablist">
+                <button type="button" class="portal-tab-btn active" id="tabBtnManage" onclick="switchPortalTab('manage')" role="tab" aria-selected="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  Manage My Domains &amp; DNS
+                </button>
+                <button type="button" class="portal-tab-btn" id="tabBtnRegister" onclick="switchPortalTab('register')" role="tab" aria-selected="false">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                  Register New Domain Wizard
+                </button>
+              </div>
+            </div>
+
+            <!-- PANEL 1: DOMAIN MANAGEMENT & DNS (ACTIVE BY DEFAULT) -->
+            <div id="portalPanelManage" class="portal-panel active">
+              
+              <!-- Sub-tabs for management -->
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;">
+                <button type="button" class="btn btn-sm btn-primary" id="mTabBtnDomains" onclick="switchManageSubTab('domains')" style="background: #0284c7; font-size: 0.82rem; padding: 0.45rem 1rem;">
+                  🌐 My Active Domains
+                </button>
+                <button type="button" class="btn btn-sm btn-outline" id="mTabBtnDns" onclick="switchManageSubTab('dns')" style="font-size: 0.82rem; padding: 0.45rem 1rem; color: #fff; border-color: rgba(255,255,255,0.25);">
+                  ⚡ DNS Zone Editor
+                </button>
+                <button type="button" class="btn btn-sm btn-outline" id="mTabBtnInvoices" onclick="switchManageSubTab('invoices')" style="font-size: 0.82rem; padding: 0.45rem 1rem; color: #fff; border-color: rgba(255,255,255,0.25);">
+                  📄 Invoices &amp; AFN Banking
+                </button>
+                <button type="button" class="btn btn-sm btn-outline" id="mTabBtnWhois" onclick="switchManageSubTab('whois')" style="font-size: 0.82rem; padding: 0.45rem 1rem; color: #fff; border-color: rgba(255,255,255,0.25);">
+                  🔒 WHOIS Privacy
+                </button>
+              </div>
+
+              <!-- SUB-TAB 1: MY ACTIVE DOMAINS -->
+              <div id="mSubTabDomains">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+                  <div>
+                    <h3 style="font-size: 1.25rem; font-weight: 900; margin: 0; color: #fff;">Registered Domains in Your Account</h3>
+                    <span style="font-size: 0.82rem; color: #94a3b8;">Active ccTLDs under Afghan accreditation &amp; global registrars.</span>
+                  </div>
+                  <button type="button" onclick="promptAddDomainToConsole()" class="btn btn-sm btn-outline" style="border-color: #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.82rem; background: rgba(56, 189, 248, 0.1);">
+                    + Add Existing Domain to Console
+                  </button>
+                </div>
+
+                <div id="clientDomainsListContainer">
+                  <!-- Dynamically populated from JS -->
+                </div>
+              </div>
+
+              <!-- SUB-TAB 2: DNS ZONE EDITOR -->
+              <div id="mSubTabDns" style="display: none;">
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+                    <div>
+                      <h3 style="font-size: 1.2rem; font-weight: 900; margin-bottom: 0.25rem; color: #fff;">
+                        DNS Records Manager: <span id="activeDnsDomainName" style="color: #38bdf8;">yourcompany.af</span>
+                      </h3>
+                      <span style="font-size: 0.82rem; color: #94a3b8;">Authoritative Nameservers: ns1.ocafghan.com / ns2.ocafghan.com</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                      <button type="button" onclick="applyPresetDns('google')" class="btn btn-sm btn-outline" style="font-size: 0.78rem; border-color: #38bdf8; color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
+                        + Google Workspace Preset
+                      </button>
+                      <button type="button" onclick="applyPresetDns('microsoft')" class="btn btn-sm btn-outline" style="font-size: 0.78rem; border-color: #38bdf8; color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
+                        + Microsoft 365 Preset
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Add Record Inline Form -->
+                  <form onsubmit="handleAddNewDnsRecord(event); return false;" style="display: grid; grid-template-columns: 1fr 1.5fr 2fr 1fr auto; gap: 0.5rem; align-items: end; background: rgba(0, 0, 0, 0.25); padding: 1rem; border-radius: 8px; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.08);">
+                    <div>
+                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">Type</label>
+                      <select id="dnsNewType" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;">
+                        <option value="A">A (IPv4)</option>
+                        <option value="CNAME">CNAME</option>
+                        <option value="MX">MX (Mail)</option>
+                        <option value="TXT">TXT (SPF/DKIM)</option>
+                        <option value="NS">NS (Nameserver)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">Host Name</label>
+                      <input type="text" id="dnsNewHost" placeholder="@ or mail" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;" required>
+                    </div>
+                    <div>
+                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">Destination / Value</label>
+                      <input type="text" id="dnsNewValue" placeholder="192.168.1.1 or mail.google.com" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;" required>
+                    </div>
+                    <div>
+                      <label style="font-size: 0.75rem; font-weight: 700; color: #94a3b8; display: block; margin-bottom: 0.25rem;">TTL</label>
+                      <select id="dnsNewTtl" class="form-control-custom" style="padding: 0.5rem; font-size: 0.85rem;">
+                        <option value="3600">1 Hour</option>
+                        <option value="1800">30 Mins</option>
+                        <option value="300">5 Mins</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="padding: 0.55rem 1rem; font-size: 0.85rem; height: 38px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 800; border: none; border-radius: 6px; cursor: pointer;">
+                      Add Record
+                    </button>
+                  </form>
+
+                  <!-- DNS Records Table -->
+                  <div style="overflow-x: auto;">
+                    <table class="dns-table">
+                      <thead>
+                        <tr>
+                          <th>Record Type</th>
+                          <th>Host / Name</th>
+                          <th>Value / Points To</th>
+                          <th>TTL</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="dnsRecordsTableBody">
+                        <!-- Populated from JS -->
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div style="margin-top: 1rem; font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                    <span>Need custom SRV, CAA, or reverse DNS? Contact Technical Desk: <a href="https://wa.me/93792002341" style="color: #38bdf8; font-weight: 700;">0093 792 002341</a></span>
+                    <span style="color: #34d399; font-weight: 700;">✓ Instant Zone Sync across Kabul Nodes</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SUB-TAB 3: INVOICES & AFN BANKING -->
+              <div id="mSubTabInvoices" style="display: none;">
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.35rem; color: #fff;">Official Afghan Invoices &amp; Banking Details</h3>
+                  <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 1.25rem;">
+                    All domains registered with Oriental Consultants are issued with statutory tax receipts and Ministry of Finance (MoF) compliant invoices.
+                  </p>
+
+                  <!-- Afghan Bank Transfer Desk -->
+                  <div style="background: rgba(0, 0, 0, 0.3); padding: 1.25rem; border-radius: 10px; border-left: 4px solid #f59e0b; margin-bottom: 1.25rem;">
+                    <h4 style="font-size: 1.05rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.5rem;">
+                      🏦 Local Bank Payment Methods in Afghanistan
+                    </h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.85rem; margin-top: 0.75rem; color: #e2e8f0;">
+                      <div>
+                        <strong style="color: #38bdf8;">Kabul Bank (کابل بانک)</strong><br>
+                        Account Title: Oriental Consultants Ltd<br>
+                        Currency: AFN &amp; USD Accepted<br>
+                        Branch: Main Branch, Kabul
+                      </div>
+                      <div>
+                        <strong style="color: #38bdf8;">Azizi Bank (عزیزی بانک)</strong><br>
+                        Account Title: Oriental Consultants Afghanistan<br>
+                        Currency: AFN &amp; USD Accepted<br>
+                        Branch: Karte 3 Branch, Kabul
+                      </div>
+                      <div>
+                        <strong style="color: #38bdf8;">Cash / Hawala &amp; Office Visit</strong><br>
+                        Headquarters: House 22, Street 17 Karte 3, Kabul<br>
+                        WhatsApp Receipt Desk: <a href="https://wa.me/93700567868" style="color: #38bdf8; font-weight: 700;">0093 700 567868</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Invoices Table -->
+                  <div style="overflow-x: auto;">
+                    <table class="dns-table">
+                      <thead>
+                        <tr>
+                          <th>Invoice No.</th>
+                          <th>Domain / Service</th>
+                          <th>Amount (USD / AFN)</th>
+                          <th>Due Date</th>
+                          <th>Status</th>
+                          <th>Receipt</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>INV-2026-0841</strong></td>
+                          <td>yourcompany.af (1 Year Registration)</td>
+                          <td>$45.00 / 3,150 AFN</td>
+                          <td>Immediate</td>
+                          <td><span class="table-badge badge-cname">Paid / Active</span></td>
+                          <td><button type="button" onclick="alert('Downloading Official Receipt for INV-2026-0841...')" class="btn btn-sm btn-outline" style="font-size: 0.75rem; color: #38bdf8; border-color: rgba(56,189,248,0.4);">Download PDF</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SUB-TAB 4: WHOIS PRIVACY -->
+              <div id="mSubTabWhois" style="display: none;">
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.35rem; color: #fff;">WHOIS Privacy &amp; Anti-Spam Masking</h3>
+                  <p style="color: #94a3b8; font-size: 0.88rem; margin-bottom: 1.25rem;">
+                    Keep your corporate email, Kabul phone number, and physical office location shielded from automated web scrapers.
+                  </p>
+
+                  <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(0, 0, 0, 0.25); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+                    <div>
+                      <strong style="color: #fff; font-size: 0.98rem; display: block;">WHOIS Privacy Protection Shield</strong>
+                      <div style="font-size: 0.82rem; color: #94a3b8;">
+                        Status: <span id="whoisStatusBadge" style="color: #34d399; font-weight: 800;">ACTIVE (Masked)</span>
+                      </div>
+                    </div>
+                    <button type="button" onclick="toggleWhoisShield()" class="btn btn-sm btn-outline" id="btnToggleWhois" style="border-color: #38bdf8; color: #38bdf8; font-size: 0.82rem;">
+                      Toggle Shield
+                    </button>
+                  </div>
+
+                  <div style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6;">
+                    Note: Under ATRA regulations in Afghanistan, national government (.gov.af) and official non-profit (.ngo / .org.af) domains maintain verified registry records at the central registry while public web queries remain masked.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- PANEL 2: INTERACTIVE 4-STEP DOMAIN REGISTRATION WIZARD -->
+            <div id="portalPanelRegister" class="portal-panel">
+              <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; padding: 1.75rem; margin-bottom: 1.5rem;">
+                
+                <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.35rem; font-weight: 900; margin-bottom: 0.3rem; color: #fff;">
+                    Domain Registration Desk (Afghanistan)
+                  </h3>
+                  <p style="color: #94a3b8; font-size: 0.88rem; margin: 0;">
+                    Complete this official registration order. Our Kabul registrar desk activates .AF domains with local AFN and USD invoicing.
+                  </p>
+                </div>
+
+                <form id="domainRegistrationForm" onsubmit="handlePortalRegistration(event); return false;">
+                  
+                  <!-- STEP 1: Domain & Extension -->
+                  <div style="margin-bottom: 1.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                      <span class="wizard-step-badge">1</span>
+                      <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Select Domain Name &amp; Extension</h4>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 0.75rem;">
+                      <div class="form-group-custom" style="margin-bottom: 0;">
+                        <label for="regDomainName">Domain Name (without extension) *</label>
+                        <input type="text" id="regDomainName" required placeholder="e.g. mycompany, kabulbank, afghanhope" class="form-control-custom" oninput="updateRegistrationPreview()">
+                      </div>
+                      <div class="form-group-custom" style="margin-bottom: 0;">
+                        <label for="regDomainExt">Extension (TLD) *</label>
+                        <select id="regDomainExt" class="form-control-custom" onchange="updateRegistrationPreview()">
+                          <option value=".af">.af ($45 / 3,150 AFN)</option>
+                          <option value=".com.af">.com.af ($35 / 2,450 AFN)</option>
+                          <option value=".org.af">.org.af ($35 / 2,450 AFN)</option>
+                          <option value=".ngo">.ngo ($39 / 2,730 AFN)</option>
+                          <option value=".com">.com ($14 / 980 AFN)</option>
+                          <option value=".info">.info ($12 / 840 AFN)</option>
+                          <option value=".ai">.ai ($79 / 5,530 AFN)</option>
+                          <option value=".io">.io ($49 / 3,430 AFN)</option>
+                          <option value=".net">.net ($15 / 1,050 AFN)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Registration Period -->
+                    <div style="margin-top: 0.85rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                      <span style="font-size: 0.82rem; font-weight: 700; color: #94a3b8;">Registration Period:</span>
+                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
+                        <input type="radio" name="regPeriod" value="1" checked onchange="updateRegistrationPreview()"> 1 Year
+                      </label>
+                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
+                        <input type="radio" name="regPeriod" value="2" onchange="updateRegistrationPreview()"> 2 Years (Save 5%)
+                      </label>
+                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
+                        <input type="radio" name="regPeriod" value="3" onchange="updateRegistrationPreview()"> 3 Years (Save 8%)
+                      </label>
+                      <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer;">
+                        <input type="radio" name="regPeriod" value="5" onchange="updateRegistrationPreview()"> 5 Years (Save 12%)
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- STEP 2: Registrant Organization Details -->
+                  <div style="margin-bottom: 1.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                      <span class="wizard-step-badge">2</span>
+                      <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Registrant &amp; Organization Details</h4>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem;">
+                      <div class="form-group-custom">
+                        <label for="regOrgName">Organization / Business / Brand Name *</label>
+                        <input type="text" id="regOrgName" required placeholder="e.g. Pamir Logistics Ltd" class="form-control-custom">
+                      </div>
+                      <div class="form-group-custom">
+                        <label for="regLicenseNo">Business License (Jawaz) / Tazkira No.</label>
+                        <input type="text" id="regLicenseNo" placeholder="Required for .com.af & .ngo" class="form-control-custom">
+                      </div>
+                      <div class="form-group-custom">
+                        <label for="regContactPerson">Authorized Contact Person *</label>
+                        <input type="text" id="regContactPerson" required placeholder="Full Name" class="form-control-custom">
+                      </div>
+                      <div class="form-group-custom">
+                        <label for="regEmail">Corporate / Personal Email *</label>
+                        <input type="email" id="regEmail" required placeholder="name@domain.com" class="form-control-custom">
+                      </div>
+                      <div class="form-group-custom">
+                        <label for="regPhone">WhatsApp / Mobile Phone *</label>
+                        <input type="tel" id="regPhone" required placeholder="e.g. 0093 787 881808" class="form-control-custom">
+                      </div>
+                      <div class="form-group-custom">
+                        <label for="regCity">City &amp; Province in Afghanistan *</label>
+                        <select id="regCity" class="form-control-custom">
+                          <option value="Kabul">Kabul</option>
+                          <option value="Herat">Herat</option>
+                          <option value="Mazar-i-Sharif">Mazar-i-Sharif (Balkh)</option>
+                          <option value="Kandahar">Kandahar</option>
+                          <option value="Jalalabad">Jalalabad (Nangarhar)</option>
+                          <option value="Kunduz">Kunduz</option>
+                          <option value="Ghazni">Ghazni</option>
+                          <option value="Badakhshan">Badakhshan</option>
+                          <option value="Other">Other Afghan Province</option>
+                          <option value="International">Outside Afghanistan</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- STEP 3: DNS & Cloud Integration -->
+                  <div style="margin-bottom: 1.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                      <span class="wizard-step-badge">3</span>
+                      <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">DNS &amp; Nameserver Setup</h4>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                      <label style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.85rem 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="radio" name="regDnsChoice" value="default" checked style="margin-top: 0.25rem;">
+                        <div>
+                          <strong style="color: #fff; font-size: 0.92rem;">Oriental Consultants NVMe Cloud DNS (Recommended)</strong>
+                          <div style="font-size: 0.8rem; color: #94a3b8;">
+                            Free DNS zone editor, 99.99% uptime, and instant propagation across Afghanistan. (ns1.ocafghan.com / ns2.ocafghan.com)
+                          </div>
+                        </div>
+                      </label>
+
+                      <label style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.85rem 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="radio" name="regDnsChoice" value="google" style="margin-top: 0.25rem;">
+                        <div>
+                          <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Google Workspace Afghanistan</strong>
+                          <div style="font-size: 0.8rem; color: #94a3b8;">
+                            Automatically configure MX, SPF, and DKIM verification records for your Google business email.
+                          </div>
+                        </div>
+                      </label>
+
+                      <label style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.85rem 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <input type="radio" name="regDnsChoice" value="microsoft" style="margin-top: 0.25rem;">
+                        <div>
+                          <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Microsoft 365 &amp; Office 365</strong>
+                          <div style="font-size: 0.8rem; color: #94a3b8;">
+                            Automatically configure Exchange Online MX records, Autodiscover, and Intune mobile records.
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- STEP 4: Billing Currency & Live Total -->
+                  <div style="margin-bottom: 1.5rem; background: rgba(0, 0, 0, 0.35); padding: 1.25rem; border-radius: 10px; border: 1.5px solid rgba(56, 189, 248, 0.3);">
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+                      <div>
+                        <span style="font-size: 0.78rem; font-weight: 800; color: #38bdf8; text-transform: uppercase;">Order Summary</span>
+                        <div id="previewDomainName" style="font-size: 1.25rem; font-weight: 900; color: #fff;">
+                          yourdomain.af
+                        </div>
+                      </div>
+                      <div style="text-align: right;">
+                        <div id="previewTotalPriceUsd" style="font-size: 1.5rem; font-weight: 900; color: #38bdf8;">
+                          $45.00
+                        </div>
+                        <div id="previewTotalPriceAfn" style="font-size: 0.85rem; font-weight: 800; color: #fbbf24;">
+                          Approx. 3,150 AFN
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: #94a3b8;">
+                      <span>✓ Free DNS Zone Editor Included</span>
+                      <span>✓ Free WHOIS Privacy Guard Included</span>
+                      <span>✓ Invoicing in AFN &amp; USD</span>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons: WhatsApp Instant & AFN Bank Invoice -->
+                  <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button type="submit" style="flex: 1.5; min-width: 240px; background: #25d366; color: #075e54; font-weight: 900; font-size: 1rem; border: none; padding: 0.85rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                      <span>Submit Order to WhatsApp (0093 787 881808)</span>
+                    </button>
+
+                    <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 200px; background: transparent; border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800; font-size: 0.9rem; padding: 0.85rem 1.15rem; border-radius: 8px; cursor: pointer;">
+                      Request AFN Bank Invoice &rarr;
+                    </button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+
+          </div>
 
           <!-- Quick WhatsApp Hotline Strip -->
           <div style="margin-top: 1.25rem; padding: 0.85rem 1rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
@@ -875,5 +1442,417 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+
+  <!-- Integrated Domain Customer Portal & DNS Zone Editor Script -->
+  <script>
+    const defaultClientDomains = [
+      { name: 'yourcompany.af', ext: '.af', registered: '2024-03-15', expiry: '2027-03-15', status: 'Active', autoRenew: true },
+      { name: 'afghanhope.ngo', ext: '.ngo', registered: '2023-11-20', expiry: '2026-11-20', status: 'Active', autoRenew: true }
+    ];
+    let clientDomains = JSON.parse(localStorage.getItem('oc_client_domains')) || defaultClientDomains;
+
+    const defaultDnsRecords = [
+      { type: 'A', host: '@', value: '185.199.108.153', ttl: '3600' },
+      { type: 'A', host: '@', value: '185.199.109.153', ttl: '3600' },
+      { type: 'CNAME', host: 'www', value: 'ocafghan.com', ttl: '3600' },
+      { type: 'MX', host: '@', value: '1 ASPMX.L.GOOGLE.COM', ttl: '3600' },
+      { type: 'TXT', host: '@', value: 'v=spf1 include:_spf.google.com ~all', ttl: '3600' }
+    ];
+    let clientDnsRecords = JSON.parse(localStorage.getItem('oc_dns_records')) || defaultDnsRecords;
+    let whoisMasked = true;
+
+    function switchPortalTab(tab) {
+      const regPanel = document.getElementById('portalPanelRegister');
+      const managePanel = document.getElementById('portalPanelManage');
+      const btnReg = document.getElementById('tabBtnRegister');
+      const btnManage = document.getElementById('tabBtnManage');
+
+      if (!regPanel || !managePanel) return;
+
+      if (tab === 'register') {
+        regPanel.classList.add('active');
+        managePanel.classList.remove('active');
+        if (btnReg) {
+          btnReg.classList.add('active');
+          btnReg.setAttribute('aria-selected', 'true');
+        }
+        if (btnManage) {
+          btnManage.classList.remove('active');
+          btnManage.setAttribute('aria-selected', 'false');
+        }
+        updateRegistrationPreview();
+      } else {
+        regPanel.classList.remove('active');
+        managePanel.classList.add('active');
+        if (btnReg) {
+          btnReg.classList.remove('active');
+          btnReg.setAttribute('aria-selected', 'false');
+        }
+        if (btnManage) {
+          btnManage.classList.add('active');
+          btnManage.setAttribute('aria-selected', 'true');
+        }
+        renderClientDomains();
+        renderDnsRecords();
+      }
+    }
+
+    function switchManageSubTab(sub) {
+      ['domains', 'dns', 'invoices', 'whois'].forEach(id => {
+        const el = document.getElementById('mSubTab' + id.charAt(0).toUpperCase() + id.slice(1));
+        const btn = document.getElementById('mTabBtn' + id.charAt(0).toUpperCase() + id.slice(1));
+        if (el) el.style.display = (id === sub) ? 'block' : 'none';
+        if (btn) {
+          if (id === sub) {
+            btn.classList.remove('btn-outline');
+            btn.classList.add('btn-primary');
+            btn.style.background = '#0284c7';
+            btn.style.borderColor = '#0284c7';
+          } else {
+            btn.classList.remove('btn-primary');
+            btn.classList.add('btn-outline');
+            btn.style.background = 'transparent';
+            btn.style.borderColor = 'rgba(255,255,255,0.25)';
+          }
+        }
+      });
+    }
+
+    function updateRegistrationPreview() {
+      const nameInput = document.getElementById('regDomainName');
+      const extSelect = document.getElementById('regDomainExt');
+      if (!nameInput || !extSelect) return;
+
+      const rawName = nameInput.value;
+      const ext = extSelect.value;
+      const period = parseInt(document.querySelector('input[name="regPeriod"]:checked')?.value || '1');
+
+      const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(rawName) : rawName.trim().toLowerCase()) || 'yourdomain';
+      const fullDomain = `${clean}${ext}`;
+      
+      const previewDom = document.getElementById('previewDomainName');
+      if (previewDom) previewDom.textContent = fullDomain;
+
+      const registry = (typeof OC_DOMAIN_REGISTRY !== 'undefined') ? OC_DOMAIN_REGISTRY : [
+        { tld: '.af', salePrice: 45, priceAfn: 3150 },
+        { tld: '.com.af', salePrice: 35, priceAfn: 2450 },
+        { tld: '.org.af', salePrice: 35, priceAfn: 2450 },
+        { tld: '.ngo', salePrice: 39, priceAfn: 2730 },
+        { tld: '.com', salePrice: 14, priceAfn: 980 },
+        { tld: '.info', salePrice: 12, priceAfn: 840 },
+        { tld: '.ai', salePrice: 79, priceAfn: 5530 },
+        { tld: '.io', salePrice: 49, priceAfn: 3430 },
+        { tld: '.net', salePrice: 15, priceAfn: 1050 }
+      ];
+
+      const item = registry.find(d => d.tld === ext) || registry[0];
+      let discountRate = 1.0;
+      if (period === 2) discountRate = 0.95;
+      if (period === 3) discountRate = 0.92;
+      if (period === 5) discountRate = 0.88;
+
+      const totalUsd = (item.salePrice * period * discountRate).toFixed(2);
+      const totalAfn = Math.round(item.priceAfn * period * discountRate);
+
+      const previewUsd = document.getElementById('previewTotalPriceUsd');
+      const previewAfn = document.getElementById('previewTotalPriceAfn');
+      if (previewUsd) previewUsd.textContent = `$${totalUsd}`;
+      if (previewAfn) previewAfn.textContent = `Approx. ${totalAfn.toLocaleString()} AFN (${period} Yr${period > 1 ? 's' : ''})`;
+    }
+
+    function handlePortalRegistration(e) {
+      if (e) e.preventDefault();
+      const rawName = document.getElementById('regDomainName').value;
+      const ext = document.getElementById('regDomainExt').value;
+      const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(rawName) : rawName.trim().toLowerCase());
+
+      if (!clean) {
+        alert('Please enter a valid domain name.');
+        return;
+      }
+
+      const fullDomain = `${clean}${ext}`;
+      const org = document.getElementById('regOrgName')?.value || 'Corporate Client';
+      const contact = document.getElementById('regContactPerson')?.value || 'Authorized Contact';
+      const phone = document.getElementById('regPhone')?.value || '';
+      const email = document.getElementById('regEmail')?.value || '';
+      const city = document.getElementById('regCity')?.value || 'Kabul';
+      const period = document.querySelector('input[name="regPeriod"]:checked')?.value || '1';
+      const dns = document.querySelector('input[name="regDnsChoice"]:checked')?.value || 'default';
+
+      const registry = (typeof OC_DOMAIN_REGISTRY !== 'undefined') ? OC_DOMAIN_REGISTRY : [
+        { tld: '.af', salePrice: 45, priceAfn: 3150 }
+      ];
+      const item = registry.find(d => d.tld === ext) || registry[0];
+      const totalUsd = (item.salePrice * parseInt(period)).toFixed(2);
+      const totalAfn = Math.round(item.priceAfn * parseInt(period)).toLocaleString();
+
+      // Save to client domain list
+      clientDomains.unshift({
+        name: fullDomain,
+        ext: ext,
+        registered: new Date().toISOString().split('T')[0],
+        expiry: new Date(Date.now() + parseInt(period) * 365 * 24 * 3600 * 1000).toISOString().split('T')[0],
+        status: 'Pending Activation',
+        autoRenew: true
+      });
+      localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
+
+      // Construct WhatsApp message
+      const msg = `*NEW DOMAIN REGISTRATION ORDER - AFGHANISTAN*
+----------------------------------------
+*Domain:* ${fullDomain}
+*Period:* ${period} Year(s)
+*Price:* $${totalUsd} / ~${totalAfn} AFN
+*Organization:* ${org}
+*Contact:* ${contact}
+*Phone/WA:* ${phone}
+*Email:* ${email}
+*City:* ${city}, Afghanistan
+*DNS Choice:* ${dns}
+----------------------------------------
+Please confirm registration & provide bank details (Kabul/Azizi Bank).`;
+
+      const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+
+      alert(`Thank you! Your domain registration order for ${fullDomain} has been submitted. WhatsApp chat has been opened to finalize your fast-track activation.`);
+      switchPortalTab('manage');
+    }
+
+    function submitAfnInvoiceRequest() {
+      const rawName = document.getElementById('regDomainName')?.value || 'mycompany';
+      const ext = document.getElementById('regDomainExt')?.value || '.af';
+      const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(rawName) : rawName.trim().toLowerCase()) || 'mycompany';
+      const fullDomain = `${clean}${ext}`;
+      const org = document.getElementById('regOrgName')?.value || 'Corporate Client';
+
+      const msg = `Hello Oriental Consultants, I need a formal AFN quotation & tax invoice for registering: ${fullDomain} for organization: ${org}. Please send bank account details for Kabul Bank / Azizi Bank.`;
+      const waUrl = `https://wa.me/93700567868?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function renderClientDomains() {
+      const container = document.getElementById('clientDomainsListContainer');
+      if (!container) return;
+
+      if (!clientDomains.length) {
+        container.innerHTML = '<div style="padding: 2rem; text-align: center; color: #94a3b8;">No domains registered yet. Click "Register New Domain Wizard" above.</div>';
+        return;
+      }
+
+      let html = '';
+      clientDomains.forEach((d, idx) => {
+        html += `
+          <div class="client-domain-row">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                <strong style="font-size: 1.15rem; color: #fff;">${d.name}</strong>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.75rem;">● ${d.status}</span>
+              </div>
+              <div style="font-size: 0.8rem; color: #94a3b8;">
+                Registered: ${d.registered} &bull; Expires: <strong style="color: #e2e8f0;">${d.expiry}</strong> &bull; Auto-Renew: ${d.autoRenew ? 'Enabled' : 'Disabled'}
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button type="button" onclick="manageDomainDns('${d.name}')" class="btn btn-sm btn-outline" style="border-color: #38bdf8; color: #38bdf8; font-weight: 700; font-size: 0.82rem; background: rgba(56,189,248,0.1);">
+                ⚡ Manage DNS
+              </button>
+              <a href="https://wa.me/93787881808?text=${encodeURIComponent('Hello Oriental Consultants, I want to renew domain: ' + d.name)}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" style="background: #25d366; color: #075e54; font-weight: 800; font-size: 0.82rem; padding: 0.35rem 0.75rem; text-decoration: none; border-radius: 6px;">
+                Renew
+              </a>
+              <button type="button" onclick="removeDomainFromConsole(${idx})" class="btn btn-sm btn-outline" style="color: #ef4444; border-color: rgba(239,68,68,0.3); font-size: 0.75rem;" title="Remove from list">
+                ✕
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function manageDomainDns(domainName) {
+      const activeLabel = document.getElementById('activeDnsDomainName');
+      if (activeLabel) activeLabel.textContent = domainName;
+      switchManageSubTab('dns');
+    }
+
+    function renderDnsRecords() {
+      const tbody = document.getElementById('dnsRecordsTableBody');
+      if (!tbody) return;
+
+      let html = '';
+      clientDnsRecords.forEach((rec, idx) => {
+        let badgeClass = 'badge-a';
+        if (rec.type === 'CNAME') badgeClass = 'badge-cname';
+        if (rec.type === 'MX') badgeClass = 'badge-mx';
+        if (rec.type === 'TXT') badgeClass = 'badge-txt';
+        if (rec.type === 'NS') badgeClass = 'badge-ns';
+
+        html += `
+          <tr>
+            <td><span class="table-badge ${badgeClass}">${rec.type}</span></td>
+            <td><code>${rec.host}</code></td>
+            <td style="word-break: break-all;"><code>${rec.value}</code></td>
+            <td>${rec.ttl}s</td>
+            <td>
+              <button type="button" onclick="deleteDnsRecord(${idx})" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.85rem; font-weight: 700;">
+                Delete
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    function handleAddNewDnsRecord(e) {
+      if (e) e.preventDefault();
+      const type = document.getElementById('dnsNewType').value;
+      const host = document.getElementById('dnsNewHost').value.trim();
+      const val = document.getElementById('dnsNewValue').value.trim();
+      const ttl = document.getElementById('dnsNewTtl').value;
+
+      if (!host || !val) {
+        alert('Please provide Host and Value.');
+        return;
+      }
+
+      clientDnsRecords.push({ type, host, value: val, ttl });
+      localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
+      renderDnsRecords();
+
+      document.getElementById('dnsNewHost').value = '';
+      document.getElementById('dnsNewValue').value = '';
+      alert('DNS record added successfully. Propagating across Kabul nodes.');
+    }
+
+    function deleteDnsRecord(idx) {
+      if (confirm('Are you sure you want to delete this DNS record?')) {
+        clientDnsRecords.splice(idx, 1);
+        localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
+        renderDnsRecords();
+      }
+    }
+
+    function applyPresetDns(preset) {
+      if (preset === 'google') {
+        clientDnsRecords.push(
+          { type: 'MX', host: '@', value: '1 ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'MX', host: '@', value: '5 ALT1.ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:_spf.google.com ~all', ttl: '3600' }
+        );
+      } else if (preset === 'microsoft') {
+        const dom = document.getElementById('activeDnsDomainName')?.textContent || 'yourcompany.af';
+        const clean = dom.replace(/[^a-zA-Z0-9]/g, '-');
+        clientDnsRecords.push(
+          { type: 'MX', host: '@', value: `0 ${clean}.mail.protection.outlook.com`, ttl: '3600' },
+          { type: 'CNAME', host: 'autodiscover', value: 'autodiscover.outlook.com', ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:spf.protection.outlook.com -all', ttl: '3600' }
+        );
+      }
+      localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
+      renderDnsRecords();
+      alert(`Applied ${preset.toUpperCase()} DNS presets successfully.`);
+    }
+
+    function toggleWhoisShield() {
+      whoisMasked = !whoisMasked;
+      const badge = document.getElementById('whoisStatusBadge');
+      if (badge) {
+        if (whoisMasked) {
+          badge.textContent = 'ACTIVE (Masked)';
+          badge.style.color = '#34d399';
+        } else {
+          badge.textContent = 'EXPOSED (Public WHOIS)';
+          badge.style.color = '#ef4444';
+        }
+      }
+    }
+
+    function promptAddDomainToConsole() {
+      const name = prompt('Enter the domain name you registered with Oriental Consultants:');
+      if (!name) return;
+      const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(name) : name.trim().toLowerCase());
+      let ext = '.af';
+      if (name.includes('.')) {
+        ext = '.' + name.split('.').slice(1).join('.');
+      }
+      clientDomains.push({
+        name: clean + ext,
+        ext: ext,
+        registered: new Date().toISOString().split('T')[0],
+        expiry: '2027-01-01',
+        status: 'Active',
+        autoRenew: true
+      });
+      localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
+      renderClientDomains();
+    }
+
+    function removeDomainFromConsole(idx) {
+      if (confirm('Remove this domain from your view? (Does not delete your registration).')) {
+        clientDomains.splice(idx, 1);
+        localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
+        renderClientDomains();
+      }
+    }
+
+    function selectDomainForPortal(cleanName, tld) {
+      switchPortalTab('register');
+      const input = document.getElementById('regDomainName');
+      const select = document.getElementById('regDomainExt');
+      if (input) input.value = cleanName;
+      if (select && tld) select.value = tld;
+      updateRegistrationPreview();
+      const portal = document.getElementById('portal');
+      if (portal) portal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Auto-detect URL parameters & hash on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const dom = urlParams.get('domain') || urlParams.get('q');
+      const tld = urlParams.get('tld');
+      const tab = urlParams.get('tab');
+      const hasHashPortal = window.location.hash === '#portal';
+
+      if (dom) {
+        const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(dom) : dom.trim().toLowerCase());
+        const nameInput = document.getElementById('regDomainName');
+        if (nameInput) nameInput.value = clean;
+
+        if (tld) {
+          const extSelect = document.getElementById('regDomainExt');
+          if (extSelect) extSelect.value = tld;
+        }
+        updateRegistrationPreview();
+      }
+
+      if (tab === 'register') {
+        switchPortalTab('register');
+      } else {
+        switchPortalTab('manage');
+        if (tab === 'dns') switchManageSubTab('dns');
+      }
+
+      if (hasHashPortal || tab) {
+        setTimeout(() => {
+          const portalEl = document.getElementById('portal');
+          if (portalEl) portalEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
+    });
+
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash === '#portal') {
+        switchPortalTab('manage');
+        const portalEl = document.getElementById('portal');
+        if (portalEl) portalEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  </script>
 </body>
 </html>
