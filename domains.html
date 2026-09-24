@@ -1281,7 +1281,7 @@
               <li class="dropdown-item"><a href="microsoft-365.html">Microsoft 365 Solutions</a></li>
               <li class="dropdown-item"><a href="accounting.html">Accounting &amp; Financial Mgmt</a></li>
               <li class="dropdown-item"><a href="audit.html">Audit &amp; Assurance (ISA)</a></li>
-              <li class="dropdown-item"><a href="quickbooks.html">KuickBok Enterprise 2025/2026</a></li>
+              <li class="dropdown-item"><a href="quickbooks.html">QuickBooks Enterprise 2025/2026</a></li>
               <li class="dropdown-item"><a href="odoo.html">Odoo ERP Implementation</a></li>
             </ul>
           </li>
@@ -1497,6 +1497,20 @@
                   <div class="hostinger-stat-value" style="color: #fbbf24;">AFN &amp; USD Tax Rec.</div>
                 </div>
               </div>
+            <!-- Portal User Session Status Bar -->
+            <div id="portalUserSessionBar" style="background: rgba(14, 165, 233, 0.08); border: 1.5px solid rgba(56, 189, 248, 0.28); border-radius: 12px; padding: 0.75rem 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; font-size: 0.85rem;">
+              <div id="portalUserStatusText" style="display: flex; align-items: center; gap: 0.6rem; color: #e2e8f0;">
+                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 8px #38bdf8;"></span>
+                <span>👤 <strong>Customer Portal:</strong> Register your domain below to auto-create your DNS portal login, or sign in to an existing account.</span>
+              </div>
+              <div id="portalUserActions" style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                <button type="button" onclick="switchHostingerTab('register')" class="btn btn-sm" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; border: none; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 6px; font-weight: 800; cursor: pointer;">
+                  🚀 Register Domain &amp; Create Portal
+                </button>
+                <button type="button" id="btnSignInModalToggle" onclick="toggleQuickSignInModal()" class="btn btn-sm" style="background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.2); font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 6px; font-weight: 700; cursor: pointer;">
+                  Existing Client Sign In
+                </button>
+              </div>
             </div>
 
             <!-- Hostinger Segmented Navigation Bar -->
@@ -1682,125 +1696,209 @@
                 </div>
               </div>
 
-              <!-- TAB 3: REGISTER NEW DOMAIN WIZARD -->
+              <!-- TAB 3: REGISTER NEW DOMAIN & CREATE PORTAL LOGIN -->
               <div id="hTabContentRegister" class="hostinger-tab-content">
                 <div style="background: rgba(255, 255, 255, 0.025); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 1.75rem; margin-bottom: 1.5rem;">
                   
-                  <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                  <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1.25rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
                     <div>
-                      <h3 style="font-size: 1.35rem; font-weight: 900; margin-bottom: 0.3rem; color: #fff;">
-                        Domain Registration &amp; Transfer Wizard
+                      <div class="hostinger-portal-badge" style="margin-bottom: 0.4rem;">
+                        <span class="hostinger-pulse-dot"></span>
+                        Instant Onboarding &bull; Official Afghan Registry
+                      </div>
+                      <h3 style="font-size: 1.45rem; font-weight: 900; margin: 0 0 0.35rem; color: #fff;">
+                        Take Your Domain &amp; Create Customer Portal Account
                       </h3>
-                      <p style="color: #94a3b8; font-size: 0.88rem; margin: 0;">
-                        Direct registry order via official .AF partner. Fast-track activation with official MoF receipts in AFN &amp; USD.
+                      <p style="color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;">
+                        Register your domain in under 2 minutes. Your customer portal login will be created instantly so you can manage DNS zone records, WHOIS privacy, and download official Afghanistan Ministry of Finance (MoF) tax invoices.
                       </p>
                     </div>
                     <div style="display: flex; gap: 0.5rem; align-items: center;">
-                      <span class="badge" style="background: rgba(103, 61, 230, 0.2); color: #c4b5fd; font-weight: 800; font-size: 0.75rem; border: 1px solid rgba(103,61,230,0.35);">
-                        ⚡ 10-Minute Rapid Provisioning
+                      <span class="badge" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; font-weight: 800; font-size: 0.8rem; border: 1px solid rgba(0, 229, 255, 0.35); padding: 0.4rem 0.8rem;">
+                        ⚡ Rapid Notice: sa_nsr@yahoo.com
                       </span>
                     </div>
                   </div>
 
                   <form id="domainRegistrationForm" onsubmit="handlePortalRegistration(event); return false;">
                     
-                    <!-- STEP 1: Domain & Extension -->
-                    <div style="margin-bottom: 1.75rem;">
-                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
+                    <!-- SECTION 1: DOMAIN NAME & REGISTRATION TERM -->
+                    <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;">
                         <span class="wizard-step-badge">1</span>
-                        <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Choose Domain Name &amp; Extension</h4>
+                        <div>
+                          <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #fff;">Choose Domain Name &amp; Registration Term</h4>
+                          <span style="font-size: 0.78rem; color: #94a3b8;">Enter your desired domain keyword and choose the extension and years.</span>
+                        </div>
                       </div>
 
-                      <div style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 0.75rem;">
+                      <div style="display: grid; grid-template-columns: 2fr 1.3fr; gap: 0.85rem; margin-bottom: 1rem;">
                         <div class="form-group-custom" style="margin-bottom: 0;">
-                          <label for="regDomainName">Domain Keyword (without extension) *</label>
-                          <input type="text" id="regDomainName" required placeholder="e.g. pamircloud, kabulbiz, afghanhope" class="form-control-custom" oninput="updateRegistrationPreview()">
+                          <label for="regDomainName" style="color: #e2e8f0; font-size: 0.85rem; font-weight: 700;">Domain Name (Keyword without extension) *</label>
+                          <input type="text" id="regDomainName" required placeholder="e.g. pamirgroup, afghanhope, kabultech" class="form-control-custom" oninput="updateRegistrationPreview()" style="font-size: 1rem; font-weight: 700; color: #00e5ff; letter-spacing: 0.5px;">
                         </div>
                         <div class="form-group-custom" style="margin-bottom: 0;">
-                          <label for="regDomainExt">Extension (TLD) *</label>
-                          <select id="regDomainExt" class="form-control-custom" onchange="updateRegistrationPreview()">
-                            <option value=".af">.af ($45 / 3,150 AFN)</option>
-                            <option value=".com.af">.com.af ($35 / 2,450 AFN)</option>
-                            <option value=".org.af">.org.af ($35 / 2,450 AFN)</option>
-                            <option value=".ngo">.ngo ($39 / 2,730 AFN)</option>
-                            <option value=".com">.com ($14 / 980 AFN)</option>
-                            <option value=".info">.info ($12 / 840 AFN)</option>
-                            <option value=".ai">.ai ($79 / 5,530 AFN)</option>
-                            <option value=".io">.io ($49 / 3,430 AFN)</option>
-                            <option value=".net">.net ($15 / 1,050 AFN)</option>
+                          <label for="regDomainExt" style="color: #e2e8f0; font-size: 0.85rem; font-weight: 700;">Extension (TLD) *</label>
+                          <select id="regDomainExt" class="form-control-custom" onchange="updateRegistrationPreview()" style="font-size: 0.92rem; font-weight: 700;">
+                            <option value=".af">.af ($45 / 3,150 AFN) — National ccTLD</option>
+                            <option value=".com.af">.com.af ($35 / 2,450 AFN) — Commercial Jawaz</option>
+                            <option value=".org.af">.org.af ($35 / 2,450 AFN) — Afghan NGOs</option>
+                            <option value=".ngo">.ngo ($39 / 2,730 AFN) — Tri-Pillar NGO Ecosystem</option>
+                            <option value=".com">.com ($14 / 980 AFN) — Global Commercial</option>
+                            <option value=".info">.info ($12 / 840 AFN) — Media &amp; News</option>
+                            <option value=".ai">.ai ($79 / 5,530 AFN) — Artificial Intelligence</option>
+                            <option value=".io">.io ($49 / 3,430 AFN) — Tech &amp; SaaS</option>
+                            <option value=".net">.net ($15 / 1,050 AFN) — Networks &amp; IT</option>
                           </select>
                         </div>
                       </div>
 
-                      <!-- Registration Period with Discount Badges -->
-                      <div style="margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
-                        <span style="font-size: 0.82rem; font-weight: 700; color: #94a3b8;">Registration Term:</span>
-                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                      <!-- Registration Term Selector -->
+                      <div style="display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="font-size: 0.82rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Term:</span>
+                        <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.05); padding: 0.4rem 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
                           <input type="radio" name="regPeriod" value="1" checked onchange="updateRegistrationPreview()"> 1 Year
                         </label>
-                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                        <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.05); padding: 0.4rem 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
                           <input type="radio" name="regPeriod" value="2" onchange="updateRegistrationPreview()"> 2 Years <span style="color: #00e5ff; font-weight: 800; font-size: 0.72rem;">(Save 5%)</span>
                         </label>
-                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                        <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.05); padding: 0.4rem 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
                           <input type="radio" name="regPeriod" value="3" onchange="updateRegistrationPreview()"> 3 Years <span style="color: #00e5ff; font-weight: 800; font-size: 0.72rem;">(Save 8%)</span>
                         </label>
-                        <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.04); padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+                        <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.05); padding: 0.4rem 0.85rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
                           <input type="radio" name="regPeriod" value="5" onchange="updateRegistrationPreview()"> 5 Years <span style="color: #00b090; font-weight: 800; font-size: 0.72rem;">(Save 12%)</span>
                         </label>
                       </div>
+
+                      <!-- Live Transparent Order Pricing Card -->
+                      <div style="background: linear-gradient(135deg, rgba(103, 61, 230, 0.18) 0%, rgba(14, 165, 233, 0.12) 100%); padding: 1.15rem 1.25rem; border-radius: 10px; border: 1.5px solid rgba(103, 61, 230, 0.4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                          <div style="font-size: 0.74rem; font-weight: 800; color: #c4b5fd; text-transform: uppercase; letter-spacing: 0.05em;">Live Selected Domain &amp; Term:</div>
+                          <div id="previewDomainName" style="font-size: 1.35rem; font-weight: 900; color: #fff; letter-spacing: 0.5px;">
+                            yourdomain.af
+                          </div>
+                          <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">
+                            ✓ Free Anycast DNS Zone Manager &bull; ✓ Free WHOIS Privacy Guard &bull; ✓ MoF Tax Receipt
+                          </div>
+                        </div>
+                        <div style="text-align: right;">
+                          <div id="previewTotalPriceUsd" style="font-size: 1.7rem; font-weight: 900; color: #00e5ff; line-height: 1;">
+                            $45.00
+                          </div>
+                          <div id="previewTotalPriceAfn" style="font-size: 0.88rem; font-weight: 800; color: #fbbf24; margin-top: 0.2rem;">
+                            Approx. 3,150 AFN
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <!-- STEP 2: Registrant Organization Details -->
-                    <div style="margin-bottom: 1.75rem;">
-                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
-                        <span class="wizard-step-badge">2</span>
-                        <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Registrant &amp; Organization Profile</h4>
+                    <!-- SECTION 2: CREATE PORTAL LOGIN CREDENTIALS -->
+                    <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.65rem;">
+                          <span class="wizard-step-badge" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);">2</span>
+                          <div>
+                            <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #fff;">Create Customer Portal Login Credentials</h4>
+                            <span style="font-size: 0.78rem; color: #94a3b8;">Use these details to access your self-service DNS console, renew domains &amp; view invoices.</span>
+                          </div>
+                        </div>
+                        <span style="font-size: 0.75rem; background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 0.25rem 0.65rem; border-radius: 6px; font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.3);">
+                          🔐 Client Console Access
+                        </span>
+                      </div>
+
+                      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+                        <div class="form-group-custom" style="margin-bottom: 0;">
+                          <label for="regEmail" style="color: #e2e8f0; font-size: 0.85rem; font-weight: 700;">Portal Login Email (Your Username) *</label>
+                          <input type="email" id="regEmail" required placeholder="name@company.af or you@gmail.com" class="form-control-custom">
+                          <span style="font-size: 0.74rem; color: #94a3b8; display: block; margin-top: 0.3rem;">Order confirmation and portal activation will be sent to this email.</span>
+                        </div>
+
+                        <div class="form-group-custom" style="margin-bottom: 0;">
+                          <label for="regPassword" style="color: #e2e8f0; font-size: 0.85rem; font-weight: 700;">Portal Password *</label>
+                          <div style="position: relative;">
+                            <input type="password" id="regPassword" required minlength="6" placeholder="Choose a secure password" class="form-control-custom" style="padding-right: 2.75rem;">
+                            <button type="button" onclick="togglePasswordVisibility('regPassword', this)" style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer; padding: 0.2rem;" title="Show/Hide Password">
+                              👁️
+                            </button>
+                          </div>
+                          <span style="font-size: 0.74rem; color: #94a3b8; display: block; margin-top: 0.3rem;">Min. 6 characters. Kept secure for your portal access.</span>
+                        </div>
+
+                        <div class="form-group-custom" style="margin-bottom: 0;">
+                          <label for="regPasswordConfirm" style="color: #e2e8f0; font-size: 0.85rem; font-weight: 700;">Confirm Portal Password *</label>
+                          <div style="position: relative;">
+                            <input type="password" id="regPasswordConfirm" required minlength="6" placeholder="Re-type your password" class="form-control-custom" style="padding-right: 2.75rem;">
+                            <button type="button" onclick="togglePasswordVisibility('regPasswordConfirm', this)" style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer; padding: 0.2rem;" title="Show/Hide Password">
+                              👁️
+                            </button>
+                          </div>
+                          <span style="font-size: 0.74rem; color: #94a3b8; display: block; margin-top: 0.3rem;">Ensure both passwords match identically.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- SECTION 3: REGISTRANT & AFGHAN INVOICING PROFILE -->
+                    <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;">
+                        <span class="wizard-step-badge" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">3</span>
+                        <div>
+                          <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #fff;">Registrant Profile &amp; Afghan Invoicing Details</h4>
+                          <span style="font-size: 0.78rem; color: #94a3b8;">Required for Afghanistan Ministry of Finance (MoF) tax receipts (TIN: 1045181011).</span>
+                        </div>
                       </div>
 
                       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem;">
                         <div class="form-group-custom">
-                          <label for="regOrgName">Organization / Business / Brand Name *</label>
+                          <label for="regContactPerson">Authorized Contact Person (Full Name) *</label>
+                          <input type="text" id="regContactPerson" required placeholder="e.g. Sayed Ullabrar / Ahmad Khan" class="form-control-custom">
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regOrgName">Organization / Business / NGO Name *</label>
                           <input type="text" id="regOrgName" required placeholder="e.g. Pamir Logistics Ltd" class="form-control-custom">
-                        </div>
-                        <div class="form-group-custom">
-                          <label for="regLicenseNo">Business License (Jawaz) / Tazkira No.</label>
-                          <input type="text" id="regLicenseNo" placeholder="Required for .com.af &amp; .ngo" class="form-control-custom">
-                        </div>
-                        <div class="form-group-custom">
-                          <label for="regContactPerson">Authorized Contact Person *</label>
-                          <input type="text" id="regContactPerson" required placeholder="Full Name" class="form-control-custom">
-                        </div>
-                        <div class="form-group-custom">
-                          <label for="regEmail">Corporate / Personal Email *</label>
-                          <input type="email" id="regEmail" required placeholder="name@domain.com" class="form-control-custom">
                         </div>
                         <div class="form-group-custom">
                           <label for="regPhone">WhatsApp / Mobile Phone *</label>
                           <input type="tel" id="regPhone" required placeholder="e.g. 0093 787 881808" class="form-control-custom">
                         </div>
                         <div class="form-group-custom">
-                          <label for="regCity">City &amp; Province in Afghanistan *</label>
+                          <label for="regCity">City / Province in Afghanistan *</label>
                           <select id="regCity" class="form-control-custom">
-                            <option value="Kabul">Kabul</option>
+                            <option value="Kabul" selected>Kabul</option>
                             <option value="Herat">Herat</option>
-                            <option value="Mazar-i-Sharif">Mazar-i-Sharif (Balkh)</option>
+                            <option value="Mazar-i-Sharif (Balkh)">Mazar-i-Sharif (Balkh)</option>
                             <option value="Kandahar">Kandahar</option>
-                            <option value="Jalalabad">Jalalabad (Nangarhar)</option>
+                            <option value="Jalalabad (Nangarhar)">Jalalabad (Nangarhar)</option>
                             <option value="Kunduz">Kunduz</option>
                             <option value="Ghazni">Ghazni</option>
                             <option value="Badakhshan">Badakhshan</option>
-                            <option value="Other">Other Afghan Province</option>
-                            <option value="International">Outside Afghanistan</option>
+                            <option value="Bamyan">Bamyan</option>
+                            <option value="Other Afghan Province">Other Afghan Province</option>
+                            <option value="Outside Afghanistan">Outside Afghanistan (International)</option>
                           </select>
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regCurrency">Preferred Invoicing Currency *</label>
+                          <select id="regCurrency" class="form-control-custom">
+                            <option value="AFN" selected>AFN (Afghan Afghani) — Local Bank Wire</option>
+                            <option value="USD">USD (United States Dollar)</option>
+                          </select>
+                        </div>
+                        <div class="form-group-custom">
+                          <label for="regLicenseNo">Business License (Jawaz) / Tazkira No.</label>
+                          <input type="text" id="regLicenseNo" placeholder="Required for .com.af &amp; .ngo" class="form-control-custom">
                         </div>
                       </div>
                     </div>
 
-                    <!-- STEP 3: DNS & Cloud Integration -->
-                    <div style="margin-bottom: 1.75rem;">
-                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.85rem;">
-                        <span class="wizard-step-badge">3</span>
-                        <h4 style="font-size: 1.05rem; font-weight: 800; margin: 0; color: #fff;">Nameserver &amp; DNS Configuration</h4>
+                    <!-- SECTION 4: DNS CONFIGURATION & CLOUD PRESETS -->
+                    <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;">
+                        <span class="wizard-step-badge" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">4</span>
+                        <div>
+                          <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #fff;">Nameserver &amp; DNS Zone Setup</h4>
+                          <span style="font-size: 0.78rem; color: #94a3b8;">Select your preferred initial DNS configuration. You can change this anytime from your portal.</span>
+                        </div>
                       </div>
 
                       <div style="display: flex; flex-direction: column; gap: 0.65rem;">
@@ -1849,42 +1947,26 @@
                       </div>
                     </div>
 
-                    <!-- STEP 4: Hostinger-Style Order Summary Box -->
-                    <div style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(103, 61, 230, 0.12) 0%, rgba(0, 0, 0, 0.35) 100%); padding: 1.35rem; border-radius: 12px; border: 1.5px solid rgba(103, 61, 230, 0.35);">
-                      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.85rem;">
-                        <div>
-                          <span style="font-size: 0.74rem; font-weight: 800; color: #00e5ff; text-transform: uppercase; letter-spacing: 0.05em;">Order Summary</span>
-                          <div id="previewDomainName" style="font-size: 1.35rem; font-weight: 900; color: #fff;">
-                            yourdomain.af
-                          </div>
-                        </div>
-                        <div style="text-align: right;">
-                          <div id="previewTotalPriceUsd" style="font-size: 1.6rem; font-weight: 900; color: #00e5ff;">
-                            $45.00
-                          </div>
-                          <div id="previewTotalPriceAfn" style="font-size: 0.85rem; font-weight: 800; color: #fbbf24;">
-                            Approx. 3,150 AFN
-                          </div>
-                        </div>
+                    <!-- SUBMIT BUTTONS & DISPATCH NOTICE -->
+                    <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+                      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
+                        <button type="submit" id="btnSubmitRegistration" style="flex: 2; min-width: 280px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 1.05rem; border: none; padding: 1rem 1.5rem; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4); font-family: inherit; transition: transform 0.15s ease;">
+                          <span>🚀 Take This Domain &amp; Create Portal Account</span>
+                        </button>
+
+                        <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 220px; background: transparent; border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800; font-size: 0.9rem; padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+                          <span>🧾 Request AFN Bank Invoice</span>
+                        </button>
                       </div>
 
-                      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: #94a3b8;">
-                        <span style="color: #00b090; font-weight: 700;">✓ Free DNS Zone Editor &amp; DDoS Shield ($0.00)</span>
-                        <span style="color: #00b090; font-weight: 700;">✓ Free WHOIS Privacy Guard ($0.00)</span>
-                        <span style="color: #c4b5fd; font-weight: 700;">✓ Statutory MoF Tax Receipt in AFN &amp; USD</span>
+                      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.85rem;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.4rem; color: #00e5ff; font-weight: 700;">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                          Instant Notification Dispatch: sa_nsr@yahoo.com
+                        </span>
+                        <span style="color: #00b090; font-weight: 700;">✓ Free WHOIS Privacy Guard Included</span>
+                        <span style="color: #fbbf24; font-weight: 700;">✓ Afghan Banks: Kabul Bank &bull; Azizi Bank</span>
                       </div>
-                    </div>
-
-                    <!-- Action Buttons: WhatsApp Instant & AFN Bank Invoice -->
-                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                      <button type="submit" style="flex: 1.5; min-width: 240px; background: #25d366; color: #075e54; font-weight: 900; font-size: 0.95rem; border: none; padding: 0.85rem 1.25rem; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); font-family: inherit;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        <span>Submit Order via WhatsApp (0093 787 881808)</span>
-                      </button>
-
-                      <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 200px; background: transparent; border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800; font-size: 0.88rem; padding: 0.85rem 1.15rem; border-radius: 10px; cursor: pointer; font-family: inherit;">
-                        Request Official AFN Bank Invoice &rarr;
-                      </button>
                     </div>
 
                   </form>
@@ -2103,7 +2185,7 @@
                 <li><span class="check-icon">✓</span> Free Anycast DNS zone management &amp; record editor</li>
                 <li><span class="check-icon">✓</span> Instant fast-track activation with business license copy (Jawaz)</li>
                 <li><span class="check-icon">✓</span> Local payment via Kabul Bank or Azizi Bank in AFN</li>
-                <li><span class="check-icon">✓</span> Compatible with Google Workspace &amp; KuickBok ERP</li>
+                <li><span class="check-icon">✓</span> Compatible with Google Workspace &amp; QuickBooks ERP</li>
               </ul>
             </div>
             <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.com.af%20domain%20for%20$35/yr%20(2,450%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem;">
@@ -2362,7 +2444,7 @@
               <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Custom NGO project portals, humanitarian visibility sites &amp; annual reporting</li>
               <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Monitoring &amp; Evaluation (M&amp;E) field survey &amp; beneficiary management databases</li>
               <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Trilingual software systems: fluent English, Dari, and Pashto interface design</li>
-              <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Seamless Odoo Non-Profit ERP &amp; KuickBok desktop financial integration</li>
+              <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Seamless Odoo Non-Profit ERP &amp; QuickBooks desktop financial integration</li>
             </ul>
             <a href="https://wa.me/93787881808?text=Hello%20AfghanDevelopers%20(Software%20house),%20we%20need%20a%20custom%20NGO%20portal%20and%20donor%20dashboard%20for%20our%20.ngo%20organization." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" style="width: 100%; text-align: center; justify-content: center; padding: 0.65rem 1rem; color: #fbbf24; border-color: rgba(251, 191, 36, 0.35);">
               💬 Software House Desk: 0093 787 881808
@@ -2793,7 +2875,7 @@
           <li><a href="microsoft-365.html" style="color:var(--text-muted); text-decoration:none;">Microsoft 365 Solutions</a></li>
           <li><a href="afghanhoster.html" style="color:var(--text-muted); text-decoration:none;">AfghanHoster NVMe Cloud</a></li>
           <li><a href="odoo.html" style="color:var(--text-muted); text-decoration:none;">Odoo ERP Implementation</a></li>
-          <li><a href="quickbooks.html" style="color:var(--text-muted); text-decoration:none;">KuickBok Enterprise</a></li>
+          <li><a href="quickbooks.html" style="color:var(--text-muted); text-decoration:none;">QuickBooks Enterprise</a></li>
         </ul>
       </div>
 
@@ -2812,6 +2894,105 @@
       &copy; 2006 &ndash; 2026 Oriental Consultants. All rights reserved. Registered under the Laws of Afghanistan.
     </div>
   </footer>
+
+  <!-- ==================== DOMAIN REGISTRATION SUCCESS MODAL ==================== -->
+  <div id="domainSuccessModal" style="display: none; position: fixed; inset: 0; background: rgba(3, 7, 18, 0.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 1.25rem; overflow-y: auto;">
+    <div style="background: linear-gradient(145deg, #0e1626 0%, #080d1a 100%); border: 1.5px solid rgba(56, 189, 248, 0.45); border-radius: 18px; max-width: 620px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.85); padding: 2.25rem 2rem; color: #fff; position: relative;">
+      
+      <button type="button" onclick="closeSuccessModal()" style="position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; line-height: 1;">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 68px; height: 68px; border-radius: 50%; background: rgba(0, 176, 144, 0.15); border: 2.5px solid #00b090; display: inline-flex; align-items: center; justify-content: center; color: #00b090; font-size: 2.2rem; margin-bottom: 1rem; box-shadow: 0 0 24px rgba(0,176,144,0.35);">
+          ✓
+        </div>
+        <h3 style="font-size: 1.65rem; font-weight: 900; margin: 0 0 0.35rem; color: #fff;">
+          Domain Order &amp; Portal Created!
+        </h3>
+        <p style="color: #94a3b8; font-size: 0.92rem; margin: 0; line-height: 1.5;">
+          Your domain has been queued for registration and your customer portal login details are now active.
+        </p>
+      </div>
+
+      <!-- Order Details Summary Card -->
+      <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="color: #94a3b8; font-size: 0.85rem;">Registered Domain:</span>
+          <strong id="modalSummaryDomain" style="color: #00e5ff; font-size: 1.2rem; font-family: 'JetBrains Mono', monospace;">yourdomain.af</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="color: #94a3b8; font-size: 0.85rem;">Portal Username (Email):</span>
+          <strong id="modalSummaryEmail" style="color: #fff; font-size: 0.95rem;">client@domain.com</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="color: #94a3b8; font-size: 0.85rem;">Total Payable:</span>
+          <strong id="modalSummaryPrice" style="color: #fbbf24; font-size: 1.1rem;">$45.00 (3,150 AFN)</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="color: #94a3b8; font-size: 0.85rem;">Notification Dispatched To:</span>
+          <strong style="color: #38bdf8; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span>📧</span> sa_nsr@yahoo.com (NOC Desk)
+          </strong>
+        </div>
+      </div>
+
+      <!-- Informative Box -->
+      <div style="background: rgba(37, 211, 102, 0.08); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 10px; padding: 0.85rem 1rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: #a7f3d0; line-height: 1.5;">
+        💬 <strong>Fast-Track Activation:</strong> Please send your payment confirmation or wire receipt to our WhatsApp desk (<strong style="color: #fff;">0093 787 881808</strong>) or request the Kabul Bank / Azizi Bank account details.
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a id="modalWhatsAppBtn" href="https://wa.me/93787881808" target="_blank" rel="noopener noreferrer" style="flex: 1.4; min-width: 200px; text-align: center; background: #25d366; color: #075e54; font-weight: 900; font-size: 0.92rem; padding: 0.9rem 1.25rem; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);">
+          <span>Confirm on WhatsApp: 0093 787 881808 &rarr;</span>
+        </a>
+        <button type="button" onclick="goToMyDomainsConsole()" style="flex: 1; min-width: 170px; background: rgba(56, 189, 248, 0.15); border: 1.5px solid #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.88rem; padding: 0.9rem 1.15rem; border-radius: 10px; cursor: pointer;">
+          Manage in Portal Console &rarr;
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== EXISTING CLIENT QUICK SIGN-IN MODAL ==================== -->
+  <div id="quickSignInModal" style="display: none; position: fixed; inset: 0; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 999999; align-items: center; justify-content: center; padding: 1.25rem;">
+    <div style="background: linear-gradient(145deg, #0e1626 0%, #080d1a 100%); border: 1.5px solid rgba(255, 255, 255, 0.15); border-radius: 16px; max-width: 440px; width: 100%; box-shadow: 0 25px 60px rgba(0,0,0,0.85); padding: 2rem; color: #fff; position: relative;">
+      
+      <button type="button" onclick="toggleQuickSignInModal()" style="position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: rgba(56, 189, 248, 0.15); border: 2px solid #38bdf8; display: inline-flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 1.5rem; margin-bottom: 0.75rem;">
+          👤
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 900; margin: 0 0 0.25rem; color: #fff;">
+          Customer Portal Sign In
+        </h3>
+        <p style="color: #94a3b8; font-size: 0.84rem; margin: 0;">
+          Access your DNS console, live Anycast zone editor &amp; invoices.
+        </p>
+      </div>
+
+      <form onsubmit="handleQuickPortalLogin(event); return false;">
+        <div class="form-group-custom">
+          <label for="signInEmail">Portal Login Email *</label>
+          <input type="email" id="signInEmail" required placeholder="name@company.af" class="form-control-custom">
+        </div>
+        <div class="form-group-custom">
+          <label for="signInPassword">Portal Password *</label>
+          <div style="position: relative;">
+            <input type="password" id="signInPassword" required placeholder="Enter your password" class="form-control-custom" style="padding-right: 2.75rem;">
+            <button type="button" onclick="togglePasswordVisibility('signInPassword', this)" style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: #94a3b8; cursor: pointer; padding: 0.2rem;" title="Show/Hide Password">👁️</button>
+          </div>
+        </div>
+        <button type="submit" style="width: 100%; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 800; font-size: 0.95rem; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; margin-top: 0.5rem;">
+          Sign In to Portal &rarr;
+        </button>
+      </form>
+
+      <div style="margin-top: 1.25rem; text-align: center; font-size: 0.8rem; color: #94a3b8;">
+        Don't have a portal account yet? <a href="#portal" onclick="toggleQuickSignInModal(); switchHostingerTab('register'); return false;" style="color: #38bdf8; font-weight: 700; text-decoration: none;">Register a domain to create one &rarr;</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
@@ -3147,6 +3328,19 @@
       }
     }
 
+    // Toggle Password Field Visibility
+    function togglePasswordVisibility(fieldId, btn) {
+      const input = document.getElementById(fieldId);
+      if (!input) return;
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (btn) btn.textContent = '🔒';
+      } else {
+        input.type = 'password';
+        if (btn) btn.textContent = '👁️';
+      }
+    }
+
     // Register Wizard Preview Calculator
     function updateRegistrationPreview() {
       const nameInput = document.getElementById('regDomainName');
@@ -3184,6 +3378,9 @@
       const totalUsd = (item.salePrice * period * discountRate).toFixed(2);
       const totalAfn = Math.round(item.priceAfn * period * discountRate);
 
+      const previewUsd = document.getElementById('previewTotalPriceUsd');
+      const previewAfn = document.getElementById('previewTotalPriceAfn');
+
       if (previewUsd) previewUsd.textContent = `$${totalUsd}`;
       if (previewAfn) {
         if (ext === '.ngo') {
@@ -3194,65 +3391,278 @@
       }
     }
 
-    // Submit Registration via WhatsApp
+    // Submit Registration: Dispatch Notice to sa_nsr@yahoo.com & Create Portal Login
     function handlePortalRegistration(e) {
       if (e && e.preventDefault) e.preventDefault();
-      const rawName = document.getElementById('regDomainName').value;
-      const ext = document.getElementById('regDomainExt').value;
+      
+      const rawName = document.getElementById('regDomainName')?.value || '';
+      const ext = document.getElementById('regDomainExt')?.value || '.af';
       const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(rawName) : rawName.trim().toLowerCase());
 
       if (!clean) {
-        alert('Please enter a valid domain name.');
+        alert('Please enter a valid domain name keyword (without spaces or dots).');
+        document.getElementById('regDomainName')?.focus();
+        return;
+      }
+
+      const email = document.getElementById('regEmail')?.value?.trim();
+      const password = document.getElementById('regPassword')?.value;
+      const passwordConfirm = document.getElementById('regPasswordConfirm')?.value;
+
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address for your customer portal login.');
+        document.getElementById('regEmail')?.focus();
+        return;
+      }
+
+      if (!password || password.length < 6) {
+        alert('Please enter a secure password of at least 6 characters for your portal login.');
+        document.getElementById('regPassword')?.focus();
+        return;
+      }
+
+      if (password !== passwordConfirm) {
+        alert('Passwords do not match. Please re-enter your password in both fields.');
+        document.getElementById('regPasswordConfirm')?.focus();
         return;
       }
 
       const fullDomain = `${clean}${ext}`;
-      const org = document.getElementById('regOrgName')?.value || 'Corporate Client';
-      const contact = document.getElementById('regContactPerson')?.value || 'Authorized Contact';
-      const phone = document.getElementById('regPhone')?.value || '';
-      const email = document.getElementById('regEmail')?.value || '';
+      const contact = document.getElementById('regContactPerson')?.value?.trim() || 'Authorized Representative';
+      const org = document.getElementById('regOrgName')?.value?.trim() || 'Corporate Client';
+      const phone = document.getElementById('regPhone')?.value?.trim() || '';
       const city = document.getElementById('regCity')?.value || 'Kabul';
+      const currency = document.getElementById('regCurrency')?.value || 'AFN';
+      const licenseNo = document.getElementById('regLicenseNo')?.value?.trim() || 'N/A';
       const period = document.querySelector('input[name="regPeriod"]:checked')?.value || '1';
       const dns = document.querySelector('input[name="regDnsChoice"]:checked')?.value || 'default';
 
       const registry = (typeof OC_DOMAIN_REGISTRY !== 'undefined') ? OC_DOMAIN_REGISTRY : [
-        { tld: '.af', salePrice: 45, priceAfn: 3150 }
+        { tld: '.af', salePrice: 45, priceAfn: 3150 },
+        { tld: '.com.af', salePrice: 35, priceAfn: 2450 },
+        { tld: '.org.af', salePrice: 35, priceAfn: 2450 },
+        { tld: '.ngo', salePrice: 39, priceAfn: 2730 },
+        { tld: '.com', salePrice: 14, priceAfn: 980 }
       ];
       const item = registry.find(d => d.tld === ext) || registry[0];
-      const totalUsd = (item.salePrice * parseInt(period)).toFixed(2);
-      const totalAfn = Math.round(item.priceAfn * parseInt(period)).toLocaleString();
+      let discountRate = 1.0;
+      if (period === '2') discountRate = 0.95;
+      if (period === '3') discountRate = 0.92;
+      if (period === '5') discountRate = 0.88;
+      const totalUsd = (item.salePrice * parseInt(period) * discountRate).toFixed(2);
+      const totalAfn = Math.round(item.priceAfn * parseInt(period) * discountRate).toLocaleString();
 
-      // Save to client domain list
+      // UI Loading indicator on button
+      const submitBtn = document.getElementById('btnSubmitRegistration');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>⏳ Registering &amp; Notifying Desk...</span>';
+      }
+
+      // Save credentials & active session to localStorage
+      const portalUser = {
+        email: email,
+        name: contact,
+        org: org,
+        phone: phone,
+        city: city,
+        currency: currency,
+        registeredDomain: fullDomain,
+        loggedInAt: new Date().toISOString()
+      };
+      localStorage.setItem('oc_portal_user', JSON.stringify(portalUser));
+
+      // Prepend domain to client portal domain list
       clientDomains.unshift({
         name: fullDomain,
         ext: ext,
         registered: new Date().toISOString().split('T')[0],
         expiry: new Date(Date.now() + parseInt(period) * 365 * 24 * 3600 * 1000).toISOString().split('T')[0],
-        status: 'Pending Activation',
+        status: 'Provisioning (Active)',
         autoRenew: true
       });
       localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
 
-      // Construct WhatsApp message
-      const msg = `*NEW DOMAIN REGISTRATION ORDER - AFGHANISTAN*
+      // Format WhatsApp notification message
+      const dnsLabel = (dns === 'ngo-triple-bundle') 
+        ? 'Tri-Pillar NGO Stack (Oriental Consultants + AfghanHoster + AfghanDevelopers)' 
+        : (dns === 'google' ? 'Google Workspace Afghanistan' : (dns === 'microsoft' ? 'Microsoft 365 Pre-Configured' : 'Oriental Consultants Anycast DNS'));
+
+      const waMsg = `*NEW DOMAIN REGISTRATION & PORTAL CREATED*
 ----------------------------------------
 *Domain:* ${fullDomain}
-*Period:* ${period} Year(s)
-*Price:* $${totalUsd} / ~${totalAfn} AFN
+*Term:* ${period} Year(s)
+*Price:* $${totalUsd} USD / ~${totalAfn} AFN
+*Portal Login Email:* ${email}
+*Authorized Contact:* ${contact}
 *Organization:* ${org}
-*Contact:* ${contact}
-*Phone/WA:* ${phone}
-*Email:* ${email}
-*City:* ${city}, Afghanistan
-*Configuration:* ${dns === 'ngo-triple-bundle' ? 'Tri-Pillar NGO Stack (Oriental Consultants + AfghanHoster + AfghanDevelopers (Software house))' : dns}
+*Phone / WA:* ${phone}
+*City / Province:* ${city}, Afghanistan
+*Currency Preference:* ${currency}
+*Business License / Tazkira:* ${licenseNo}
+*DNS Configuration:* ${dnsLabel}
 ----------------------------------------
-Please confirm registration & provide bank details (Kabul/Azizi Bank).`;
+Notification sent to sa_nsr@yahoo.com. Please confirm registration & send bank invoice details (Kabul / Azizi Bank).`;
 
-      const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent(msg)}`;
-      window.open(waUrl, '_blank');
+      const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent(waMsg)}`;
 
-      alert(`Thank you! Your domain registration order for ${fullDomain} has been submitted. WhatsApp chat has been opened to finalize your fast-track activation.`);
+      // DISPATCH EMAIL NOTIFICATION VIA AJAX TO sa_nsr@yahoo.com
+      const emailPayload = {
+        _subject: `New Domain Order & Portal Account: ${fullDomain} (${contact} - ${org})`,
+        Domain: fullDomain,
+        Extension: ext,
+        Registration_Term: `${period} Year(s)`,
+        Total_USD: `$${totalUsd}`,
+        Total_AFN: `${totalAfn} AFN`,
+        Customer_Name: contact,
+        Organization: org,
+        Portal_Login_Email: email,
+        Portal_Password: password,
+        WhatsApp_Phone: phone,
+        City_Province: city,
+        Currency_Preference: currency,
+        Business_License: licenseNo,
+        DNS_Selection: dnsLabel,
+        Notice_Recipient: 'sa_nsr@yahoo.com',
+        Order_Timestamp: new Date().toLocaleString(),
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      fetch('https://formsubmit.co/ajax/sa_nsr@yahoo.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(emailPayload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log('Order notification dispatched to sa_nsr@yahoo.com:', data);
+      })
+      .catch(err => {
+        console.warn('Form notification delivery:', err);
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+
+        // Update portal session bar & render list
+        checkPortalUserSession();
+        renderClientDomains();
+
+        // Show rich interactive success modal
+        showRegistrationSuccessModal(fullDomain, email, `$${totalUsd} (${totalAfn} AFN)`, waUrl);
+      });
+    }
+
+    // Show Registration Success Modal
+    function showRegistrationSuccessModal(domain, email, priceText, waUrl) {
+      const modal = document.getElementById('domainSuccessModal');
+      const domainEl = document.getElementById('modalSummaryDomain');
+      const emailEl = document.getElementById('modalSummaryEmail');
+      const priceEl = document.getElementById('modalSummaryPrice');
+      const waBtn = document.getElementById('modalWhatsAppBtn');
+
+      if (domainEl) domainEl.textContent = domain;
+      if (emailEl) emailEl.textContent = email;
+      if (priceEl) priceEl.textContent = priceText;
+      if (waBtn && waUrl) waBtn.href = waUrl;
+
+      if (modal) {
+        modal.style.display = 'flex';
+      }
+    }
+
+    // Close Success Modal
+    function closeSuccessModal() {
+      const modal = document.getElementById('domainSuccessModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    // Go to My Domains Console from Modal
+    function goToMyDomainsConsole() {
+      closeSuccessModal();
       switchHostingerTab('domains');
+      scrollToPortalSmoothly();
+    }
+
+    // Quick Sign-In Modal Handlers
+    function toggleQuickSignInModal() {
+      const modal = document.getElementById('quickSignInModal');
+      if (!modal) return;
+      modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function handleQuickPortalLogin(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const email = document.getElementById('signInEmail')?.value?.trim();
+      const password = document.getElementById('signInPassword')?.value;
+      if (!email) return;
+
+      const user = {
+        email: email,
+        name: email.split('@')[0],
+        org: 'Client Account',
+        loggedInAt: new Date().toISOString()
+      };
+      localStorage.setItem('oc_portal_user', JSON.stringify(user));
+      toggleQuickSignInModal();
+      checkPortalUserSession();
+      alert(`Welcome back to your Oriental Consultants Domain Portal, ${email}!`);
+      switchHostingerTab('domains');
+      scrollToPortalSmoothly();
+    }
+
+    function logoutPortalUser() {
+      localStorage.removeItem('oc_portal_user');
+      checkPortalUserSession();
+      alert('You have logged out of your customer portal.');
+    }
+
+    function checkPortalUserSession() {
+      const stored = localStorage.getItem('oc_portal_user');
+      const statusText = document.getElementById('portalUserStatusText');
+      const actions = document.getElementById('portalUserActions');
+      if (!statusText || !actions) return;
+
+      if (stored) {
+        try {
+          const user = JSON.parse(stored);
+          statusText.innerHTML = `
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #00b090; box-shadow: 0 0 8px #00b090;"></span>
+            <span>👤 <strong>Logged In:</strong> <strong style="color: #00e5ff;">${user.name || user.email}</strong> (${user.email}) &bull; Org: <span style="color: #fbbf24;">${user.org || 'Client'}</span></span>
+          `;
+          actions.innerHTML = `
+            <button type="button" onclick="switchHostingerTab('domains')" class="btn btn-sm" style="background: rgba(0, 229, 255, 0.15); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.35); font-size: 0.76rem; padding: 0.3rem 0.75rem; border-radius: 6px; font-weight: 700; cursor: pointer;">
+              My Domains (${clientDomains.length})
+            </button>
+            <button type="button" onclick="switchHostingerTab('register')" class="btn btn-sm" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; border: none; font-size: 0.76rem; padding: 0.3rem 0.75rem; border-radius: 6px; font-weight: 800; cursor: pointer;">
+              + Register New
+            </button>
+            <button type="button" onclick="logoutPortalUser()" class="btn btn-sm" style="background: rgba(255, 255, 255, 0.06); color: #94a3b8; border: 1px solid rgba(255, 255, 255, 0.15); font-size: 0.76rem; padding: 0.3rem 0.65rem; border-radius: 6px; cursor: pointer;">
+              Sign Out
+            </button>
+          `;
+        } catch(e) {}
+      } else {
+        statusText.innerHTML = `
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; box-shadow: 0 0 8px #38bdf8;"></span>
+          <span>👤 <strong>Customer Portal:</strong> Register your domain below to auto-create your DNS portal login, or sign in to an existing account.</span>
+        `;
+        actions.innerHTML = `
+          <button type="button" onclick="switchHostingerTab('register')" class="btn btn-sm" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; border: none; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 6px; font-weight: 800; cursor: pointer;">
+            🚀 Register Domain &amp; Create Portal
+          </button>
+          <button type="button" id="btnSignInModalToggle" onclick="toggleQuickSignInModal()" class="btn btn-sm" style="background: rgba(255,255,255,0.06); color: #fff; border: 1px solid rgba(255,255,255,0.2); font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 6px; font-weight: 700; cursor: pointer;">
+            Existing Client Sign In
+          </button>
+        `;
+      }
     }
 
     // Submit AFN Invoice Request
@@ -3326,6 +3736,7 @@ Please confirm registration & provide bank details (Kabul/Azizi Bank).`;
 
     // Auto-detect URL parameters & hash on load
     document.addEventListener('DOMContentLoaded', () => {
+      checkPortalUserSession();
       renderClientDomains();
       renderDnsRecords();
 

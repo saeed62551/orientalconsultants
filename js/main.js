@@ -917,8 +917,8 @@ function renderDomainResultCards(cleanName, targetTld) {
         </div>
         <div style="display: flex; flex-direction: column; gap: 0.45rem;">
           <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-            <a href="domains.html?domain=${encodeURIComponent(cleanName)}&tld=${encodeURIComponent(item.tld)}&tab=register#portal" onclick="if(typeof selectDomainForPortal === 'function'){ selectDomainForPortal('${cleanName}', '${item.tld}'); return false; }" style="flex: 1; min-width: 140px; text-align: center; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 800; font-size: 0.82rem; padding: 0.5rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(56,189,248,0.35);">
-              ⚡ Register in Portal &rarr;
+            <a href="domains.html?domain=${encodeURIComponent(cleanName)}&tld=${encodeURIComponent(item.tld)}&tab=register#portal" onclick="if(typeof selectDomainForPortal === 'function'){ selectDomainForPortal('${cleanName}', '${item.tld}'); return false; }" style="flex: 1.2; min-width: 155px; text-align: center; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 0.82rem; padding: 0.55rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.35rem; box-shadow: 0 2px 10px rgba(56,189,248,0.35);">
+              🚀 Take Domain ($${item.salePrice}/yr) &rarr;
             </a>
             <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 130px; text-align: center; background: #25d366; color: #075e54; font-weight: 800; font-size: 0.8rem; padding: 0.5rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.3rem;">
               💬 WhatsApp: 0093 787 881808
