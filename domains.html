@@ -1262,34 +1262,32 @@
     <!-- ==========================================================================
          HERO SECTION: CENTRAL INTERACTIVE DOMAIN SEARCH BAR
          ========================================================================== -->
-    <section class="domain-search-hero">
+    <section class="hostinger-hero">
       <div class="container" style="text-align: center;">
         
-        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.35rem 0.9rem; border-radius: 9999px; margin-bottom: 1.25rem;">
-          <span class="pulse-dot" style="width: 8px; height: 8px; background: #38bdf8;"></span>
-          <span style="font-size: 0.82rem; font-weight: 800; color: #7dd3fc; text-transform: uppercase; letter-spacing: 0.5px;">
-            Domain Search (.af &amp; Global) &bull; Official Afghanistan Registrar Partner
-          </span>
+        <div class="hostinger-pill-badge">
+          <span class="hostinger-pulse-dot"></span>
+          <span>Official .AF &amp; Global Domain Registrar &bull; Anycast Edge DNS</span>
         </div>
 
-        <h1 style="font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 0.75rem; color: #fff;">
-          Domain Search (.af &amp; Global) &bull; <span style="background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Afghanistan</span>
+        <h1 class="hostinger-hero-title">
+          Find the Perfect <span class="gradient-text-hostinger">Domain Name</span>
         </h1>
 
-        <p style="font-size: 1.1rem; color: #94a3b8; max-width: 760px; margin: 0 auto 2.5rem; line-height: 1.6;">
-          Fast-track activation for <strong style="color: #fff;">.af</strong>, <strong style="color: #fff;">.com.af</strong>, <strong style="color: #fff;">.org.af</strong>, <strong style="color: #fff;">.ngo</strong>, <strong style="color: #fff;">.com</strong>, <strong style="color: #fff;">.ai</strong>, <strong style="color: #fff;">.io</strong>. Slashed competitor rates with local billing in Afghani (AFN) &amp; USD.
+        <p class="hostinger-hero-sub">
+          Fast-track activation for <strong style="color: #fff;">.af</strong>, <strong style="color: #fff;">.com.af</strong>, <strong style="color: #fff;">.org.af</strong>, <strong style="color: #fff;">.ngo</strong>, <strong style="color: #fff;">.com</strong>, <strong style="color: #fff;">.ai</strong>, <strong style="color: #fff;">.io</strong>. Slashed competitor rates with instant Anycast DNS, free WHOIS privacy shield, and local Afghan banking in AFN &amp; USD.
         </p>
 
-        <!-- Main Search Console Box -->
-        <div class="search-console-box" style="text-align: left;">
+        <!-- Hostinger-Style Search Console Card -->
+        <div class="hostinger-search-card">
           
-          <form onsubmit="handleMainDomainSearch(event); return false;" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-            <div style="display: flex; flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.08); border: 2px solid rgba(56, 189, 248, 0.5); border-radius: 12px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);">
-              <div style="display: flex; align-items: center; padding-left: 1.2rem; color: #38bdf8;">
+          <form onsubmit="handleMainDomainSearch(event); return false;" class="hostinger-search-bar">
+            <div class="hostinger-search-input-wrap">
+              <div class="hostinger-search-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               </div>
-              <input type="text" id="mainDomainSearchInput" autofocus placeholder="Type your company or NGO name (e.g. kabultech, hopeafghan, myshop)..." style="flex: 1; background: transparent; border: none; padding: 1rem 1.15rem; color: #fff; font-size: 1.05rem; font-weight: 700; outline: none; font-family: inherit;">
-              <select id="mainDomainExtSelect" style="background: #011633; border: none; border-left: 1.5px solid rgba(255, 255, 255, 0.15); color: #38bdf8; font-weight: 800; padding: 1rem 1.15rem; font-size: 0.95rem; cursor: pointer; outline: none;">
+              <input type="text" id="mainDomainSearchInput" autofocus placeholder="Type your company, NGO, or brand name (e.g. kabultech, afghanhope, myshop)..." class="hostinger-search-input">
+              <select id="mainDomainExtSelect" class="hostinger-search-select">
                 <option value="ALL">🔍 Check All Extensions</option>
                 <option value=".af">.af (Official Afghan ccTLD - $45)</option>
                 <option value=".com.af">.com.af (Afghan Commercial - $35)</option>
@@ -1302,43 +1300,43 @@
                 <option value=".net">.net (Network Infrastructure - $15)</option>
               </select>
             </div>
-            <button type="submit" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 1.05rem; border: none; padding: 1rem 2.25rem; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4); transition: transform 0.15s ease;">
-              <span>Search Availability</span>
+            <button type="submit" class="hostinger-search-btn">
+              <span>Search Domain</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </button>
           </form>
 
-          <!-- Clickable TLD Chips -->
-          <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-            <span style="font-size: 0.78rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Quick Filter:</span>
-            <button type="button" onclick="selectTldChip('.af')" class="tld-chip active" data-tld=".af" style="background: rgba(56, 189, 248, 0.25); border: 1.5px solid #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .af <span style="font-size: 0.72rem; opacity: 0.85;">$45/yr (~3,150 AFN)</span>
+          <!-- Hostinger TLD Price Pills Row -->
+          <div class="hostinger-tld-pills">
+            <span style="font-size: 0.76rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.25rem;">Popular TLDs:</span>
+            <button type="button" onclick="selectTldChip('.af')" class="hostinger-tld-pill active" data-tld=".af">
+              <strong>.af</strong> <span class="pill-price">$45/yr (~3,150 AFN)</span>
             </button>
-            <button type="button" onclick="selectTldChip('.com.af')" class="tld-chip" data-tld=".com.af" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .com.af <span style="font-size: 0.72rem; color: #94a3b8;">$35/yr</span>
+            <button type="button" onclick="selectTldChip('.com.af')" class="hostinger-tld-pill" data-tld=".com.af">
+              <strong>.com.af</strong> <span class="pill-price">$35/yr</span>
             </button>
-            <button type="button" onclick="selectTldChip('.org.af')" class="tld-chip" data-tld=".org.af" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .org.af <span style="font-size: 0.72rem; color: #94a3b8;">$35/yr</span>
+            <button type="button" onclick="selectTldChip('.ngo')" class="hostinger-tld-pill" data-tld=".ngo">
+              <strong>.ngo</strong> <span class="pill-price">$39/yr</span>
             </button>
-            <button type="button" onclick="selectTldChip('.ngo')" class="tld-chip" data-tld=".ngo" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #34d399; font-weight: 700; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .ngo <span style="font-size: 0.72rem; opacity: 0.85;">$39/yr</span>
+            <button type="button" onclick="selectTldChip('.com')" class="hostinger-tld-pill" data-tld=".com">
+              <strong>.com</strong> <span class="pill-price">$14/yr</span>
             </button>
-            <button type="button" onclick="selectTldChip('.com')" class="tld-chip" data-tld=".com" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .com <span style="font-size: 0.72rem; color: #94a3b8;">$14/yr</span>
+            <button type="button" onclick="selectTldChip('.org.af')" class="hostinger-tld-pill" data-tld=".org.af">
+              <strong>.org.af</strong> <span class="pill-price">$35/yr</span>
             </button>
-            <button type="button" onclick="selectTldChip('.info')" class="tld-chip" data-tld=".info" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .info <span style="font-size: 0.72rem; color: #94a3b8;">$12/yr</span>
+            <button type="button" onclick="selectTldChip('.ai')" class="hostinger-tld-pill" data-tld=".ai">
+              <strong>.ai</strong> <span class="pill-price">$79/yr</span>
             </button>
-            <button type="button" onclick="selectTldChip('.ai')" class="tld-chip" data-tld=".ai" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc; font-weight: 800; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .ai <span style="font-size: 0.72rem; opacity: 0.85;">$79/yr</span>
+            <button type="button" onclick="selectTldChip('.io')" class="hostinger-tld-pill" data-tld=".io">
+              <strong>.io</strong> <span class="pill-price">$49/yr</span>
             </button>
-            <button type="button" onclick="selectTldChip('.io')" class="tld-chip" data-tld=".io" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-weight: 800; font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 9999px; cursor: pointer;">
-              .io <span style="font-size: 0.72rem; opacity: 0.85;">$49/yr</span>
+            <button type="button" onclick="selectTldChip('.net')" class="hostinger-tld-pill" data-tld=".net">
+              <strong>.net</strong> <span class="pill-price">$15/yr</span>
             </button>
           </div>
 
           <!-- Live Results Output Box -->
-          <div id="mainDomainSearchResults" style="display: none; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.15);"></div>
+          <div id="mainDomainSearchResults" style="display: none; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.12);"></div>
 
           <!-- ==========================================================================
                HOSTINGER-GRADE DOMAIN CUSTOMER PORTAL & DNS CONSOLE (hPanel STYLE)
