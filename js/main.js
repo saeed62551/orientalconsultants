@@ -821,3 +821,269 @@ function initWhatsAppChatWidget() {
   }
 }
 
+/* ==========================================================================
+   14. INTERACTIVE PREMIUM DOMAIN SEARCH ENGINE (AFGHANISTAN & GLOBAL TLDs)
+   Covers: .af, .com.af, .org.af, .ngo, .com, .info, .ai, .io, .net, etc.
+   ========================================================================== */
+const OC_DOMAIN_REGISTRY = [
+  { tld: '.af', name: 'Afghanistan Official ccTLD', category: 'National Premier', retailPrice: 55, salePrice: 45, priceAfn: 3150, popular: true, desc: 'Highest authority national domain for Afghanistan commercial & public entities.' },
+  { tld: '.com.af', name: 'Commercial Afghanistan', category: 'Afghan Business', retailPrice: 45, salePrice: 35, priceAfn: 2450, popular: true, desc: 'Recognized standard for registered corporations & trade in Afghanistan.' },
+  { tld: '.org.af', name: 'Afghan Organizations', category: 'Afghan Non-Profit', retailPrice: 45, salePrice: 35, priceAfn: 2450, popular: true, desc: 'Designated for Afghan non-profits, foundations & civil society associations.' },
+  { tld: '.ngo', name: 'Non-Governmental Organization', category: 'Humanitarian & INGO', retailPrice: 50, salePrice: 39, priceAfn: 2730, popular: true, desc: 'Verified international & local humanitarian organizations operating in Afghanistan.' },
+  { tld: '.com', name: 'Commercial Worldwide', category: 'Global Business', retailPrice: 18, salePrice: 14, priceAfn: 980, popular: true, desc: 'The most trusted universal global domain for international commerce.' },
+  { tld: '.info', name: 'Information & Media', category: 'News & Media', retailPrice: 18, salePrice: 12, priceAfn: 840, popular: false, desc: 'Ideal for informational portals, educational guides, publications & directories.' },
+  { tld: '.ai', name: 'Artificial Intelligence', category: 'Next-Gen Tech', retailPrice: 99, salePrice: 79, priceAfn: 5530, popular: true, desc: 'The gold standard domain for AI development, machine learning & automation.' },
+  { tld: '.io', name: 'Developer & Cloud Tech', category: 'Tech Startups', retailPrice: 65, salePrice: 49, priceAfn: 3430, popular: true, desc: 'Preferred extension for software engineers, SaaS platforms & cloud startups.' },
+  { tld: '.net', name: 'Network Infrastructure', category: 'Enterprise Network', retailPrice: 20, salePrice: 15, priceAfn: 1050, popular: false, desc: 'Enterprise infrastructure, internet service providers & networking systems.' }
+];
+
+function sanitizeDomainKeyword(raw) {
+  if (!raw) return '';
+  let clean = raw.trim().toLowerCase();
+  clean = clean.replace(/^(https?:\/\/)?(www\.)?/, '');
+  clean = clean.replace(/[/?#].*$/, '');
+  // Remove trailing extensions if user typed them
+  const allTlds = ['.com.af', '.org.af', '.net.af', '.gov.af', '.edu.af', '.af', '.ngo', '.com', '.info', '.ai', '.io', '.net', '.org', '.biz'];
+  for (let t of allTlds) {
+    if (clean.endsWith(t)) {
+      clean = clean.slice(0, -t.length);
+      break;
+    }
+  }
+  clean = clean.replace(/[^a-z0-9-]/g, '');
+  return clean;
+}
+
+function renderDomainResultCards(cleanName, targetTld) {
+  let list = OC_DOMAIN_REGISTRY;
+  if (targetTld && targetTld !== 'ALL') {
+    list = OC_DOMAIN_REGISTRY.filter(item => item.tld === targetTld);
+    if (!list.length) {
+      list = [{ tld: targetTld, name: targetTld + ' Domain', category: 'Custom Extension', retailPrice: 40, salePrice: 29, priceAfn: 2030, popular: false, desc: 'Custom requested top-level domain.' }];
+    }
+  }
+
+  let html = `
+    <div style="background: rgba(1, 22, 51, 0.95); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 12px; padding: 1.25rem; margin-top: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 0.75rem;">
+        <div>
+          <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Search Query:</span>
+          <strong style="color: #fff; font-size: 1.1rem; margin-left: 0.35rem;">"${cleanName}"</strong>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span style="color: #34d399; font-weight: 800; font-size: 0.82rem; background: rgba(16, 185, 129, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(16, 185, 129, 0.3);">
+            ✓ Fast-Track Registration in Kabul
+          </span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.85rem;">
+  `;
+
+  list.forEach(item => {
+    const fullDomain = `${cleanName}${item.tld}`;
+    const waText = encodeURIComponent(`Hello Oriental Consultants, I want to register the domain: ${fullDomain} at your lowest price ($${item.salePrice}/yr or ${item.priceAfn} AFN). Please send activation details.`);
+    const waUrl = `https://wa.me/93787881808?text=${waText}`;
+
+    html += `
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <span style="font-size: 0.7rem; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.15); padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">
+              ${item.category}
+            </span>
+            <span style="font-size: 0.72rem; color: #34d399; font-weight: 800;">● Available Now</span>
+          </div>
+          <div style="font-size: 1.15rem; font-weight: 900; color: #fff; margin-bottom: 0.2rem; word-break: break-all;">
+            ${fullDomain}
+          </div>
+          <div style="font-size: 0.76rem; color: #94a3b8; margin-bottom: 0.75rem; line-height: 1.4;">
+            ${item.desc}
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 0.45rem; margin-bottom: 0.2rem;">
+            <span style="font-size: 0.85rem; color: #94a3b8; text-decoration: line-through;">$${item.retailPrice}</span>
+            <span style="font-size: 1.35rem; font-weight: 900; color: #38bdf8;">$${item.salePrice}</span>
+            <span style="font-size: 0.75rem; color: #94a3b8;">/ year</span>
+          </div>
+          <div style="font-size: 0.75rem; color: #fbbf24; font-weight: 700; margin-bottom: 0.85rem;">
+            Approx. ${item.priceAfn.toLocaleString()} AFN / year
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+          <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            <a href="domain-portal.html?domain=${encodeURIComponent(cleanName)}&tld=${encodeURIComponent(item.tld)}" style="flex: 1; min-width: 140px; text-align: center; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 800; font-size: 0.82rem; padding: 0.5rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(56,189,248,0.35);">
+              ⚡ Register in Portal &rarr;
+            </a>
+            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 130px; text-align: center; background: #25d366; color: #075e54; font-weight: 800; font-size: 0.8rem; padding: 0.5rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.3rem;">
+              💬 WhatsApp: 0093 787 881808
+            </a>
+          </div>
+          <div style="display: flex; gap: 0.3rem; flex-wrap: wrap;">
+            <a href="https://wa.me/93700567868?text=${encodeURIComponent('Hello Oriental Consultants, I need an official AFN invoice quote for domain ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(255,255,255,0.08); color: #fff; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.18);" title="Official Invoicing & Afghani Payment Desk">
+              🧾 0093 700 567868
+            </a>
+            <a href="https://wa.me/93792002341?text=${encodeURIComponent('Hello Oriental Consultants, I need DNS and technical setup for ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(56, 189, 248, 0.12); color: #38bdf8; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(56, 189, 248, 0.25);" title="Technical & DNS Config Desk">
+              ⚙️ Tech: 0093 792002341
+            </a>
+            <a href="https://wa.me/923219744347?text=${encodeURIComponent('Hello Oriental Consultants, international domain enquiry for ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(255,255,255,0.08); color: #94a3b8; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15);" title="Regional Desk">
+              🌐 0092 321 9744347
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+      <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; color: #94a3b8;">
+        <span>🔒 Includes Free DNS Zone Management &bull; WHOIS Privacy &bull; Local Bank Transfer (Azizi/Kabul Bank)</span>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <span>WhatsApp Desks: <a href="https://wa.me/93787881808" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 787 881808</a> | <a href="https://wa.me/93700567868" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 700 567868</a> | <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 792002341</a> | <a href="https://wa.me/923219744347" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0092 321 9744347</a></span>
+        </div>
+      </div>
+    </div>
+  `;
+
+  return html;
+}
+
+function handleMainDomainSearch(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const input = document.getElementById('mainDomainSearchInput');
+  const extSelect = document.getElementById('mainDomainExtSelect');
+  const resultsContainer = document.getElementById('mainDomainSearchResults');
+  if (!input || !resultsContainer) return;
+
+  const raw = input.value;
+  const clean = sanitizeDomainKeyword(raw);
+  if (!clean) {
+    resultsContainer.style.display = 'block';
+    resultsContainer.innerHTML = '<div style="color: #f87171; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 0.75rem 1rem; font-weight: 700; font-size: 0.88rem;">⚠️ Please enter a domain name (e.g. mycompany, kabultech, hopeafghan).</div>';
+    return;
+  }
+
+  const ext = extSelect ? extSelect.value : 'ALL';
+  resultsContainer.style.display = 'block';
+  resultsContainer.innerHTML = renderDomainResultCards(clean, ext);
+  resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function handleHeroQuickDomainSearch(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const input = document.getElementById('heroQuickDomainInput');
+  const extSelect = document.getElementById('heroQuickDomainExt');
+  const resultsContainer = document.getElementById('heroQuickDomainResults');
+  if (!input) return;
+
+  const clean = sanitizeDomainKeyword(input.value);
+  if (!clean) {
+    if (resultsContainer) {
+      resultsContainer.innerHTML = '<span style="color: #f87171; font-size: 0.8rem; font-weight: 700;">⚠️ Please enter a domain name</span>';
+    }
+    return;
+  }
+
+  // Also sync with mainDomainSearchInput if present on page
+  const mainInput = document.getElementById('mainDomainSearchInput');
+  const mainExt = document.getElementById('mainDomainExtSelect');
+  if (mainInput) {
+    mainInput.value = clean;
+    if (mainExt && extSelect) {
+      mainExt.value = extSelect.value;
+    }
+    handleMainDomainSearch();
+  } else if (resultsContainer) {
+    const ext = extSelect ? extSelect.value : '.af';
+    const item = OC_DOMAIN_REGISTRY.find(d => d.tld === ext) || OC_DOMAIN_REGISTRY[0];
+    const fullDomain = `${clean}${item.tld}`;
+    const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent('Hello Oriental Consultants, I want to register: ' + fullDomain + ' at $' + item.salePrice + '/yr (' + item.priceAfn + ' AFN).')}`;
+    resultsContainer.innerHTML = `
+      <div style="background: rgba(2, 18, 38, 0.95); border: 1px solid rgba(56, 189, 248, 0.5); border-radius: 8px; padding: 0.65rem 0.85rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.35rem;">
+        <div>
+          <strong style="color: #fff; font-size: 0.92rem;">${fullDomain}</strong>
+          <span style="color: #34d399; font-size: 0.75rem; font-weight: 800; margin-left: 0.35rem;">Available</span>
+          <div style="font-size: 0.75rem; color: #fbbf24; font-weight: 700;">$${item.salePrice}/yr (~${item.priceAfn} AFN)</div>
+        </div>
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="background: #25d366; color: #075e54; font-weight: 800; font-size: 0.75rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">
+          💬 WhatsApp: 0093 787 881808 &rarr;
+        </a>
+      </div>
+    `;
+  }
+}
+
+function handleSlideDomainSearch(e, inputId, extId, resultsId) {
+  if (e && e.preventDefault) e.preventDefault();
+  const input = document.getElementById(inputId);
+  const extSelect = document.getElementById(extId);
+  const resultsContainer = document.getElementById(resultsId);
+  if (!input || !resultsContainer) return;
+
+  const clean = sanitizeDomainKeyword(input.value);
+  if (!clean) {
+    resultsContainer.innerHTML = '<span style="color: #f87171; font-size: 0.8rem; font-weight: 700;">⚠️ Enter a domain name first</span>';
+    return;
+  }
+
+  const ext = extSelect ? extSelect.value : '.af';
+  const item = OC_DOMAIN_REGISTRY.find(d => d.tld === ext) || OC_DOMAIN_REGISTRY[0];
+  const fullDomain = `${clean}${item.tld}`;
+  const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent('Hello Oriental Consultants, I want to register: ' + fullDomain + ' at $' + item.salePrice + '/yr (' + item.priceAfn + ' AFN).')}`;
+
+  resultsContainer.innerHTML = `
+    <div style="background: rgba(2, 18, 38, 0.95); border: 1px solid rgba(56, 189, 248, 0.5); border-radius: 8px; padding: 0.65rem 0.85rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.35rem;">
+      <div>
+        <strong style="color: #fff; font-size: 0.92rem;">${fullDomain}</strong>
+        <span style="color: #34d399; font-size: 0.75rem; font-weight: 800; margin-left: 0.35rem;">Available</span>
+        <div style="font-size: 0.75rem; color: #fbbf24; font-weight: 700;">$${item.salePrice}/yr (~${item.priceAfn} AFN)</div>
+      </div>
+      <div style="display: flex; gap: 0.25rem;">
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="background: #25d366; color: #075e54; font-weight: 800; font-size: 0.75rem; padding: 0.4rem 0.65rem; border-radius: 6px; text-decoration: none;">
+          💬 WhatsApp &rarr;
+        </a>
+        <a href="https://wa.me/93700567868?text=${encodeURIComponent('Hello, quote for ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.1); color: #fff; font-weight: 700; font-size: 0.72rem; padding: 0.4rem 0.55rem; border-radius: 6px; text-decoration: none;">
+          AFN Quote
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function selectTldChip(tld) {
+  const select = document.getElementById('mainDomainExtSelect');
+  if (select) {
+    select.value = tld;
+  }
+  document.querySelectorAll('.tld-chip').forEach(btn => {
+    if (btn.getAttribute('data-tld') === tld) {
+      btn.style.background = 'rgba(56, 189, 248, 0.25)';
+      btn.style.borderColor = '#38bdf8';
+      btn.style.color = '#38bdf8';
+    } else {
+      btn.style.background = 'rgba(255, 255, 255, 0.08)';
+      btn.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+      btn.style.color = '#fff';
+    }
+  });
+
+  const input = document.getElementById('mainDomainSearchInput');
+  if (input && input.value.trim()) {
+    handleMainDomainSearch();
+  }
+}
+
+// Auto-run domain search if URL contains query parameter (?domain=... or ?q=...)
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const q = urlParams.get('domain') || urlParams.get('q');
+  if (q) {
+    const input = document.getElementById('mainDomainSearchInput') || document.getElementById('heroQuickDomainInput');
+    if (input) {
+      input.value = q;
+      handleMainDomainSearch();
+    }
+  }
+});
+
+
+

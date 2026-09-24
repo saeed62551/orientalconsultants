@@ -4,272 +4,336 @@
 
   <!-- 01. Homepage (Kabul HQ & Regional Afghanistan) -->
   <url>
-    <loc>https://www.ocafghan.com/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
-    <xhtml:link rel="alternate" hreflang="en-AF" href="https://www.ocafghan.com/"/>
-    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://www.ocafghan.com/"/>
-    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://www.ocafghan.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ocafghan.com/"/>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/"/>
   </url>
 
   <!-- 02. Afghanistan Tax & BRT Calculator -->
   <url>
-    <loc>https://www.ocafghan.com/tax-calculator.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en-AF" href="https://www.ocafghan.com/tax-calculator.html"/>
-    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://www.ocafghan.com/tax-calculator.html"/>
-    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://www.ocafghan.com/tax-calculator.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ocafghan.com/tax-calculator.html"/>
-  </url>
-
-  <!-- 03. Statutory Audit & Assurance (ISA) -->
-  <url>
-    <loc>https://www.ocafghan.com/audit.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- 04. Accounting & Financial Management -->
-  <url>
-    <loc>https://www.ocafghan.com/accounting.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- 05. KuickBok Enterprise Desktop 2025/2026 Reseller -->
-  <url>
-    <loc>https://www.ocafghan.com/kuickbok.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- 06. Official Odoo Ready Partner Afghanistan -->
-  <url>
-    <loc>https://www.ocafghan.com/odoo.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- 07. TSplus Remote Desktop Cloud Hosting -->
-  <url>
-    <loc>https://www.ocafghan.com/tsplus.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- 08. ICT, Microsoft 365, Office 365 & Google Workspace -->
-  <url>
-    <loc>https://www.ocafghan.com/ict.html</loc>
+    <loc>https://ocafghan.com/tax-calculator.html</loc>
     <lastmod>2026-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/tax-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/tax-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/tax-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/tax-calculator.html"/>
   </url>
 
-  <!-- 09. Fixed Asset Valuation & Barcoding -->
+  <!-- 03. Microsoft 365 Afghanistan Official Partner & Reseller -->
   <url>
-    <loc>https://www.ocafghan.com/asset-valuation.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://ocafghan.com/microsoft-365.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/microsoft-365.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/microsoft-365.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/microsoft-365.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/microsoft-365.html"/>
   </url>
 
-  <!-- 10. ACBAR Jobs Portal Live Feed -->
+  <!-- 04. Office 365 Afghanistan Alias / Redirect -->
   <url>
-    <loc>https://www.ocafghan.com/acbar-jobs.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/office-365.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- 11. ACBAR RFPs & Tenders Portal Live Feed -->
+  <!-- 05. ICT, Microsoft 365, Office 365 & Google Workspace Hub -->
   <url>
-    <loc>https://www.ocafghan.com/acbar-rfps.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/ict.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/ict.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/ict.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/ict.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/ict.html"/>
+  </url>
+
+  <!-- 05a. Domain Search & .AF Registrar Afghanistan -->
+  <url>
+    <loc>https://ocafghan.com/domains.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/domains.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/domains.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/domains.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/domains.html"/>
+  </url>
+
+  <!-- 05b. Domain Search Alias / Redirect -->
+  <url>
+    <loc>https://ocafghan.com/domain-search.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- 12. Jobs.af Career Portal Feed -->
+  <!-- 05c. Domain Customer Portal & Registration Console -->
   <url>
-    <loc>https://www.ocafghan.com/jobs-af.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/domain-portal.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en-AF" href="https://ocafghan.com/domain-portal.html"/>
+    <xhtml:link rel="alternate" hreflang="prs-AF" href="https://ocafghan.com/domain-portal.html"/>
+    <xhtml:link rel="alternate" hreflang="ps-AF" href="https://ocafghan.com/domain-portal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ocafghan.com/domain-portal.html"/>
+  </url>
+
+  <!-- 05d. Client Portal Redirect -->
+  <url>
+    <loc>https://ocafghan.com/client-portal.html</loc>
+    <lastmod>2026-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- 13. Jobs.af Tenders & RFQs Feed -->
+  <!-- 06. Statutory Audit & Assurance (ISA) -->
   <url>
-    <loc>https://www.ocafghan.com/jobs-af-tenders.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/audit.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 07. Accounting & Financial Management -->
+  <url>
+    <loc>https://ocafghan.com/accounting.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 08. KuickBok Enterprise Desktop 2025/2026 Reseller -->
+  <url>
+    <loc>https://ocafghan.com/kuickbok.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 09. Official Odoo Ready Partner Afghanistan -->
+  <url>
+    <loc>https://ocafghan.com/odoo.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 10. TSplus Remote Desktop Cloud Hosting -->
+  <url>
+    <loc>https://ocafghan.com/tsplus.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 11. Fixed Asset Valuation & Barcoding -->
+  <url>
+    <loc>https://ocafghan.com/asset-valuation.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 12. ACBAR Jobs Portal Live Feed -->
+  <url>
+    <loc>https://ocafghan.com/acbar-jobs.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 13. ACBAR RFPs & Tenders Portal Live Feed -->
+  <url>
+    <loc>https://ocafghan.com/acbar-rfps.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- 14. Jobs.af Career Portal Feed -->
+  <url>
+    <loc>https://ocafghan.com/jobs-af.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- 14. AfghanTenders Procurement Feed -->
+  <!-- 15. Jobs.af Tenders & RFQs Feed -->
   <url>
-    <loc>https://www.ocafghan.com/afghan-tenders.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/jobs-af-tenders.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- 15. Services & Solutions Overview -->
+  <!-- 16. AfghanTenders Procurement Feed -->
   <url>
-    <loc>https://www.ocafghan.com/services.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/afghan-tenders.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 17. Services & Solutions Overview -->
+  <url>
+    <loc>https://ocafghan.com/services.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 16. AI Integration Services -->
+  <!-- 18. AI Integration Services -->
   <url>
-    <loc>https://www.ocafghan.com/ai-services.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/ai-services.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 17. Training & Capacity Building -->
+  <!-- 19. Training & Capacity Building -->
   <url>
-    <loc>https://www.ocafghan.com/training.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/training.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 18. Program Design & Delivery -->
+  <!-- 20. Program Design & Delivery -->
   <url>
-    <loc>https://www.ocafghan.com/program-design.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/program-design.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 19. Proposal & Business Plan Writing -->
+  <!-- 21. Proposal & Business Plan Writing -->
   <url>
-    <loc>https://www.ocafghan.com/proposal-writing.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/proposal-writing.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 20. Research, Assessment & Evaluation -->
+  <!-- 22. Research, Assessment & Evaluation -->
   <url>
-    <loc>https://www.ocafghan.com/research.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/research.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 21. Third-Party Monitoring (TPM) -->
+  <!-- 23. Third-Party Monitoring (TPM) -->
   <url>
-    <loc>https://www.ocafghan.com/monitoring.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/monitoring.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 22. About Us & Corporate Heritage -->
+  <!-- 24. About Us & Corporate Heritage -->
   <url>
-    <loc>https://www.ocafghan.com/about.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/about.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 23. Executive Leadership & Team -->
+  <!-- 25. Executive Leadership & Team -->
   <url>
-    <loc>https://www.ocafghan.com/team.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/team.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 24. Global Hubs & Afghan Provincial Branches -->
+  <!-- 26. Global Hubs & Afghan Provincial Branches -->
   <url>
-    <loc>https://www.ocafghan.com/branches.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/branches.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 25. Contact & Consultation Booking -->
+  <!-- 27. Contact & Consultation Booking -->
   <url>
-    <loc>https://www.ocafghan.com/contact.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/contact.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- 26. Careers & Job Openings -->
+  <!-- 28. Careers & Job Openings -->
   <url>
-    <loc>https://www.ocafghan.com/careers.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/careers.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- 27. Case Studies & Track Record -->
+  <!-- 29. Case Studies & Track Record -->
   <url>
-    <loc>https://www.ocafghan.com/case-studies.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/case-studies.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 28. Ministry of Commerce & Industry License -->
+  <!-- 30. Ministry of Commerce & Industry License -->
   <url>
-    <loc>https://www.ocafghan.com/license.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/license.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 29. PrimeGlobal USA Partnership -->
+  <!-- 31. PrimeGlobal USA Partnership -->
   <url>
-    <loc>https://www.ocafghan.com/primeglobal.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/primeglobal.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 30. AfghanHoster Partnership -->
+  <!-- 32. AfghanHoster Partnership -->
   <url>
-    <loc>https://www.ocafghan.com/afghanhoster.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/afghanhoster.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 31. AfghanDevelopers Partnership -->
+  <!-- 33. AfghanDevelopers Partnership -->
   <url>
-    <loc>https://www.ocafghan.com/afghandevelopers.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/afghandevelopers.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 32. Wafa Consultants Partnership -->
+  <!-- 34. Wafa Consultants Partnership -->
   <url>
-    <loc>https://www.ocafghan.com/wafa-consultants.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/wafa-consultants.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
 
-  <!-- 33. Legacy QuickBooks Page -->
+  <!-- 35. Legacy QuickBooks Page -->
   <url>
-    <loc>https://www.ocafghan.com/quickbooks.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <loc>https://ocafghan.com/quickbooks.html</loc>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>

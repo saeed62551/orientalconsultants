@@ -172,6 +172,7 @@
       <nav aria-label="Primary Navigation">
         <ul class="nav-menu">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="domains.html" class="nav-link" style="color: #38bdf8; font-weight: 800;">Domain Search</a></li>
           
           <!-- Services & Solutions -->
           <li class="nav-item has-mega-menu">
@@ -429,6 +430,75 @@
             <div><strong>Email:</strong> info@afghanhoster.com &bull; <strong>Web:</strong> <a href="https://afghanhoster.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">https://afghanhoster.com</a></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE DOMAIN SEARCH BAR FOR PREMIUM DOMAINS (.af, .com.af, .org, .ngo, .com, .info, .ai, .io, etc.)
+       ========================================================================== -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-alt);">
+    <div class="container">
+      <div style="background: rgba(2, 18, 38, 0.94); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 16px; padding: 1.75rem 2rem; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35); color: #fff;">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); display: flex; align-items: center; justify-content: center; color: #011633; font-weight: 900; font-size: 1.15rem; flex-shrink: 0;">
+              🌐
+            </div>
+            <div>
+              <div style="font-weight: 800; font-size: 1.2rem; color: #fff;">
+                Official .AF &amp; Global Domain Registry Search
+              </div>
+              <div style="font-size: 0.82rem; color: #94a3b8;">
+                Direct accreditation with Afghan Ministry of Communications &amp; global registrars &bull; AFN &amp; USD payments
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.35rem; align-items: center; flex-wrap: wrap;">
+            <span class="badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-weight: 800; font-size: 0.75rem;">.af $45/yr</span>
+            <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-weight: 800; font-size: 0.75rem;">.com.af $35/yr</span>
+            <span class="badge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; font-weight: 800; font-size: 0.75rem;">.ngo $39/yr</span>
+            <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-weight: 800; font-size: 0.75rem;">.com $14/yr</span>
+          </div>
+        </div>
+
+        <form onsubmit="handleMainDomainSearch(event); return false;" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+          <div style="display: flex; flex: 1; min-width: 260px; background: rgba(255, 255, 255, 0.08); border: 1.5px solid rgba(56, 189, 248, 0.4); border-radius: 8px; overflow: hidden;">
+            <input type="text" id="mainDomainSearchInput" placeholder="Enter domain name (e.g. mycompany, kabulbank, afghanngo)..." style="flex: 1; background: transparent; border: none; padding: 0.75rem 1rem; color: #fff; font-size: 0.95rem; font-weight: 600; outline: none; font-family: inherit;">
+            <select id="mainDomainExtSelect" style="background: #021226; border: none; border-left: 1px solid rgba(255, 255, 255, 0.15); color: #38bdf8; font-weight: 800; padding: 0.75rem 0.85rem; font-size: 0.88rem; cursor: pointer; outline: none;">
+              <option value="ALL">🔍 Check All Extensions</option>
+              <option value=".af">.af (Official AF National - $45)</option>
+              <option value=".com.af">.com.af (Commercial AF - $35)</option>
+              <option value=".org.af">.org.af (Afghan Organizations - $35)</option>
+              <option value=".ngo">.ngo (Humanitarian NGOs - $39)</option>
+              <option value=".com">.com (Global Commercial - $14)</option>
+              <option value=".info">.info (Information &amp; Media - $12)</option>
+              <option value=".ai">.ai (Artificial Intelligence - $79)</option>
+              <option value=".io">.io (Tech &amp; Cloud - $49)</option>
+              <option value=".net">.net (Network - $15)</option>
+            </select>
+          </div>
+          <button type="submit" style="background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 0.9rem; border: none; padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <span>Search Domain</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <!-- Quick TLD filter chips -->
+        <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #94a3b8;">Extensions:</span>
+          <button type="button" onclick="selectTldChip('.af')" class="tld-chip active" data-tld=".af" style="background: rgba(56, 189, 248, 0.25); border: 1px solid #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.af ($45)</button>
+          <button type="button" onclick="selectTldChip('.com.af')" class="tld-chip" data-tld=".com.af" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 600; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.com.af ($35)</button>
+          <button type="button" onclick="selectTldChip('.org.af')" class="tld-chip" data-tld=".org.af" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 600; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.org.af ($35)</button>
+          <button type="button" onclick="selectTldChip('.ngo')" class="tld-chip" data-tld=".ngo" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #34d399; font-weight: 700; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.ngo ($39)</button>
+          <button type="button" onclick="selectTldChip('.com')" class="tld-chip" data-tld=".com" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 600; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.com ($14)</button>
+          <button type="button" onclick="selectTldChip('.info')" class="tld-chip" data-tld=".info" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 600; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.info ($12)</button>
+          <button type="button" onclick="selectTldChip('.ai')" class="tld-chip" data-tld=".ai" style="background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.4); color: #c084fc; font-weight: 800; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.ai ($79)</button>
+          <button type="button" onclick="selectTldChip('.io')" class="tld-chip" data-tld=".io" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; font-weight: 800; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.io ($49)</button>
+          <button type="button" onclick="selectTldChip('.net')" class="tld-chip" data-tld=".net" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-weight: 600; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; cursor: pointer;">.net ($15)</button>
+        </div>
+
+        <div id="mainDomainSearchResults" style="display: none; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.15);"></div>
       </div>
     </div>
   </section>

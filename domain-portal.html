@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ==========================================================================
+       STRICT AFGHANISTAN REGION SEO & GEO-TARGETING (DOMAIN CUSTOMER PORTAL)
+       ========================================================================== -->
+  <title>Domain Customer Portal &amp; Registration &bull; .AF Domain Management Kabul | Oriental Consultants</title>
+  <meta name="description" content="Official Afghanistan Domain Customer Portal &amp; Registration Console. Register, renew and manage .af, .com.af, .ngo, .com, .ai domains with DNS zone control, WHOIS privacy and local AFN invoicing. WhatsApp: 0093 787 881808 / 0093 700 567868.">
+  <meta name="keywords" content="domain customer portal afghanistan, domain registration portal kabul, manage .af domain, .af DNS manager, afghan domain control panel, renew .af domain afghanistan, domain whois afghanistan, afghanhoster portal, WhatsApp 0093 787 881808, WhatsApp 0093 700 567868, WhatsApp 0093 792002341, WhatsApp 0092 321 9744347">
+  <meta name="author" content="Oriental Consultants Afghanistan">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ocafghan.com/domain-portal.html">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="service">
+  <meta property="og:title" content="Domain Customer Portal &amp; Registration &bull; Oriental Consultants Afghanistan">
+  <meta property="og:description" content="Manage your .af domains, DNS records, renewals and local AFN invoicing in Kabul. Instant WhatsApp setup.">
+  <meta property="og:url" content="https://ocafghan.com/domain-portal.html">
+  <meta property="og:image" content="https://ocafghan.com/images/logo.svg">
+
+  <!-- Strict Afghanistan Geo-Targeting -->
+  <meta name="geo.region" content="AF-KBL">
+  <meta name="geo.placename" content="Kabul, Afghanistan">
+  <meta name="geo.position" content="34.5169;69.1472">
+  <meta name="ICBM" content="34.5169, 69.1472">
+  <meta name="target" content="Afghanistan">
+  <meta name="coverage" content="Afghanistan Nationwide">
+  <meta name="distribution" content="Afghanistan">
+  <meta name="country" content="AF">
+
+  <!-- Google Fonts & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Domain Portal Specific Layout & Controls */
+    .portal-hero {
+      background: linear-gradient(145deg, #021226 0%, #032b5f 60%, #011633 100%);
+      padding: 3.5rem 0 2.5rem;
+      color: #fff;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.25);
+    }
+    .portal-nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.35rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      margin-top: 1.5rem;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .portal-tab-btn {
+      flex: 1;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.92rem;
+      font-weight: 800;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #94a3b8;
+      background: transparent;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .portal-tab-btn.active {
+      background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+      color: #011633;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    }
+    .portal-panel {
+      display: none;
+    }
+    .portal-panel.active {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .wizard-step-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #0284c7;
+      color: #fff;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+    }
+    .form-group-custom {
+      margin-bottom: 1.25rem;
+    }
+    .form-group-custom label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+    }
+    .form-control-custom {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border-medium);
+      border-radius: 8px;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .form-control-custom:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .dns-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-top: 1rem;
+    }
+    .dns-table th, .dns-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+    .dns-table th {
+      background: var(--bg-alt);
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    .table-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .badge-a { background: rgba(56, 189, 248, 0.15); color: #0284c7; }
+    .badge-cname { background: rgba(16, 185, 129, 0.15); color: #059669; }
+    .badge-mx { background: rgba(168, 85, 247, 0.15); color: #7c3aed; }
+    .badge-txt { background: rgba(245, 158, 11, 0.15); color: #d97706; }
+    .client-domain-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.85rem;
+      transition: all 0.2s ease;
+    }
+    .client-domain-row:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <a href="contact.html" class="top-bar-item" title="Kabul Headquarters">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>House 22, Street 17 Karte 3, Kabul, Afghanistan</span>
+        </a>
+        <a href="mailto:info@ocafghan.com" class="top-bar-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>info@ocafghan.com</span>
+        </a>
+        <div class="top-bar-phone-pill" title="WhatsApp Hotlines">
+          <span class="phone-label">WhatsApp Desks:</span>
+          <a href="https://wa.me/93787881808" target="_blank" rel="noopener noreferrer" class="phone-link">0093 787 881808</a>
+          <span class="phone-sep">/</span>
+          <a href="https://wa.me/93700567868" target="_blank" rel="noopener noreferrer" class="phone-link">0093 700 567868</a>
+          <span class="phone-sep">/</span>
+          <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" class="phone-link">0093 792 002341</a>
+          <span class="phone-sep">/</span>
+          <a href="https://wa.me/923219744347" target="_blank" rel="noopener noreferrer" class="phone-link">0092 321 9744347</a>
+        </div>
+      </div>
+      <div class="top-bar-actions">
+        <span class="top-bar-badge badge-blue">Official .AF ccTLD Registrar</span>
+        <span class="top-bar-badge badge-green">Invoicing in AFN &amp; USD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Oriental Consultants Afghanistan Homepage">
+        <img src="images/logo.svg" alt="Oriental Consultants" width="200" height="46" style="display:block;">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="domains.html" class="nav-link">Domain Search</a></li>
+          <li class="nav-item"><a href="domain-portal.html" class="nav-link active" style="color: #38bdf8; font-weight: 800;">Customer Portal</a></li>
+          <li class="nav-item"><a href="ict.html" class="nav-link">Google Workspace</a></li>
+          <li class="nav-item"><a href="microsoft-365.html" class="nav-link">Microsoft 365</a></li>
+          <li class="nav-item"><a href="afghanhoster.html" class="nav-link">AfghanHoster</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20need%20help%20with%20my%20domain%20portal." target="_blank" rel="noopener noreferrer" class="btn-header-cta" style="background: #25d366; color: #075e54; font-weight: 800; border: none;">
+          💬 WhatsApp Help: 0093 787 881808
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         HERO SECTION: PORTAL SWITCHER (REGISTER VS MANAGE)
+         ========================================================================== -->
+    <section class="portal-hero">
+      <div class="container" style="text-align: center;">
+        
+        <span class="badge" style="background: rgba(56, 189, 248, 0.2); color: #7dd3fc; font-weight: 800; margin-bottom: 0.75rem;">
+          Client Area &bull; Domain Management &bull; Instant Registration
+        </span>
+
+        <h1 style="font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.5rem; color: #fff;">
+          Afghanistan Domain <span style="background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Customer Portal</span>
+        </h1>
+        <p style="color: #94a3b8; font-size: 1.05rem; max-width: 680px; margin: 0 auto;">
+          Register new Afghan domains, configure live DNS zone records, manage renewals, and process AFN invoices with local bank support.
+        </p>
+
+        <!-- Portal Tabs Switcher -->
+        <div class="portal-nav-tabs" role="tablist">
+          <button class="portal-tab-btn active" id="tabBtnRegister" onclick="switchPortalTab('register')" role="tab" aria-selected="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Register New Domain
+          </button>
+          <button class="portal-tab-btn" id="tabBtnManage" onclick="switchPortalTab('manage')" role="tab" aria-selected="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Manage My Domains &amp; DNS
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PANEL 1: INTERACTIVE 4-STEP DOMAIN REGISTRATION WIZARD
+         ========================================================================== -->
+    <div id="portalPanelRegister" class="portal-panel active">
+      <section class="section" style="background: var(--bg-alt); padding: 3rem 0;">
+        <div class="container" style="max-width: 860px;">
+          
+          <div class="card" style="padding: 2.25rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+            
+            <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.25rem; margin-bottom: 2rem;">
+              <h2 style="font-size: 1.6rem; font-weight: 900; margin-bottom: 0.35rem;">
+                Domain Registration Desk (Afghanistan)
+              </h2>
+              <p style="color: var(--text-muted); font-size: 0.92rem; margin: 0;">
+                Complete this official registration order. Our Kabul registrar desk activates .AF domains with local AFN and USD invoicing.
+              </p>
+            </div>
+
+            <form id="domainRegistrationForm" onsubmit="handlePortalRegistration(event); return false;">
+              
+              <!-- STEP 1: Domain & Extension -->
+              <div style="margin-bottom: 2.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                  <span class="wizard-step-badge">1</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; margin: 0;">Select Domain Name &amp; Extension</h3>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 0.75rem;">
+                  <div class="form-group-custom" style="margin-bottom: 0;">
+                    <label for="regDomainName">Domain Name (without extension) *</label>
+                    <input type="text" id="regDomainName" required placeholder="e.g. mycompany, kabulbank, afghanhope" class="form-control-custom" oninput="updateRegistrationPreview()">
+                  </div>
+                  <div class="form-group-custom" style="margin-bottom: 0;">
+                    <label for="regDomainExt">Extension (TLD) *</label>
+                    <select id="regDomainExt" class="form-control-custom" onchange="updateRegistrationPreview()">
+                      <option value=".af">.af ($45 / 3,150 AFN)</option>
+                      <option value=".com.af">.com.af ($35 / 2,450 AFN)</option>
+                      <option value=".org.af">.org.af ($35 / 2,450 AFN)</option>
+                      <option value=".ngo">.ngo ($39 / 2,730 AFN)</option>
+                      <option value=".com">.com ($14 / 980 AFN)</option>
+                      <option value=".info">.info ($12 / 840 AFN)</option>
+                      <option value=".ai">.ai ($79 / 5,530 AFN)</option>
+                      <option value=".io">.io ($49 / 3,430 AFN)</option>
+                      <option value=".net">.net ($15 / 1,050 AFN)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Registration Period -->
+                <div style="margin-top: 1rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);">Registration Period:</span>
+                  <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; cursor: pointer;">
+                    <input type="radio" name="regPeriod" value="1" checked onchange="updateRegistrationPreview()"> 1 Year
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; cursor: pointer;">
+                    <input type="radio" name="regPeriod" value="2" onchange="updateRegistrationPreview()"> 2 Years (Save 5%)
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; cursor: pointer;">
+                    <input type="radio" name="regPeriod" value="3" onchange="updateRegistrationPreview()"> 3 Years (Save 8%)
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; cursor: pointer;">
+                    <input type="radio" name="regPeriod" value="5" onchange="updateRegistrationPreview()"> 5 Years (Save 12%)
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 2: Registrant Organization Details -->
+              <div style="margin-bottom: 2.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                  <span class="wizard-step-badge">2</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; margin: 0;">Registrant &amp; Organization Details</h3>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+                  <div class="form-group-custom">
+                    <label for="regOrgName">Organization / Business / Brand Name *</label>
+                    <input type="text" id="regOrgName" required placeholder="e.g. Pamir Logistics Ltd" class="form-control-custom">
+                  </div>
+                  <div class="form-group-custom">
+                    <label for="regLicenseNo">Business License (Jawaz) / Tazkira No.</label>
+                    <input type="text" id="regLicenseNo" placeholder="Required for .com.af & .ngo" class="form-control-custom">
+                  </div>
+                  <div class="form-group-custom">
+                    <label for="regContactPerson">Authorized Contact Person *</label>
+                    <input type="text" id="regContactPerson" required placeholder="Full Name" class="form-control-custom">
+                  </div>
+                  <div class="form-group-custom">
+                    <label for="regEmail">Corporate / Personal Email *</label>
+                    <input type="email" id="regEmail" required placeholder="name@domain.com" class="form-control-custom">
+                  </div>
+                  <div class="form-group-custom">
+                    <label for="regPhone">WhatsApp / Mobile Phone *</label>
+                    <input type="tel" id="regPhone" required placeholder="e.g. 0093 787 881808" class="form-control-custom">
+                  </div>
+                  <div class="form-group-custom">
+                    <label for="regCity">City &amp; Province in Afghanistan *</label>
+                    <select id="regCity" class="form-control-custom">
+                      <option value="Kabul">Kabul</option>
+                      <option value="Herat">Herat</option>
+                      <option value="Mazar-i-Sharif">Mazar-i-Sharif (Balkh)</option>
+                      <option value="Kandahar">Kandahar</option>
+                      <option value="Jalalabad">Jalalabad (Nangarhar)</option>
+                      <option value="Kunduz">Kunduz</option>
+                      <option value="Ghazni">Ghazni</option>
+                      <option value="Badakhshan">Badakhshan</option>
+                      <option value="Other">Other Afghan Province</option>
+                      <option value="International">Outside Afghanistan</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: DNS & Cloud Integration -->
+              <div style="margin-bottom: 2.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                  <span class="wizard-step-badge">3</span>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; margin: 0;">DNS &amp; Nameserver Setup</h3>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                  <label class="card" style="padding: 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                    <input type="radio" name="regDnsChoice" value="default" checked style="margin-top: 0.25rem;">
+                    <div>
+                      <strong style="color: var(--text-primary); font-size: 0.95rem;">Oriental Consultants NVMe Cloud DNS (Recommended)</strong>
+                      <div style="font-size: 0.82rem; color: var(--text-muted);">
+                        Free DNS zone editor, 99.99% uptime, and instant propagation across Afghanistan. (ns1.ocafghan.com / ns2.ocafghan.com)
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="card" style="padding: 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                    <input type="radio" name="regDnsChoice" value="google" style="margin-top: 0.25rem;">
+                    <div>
+                      <strong style="color: var(--text-primary); font-size: 0.95rem;">Pre-configured for Google Workspace Afghanistan</strong>
+                      <div style="font-size: 0.82rem; color: var(--text-muted);">
+                        Automatically configure MX, SPF, and DKIM verification records for your Google business email.
+                      </div>
+                    </div>
+                  </label>
+
+                  <label class="card" style="padding: 1rem; border-radius: 8px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
+                    <input type="radio" name="regDnsChoice" value="microsoft" style="margin-top: 0.25rem;">
+                    <div>
+                      <strong style="color: var(--text-primary); font-size: 0.95rem;">Pre-configured for Microsoft 365 &amp; Office 365</strong>
+                      <div style="font-size: 0.82rem; color: var(--text-muted);">
+                        Automatically configure Exchange Online MX records, Autodiscover, and Intune mobile records.
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 4: Billing Currency & Live Total -->
+              <div style="margin-bottom: 2rem; background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border: 1.5px solid var(--border-medium);">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.75rem;">
+                  <div>
+                    <span style="font-size: 0.8rem; font-weight: 800; color: var(--accent-blue); text-transform: uppercase;">Order Summary</span>
+                    <div id="previewDomainName" style="font-size: 1.3rem; font-weight: 900; color: var(--text-primary);">
+                      yourdomain.af
+                    </div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div id="previewTotalPriceUsd" style="font-size: 1.6rem; font-weight: 900; color: #0284c7;">
+                      $45.00
+                    </div>
+                    <div id="previewTotalPriceAfn" style="font-size: 0.9rem; font-weight: 800; color: #d97706;">
+                      Approx. 3,150 AFN
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted);">
+                  <span>✓ Free DNS Zone Editor Included</span>
+                  <span>✓ Free WHOIS Privacy Guard Included</span>
+                  <span>✓ Invoicing in AFN &amp; USD</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons: WhatsApp Instant & AFN Bank Invoice -->
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <button type="submit" style="flex: 1.5; min-width: 240px; background: #25d366; color: #075e54; font-weight: 900; font-size: 1.05rem; border: none; padding: 1rem 1.5rem; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                  <span>Submit Order to WhatsApp (0093 787 881808)</span>
+                </button>
+
+                <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 200px; background: transparent; border: 2px solid var(--accent-gold); color: var(--accent-gold); font-weight: 800; font-size: 0.95rem; padding: 1rem 1.25rem; border-radius: 10px; cursor: pointer;">
+                  Request AFN Bank Invoice &rarr;
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ==========================================================================
+         PANEL 2: CUSTOMER DOMAIN MANAGEMENT CONSOLE (DNS, WHOIS, RENEWAL)
+         ========================================================================== -->
+    <div id="portalPanelManage" class="portal-panel">
+      <section class="section" style="background: var(--bg-alt); padding: 3rem 0;">
+        <div class="container" style="max-width: 980px;">
+          
+          <!-- Sub-tabs for management -->
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <button class="btn btn-sm btn-primary" id="mTabBtnDomains" onclick="switchManageSubTab('domains')" style="background: #0284c7;">
+              🌐 My Active Domains
+            </button>
+            <button class="btn btn-sm btn-outline" id="mTabBtnDns" onclick="switchManageSubTab('dns')">
+              ⚡ DNS Zone Editor
+            </button>
+            <button class="btn btn-sm btn-outline" id="mTabBtnInvoices" onclick="switchManageSubTab('invoices')">
+              📄 Invoices &amp; AFN Banking
+            </button>
+            <button class="btn btn-sm btn-outline" id="mTabBtnWhois" onclick="switchManageSubTab('whois')">
+              🔒 WHOIS Privacy
+            </button>
+          </div>
+
+          <!-- SUB-TAB 1: MY ACTIVE DOMAINS -->
+          <div id="mSubTabDomains">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+              <div>
+                <h3 style="font-size: 1.4rem; font-weight: 900; margin: 0;">Registered Domains in Your Account</h3>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Active ccTLDs under Afghan accreditation &amp; global registrars.</span>
+              </div>
+              <button onclick="promptAddDomainToConsole()" class="btn btn-sm btn-outline" style="border-color: #0284c7; color: #0284c7; font-weight: 800;">
+                + Add Existing Domain to Console
+              </button>
+            </div>
+
+            <div id="clientDomainsListContainer">
+              <!-- Dynamically populated from JS -->
+            </div>
+          </div>
+
+          <!-- SUB-TAB 2: DNS ZONE EDITOR -->
+          <div id="mSubTabDns" style="display: none;">
+            <div class="card" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                <div>
+                  <h3 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 0.25rem;">
+                    DNS Records Manager: <span id="activeDnsDomainName" style="color: #0284c7;">yourcompany.af</span>
+                  </h3>
+                  <span style="font-size: 0.85rem; color: var(--text-muted);">Authoritative Nameservers: ns1.ocafghan.com / ns2.ocafghan.com</span>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                  <button type="button" onclick="applyPresetDns('google')" class="btn btn-sm btn-outline" style="font-size: 0.78rem;">
+                    + Google Workspace Preset
+                  </button>
+                  <button type="button" onclick="applyPresetDns('microsoft')" class="btn btn-sm btn-outline" style="font-size: 0.78rem;">
+                    + Microsoft 365 Preset
+                  </button>
+                </div>
+              </div>
+
+              <!-- Add Record Inline Form -->
+              <form onsubmit="handleAddNewDnsRecord(event); return false;" style="display: grid; grid-template-columns: 1fr 1.5fr 2fr 1fr auto; gap: 0.5rem; align-items: end; background: var(--bg-alt); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <div>
+                  <label style="font-size: 0.75rem; font-weight: 700;">Type</label>
+                  <select id="dnsNewType" class="form-control-custom" style="padding: 0.5rem;">
+                    <option value="A">A (IPv4)</option>
+                    <option value="CNAME">CNAME</option>
+                    <option value="MX">MX (Mail)</option>
+                    <option value="TXT">TXT (SPF/DKIM)</option>
+                    <option value="NS">NS (Nameserver)</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem; font-weight: 700;">Host Name</label>
+                  <input type="text" id="dnsNewHost" placeholder="@ or mail" class="form-control-custom" style="padding: 0.5rem;" required>
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem; font-weight: 700;">Destination / Value</label>
+                  <input type="text" id="dnsNewValue" placeholder="192.168.1.1 or mail.google.com" class="form-control-custom" style="padding: 0.5rem;" required>
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem; font-weight: 700;">TTL</label>
+                  <select id="dnsNewTtl" class="form-control-custom" style="padding: 0.5rem;">
+                    <option value="3600">1 Hour (Auto)</option>
+                    <option value="1800">30 Mins</option>
+                    <option value="300">5 Mins</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="padding: 0.55rem 1rem; font-size: 0.85rem; height: 38px;">
+                  Add Record
+                </button>
+              </form>
+
+              <!-- DNS Records Table -->
+              <div style="overflow-x: auto;">
+                <table class="dns-table">
+                  <thead>
+                    <tr>
+                      <th>Record Type</th>
+                      <th>Host / Name</th>
+                      <th>Value / Points To</th>
+                      <th>TTL</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dnsRecordsTableBody">
+                    <!-- Populated from JS -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="margin-top: 1.25rem; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <span>Need custom SRV, CAA, or reverse DNS? Contact Technical Desk: <a href="https://wa.me/93792002341" style="color: #0284c7; font-weight: 700;">0093 792 002341</a></span>
+                <span style="color: #10b981; font-weight: 700;">✓ Instant Zone Sync across Kabul Nodes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-TAB 3: INVOICES & AFN BANKING -->
+          <div id="mSubTabInvoices" style="display: none;">
+            <div class="card" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 0.5rem;">Official Afghan Invoices &amp; Banking Details</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                All domains registered with Oriental Consultants are issued with statutory tax receipts and Ministry of Finance (MoF) compliant invoices.
+              </p>
+
+              <!-- Afghan Bank Transfer Desk -->
+              <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-gold); margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem;">
+                  🏦 Local Bank Payment Methods in Afghanistan
+                </h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.88rem; margin-top: 1rem;">
+                  <div>
+                    <strong style="color: #0284c7;">Kabul Bank (کابل بانک)</strong><br>
+                    Account Title: Oriental Consultants Ltd<br>
+                    Currency: AFN &amp; USD Accepted<br>
+                    Branch: Main Branch, Kabul
+                  </div>
+                  <div>
+                    <strong style="color: #0284c7;">Azizi Bank (عزیزی بانک)</strong><br>
+                    Account Title: Oriental Consultants Afghanistan<br>
+                    Currency: AFN &amp; USD Accepted<br>
+                    Branch: Karte 3 Branch, Kabul
+                  </div>
+                  <div>
+                    <strong style="color: #0284c7;">Cash / Hawala &amp; Office Visit</strong><br>
+                    Headquarters: House 22, Street 17 Karte 3, Kabul<br>
+                    WhatsApp Receipt Desk: <a href="https://wa.me/93700567868" style="color: #0284c7; font-weight: 700;">0093 700 567868</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Invoices Table -->
+              <table class="dns-table">
+                <thead>
+                  <tr>
+                    <th>Invoice No.</th>
+                    <th>Domain / Service</th>
+                    <th>Amount (USD / AFN)</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>INV-2026-0841</strong></td>
+                    <td>yourcompany.af (1 Year Registration)</td>
+                    <td>$45.00 / 3,150 AFN</td>
+                    <td>Immediate</td>
+                    <td><span class="table-badge badge-cname">Paid / Active</span></td>
+                    <td><button onclick="alert('Downloading Official Receipt for INV-2026-0841...')" class="btn btn-sm btn-outline" style="font-size: 0.75rem;">Download PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- SUB-TAB 4: WHOIS PRIVACY -->
+          <div id="mSubTabWhois" style="display: none;">
+            <div class="card" style="padding: 2rem; border-radius: var(--radius-lg);">
+              <h3 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 0.5rem;">WHOIS Privacy &amp; Anti-Spam Masking</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                Keep your corporate email, Kabul phone number, and physical office location shielded from automated web scrapers.
+              </p>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; background: var(--bg-alt); padding: 1.25rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                <div>
+                  <strong style="color: var(--text-primary); font-size: 1rem;">WHOIS Privacy Protection Shield</strong>
+                  <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    Status: <span id="whoisStatusBadge" style="color: #10b981; font-weight: 800;">ACTIVE (Masked)</span>
+                  </div>
+                </div>
+                <button onclick="toggleWhoisShield()" class="btn btn-sm btn-outline" id="btnToggleWhois" style="border-color: #0284c7; color: #0284c7;">
+                  Toggle Shield
+                </button>
+              </div>
+
+              <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                Note: Under ATRA regulations in Afghanistan, national government (.gov.af) and official non-profit (.ngo / .org.af) domains maintain verified registry records at the central registry while public web queries remain masked.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ==========================================================================
+         WHATSAPP DESKS STRIP
+         ========================================================================== -->
+    <section class="section" style="background: var(--bg-surface); padding: 3rem 0; border-top: 1px solid var(--border-subtle);">
+      <div class="container" style="text-align: center;">
+        <h3 style="font-size: 1.5rem; font-weight: 900; margin-bottom: 0.5rem;">Need Live Technical Assistance?</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
+          Our Kabul operations center is active 6 days a week with direct WhatsApp support.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://wa.me/93787881808" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #25d366; color: #075e54; font-weight: 800;">
+            💬 Orders: 0093 787 881808
+          </a>
+          <a href="https://wa.me/93700567868" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-weight: 800;">
+            AFN Invoices: 0093 700 567868
+          </a>
+          <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-weight: 800;">
+            DNS Tech: 0093 792 002341
+          </a>
+          <a href="https://wa.me/923219744347" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-weight: 800;">
+            Support: 0092 321 9744347
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <img src="images/logo.svg" alt="Oriental Consultants" width="180" height="42">
+        </a>
+        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-top: 1rem;">
+          Afghanistan's trusted domain registrar, ICT partner and business consulting firm since 2006.
+        </p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">Domain Services</h4>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2; font-size:0.88rem;">
+          <li><a href="domains.html" style="color:var(--text-muted); text-decoration:none;">Domain Search Engine</a></li>
+          <li><a href="domain-portal.html" style="color:var(--text-muted); text-decoration:none;">Customer Portal &amp; DNS</a></li>
+          <li><a href="domains.html?tld=.af" style="color:var(--text-muted); text-decoration:none;">.af ccTLD Registration ($45/yr)</a></li>
+          <li><a href="domains.html?tld=.com.af" style="color:var(--text-muted); text-decoration:none;">.com.af Business ($35/yr)</a></li>
+          <li><a href="domains.html?tld=.ngo" style="color:var(--text-muted); text-decoration:none;">.ngo Non-Profit ($39/yr)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">Enterprise Cloud</h4>
+        <ul style="list-style:none; padding:0; margin:0; line-height:2; font-size:0.88rem;">
+          <li><a href="ict.html" style="color:var(--text-muted); text-decoration:none;">Google Workspace Deployment</a></li>
+          <li><a href="microsoft-365.html" style="color:var(--text-muted); text-decoration:none;">Microsoft 365 Solutions</a></li>
+          <li><a href="afghanhoster.html" style="color:var(--text-muted); text-decoration:none;">AfghanHoster NVMe Cloud</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">Kabul Headquarters</h4>
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+          House 22, Street 17 Karte 3, Kabul, Afghanistan<br>
+          Tel: <a href="tel:+93787881808" style="color:#38bdf8; text-decoration:none;">+93 787 881808</a><br>
+          Invoicing: <a href="tel:+93700567868" style="color:#38bdf8; text-decoration:none;">+93 700 567868</a><br>
+          Email: <a href="mailto:info@ocafghan.com" style="color:#38bdf8; text-decoration:none;">info@ocafghan.com</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="container" style="border-top: 1px solid var(--border-subtle); margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; color: var(--text-muted);">
+      &copy; 2006 &ndash; 2026 Oriental Consultants Afghanistan. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Customer Portal Scripts -->
+  <script src="js/main.js"></script>
+  <script>
+    // State management for client portal
+    const DEFAULT_DOMAINS = [
+      { name: 'orientalconsultants.af', ext: '.af', registered: '2024-01-15', expiry: '2027-01-15', status: 'Active', autoRenew: true },
+      { name: 'kabulbusiness.com.af', ext: '.com.af', registered: '2023-06-10', expiry: '2026-06-10', status: 'Active', autoRenew: true }
+    ];
+
+    let clientDomains = JSON.parse(localStorage.getItem('oc_client_domains')) || DEFAULT_DOMAINS;
+
+    let defaultDnsRecords = [
+      { type: 'A', host: '@', value: '185.199.108.153', ttl: '3600' },
+      { type: 'A', host: '@', value: '185.199.109.153', ttl: '3600' },
+      { type: 'CNAME', host: 'www', value: 'ocafghan.com', ttl: '3600' },
+      { type: 'MX', host: '@', value: '10 ASPMX.L.GOOGLE.COM', ttl: '3600' },
+      { type: 'MX', host: '@', value: '20 ALT1.ASPMX.L.GOOGLE.COM', ttl: '3600' },
+      { type: 'TXT', host: '@', value: 'v=spf1 include:_spf.google.com ~all', ttl: '3600' }
+    ];
+
+    let clientDnsRecords = JSON.parse(localStorage.getItem('oc_dns_records')) || defaultDnsRecords;
+    let whoisMasked = true;
+
+    function switchPortalTab(tab) {
+      const regPanel = document.getElementById('portalPanelRegister');
+      const managePanel = document.getElementById('portalPanelManage');
+      const btnReg = document.getElementById('tabBtnRegister');
+      const btnManage = document.getElementById('tabBtnManage');
+
+      if (tab === 'register') {
+        regPanel.classList.add('active');
+        managePanel.classList.remove('active');
+        btnReg.classList.add('active');
+        btnReg.setAttribute('aria-selected', 'true');
+        btnManage.classList.remove('active');
+        btnManage.setAttribute('aria-selected', 'false');
+      } else {
+        regPanel.classList.remove('active');
+        managePanel.classList.add('active');
+        btnReg.classList.remove('active');
+        btnReg.setAttribute('aria-selected', 'false');
+        btnManage.classList.add('active');
+        btnManage.setAttribute('aria-selected', 'true');
+        renderClientDomains();
+        renderDnsRecords();
+      }
+    }
+
+    function switchManageSubTab(sub) {
+      ['domains', 'dns', 'invoices', 'whois'].forEach(id => {
+        const el = document.getElementById('mSubTab' + id.charAt(0).toUpperCase() + id.slice(1));
+        const btn = document.getElementById('mTabBtn' + id.charAt(0).toUpperCase() + id.slice(1));
+        if (el) el.style.display = (id === sub) ? 'block' : 'none';
+        if (btn) {
+          if (id === sub) {
+            btn.classList.remove('btn-outline');
+            btn.classList.add('btn-primary');
+            btn.style.background = '#0284c7';
+          } else {
+            btn.classList.remove('btn-primary');
+            btn.classList.add('btn-outline');
+            btn.style.background = 'transparent';
+          }
+        }
+      });
+    }
+
+    function updateRegistrationPreview() {
+      const rawName = document.getElementById('regDomainName').value;
+      const ext = document.getElementById('regDomainExt').value;
+      const period = parseInt(document.querySelector('input[name="regPeriod"]:checked')?.value || '1');
+
+      const clean = sanitizeDomainKeyword(rawName) || 'yourdomain';
+      const fullDomain = `${clean}${ext}`;
+      document.getElementById('previewDomainName').textContent = fullDomain;
+
+      const item = OC_DOMAIN_REGISTRY.find(d => d.tld === ext) || OC_DOMAIN_REGISTRY[0];
+      let discountRate = 1.0;
+      if (period === 2) discountRate = 0.95;
+      if (period === 3) discountRate = 0.92;
+      if (period === 5) discountRate = 0.88;
+
+      const totalUsd = (item.salePrice * period * discountRate).toFixed(2);
+      const totalAfn = Math.round(item.priceAfn * period * discountRate);
+
+      document.getElementById('previewTotalPriceUsd').textContent = `$${totalUsd}`;
+      document.getElementById('previewTotalPriceAfn').textContent = `Approx. ${totalAfn.toLocaleString()} AFN (${period} Yr${period > 1 ? 's' : ''})`;
+    }
+
+    function handlePortalRegistration(e) {
+      if (e) e.preventDefault();
+      const rawName = document.getElementById('regDomainName').value;
+      const ext = document.getElementById('regDomainExt').value;
+      const clean = sanitizeDomainKeyword(rawName);
+
+      if (!clean) {
+        alert('Please enter a valid domain name.');
+        return;
+      }
+
+      const fullDomain = `${clean}${ext}`;
+      const org = document.getElementById('regOrgName').value;
+      const contact = document.getElementById('regContactPerson').value;
+      const phone = document.getElementById('regPhone').value;
+      const email = document.getElementById('regEmail').value;
+      const city = document.getElementById('regCity').value;
+      const period = document.querySelector('input[name="regPeriod"]:checked')?.value || '1';
+      const dns = document.querySelector('input[name="regDnsChoice"]:checked')?.value || 'default';
+
+      const item = OC_DOMAIN_REGISTRY.find(d => d.tld === ext) || OC_DOMAIN_REGISTRY[0];
+      const totalUsd = (item.salePrice * parseInt(period)).toFixed(2);
+      const totalAfn = Math.round(item.priceAfn * parseInt(period)).toLocaleString();
+
+      // Save to client domain list
+      clientDomains.unshift({
+        name: fullDomain,
+        ext: ext,
+        registered: new Date().toISOString().split('T')[0],
+        expiry: new Date(Date.now() + parseInt(period) * 365 * 24 * 3600 * 1000).toISOString().split('T')[0],
+        status: 'Pending Activation',
+        autoRenew: true
+      });
+      localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
+
+      // Construct WhatsApp message
+      const msg = `*NEW DOMAIN REGISTRATION ORDER - AFGHANISTAN*
+----------------------------------------
+*Domain:* ${fullDomain}
+*Period:* ${period} Year(s)
+*Price:* $${totalUsd} / ~${totalAfn} AFN
+*Organization:* ${org}
+*Contact:* ${contact}
+*Phone/WA:* ${phone}
+*Email:* ${email}
+*City:* ${city}, Afghanistan
+*DNS Choice:* ${dns}
+----------------------------------------
+Please confirm registration & provide bank details (Kabul/Azizi Bank).`;
+
+      const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+
+      alert(`Thank you! Your domain registration order for ${fullDomain} has been submitted. WhatsApp chat has been opened to finalize your fast-track activation.`);
+      switchPortalTab('manage');
+    }
+
+    function submitAfnInvoiceRequest() {
+      const rawName = document.getElementById('regDomainName').value;
+      const ext = document.getElementById('regDomainExt').value;
+      const clean = sanitizeDomainKeyword(rawName) || 'mycompany';
+      const fullDomain = `${clean}${ext}`;
+      const org = document.getElementById('regOrgName').value || 'Corporate Client';
+
+      const msg = `Hello Oriental Consultants, I need a formal AFN quotation & tax invoice for registering: ${fullDomain} for organization: ${org}. Please send bank account details for Kabul Bank / Azizi Bank.`;
+      const waUrl = `https://wa.me/93700567868?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function renderClientDomains() {
+      const container = document.getElementById('clientDomainsListContainer');
+      if (!container) return;
+
+      if (!clientDomains.length) {
+        container.innerHTML = '<div style="padding: 2rem; text-align: center; color: var(--text-muted);">No domains registered yet. Click "Register New Domain" above.</div>';
+        return;
+      }
+
+      let html = '';
+      clientDomains.forEach((d, idx) => {
+        html += `
+          <div class="client-domain-row">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                <strong style="font-size: 1.15rem; color: var(--text-primary);">${d.name}</strong>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #059669; font-size: 0.75rem;">● ${d.status}</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Registered: ${d.registered} &bull; Expires: <strong>${d.expiry}</strong> &bull; Auto-Renew: ${d.autoRenew ? 'Enabled' : 'Disabled'}
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button onclick="manageDomainDns('${d.name}')" class="btn btn-sm btn-outline" style="border-color: #0284c7; color: #0284c7; font-weight: 700;">
+                ⚡ Manage DNS
+              </button>
+              <a href="https://wa.me/93787881808?text=${encodeURIComponent('Hello Oriental Consultants, I want to renew domain: ' + d.name)}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary" style="background: #25d366; color: #075e54; font-weight: 800;">
+                Renew
+              </a>
+              <button onclick="removeDomainFromConsole(${idx})" class="btn btn-sm btn-outline" style="color: #ef4444; border-color: rgba(239,68,68,0.3); font-size: 0.75rem;" title="Remove from list">
+                ✕
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function manageDomainDns(domainName) {
+      document.getElementById('activeDnsDomainName').textContent = domainName;
+      switchManageSubTab('dns');
+    }
+
+    function renderDnsRecords() {
+      const tbody = document.getElementById('dnsRecordsTableBody');
+      if (!tbody) return;
+
+      let html = '';
+      clientDnsRecords.forEach((rec, idx) => {
+        let badgeClass = 'badge-a';
+        if (rec.type === 'CNAME') badgeClass = 'badge-cname';
+        if (rec.type === 'MX') badgeClass = 'badge-mx';
+        if (rec.type === 'TXT') badgeClass = 'badge-txt';
+
+        html += `
+          <tr>
+            <td><span class="table-badge ${badgeClass}">${rec.type}</span></td>
+            <td><code>${rec.host}</code></td>
+            <td style="word-break: break-all;"><code>${rec.value}</code></td>
+            <td>${rec.ttl}s</td>
+            <td>
+              <button onclick="deleteDnsRecord(${idx})" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.85rem; font-weight: 700;">
+                Delete
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    function handleAddNewDnsRecord(e) {
+      if (e) e.preventDefault();
+      const type = document.getElementById('dnsNewType').value;
+      const host = document.getElementById('dnsNewHost').value.trim();
+      const val = document.getElementById('dnsNewValue').value.trim();
+      const ttl = document.getElementById('dnsNewTtl').value;
+
+      if (!host || !val) {
+        alert('Please provide Host and Value.');
+        return;
+      }
+
+      clientDnsRecords.push({ type, host, value: val, ttl });
+      localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
+      renderDnsRecords();
+
+      document.getElementById('dnsNewHost').value = '';
+      document.getElementById('dnsNewValue').value = '';
+      alert('DNS record added successfully. Propagating across Kabul nodes.');
+    }
+
+    function deleteDnsRecord(idx) {
+      if (confirm('Are you sure you want to delete this DNS record?')) {
+        clientDnsRecords.splice(idx, 1);
+        localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
+        renderDnsRecords();
+      }
+    }
+
+    function applyPresetDns(preset) {
+      if (preset === 'google') {
+        clientDnsRecords.push(
+          { type: 'MX', host: '@', value: '1 ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'MX', host: '@', value: '5 ALT1.ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:_spf.google.com ~all', ttl: '3600' }
+        );
+      } else if (preset === 'microsoft') {
+        const dom = document.getElementById('activeDnsDomainName').textContent;
+        const clean = dom.replace(/[^a-zA-Z0-9]/g, '-');
+        clientDnsRecords.push(
+          { type: 'MX', host: '@', value: `0 ${clean}.mail.protection.outlook.com`, ttl: '3600' },
+          { type: 'CNAME', host: 'autodiscover', value: 'autodiscover.outlook.com', ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:spf.protection.outlook.com -all', ttl: '3600' }
+        );
+      }
+      localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
+      renderDnsRecords();
+      alert(`Applied ${preset.toUpperCase()} DNS presets successfully.`);
+    }
+
+    function toggleWhoisShield() {
+      whoisMasked = !whoisMasked;
+      const badge = document.getElementById('whoisStatusBadge');
+      if (whoisMasked) {
+        badge.textContent = 'ACTIVE (Masked)';
+        badge.style.color = '#10b981';
+      } else {
+        badge.textContent = 'EXPOSED (Public WHOIS)';
+        badge.style.color = '#ef4444';
+      }
+    }
+
+    function promptAddDomainToConsole() {
+      const name = prompt('Enter the domain name you registered with Oriental Consultants:');
+      if (!name) return;
+      const clean = sanitizeDomainKeyword(name);
+      let ext = '.af';
+      if (name.includes('.')) {
+        ext = '.' + name.split('.').slice(1).join('.');
+      }
+      clientDomains.push({
+        name: clean + ext,
+        ext: ext,
+        registered: '2025-01-01',
+        expiry: '2027-01-01',
+        status: 'Active',
+        autoRenew: true
+      });
+      localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
+      renderClientDomains();
+    }
+
+    function removeDomainFromConsole(idx) {
+      if (confirm('Remove this domain from your view? (Does not delete your registration).')) {
+        clientDomains.splice(idx, 1);
+        localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
+        renderClientDomains();
+      }
+    }
+
+    // Auto-detect URL parameters on load (e.g. ?domain=kabulbank.af or ?tab=manage)
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const dom = urlParams.get('domain') || urlParams.get('q');
+      const tld = urlParams.get('tld');
+      const tab = urlParams.get('tab');
+
+      if (dom) {
+        const clean = sanitizeDomainKeyword(dom);
+        const nameInput = document.getElementById('regDomainName');
+        if (nameInput) nameInput.value = clean;
+
+        if (tld) {
+          const extSelect = document.getElementById('regDomainExt');
+          if (extSelect) extSelect.value = tld;
+        }
+        updateRegistrationPreview();
+      }
+
+      if (tab === 'manage' || tab === 'dns') {
+        switchPortalTab('manage');
+        if (tab === 'dns') switchManageSubTab('dns');
+      } else {
+        updateRegistrationPreview();
+      }
+    });
+  </script>
+</body>
+</html>
