@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModalEngine();
   initNetworkFilter();
   initWhatsAppChatWidget();
+  initSmartConsultationForm();
 });
 
 /* ==========================================================================
@@ -1091,6 +1092,182 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+/* ==========================================================================
+   SMART EXECUTIVE CONSULTATION FORM HANDLER
+   Routes to info@ocafghan.com (CC: saeed@ocafghan.com)
+   Hotlines: +93-799543365, +93-787098321, 0093 792002341, +93 700 567868
+   ========================================================================== */
+function initSmartConsultationForm() {
+  const form = document.getElementById('smartConsultationForm');
+  if (!form) return;
+
+  const btnSubmit = document.getElementById('btnSubmitConsultation');
+  const btnInstantWa = document.getElementById('btnInstantWhatsApp');
+  const successCard = document.getElementById('consultationSuccessCard');
+  const formContainer = document.getElementById('consultationFormFields');
+
+  // Handle radio styling when partner is selected
+  const partnerRadios = form.querySelectorAll('input[name="clientPartnerLine"]');
+  partnerRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      form.querySelectorAll('.partner-radio-label').forEach(lbl => lbl.classList.remove('checked'));
+      if (radio.checked) {
+        radio.closest('.partner-radio-label')?.classList.add('checked');
+      }
+    });
+  });
+
+  // Instant WhatsApp Button Click
+  if (btnInstantWa) {
+    btnInstantWa.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('clientName')?.value || '').trim();
+      const org = (document.getElementById('clientOrg')?.value || '').trim();
+      const phone = (document.getElementById('clientPhone')?.value || '').trim();
+      const service = document.getElementById('clientService')?.value || 'General Consultation';
+      const province = document.getElementById('clientProvince')?.value || 'Kabul';
+      const format = document.getElementById('clientFormat')?.value || 'In-Person';
+      const urgency = document.getElementById('clientUrgency')?.value || 'Standard';
+      const budget = document.getElementById('clientBudget')?.value || 'Not specified';
+      const message = (document.getElementById('clientMessage')?.value || '').trim();
+
+      // Selected hotline
+      const selectedRadio = form.querySelector('input[name="clientPartnerLine"]:checked');
+      const targetPhone = selectedRadio ? selectedRadio.getAttribute('data-phone') : '93799543365';
+
+      let text = `*New Executive Consultation Request*\n`;
+      text += `• *Client:* ${name || 'Prospective Client'}\n`;
+      if (org) text += `• *Organization:* ${org}\n`;
+      if (phone) text += `• *Contact Phone/WA:* ${phone}\n`;
+      text += `• *Service Required:* ${service}\n`;
+      text += `• *Province:* ${province}\n`;
+      text += `• *Format:* ${format}\n`;
+      text += `• *Timeline:* ${urgency}\n`;
+      if (budget) text += `• *Budget Scale:* ${budget}\n`;
+      if (message) text += `• *Scope / Details:* ${message}\n`;
+      text += `\n_Routing to Oriental Consultants Kabul Senior Partner._`;
+
+      const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+
+  // Form Submit Handler
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('clientName');
+    const emailInput = document.getElementById('clientEmail');
+    const phoneInput = document.getElementById('clientPhone');
+
+    if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim()) {
+      alert('Please fill out all required fields marked with * (Full Name, Work Email, Phone/WhatsApp).');
+      return;
+    }
+
+    const originalBtnHtml = btnSubmit.innerHTML;
+    btnSubmit.disabled = true;
+    btnSubmit.innerHTML = `
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin-icon" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"></path></svg>
+      <span>Routing to info@ocafghan.com (cc: saeed@ocafghan.com)...</span>
+    `;
+
+    const formData = new FormData(form);
+
+    const name = nameInput.value.trim();
+    const org = (document.getElementById('clientOrg')?.value || 'Not specified').trim();
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const service = document.getElementById('clientService')?.value || 'Executive Consultation';
+    const province = document.getElementById('clientProvince')?.value || 'Kabul';
+    const format = document.getElementById('clientFormat')?.value || 'In-Person (Kabul HQ)';
+    const urgency = document.getElementById('clientUrgency')?.value || 'Normal';
+    const budget = document.getElementById('clientBudget')?.value || 'Not specified';
+    const message = (document.getElementById('clientMessage')?.value || '').trim();
+
+    const selectedRadio = form.querySelector('input[name="clientPartnerLine"]:checked');
+    const selectedLineTitle = selectedRadio ? selectedRadio.value : '+93-799543365 (Sayyed Ul Abrar)';
+    const targetWaNumber = selectedRadio ? selectedRadio.getAttribute('data-phone') : '93799543365';
+
+    // Build standard mailto fallback URL
+    const subject = `[Consultation Request] ${service} - ${name} (${org || 'Client'})`;
+    const mailBody = `EXECUTIVE CONSULTATION REQUEST\n\nClient Name: ${name}\nOrganization: ${org}\nWork Email: ${email}\nPhone / WhatsApp: ${phone}\nPractice Area: ${service}\nProvince: ${province}\nFormat: ${format}\nUrgency: ${urgency}\nBudget Scale: ${budget}\nSelected Partner Hotline: ${selectedLineTitle}\n\nProject Scope & Requirements:\n${message}\n\nDelivered via Oriental Consultants Web Portal (contact.html)\nRouting: To info@ocafghan.com | CC: saeed@ocafghan.com`;
+    const mailtoUrl = `mailto:info@ocafghan.com?cc=saeed@ocafghan.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+
+    // Try posting to contact-handler.php
+    let sentSuccess = false;
+    try {
+      const response = await fetch('contact-handler.php', {
+        method: 'POST',
+        body: formData
+      });
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success) {
+          sentSuccess = true;
+        }
+      }
+    } catch (err) {
+      console.log('Using client-side mail dispatch fallback:', err);
+    }
+
+    // If fetch failed or server returned fallback, trigger mailto client in background
+    if (!sentSuccess) {
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = mailtoUrl;
+      mailtoLink.style.display = 'none';
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      document.body.removeChild(mailtoLink);
+    }
+
+    // Show Success Card UI
+    if (formContainer && successCard) {
+      formContainer.style.display = 'none';
+      successCard.classList.add('active');
+
+      // Populate summary fields
+      const summaryElem = document.getElementById('successSummaryDetails');
+      if (summaryElem) {
+        summaryElem.innerHTML = `
+          <div style="background: var(--bg-alt); padding: 1.25rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-subtle); text-align: left; margin: 1.25rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; font-size: 0.88rem;">
+              <div><strong>Client:</strong> ${name}</div>
+              <div><strong>Organization:</strong> ${org || 'N/A'}</div>
+              <div><strong>Email:</strong> ${email}</div>
+              <div><strong>Phone/WhatsApp:</strong> ${phone}</div>
+              <div><strong>Service:</strong> <span style="color:#0284c7; font-weight:700;">${service}</span></div>
+              <div><strong>Routing:</strong> <span style="color:#10b981; font-weight:700;">info@ocafghan.com (CC: saeed@ocafghan.com)</span></div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Configure direct WhatsApp escalation button
+      const waDirectBtn = document.getElementById('successWaEscalationBtn');
+      if (waDirectBtn) {
+        let waText = `Hello Oriental Consultants, I just submitted an Executive Consultation Request on your portal for ${service}. My name is ${name} (${org || 'Client'}). Phone: ${phone}. Kindly confirm receipt.`;
+        waDirectBtn.href = `https://wa.me/${targetWaNumber}?text=${encodeURIComponent(waText)}`;
+      }
+
+      // Reset button
+      const resetBtn = document.getElementById('btnResetConsultationForm');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          form.reset();
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = originalBtnHtml;
+          successCard.classList.remove('active');
+          formContainer.style.display = 'block';
+        });
+      }
+
+      successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+}
+
 
 
 
