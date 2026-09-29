@@ -886,7 +886,7 @@ function renderDomainResultCards(cleanName, targetTld) {
     const waText = item.tld === '.ngo'
       ? encodeURIComponent(`Hello Oriental Consultants, AfghanHoster & AfghanDevelopers, I want to register the .ngo domain: ${fullDomain} ($${item.salePrice}/yr or ${item.priceAfn} AFN). We need MoEc registration, cloud hosting, and non-profit portal solutions.`)
       : encodeURIComponent(`Hello Oriental Consultants, I want to register the domain: ${fullDomain} at your lowest price ($${item.salePrice}/yr or ${item.priceAfn} AFN). Please send activation details.`);
-    const waUrl = `https://wa.me/93787881808?text=${waText}`;
+    const waUrl = `https://wa.me/93799543365?text=${waText}`;
 
     html += `
       <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease;">
@@ -920,21 +920,21 @@ function renderDomainResultCards(cleanName, targetTld) {
         <div style="display: flex; flex-direction: column; gap: 0.45rem;">
           <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
             <a href="domains.html?domain=${encodeURIComponent(cleanName)}&tld=${encodeURIComponent(item.tld)}&tab=register#portal" onclick="if(typeof selectDomainForPortal === 'function'){ selectDomainForPortal('${cleanName}', '${item.tld}'); return false; }" style="flex: 1.2; min-width: 155px; text-align: center; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 0.82rem; padding: 0.55rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.35rem; box-shadow: 0 2px 10px rgba(56,189,248,0.35);">
-              🚀 Take Domain ($${item.salePrice}/yr) &rarr;
+              🚀 Take Domain &amp; Setup DNS &rarr;
             </a>
             <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 130px; text-align: center; background: #25d366; color: #075e54; font-weight: 800; font-size: 0.8rem; padding: 0.5rem 0.65rem; border-radius: 6px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.3rem;">
-              💬 WhatsApp: 0093 787 881808
+              💬 WA: +93-799543365
             </a>
           </div>
           <div style="display: flex; gap: 0.3rem; flex-wrap: wrap;">
-            <a href="https://wa.me/93700567868?text=${encodeURIComponent('Hello Oriental Consultants, I need an official AFN invoice quote for domain ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(255,255,255,0.08); color: #fff; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.18);" title="Official Invoicing & Afghani Payment Desk">
-              🧾 0093 700 567868
+            <a href="https://wa.me/93787098321?text=${encodeURIComponent('Hello Oriental Consultants, inquiry for ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(255,255,255,0.08); color: #fff; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.18);" title="Advisory Desk">
+              💬 +93-787098321
+            </a>
+            <a href="https://wa.me/93700567868?text=${encodeURIComponent('Hello Oriental Consultants, I need an official AFN invoice quote for domain ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(255,255,255,0.08); color: #fbbf24; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(251,191,36,0.3);" title="Official Invoicing & Afghani Payment Desk">
+              🧾 +93 700 567868
             </a>
             <a href="https://wa.me/93792002341?text=${encodeURIComponent('Hello Oriental Consultants, I need DNS and technical setup for ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(56, 189, 248, 0.12); color: #38bdf8; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(56, 189, 248, 0.25);" title="Technical & DNS Config Desk">
-              ⚙️ Tech: 0093 792002341
-            </a>
-            <a href="https://wa.me/923219744347?text=${encodeURIComponent('Hello Oriental Consultants, international domain enquiry for ' + fullDomain)}" target="_blank" rel="noopener noreferrer" style="flex: 1; min-width: 85px; text-align: center; background: rgba(255,255,255,0.08); color: #94a3b8; font-weight: 700; font-size: 0.72rem; padding: 0.35rem 0.4rem; border-radius: 5px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15);" title="Regional Desk">
-              🌐 0092 321 9744347
+              ⚙️ 0093 792002341
             </a>
           </div>
         </div>
@@ -947,7 +947,11 @@ function renderDomainResultCards(cleanName, targetTld) {
       <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; color: #94a3b8;">
         <span>🔒 Includes Free DNS Zone Management &bull; WHOIS Privacy &bull; Local Bank Transfer (Azizi/Kabul Bank)</span>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-          <span>WhatsApp Desks: <a href="https://wa.me/93787881808" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 787 881808</a> | <a href="https://wa.me/93700567868" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 700 567868</a> | <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 792002341</a> | <a href="https://wa.me/923219744347" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0092 321 9744347</a></span>
+          <span>WhatsApp Desks: <a href="https://wa.me/93799543365" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">+93-799543365</a> | <a href="https://wa.me/93787098321" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">+93-787098321</a> | <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">0093 792002341</a> | <a href="https://wa.me/93700567868" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">+93 700 567868</a></span>
+        </div>
+      </div>
+    </div>
+  `;
         </div>
       </div>
     </div>
@@ -1005,7 +1009,7 @@ function handleHeroQuickDomainSearch(e) {
     const ext = extSelect ? extSelect.value : '.af';
     const item = OC_DOMAIN_REGISTRY.find(d => d.tld === ext) || OC_DOMAIN_REGISTRY[0];
     const fullDomain = `${clean}${item.tld}`;
-    const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent('Hello Oriental Consultants, I want to register: ' + fullDomain + ' at $' + item.salePrice + '/yr (' + item.priceAfn + ' AFN).')}`;
+    const waUrl = `https://wa.me/93799543365?text=${encodeURIComponent('Hello Oriental Consultants, I want to register: ' + fullDomain + ' at $' + item.salePrice + '/yr (' + item.priceAfn + ' AFN).')}`;
     resultsContainer.innerHTML = `
       <div style="background: rgba(2, 18, 38, 0.95); border: 1px solid rgba(56, 189, 248, 0.5); border-radius: 8px; padding: 0.65rem 0.85rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.35rem;">
         <div>
@@ -1014,7 +1018,7 @@ function handleHeroQuickDomainSearch(e) {
           <div style="font-size: 0.75rem; color: #fbbf24; font-weight: 700;">$${item.salePrice}/yr (~${item.priceAfn} AFN)</div>
         </div>
         <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="background: #25d366; color: #075e54; font-weight: 800; font-size: 0.75rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">
-          💬 WhatsApp: 0093 787 881808 &rarr;
+          💬 WhatsApp: +93-799543365 &rarr;
         </a>
       </div>
     `;
@@ -1037,7 +1041,7 @@ function handleSlideDomainSearch(e, inputId, extId, resultsId) {
   const ext = extSelect ? extSelect.value : '.af';
   const item = OC_DOMAIN_REGISTRY.find(d => d.tld === ext) || OC_DOMAIN_REGISTRY[0];
   const fullDomain = `${clean}${item.tld}`;
-  const waUrl = `https://wa.me/93787881808?text=${encodeURIComponent('Hello Oriental Consultants, I want to register: ' + fullDomain + ' at $' + item.salePrice + '/yr (' + item.priceAfn + ' AFN).')}`;
+  const waUrl = `https://wa.me/93799543365?text=${encodeURIComponent('Hello Oriental Consultants, I want to register: ' + fullDomain + ' at $' + item.salePrice + '/yr (' + item.priceAfn + ' AFN).')}`;
 
   resultsContainer.innerHTML = `
     <div style="background: rgba(2, 18, 38, 0.95); border: 1px solid rgba(56, 189, 248, 0.5); border-radius: 8px; padding: 0.65rem 0.85rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.35rem;">

@@ -8,8 +8,8 @@
        STRICT AFGHANISTAN REGION SEO & GEO-TARGETING (DOMAIN SEARCH & REGISTRATION)
        ========================================================================== -->
   <title>Domain Search Afghanistan &bull; .AF Domain Registration, .COM.AF &amp; .NGO Lowest Prices | Oriental Consultants</title>
-  <meta name="description" content="Search &amp; register domains in Afghanistan. Official .AF ccTLD Registrar Partner. Guaranteed lowest prices in Kabul: .af $45/yr (3,150 AFN), .com.af $35/yr (2,450 AFN), .ngo $39/yr, .com $14/yr, .ai $79/yr, .io $49/yr. Instant WhatsApp: 0093 787 881808 / 0093 700 567868.">
-  <meta name="keywords" content="domain search afghanistan, .af domain registration, register .af domain, buy .af domain kabul, .com.af domain, .org.af domain, .ngo domain afghanistan, domain name afghanistan, afghan domain registrar, cheapest domain afghanistan, whois afghanistan, afghanistan ccTLD, domain registration kabul, .af domain price, buy domain in afghani, afghanistan website domain, WhatsApp 0093 787 881808, WhatsApp 0093 700 567868, WhatsApp 0093 792002341, WhatsApp 0092 321 9744347">
+  <meta name="description" content="Search &amp; register domains in Afghanistan. Official .AF ccTLD Registrar Partner. Guaranteed lowest prices in Kabul: .af $45/yr (3,150 AFN), .com.af $35/yr (2,450 AFN), .ngo $39/yr, .com $14/yr, .ai $79/yr, .io $49/yr. Instant WhatsApp: +93-799543365 / +93-787098321 / 0093 792002341 / +93 700 567868.">
+  <meta name="keywords" content="domain search afghanistan, .af domain registration, register .af domain, buy .af domain kabul, .com.af domain, .org.af domain, .ngo domain afghanistan, domain name afghanistan, afghan domain registrar, cheapest domain afghanistan, whois afghanistan, afghanistan ccTLD, domain registration kabul, .af domain price, buy domain in afghani, afghanistan website domain, WhatsApp +93-799543365, WhatsApp +93-787098321, WhatsApp 0093 792002341, WhatsApp +93 700 567868">
   <meta name="author" content="Oriental Consultants Afghanistan">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ocafghan.com/domains.html">
@@ -19,7 +19,7 @@
   <!-- Open Graph / WhatsApp Social Preview -->
   <meta property="og:type" content="service">
   <meta property="og:title" content="Domain Search Afghanistan &bull; Official .AF Registrar &amp; Lowest Prices">
-  <meta property="og:description" content="Official Afghan Domain Registrar Partner. Search and register .af ($45), .com.af ($35), .ngo ($39), .com ($14), .ai ($79), .io ($49). Invoicing in AFN &amp; USD. WhatsApp: 0093 787 881808.">
+  <meta property="og:description" content="Official Afghan Domain Registrar Partner. Search and register .af ($45), .com.af ($35), .ngo ($39), .com ($14), .ai ($79), .io ($49). Invoicing in AFN &amp; USD. WhatsApp: +93-799543365 / +93-787098321.">
   <meta property="og:url" content="https://ocafghan.com/domains.html">
   <meta property="og:image" content="https://ocafghan.com/images/logo.svg">
 
@@ -1685,8 +1685,8 @@
               <div class="hostinger-search-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               </div>
-              <input type="text" id="mainDomainSearchInput" autofocus placeholder="Type your company, NGO, or brand name (e.g. kabultech, afghanhope, myshop)..." class="hostinger-search-input">
-              <select id="mainDomainExtSelect" class="hostinger-search-select">
+              <input type="text" id="mainDomainSearchInput" autofocus placeholder="Type your company, NGO, or brand name (e.g. kabultech, afghanhope, myshop)..." class="hostinger-search-input" oninput="handleLiveDomainSearch(this.value)">
+              <select id="mainDomainExtSelect" class="hostinger-search-select" onchange="handleMainDomainSearch()">
                 <option value="ALL">🔍 Check All Extensions</option>
                 <option value=".af">.af (Official Afghan ccTLD - $45)</option>
                 <option value=".com.af">.com.af (Afghan Commercial - $35)</option>
@@ -2161,7 +2161,7 @@
                         </div>
                         <div class="form-group-custom">
                           <label for="regPhone">WhatsApp / Mobile Phone *</label>
-                          <input type="tel" id="regPhone" required placeholder="e.g. 0093 787 881808" class="form-control-custom">
+                          <input type="tel" id="regPhone" required placeholder="e.g. +93 799 543365" class="form-control-custom">
                         </div>
                         <div class="form-group-custom">
                           <label for="regCity">City / Province in Afghanistan *</label>
@@ -2193,67 +2193,156 @@
                       </div>
                     </div>
 
-                    <!-- SECTION 4: DNS CONFIGURATION & CLOUD PRESETS -->
+                    <!-- SECTION 4: COMPLETE DNS SETUP & CLOUD PRESETS -->
                     <div style="background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
-                      <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;">
-                        <span class="wizard-step-badge" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">4</span>
-                        <div>
-                          <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #fff;">Nameserver &amp; DNS Zone Setup</h4>
-                          <span style="font-size: 0.78rem; color: #94a3b8;">Select your preferred initial DNS configuration. You can change this anytime from your portal.</span>
+                      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.65rem;">
+                          <span class="wizard-step-badge" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">4</span>
+                          <div>
+                            <h4 style="font-size: 1.1rem; font-weight: 800; margin: 0; color: #fff;">Complete Nameserver &amp; DNS Zone Setup</h4>
+                            <span style="font-size: 0.78rem; color: #94a3b8;">Choose your domain's initial DNS routing. Fully editable anytime inside your portal console.</span>
+                          </div>
+                        </div>
+                        <span style="font-size: 0.74rem; background: rgba(0, 229, 255, 0.12); color: #00e5ff; padding: 0.25rem 0.65rem; border-radius: 6px; font-weight: 800; border: 1px solid rgba(0, 229, 255, 0.3);">
+                          ⚡ Anycast Edge Propagation: &lt; 60s
+                        </span>
+                      </div>
+
+                      <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="regDnsOptionsContainer">
+                        
+                        <!-- Option 1: Anycast Cloud DNS -->
+                        <label style="background: rgba(0, 0, 0, 0.32); border: 1.5px solid rgba(103, 61, 230, 0.45); padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.85rem; align-items: flex-start; transition: all 0.2s ease;">
+                          <input type="radio" name="regDnsChoice" value="default" checked onchange="updateDnsChoicePreview()" style="margin-top: 0.25rem;">
+                          <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;">
+                              <strong style="color: #fff; font-size: 0.95rem;">⚡ Oriental Consultants Anycast Cloud DNS (Recommended • Free)</strong>
+                              <span style="font-size: 0.7rem; font-weight: 800; background: rgba(103, 61, 230, 0.25); color: #c4b5fd; padding: 0.15rem 0.55rem; border-radius: 4px;">FASTEST IN AFGHANISTAN</span>
+                            </div>
+                            <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.5;">
+                              Official Anycast nameservers (<code style="color: #00e5ff;">ns1.ocafghan.com</code> &amp; <code style="color: #00e5ff;">ns2.ocafghan.com</code>) with 12ms latency across Kabul fiber nodes. Automatically provisions Web A Record, www CNAME, and SPF.
+                            </div>
+                            <div style="margin-top: 0.6rem; display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap;">
+                              <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 700;">Web Server IPv4 (A Record):</span>
+                              <input type="text" id="regDnsWebServerIp" placeholder="185.199.108.153 (Default Cloud IP)" value="185.199.108.153" class="form-control-custom" oninput="updateDnsChoicePreview()" style="max-width: 250px; padding: 0.35rem 0.65rem; font-size: 0.82rem;">
+                              <span style="font-size: 0.72rem; color: #94a3b8;">(Leave default or enter your VPS / server IP)</span>
+                            </div>
+                          </div>
+                        </label>
+
+                        <!-- Option 2: Google Workspace -->
+                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.85rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="google" onchange="updateDnsChoicePreview()" style="margin-top: 0.25rem;">
+                          <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;">
+                              <strong style="color: #fff; font-size: 0.95rem;">📧 Google Workspace Afghanistan (Corporate Gmail Preset)</strong>
+                              <span style="font-size: 0.7rem; font-weight: 800; background: rgba(66, 133, 244, 0.2); color: #60a5fa; padding: 0.15rem 0.55rem; border-radius: 4px;">BUSINESS EMAIL READY</span>
+                            </div>
+                            <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.5;">
+                              Automatically configures Google Mail MX servers (<code style="color: #60a5fa;">ASPMX.L.GOOGLE.COM</code>), SPF verification (<code style="color: #60a5fa;">include:_spf.google.com</code>), and webmail CNAME.
+                            </div>
+                          </div>
+                        </label>
+
+                        <!-- Option 3: Microsoft 365 -->
+                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.85rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="microsoft" onchange="updateDnsChoicePreview()" style="margin-top: 0.25rem;">
+                          <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;">
+                              <strong style="color: #fff; font-size: 0.95rem;">🏢 Microsoft 365 &amp; Exchange Online Preset</strong>
+                              <span style="font-size: 0.7rem; font-weight: 800; background: rgba(242, 80, 34, 0.2); color: #f87171; padding: 0.15rem 0.55rem; border-radius: 4px;">OFFICE 365 READY</span>
+                            </div>
+                            <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.5;">
+                              Pre-configures Exchange Online MX routing, Autodiscover CNAME (<code style="color: #f87171;">autodiscover.outlook.com</code>), and Microsoft 365 SPF security records.
+                            </div>
+                          </div>
+                        </label>
+
+                        <!-- Option 4: .NGO Tri-Pillar Ecosystem -->
+                        <label style="background: rgba(0, 176, 144, 0.08); border: 1.5px solid rgba(0, 176, 144, 0.35); padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.85rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="ngo-triple-bundle" onchange="updateDnsChoicePreview()" style="margin-top: 0.25rem;">
+                          <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;">
+                              <strong style="color: #34d399; font-size: 0.95rem;">🤝 Non-Profit (.NGO) Tri-Pillar Ecosystem</strong>
+                              <span style="font-size: 0.7rem; font-weight: 800; background: rgba(52, 211, 153, 0.2); color: #34d399; padding: 0.15rem 0.55rem; border-radius: 4px;">NGO VERIFIED STACK</span>
+                            </div>
+                            <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.5;">
+                              Jointly provisioned: <strong>Oriental Consultants</strong> (MoEc Credentialing &amp; Statutory MoF Tax Receipts) + <strong>AfghanHoster</strong> (NVMe Cloud &amp; Anycast DNS) + <strong>AfghanDevelopers</strong> (Custom NGO Portal &amp; M&amp;E Dashboard).
+                            </div>
+                          </div>
+                        </label>
+
+                        <!-- Option 5: Custom Nameservers & Zone -->
+                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.85rem; align-items: flex-start;">
+                          <input type="radio" name="regDnsChoice" value="custom" onchange="updateDnsChoicePreview()" style="margin-top: 0.25rem;">
+                          <div style="flex: 1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;">
+                              <strong style="color: #fff; font-size: 0.95rem;">🛠️ Custom Nameservers / Custom DNS Records</strong>
+                              <span style="font-size: 0.7rem; font-weight: 800; background: rgba(245, 158, 11, 0.2); color: #fbbf24; padding: 0.15rem 0.55rem; border-radius: 4px;">ADVANCED SETUP</span>
+                            </div>
+                            <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.5;">
+                              Delegate your domain to external nameservers (such as Cloudflare, AWS Route 53, or cPanel hosting) or supply custom A/MX records.
+                            </div>
+                            
+                            <!-- Custom DNS Inputs Accordion -->
+                            <div id="customDnsFieldsWrap" style="display: none; margin-top: 0.85rem; padding: 0.85rem; background: rgba(0,0,0,0.4); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+                                <div>
+                                  <label style="font-size: 0.75rem; color: #cbd5e1; font-weight: 700; display: block; margin-bottom: 0.25rem;">Primary Nameserver (NS1)</label>
+                                  <input type="text" id="regCustomNs1" placeholder="e.g. ns1.yourhost.com" class="form-control-custom" oninput="updateDnsChoicePreview()" style="padding: 0.4rem 0.65rem; font-size: 0.82rem;">
+                                </div>
+                                <div>
+                                  <label style="font-size: 0.75rem; color: #cbd5e1; font-weight: 700; display: block; margin-bottom: 0.25rem;">Secondary Nameserver (NS2)</label>
+                                  <input type="text" id="regCustomNs2" placeholder="e.g. ns2.yourhost.com" class="form-control-custom" oninput="updateDnsChoicePreview()" style="padding: 0.4rem 0.65rem; font-size: 0.82rem;">
+                                </div>
+                                <div>
+                                  <label style="font-size: 0.75rem; color: #cbd5e1; font-weight: 700; display: block; margin-bottom: 0.25rem;">Custom Web Server IP (A Record)</label>
+                                  <input type="text" id="regCustomWebIp" placeholder="e.g. 192.0.2.1" class="form-control-custom" oninput="updateDnsChoicePreview()" style="padding: 0.4rem 0.65rem; font-size: 0.82rem;">
+                                </div>
+                                <div>
+                                  <label style="font-size: 0.75rem; color: #cbd5e1; font-weight: 700; display: block; margin-bottom: 0.25rem;">Custom Mail Server (MX Record)</label>
+                                  <input type="text" id="regCustomMx" placeholder="e.g. mail.yourdomain.af" class="form-control-custom" oninput="updateDnsChoicePreview()" style="padding: 0.4rem 0.65rem; font-size: 0.82rem;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </label>
+
+                      </div>
+
+                      <!-- Live Interactive DNS Zone Preview Card -->
+                      <div style="margin-top: 1.15rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 0.95rem 1.15rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.5rem;">
+                          <div style="font-size: 0.8rem; font-weight: 800; color: #00e5ff; display: flex; align-items: center; gap: 0.4rem;">
+                            <span>📋</span>
+                            <span>Live DNS Records to be provisioned in your Customer Portal:</span>
+                          </div>
+                          <span id="dnsPreviewRecordCountBadge" style="font-size: 0.72rem; color: #94a3b8; font-weight: 700;">6 Initial Zone Records</span>
+                        </div>
+
+                        <div style="overflow-x: auto;">
+                          <table style="width: 100%; border-collapse: collapse; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;">
+                            <thead>
+                              <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: #94a3b8; text-align: left;">
+                                <th style="padding: 0.4rem 0.5rem; width: 75px;">Type</th>
+                                <th style="padding: 0.4rem 0.5rem; width: 110px;">Host</th>
+                                <th style="padding: 0.4rem 0.5rem;">Points To / Target Value</th>
+                                <th style="padding: 0.4rem 0.5rem; width: 85px;">TTL</th>
+                              </tr>
+                            </thead>
+                            <tbody id="regDnsLivePreviewTbody">
+                              <!-- Dynamically populated from JS -->
+                            </tbody>
+                          </table>
                         </div>
                       </div>
 
-                      <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                          <input type="radio" name="regDnsChoice" value="default" checked style="margin-top: 0.25rem;">
-                          <div>
-                            <strong style="color: #fff; font-size: 0.92rem;">Oriental Consultants Anycast Cloud DNS (Recommended • Free)</strong>
-                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.15rem;">
-                              Free full DNS zone editor, 99.99% uptime SLA, and real-time propagation across Kabul fiber nodes (ns1.ocafghan.com / ns2.ocafghan.com).
-                            </div>
-                          </div>
-                        </label>
-
-                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                          <input type="radio" name="regDnsChoice" value="google" style="margin-top: 0.25rem;">
-                          <div>
-                            <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Google Workspace Afghanistan</strong>
-                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.15rem;">
-                              Automatically configures MX, SPF, and DKIM verification records for your official Google business email accounts.
-                            </div>
-                          </div>
-                        </label>
-
-                        <label style="background: rgba(0, 0, 0, 0.28); border: 1px solid rgba(255, 255, 255, 0.08); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                          <input type="radio" name="regDnsChoice" value="microsoft" style="margin-top: 0.25rem;">
-                          <div>
-                            <strong style="color: #fff; font-size: 0.92rem;">Pre-configured for Microsoft 365 &amp; Office 365</strong>
-                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.15rem;">
-                              Automatically provisions Exchange Online MX records, Autodiscover, and Intune mobile enterprise records.
-                            </div>
-                          </div>
-                        </label>
-
-                        <label style="background: rgba(0, 176, 144, 0.08); border: 1.5px solid rgba(0, 176, 144, 0.35); padding: 0.85rem 1rem; border-radius: 10px; cursor: pointer; display: flex; gap: 0.75rem; align-items: flex-start;">
-                          <input type="radio" name="regDnsChoice" value="ngo-triple-bundle" style="margin-top: 0.25rem;">
-                          <div>
-                            <div style="display: flex; gap: 0.45rem; align-items: center; flex-wrap: wrap;">
-                              <strong style="color: #34d399; font-size: 0.92rem;">Non-Profit (.NGO) Tri-Pillar Ecosystem</strong>
-                              <span style="font-size: 0.68rem; font-weight: 800; background: rgba(52,211,153,0.18); color: #34d399; padding: 0.15rem 0.5rem; border-radius: 4px;">RECOMMENDED FOR NGOS</span>
-                            </div>
-                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem; line-height: 1.5;">
-                              Jointly provisioned: <strong style="color: #38bdf8;">Oriental Consultants</strong> (MoEc Accreditation &amp; MoF AFN Tax Receipts TIN: 1045181011) + <strong style="color: #c084fc;">AfghanHoster</strong> (NVMe Cloud &amp; Google/Microsoft NGO Grant Setup) + <strong style="color: #fbbf24;">AfghanDevelopers (Software house)</strong> (Custom NGO Web Portal &amp; M&amp;E Dashboard).
-                            </div>
-                          </div>
-                        </label>
-                      </div>
                     </div>
 
                     <!-- SUBMIT BUTTONS & DISPATCH NOTICE -->
                     <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
                       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.85rem;">
                         <button type="submit" id="btnSubmitRegistration" style="flex: 2; min-width: 280px; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #011633; font-weight: 900; font-size: 1.05rem; border: none; padding: 1rem 1.5rem; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem; box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4); font-family: inherit; transition: transform 0.15s ease;">
-                          <span>🚀 Take This Domain &amp; Create Portal Account</span>
+                          <span>🚀 Register Domain, Setup DNS &amp; Launch Portal</span>
                         </button>
 
                         <button type="button" onclick="submitAfnInvoiceRequest()" style="flex: 1; min-width: 220px; background: transparent; border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800; font-size: 0.9rem; padding: 0.95rem 1.15rem; border-radius: 10px; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
@@ -2264,9 +2353,9 @@
                       <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.85rem;">
                         <span style="display: inline-flex; align-items: center; gap: 0.4rem; color: #00e5ff; font-weight: 700;">
                           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                          Instant Notification Dispatch: sa_nsr@yahoo.com
+                          Notification Dispatched To: sa_nsr@yahoo.com (CC: saeed@ocafghan.com, info@ocafghan.com)
                         </span>
-                        <span style="color: #00b090; font-weight: 700;">✓ Free WHOIS Privacy Guard Included</span>
+                        <span style="color: #00b090; font-weight: 700;">✓ Free Anycast DNS &amp; WHOIS Privacy Shield</span>
                         <span style="color: #fbbf24; font-weight: 700;">✓ Afghan Banks: Kabul Bank &bull; Azizi Bank</span>
                       </div>
                     </div>
@@ -2379,17 +2468,17 @@
               </span>
             </div>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-              <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20domain." target="_blank" rel="noopener noreferrer" style="background: #25d366; color: #075e54; font-weight: 800; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">
-                0093 787 881808
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20domain." target="_blank" rel="noopener noreferrer" style="background: #25d366; color: #075e54; font-weight: 800; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none;">
+                +93-799543365
               </a>
-              <a href="https://wa.me/93700567868?text=Hello,%20domain%20quote" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.1); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2);">
-                0093 700 567868
+              <a href="https://wa.me/93787098321?text=Hello,%20domain%20registration%20inquiry" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.1); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2);">
+                +93-787098321
               </a>
               <a href="https://wa.me/93792002341" target="_blank" rel="noopener noreferrer" style="background: rgba(56,189,248,0.15); color: #38bdf8; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; border: 1px solid rgba(56,189,248,0.3);">
-                0093 792 002341
+                0093 792002341
               </a>
-              <a href="https://wa.me/923219744347" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.1); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2);">
-                0092 321 9744347
+              <a href="https://wa.me/93700567868?text=Hello,%20domain%20quote" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.1); color: #fff; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.75rem; border-radius: 6px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2);">
+                +93 700 567868
               </a>
             </div>
           </div>
@@ -2453,9 +2542,14 @@
                 <li><span class="check-icon">✓</span> Free WHOIS privacy shield &amp; anti-theft domain lock</li>
               </ul>
             </div>
-            <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.af%20domain%20for%20$45/yr%20(3,150%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem;">
-              Register .af Domain &rarr;
-            </a>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button type="button" onclick="selectDomainForPortal('', '.af')" class="hostinger-btn-primary" style="flex: 1.2; min-width: 160px; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem;">
+                ⚡ Select .af &amp; Setup DNS &rarr;
+              </button>
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.af%20domain%20for%20$45/yr%20(3,150%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-renew" style="flex: 0.8; min-width: 120px; justify-content: center; padding: 0.85rem 0.75rem; font-size: 0.85rem;">
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
 
           <!-- Card 2: .com.af Commercial -->
@@ -2490,9 +2584,14 @@
                 <li><span class="check-icon">✓</span> Compatible with Google Workspace &amp; QuickBooks ERP</li>
               </ul>
             </div>
-            <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.com.af%20domain%20for%20$35/yr%20(2,450%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem;">
-              Register .com.af Domain &rarr;
-            </a>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button type="button" onclick="selectDomainForPortal('', '.com.af')" class="hostinger-btn-secondary" style="flex: 1.2; min-width: 160px; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem;">
+                ⚡ Select .com.af &amp; Setup DNS &rarr;
+              </button>
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.com.af%20domain%20for%20$35/yr%20(2,450%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-renew" style="flex: 0.8; min-width: 120px; justify-content: center; padding: 0.85rem 0.75rem; font-size: 0.85rem;">
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
 
           <!-- Card 3: .ngo & .org.af Humanitarian (Tri-Pillar Alliance) -->
@@ -2532,9 +2631,14 @@
                 <li><span class="check-icon">✓</span> Official audit-ready AFN / USD statutory tax invoices</li>
               </ul>
             </div>
-            <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20AfghanHoster%20and%20AfghanDevelopers,%20I%20want%20to%20register%20a%20.ngo%20domain%20under%20the%20tri-pillar%20non-profit%20bundle." target="_blank" rel="noopener noreferrer" class="hostinger-btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem; background: linear-gradient(135deg, #00b090 0%, #00e5ff 100%); color: #011633; font-weight: 900; border: none;">
-              Register .NGO Tri-Bundle &rarr;
-            </a>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button type="button" onclick="selectDomainForPortal('', '.ngo')" class="hostinger-btn-secondary" style="flex: 1.2; min-width: 160px; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem; background: linear-gradient(135deg, #00b090 0%, #00e5ff 100%); color: #011633; font-weight: 900; border: none;">
+                ⚡ Select .NGO Tri-Bundle &rarr;
+              </button>
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20AfghanHoster%20and%20AfghanDevelopers,%20I%20want%20to%20register%20a%20.ngo%20domain%20under%20the%20tri-pillar%20non-profit%20bundle." target="_blank" rel="noopener noreferrer" class="hostinger-btn-renew" style="flex: 0.8; min-width: 120px; justify-content: center; padding: 0.85rem 0.75rem; font-size: 0.85rem;">
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
 
           <!-- Card 4: .com Global Standard -->
@@ -2569,9 +2673,14 @@
                 <li><span class="check-icon">✓</span> Complete nameserver delegation to Cloudflare or AWS</li>
               </ul>
             </div>
-            <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.com%20domain%20for%20$14/yr%20(980%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem;">
-              Register .com Domain &rarr;
-            </a>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button type="button" onclick="selectDomainForPortal('', '.com')" class="hostinger-btn-secondary" style="flex: 1.2; min-width: 160px; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem;">
+                ⚡ Select .com &amp; Setup DNS &rarr;
+              </button>
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.com%20domain%20for%20$14/yr%20(980%20AFN)." target="_blank" rel="noopener noreferrer" class="hostinger-btn-renew" style="flex: 0.8; min-width: 120px; justify-content: center; padding: 0.85rem 0.75rem; font-size: 0.85rem;">
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
 
           <!-- Card 5: .ai Cutting-Edge -->
@@ -2606,9 +2715,14 @@
                 <li><span class="check-icon">✓</span> Anycast DNS propagation across 200+ global edge nodes</li>
               </ul>
             </div>
-            <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.ai%20domain%20for%20$79/yr." target="_blank" rel="noopener noreferrer" class="hostinger-btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem;">
-              Register .ai Domain &rarr;
-            </a>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button type="button" onclick="selectDomainForPortal('', '.ai')" class="hostinger-btn-secondary" style="flex: 1.2; min-width: 160px; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem;">
+                ⚡ Select .ai &amp; Setup DNS &rarr;
+              </button>
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.ai%20domain%20for%20$79/yr." target="_blank" rel="noopener noreferrer" class="hostinger-btn-renew" style="flex: 0.8; min-width: 120px; justify-content: center; padding: 0.85rem 0.75rem; font-size: 0.85rem;">
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
 
           <!-- Card 6: .io Cloud & Developer -->
@@ -2643,9 +2757,15 @@
                 <li><span class="check-icon">✓</span> Real-time DNS record management</li>
               </ul>
             </div>
-            <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.io%20domain%20for%20$49/yr." target="_blank" rel="noopener noreferrer" class="hostinger-btn-secondary" style="width: 100%; justify-content: center; padding: 0.85rem 1rem; font-size: 0.95rem;">
-              Register .io Domain &rarr;
-            </a>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+              <button type="button" onclick="selectDomainForPortal('', '.io')" class="hostinger-btn-secondary" style="flex: 1.2; min-width: 160px; justify-content: center; padding: 0.85rem 1rem; font-size: 0.92rem;">
+                ⚡ Select .io &amp; Setup DNS &rarr;
+              </button>
+              <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20I%20want%20to%20register%20a%20.io%20domain%20for%20$49/yr." target="_blank" rel="noopener noreferrer" class="hostinger-btn-renew" style="flex: 0.8; min-width: 120px; justify-content: center; padding: 0.85rem 0.75rem; font-size: 0.85rem;">
+                💬 WhatsApp
+              </a>
+            </div>
+          </div>
           </div>
 
         </div>
@@ -2748,8 +2868,8 @@
               <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Trilingual software systems: fluent English, Dari, and Pashto interface design</li>
               <li><span style="color: #fbbf24; margin-right: 0.4rem; font-weight: 900;">✓</span> Seamless Odoo Non-Profit ERP &amp; QuickBooks desktop financial integration</li>
             </ul>
-            <a href="https://wa.me/93787881808?text=Hello%20AfghanDevelopers%20(Software%20house),%20we%20need%20a%20custom%20NGO%20portal%20and%20donor%20dashboard%20for%20our%20.ngo%20organization." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" style="width: 100%; text-align: center; justify-content: center; padding: 0.65rem 1rem; color: #fbbf24; border-color: rgba(251, 191, 36, 0.35);">
-              💬 Software House Desk: 0093 787 881808
+            <a href="https://wa.me/93787098321?text=Hello%20AfghanDevelopers%20(Software%20house),%20we%20need%20a%20custom%20NGO%20portal%20and%20donor%20dashboard%20for%20our%20.ngo%20organization." target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" style="width: 100%; text-align: center; justify-content: center; padding: 0.65rem 1rem; color: #fbbf24; border-color: rgba(251, 191, 36, 0.35);">
+              💬 Software House Desk: +93-787098321
             </a>
           </div>
 
@@ -2768,7 +2888,7 @@
               </p>
             </div>
           </div>
-          <a href="https://wa.me/93787881808?text=Hello%20Oriental%20Consultants,%20AfghanHoster%20and%20AfghanDevelopers,%20I%20want%20to%20order%20the%20complete%20.ngo%20tri-pillar%20bundle." target="_blank" rel="noopener noreferrer" class="hostinger-btn-primary" style="background: linear-gradient(135deg, #00b090 0%, #00e5ff 100%); color: #011633; font-weight: 900; padding: 0.75rem 1.4rem; white-space: nowrap;">
+          <a href="https://wa.me/93799543365?text=Hello%20Oriental%20Consultants,%20AfghanHoster%20and%20AfghanDevelopers,%20I%20want%20to%20order%20the%20complete%20.ngo%20tri-pillar%20bundle." target="_blank" rel="noopener noreferrer" class="hostinger-btn-primary" style="background: linear-gradient(135deg, #00b090 0%, #00e5ff 100%); color: #011633; font-weight: 900; padding: 0.75rem 1.4rem; white-space: nowrap;">
             Launch .NGO Tri-Pillar Setup &rarr;
           </a>
         </div>
@@ -3229,10 +3349,14 @@
           <span style="color: #94a3b8; font-size: 0.85rem;">Total Payable:</span>
           <strong id="modalSummaryPrice" style="color: #fbbf24; font-size: 1.1rem;">$45.00 (3,150 AFN)</strong>
         </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 0.75rem; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span style="color: #94a3b8; font-size: 0.85rem;">Provisioned DNS Setup:</span>
+          <strong id="modalSummaryDns" style="color: #34d399; font-size: 0.88rem;">Anycast Cloud DNS Zone</strong>
+        </div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
           <span style="color: #94a3b8; font-size: 0.85rem;">Notification Dispatched To:</span>
           <strong style="color: #38bdf8; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.35rem;">
-            <span>📧</span> info@ocafghan.com / saeed@ocafghan.com (NOC Desk)
+            <span>📧</span> sa_nsr@yahoo.com (CC: saeed@ocafghan.com, info@ocafghan.com)
           </strong>
         </div>
       </div>
@@ -3247,8 +3371,8 @@
         <a id="modalWhatsAppBtn" href="https://wa.me/93799543365" target="_blank" rel="noopener noreferrer" style="flex: 1.4; min-width: 200px; text-align: center; background: #25d366; color: #075e54; font-weight: 900; font-size: 0.92rem; padding: 0.9rem 1.25rem; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);">
           <span>Confirm on WhatsApp: +93-799543365 &rarr;</span>
         </a>
-        <button type="button" onclick="goToMyDomainsConsole()" style="flex: 1; min-width: 170px; background: rgba(56, 189, 248, 0.15); border: 1.5px solid #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.88rem; padding: 0.9rem 1.15rem; border-radius: 10px; cursor: pointer;">
-          Manage in Portal Console &rarr;
+        <button type="button" onclick="goToMyDnsConsole()" style="flex: 1; min-width: 170px; background: rgba(56, 189, 248, 0.15); border: 1.5px solid #38bdf8; color: #38bdf8; font-weight: 800; font-size: 0.88rem; padding: 0.9rem 1.15rem; border-radius: 10px; cursor: pointer;">
+          Open DNS Zone Manager &rarr;
         </button>
       </div>
 
@@ -3643,6 +3767,134 @@
       }
     }
 
+    // Live Domain Search Debounce Handler
+    let liveSearchTimeout = null;
+    function handleLiveDomainSearch(val) {
+      clearTimeout(liveSearchTimeout);
+      const resultsContainer = document.getElementById('mainDomainSearchResults');
+      if (!resultsContainer) return;
+
+      if (!val || val.trim().length < 2) {
+        resultsContainer.style.display = 'none';
+        return;
+      }
+
+      liveSearchTimeout = setTimeout(() => {
+        handleMainDomainSearch();
+      }, 160);
+    }
+
+    // Compute Initial DNS Records based on user selection in Registration Form
+    function getProvisionedDnsRecordsForSelection(domainName, cleanKeyword) {
+      const dnsChoice = document.querySelector('input[name="regDnsChoice"]:checked')?.value || 'default';
+      const clean = cleanKeyword || domainName.split('.')[0] || 'domain';
+      let records = [];
+
+      if (dnsChoice === 'default') {
+        const webIp = document.getElementById('regDnsWebServerIp')?.value.trim() || '185.199.108.153';
+        records = [
+          { type: 'NS', host: '@', value: 'ns1.ocafghan.com', ttl: '86400' },
+          { type: 'NS', host: '@', value: 'ns2.ocafghan.com', ttl: '86400' },
+          { type: 'A', host: '@', value: webIp, ttl: '3600' },
+          { type: 'CNAME', host: 'www', value: domainName, ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 mx ~all', ttl: '3600' }
+        ];
+      } else if (dnsChoice === 'google') {
+        records = [
+          { type: 'NS', host: '@', value: 'ns1.ocafghan.com', ttl: '86400' },
+          { type: 'NS', host: '@', value: 'ns2.ocafghan.com', ttl: '86400' },
+          { type: 'A', host: '@', value: '185.199.108.153', ttl: '3600' },
+          { type: 'CNAME', host: 'www', value: domainName, ttl: '3600' },
+          { type: 'MX', host: '@', value: '1 ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'MX', host: '@', value: '5 ALT1.ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'MX', host: '@', value: '5 ALT2.ASPMX.L.GOOGLE.COM', ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:_spf.google.com ~all', ttl: '3600' },
+          { type: 'CNAME', host: 'mail', value: 'ghs.googlehosted.com', ttl: '3600' }
+        ];
+      } else if (dnsChoice === 'microsoft') {
+        records = [
+          { type: 'NS', host: '@', value: 'ns1.ocafghan.com', ttl: '86400' },
+          { type: 'NS', host: '@', value: 'ns2.ocafghan.com', ttl: '86400' },
+          { type: 'A', host: '@', value: '185.199.108.153', ttl: '3600' },
+          { type: 'CNAME', host: 'www', value: domainName, ttl: '3600' },
+          { type: 'MX', host: '@', value: `0 ${clean}.mail.protection.outlook.com`, ttl: '3600' },
+          { type: 'CNAME', host: 'autodiscover', value: 'autodiscover.outlook.com', ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:spf.protection.outlook.com -all', ttl: '3600' }
+        ];
+      } else if (dnsChoice === 'ngo-triple-bundle') {
+        records = [
+          { type: 'NS', host: '@', value: 'ns1.afghanhoster.com', ttl: '86400' },
+          { type: 'NS', host: '@', value: 'ns2.afghanhoster.com', ttl: '86400' },
+          { type: 'A', host: '@', value: '185.199.108.153', ttl: '3600' },
+          { type: 'CNAME', host: 'portal', value: 'portal.afghandevelopers.com', ttl: '3600' },
+          { type: 'CNAME', host: 'www', value: domainName, ttl: '3600' },
+          { type: 'TXT', host: '@', value: 'v=spf1 include:afghanhoster.com ~all', ttl: '3600' }
+        ];
+      } else if (dnsChoice === 'custom') {
+        const ns1 = document.getElementById('regCustomNs1')?.value.trim() || 'ns1.yourhost.com';
+        const ns2 = document.getElementById('regCustomNs2')?.value.trim() || 'ns2.yourhost.com';
+        const webIp = document.getElementById('regCustomWebIp')?.value.trim() || '185.199.108.153';
+        const mx = document.getElementById('regCustomMx')?.value.trim() || '';
+
+        records = [
+          { type: 'NS', host: '@', value: ns1, ttl: '86400' },
+          { type: 'NS', host: '@', value: ns2, ttl: '86400' },
+          { type: 'A', host: '@', value: webIp, ttl: '3600' },
+          { type: 'CNAME', host: 'www', value: domainName, ttl: '3600' }
+        ];
+        if (mx) {
+          records.push({ type: 'MX', host: '@', value: `10 ${mx}`, ttl: '3600' });
+        }
+      }
+
+      return { choice: dnsChoice, records: records };
+    }
+
+    // Update Live DNS Setup Preview in Form
+    function updateDnsChoicePreview() {
+      const nameInput = document.getElementById('regDomainName');
+      const extSelect = document.getElementById('regDomainExt');
+      const rawName = nameInput ? nameInput.value : '';
+      const ext = extSelect ? extSelect.value : '.af';
+      const clean = (typeof sanitizeDomainKeyword === 'function' ? sanitizeDomainKeyword(rawName) : rawName.trim().toLowerCase()) || 'yourdomain';
+      const fullDomain = `${clean}${ext}`;
+
+      const dnsChoice = document.querySelector('input[name="regDnsChoice"]:checked')?.value || 'default';
+      const customWrap = document.getElementById('customDnsFieldsWrap');
+      if (customWrap) {
+        customWrap.style.display = (dnsChoice === 'custom') ? 'block' : 'none';
+      }
+
+      const dnsData = getProvisionedDnsRecordsForSelection(fullDomain, clean);
+      const tbody = document.getElementById('regDnsLivePreviewTbody');
+      const badge = document.getElementById('dnsPreviewRecordCountBadge');
+
+      if (badge) {
+        badge.textContent = `${dnsData.records.length} Initial Zone Records (${fullDomain})`;
+      }
+
+      if (tbody) {
+        let html = '';
+        dnsData.records.forEach(rec => {
+          let badgeColor = '#00e5ff';
+          if (rec.type === 'CNAME') badgeColor = '#c084fc';
+          if (rec.type === 'MX') badgeColor = '#00b090';
+          if (rec.type === 'TXT') badgeColor = '#fbbf24';
+          if (rec.type === 'NS') badgeColor = '#818cf8';
+
+          html += `
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <td style="padding: 0.35rem 0.5rem;"><span style="color: ${badgeColor}; font-weight: 800;">${rec.type}</span></td>
+              <td style="padding: 0.35rem 0.5rem; color: #fff;">${rec.host}</td>
+              <td style="padding: 0.35rem 0.5rem; color: #cbd5e1; word-break: break-all;">${rec.value}</td>
+              <td style="padding: 0.35rem 0.5rem; color: #94a3b8;">${rec.ttl}s</td>
+            </tr>
+          `;
+        });
+        tbody.innerHTML = html;
+      }
+    }
+
     // Register Wizard Preview Calculator
     function updateRegistrationPreview() {
       const nameInput = document.getElementById('regDomainName');
@@ -3691,9 +3943,11 @@
           previewAfn.textContent = `Approx. ${totalAfn.toLocaleString()} AFN (${period} Yr${period > 1 ? 's' : ''})`;
         }
       }
+
+      updateDnsChoicePreview();
     }
 
-    // Submit Registration: Dispatch Notice to sa_nsr@yahoo.com & Create Portal Login
+    // Submit Registration: Dispatch Notice to sa_nsr@yahoo.com & Create Portal Login + Provision DNS
     function handlePortalRegistration(e) {
       if (e && e.preventDefault) e.preventDefault();
       
@@ -3737,7 +3991,6 @@
       const currency = document.getElementById('regCurrency')?.value || 'AFN';
       const licenseNo = document.getElementById('regLicenseNo')?.value?.trim() || 'N/A';
       const period = document.querySelector('input[name="regPeriod"]:checked')?.value || '1';
-      const dns = document.querySelector('input[name="regDnsChoice"]:checked')?.value || 'default';
 
       const registry = (typeof OC_DOMAIN_REGISTRY !== 'undefined') ? OC_DOMAIN_REGISTRY : [
         { tld: '.af', salePrice: 45, priceAfn: 3150 },
@@ -3754,12 +4007,20 @@
       const totalUsd = (item.salePrice * parseInt(period) * discountRate).toFixed(2);
       const totalAfn = Math.round(item.priceAfn * parseInt(period) * discountRate).toLocaleString();
 
+      // Compute provisioned DNS records
+      const dnsProvisionData = getProvisionedDnsRecordsForSelection(fullDomain, clean);
+      let dnsLabel = 'Oriental Consultants Anycast Cloud DNS';
+      if (dnsProvisionData.choice === 'google') dnsLabel = 'Google Workspace Afghanistan (Corporate Gmail)';
+      else if (dnsProvisionData.choice === 'microsoft') dnsLabel = 'Microsoft 365 & Exchange Online Preset';
+      else if (dnsProvisionData.choice === 'ngo-triple-bundle') dnsLabel = 'Tri-Pillar NGO Stack (Oriental Consultants + AfghanHoster + AfghanDevelopers)';
+      else if (dnsProvisionData.choice === 'custom') dnsLabel = 'Custom Nameservers & Custom DNS Zone';
+
       // UI Loading indicator on button
       const submitBtn = document.getElementById('btnSubmitRegistration');
       const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>⏳ Registering &amp; Notifying Desk...</span>';
+        submitBtn.innerHTML = '<span>⏳ Provisioning DNS &amp; Notifying sa_nsr@yahoo.com...</span>';
       }
 
       // Save credentials & active session to localStorage
@@ -3781,16 +4042,30 @@
         ext: ext,
         registered: new Date().toISOString().split('T')[0],
         expiry: new Date(Date.now() + parseInt(period) * 365 * 24 * 3600 * 1000).toISOString().split('T')[0],
-        status: 'Provisioning (Active)',
+        status: 'Active (Anycast Provisioned)',
         autoRenew: true
       });
       localStorage.setItem('oc_client_domains', JSON.stringify(clientDomains));
 
-      // Format WhatsApp notification message
-      const dnsLabel = (dns === 'ngo-triple-bundle') 
-        ? 'Tri-Pillar NGO Stack (Oriental Consultants + AfghanHoster + AfghanDevelopers)' 
-        : (dns === 'google' ? 'Google Workspace Afghanistan' : (dns === 'microsoft' ? 'Microsoft 365 Pre-Configured' : 'Oriental Consultants Anycast DNS'));
+      // Provision DNS records into client console
+      clientDnsRecords = dnsProvisionData.records;
+      localStorage.setItem('oc_dns_records', JSON.stringify(clientDnsRecords));
 
+      // Update DNS domain selector
+      changeDnsActiveDomain(fullDomain);
+      const dnsDomainSelector = document.getElementById('dnsDomainSelector');
+      if (dnsDomainSelector) {
+        const opt = document.createElement('option');
+        opt.value = fullDomain;
+        opt.textContent = fullDomain;
+        opt.selected = true;
+        dnsDomainSelector.prepend(opt);
+      }
+
+      // Readable list of DNS records for email & WhatsApp
+      const recordsSummary = dnsProvisionData.records.map(r => `${r.type} | ${r.host} -> ${r.value} (TTL ${r.ttl}s)`).join('\n');
+
+      // Format WhatsApp notification message
       const waMsg = `*NEW DOMAIN REGISTRATION & PORTAL CREATED*
 ----------------------------------------
 *Domain:* ${fullDomain}
@@ -3805,14 +4080,17 @@
 *Business License / Tazkira:* ${licenseNo}
 *DNS Configuration:* ${dnsLabel}
 ----------------------------------------
-Notification sent to info@ocafghan.com. Please confirm registration & send bank invoice details (Kabul / Azizi Bank).`;
+*Provisioned DNS Records:*
+${recordsSummary}
+----------------------------------------
+Notification sent to sa_nsr@yahoo.com. Please confirm registration & send bank invoice details (Kabul / Azizi Bank).`;
 
       const waUrl = `https://wa.me/93799543365?text=${encodeURIComponent(waMsg)}`;
 
-      // DISPATCH EMAIL NOTIFICATION VIA AJAX TO info@ocafghan.com (CC: saeed@ocafghan.com)
+      // DISPATCH EMAIL NOTIFICATION VIA AJAX TO sa_nsr@yahoo.com (CC: saeed@ocafghan.com, info@ocafghan.com)
       const emailPayload = {
         _subject: `New Domain Order & Portal Account: ${fullDomain} (${contact} - ${org})`,
-        _cc: 'saeed@ocafghan.com',
+        _cc: 'saeed@ocafghan.com,info@ocafghan.com',
         Domain: fullDomain,
         Extension: ext,
         Registration_Term: `${period} Year(s)`,
@@ -3826,14 +4104,16 @@ Notification sent to info@ocafghan.com. Please confirm registration & send bank 
         City_Province: city,
         Currency_Preference: currency,
         Business_License: licenseNo,
-        DNS_Selection: dnsLabel,
-        Notice_Recipient: 'info@ocafghan.com (CC: saeed@ocafghan.com)',
+        DNS_Setup_Selection: dnsLabel,
+        Provisioned_DNS_Records: recordsSummary,
+        Notice_Recipient: 'sa_nsr@yahoo.com (CC: saeed@ocafghan.com, info@ocafghan.com)',
         Order_Timestamp: new Date().toLocaleString(),
         _template: 'table',
         _captcha: 'false'
       };
 
-      fetch('https://formsubmit.co/ajax/info@ocafghan.com', {
+      // Primary dispatch: FormSubmit to sa_nsr@yahoo.com
+      fetch('https://formsubmit.co/ajax/sa_nsr@yahoo.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -3843,37 +4123,50 @@ Notification sent to info@ocafghan.com. Please confirm registration & send bank 
       })
       .then(res => res.json())
       .then(data => {
-        console.log('Order notification dispatched to info@ocafghan.com (CC: saeed@ocafghan.com):', data);
+        console.log('Order notification dispatched to sa_nsr@yahoo.com (CC: saeed@ocafghan.com, info@ocafghan.com):', data);
       })
       .catch(err => {
-        console.warn('Form notification delivery:', err);
-      })
-      .finally(() => {
+        console.warn('FormSubmit notification status:', err);
+      });
+
+      // Secondary local server dispatch to domain-handler.php
+      try {
+        fetch('domain-handler.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(emailPayload)
+        }).catch(() => {});
+      } catch (e) {}
+
+      setTimeout(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnHtml;
         }
 
-        // Update portal session bar & render list
+        // Update portal session bar & render lists
         checkPortalUserSession();
         renderClientDomains();
+        renderDnsRecords();
 
         // Show rich interactive success modal
-        showRegistrationSuccessModal(fullDomain, email, `$${totalUsd} (${totalAfn} AFN)`, waUrl);
-      });
+        showRegistrationSuccessModal(fullDomain, email, `$${totalUsd} (${totalAfn} AFN)`, dnsLabel, waUrl);
+      }, 700);
     }
 
     // Show Registration Success Modal
-    function showRegistrationSuccessModal(domain, email, priceText, waUrl) {
+    function showRegistrationSuccessModal(domain, email, priceText, dnsLabelText, waUrl) {
       const modal = document.getElementById('domainSuccessModal');
       const domainEl = document.getElementById('modalSummaryDomain');
       const emailEl = document.getElementById('modalSummaryEmail');
       const priceEl = document.getElementById('modalSummaryPrice');
+      const dnsEl = document.getElementById('modalSummaryDns');
       const waBtn = document.getElementById('modalWhatsAppBtn');
 
       if (domainEl) domainEl.textContent = domain;
       if (emailEl) emailEl.textContent = email;
       if (priceEl) priceEl.textContent = priceText;
+      if (dnsEl && dnsLabelText) dnsEl.textContent = dnsLabelText;
       if (waBtn && waUrl) waBtn.href = waUrl;
 
       if (modal) {
@@ -3891,6 +4184,13 @@ Notification sent to info@ocafghan.com. Please confirm registration & send bank 
     function goToMyDomainsConsole() {
       closeSuccessModal();
       switchHostingerTab('domains');
+      scrollToPortalSmoothly();
+    }
+
+    // Go to DNS Zone Manager Console from Modal
+    function goToMyDnsConsole() {
+      closeSuccessModal();
+      switchHostingerTab('dns');
       scrollToPortalSmoothly();
     }
 
@@ -4042,6 +4342,8 @@ Notification sent to info@ocafghan.com. Please confirm registration & send bank 
       checkPortalUserSession();
       renderClientDomains();
       renderDnsRecords();
+      updateRegistrationPreview();
+      updateDnsChoicePreview();
 
       const urlParams = new URLSearchParams(window.location.search);
       const dom = urlParams.get('domain') || urlParams.get('q');
