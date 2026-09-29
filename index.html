@@ -2167,12 +2167,20 @@
        ENTERPRISE SOLUTIONS & QUICKBOOKS PIONEER POPUP MODAL & FLOATING TRIGGER
        ========================================================================== -->
   <style>
-    /* Floating Trigger Button */
-    .oc-solutions-floating-btn {
+    /* Floating Trigger Cluster on Index Page */
+    .oc-floating-cluster {
       position: fixed;
       left: 1.5rem;
       bottom: 1.5rem;
       z-index: 9998;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .oc-solutions-floating-btn {
+      position: relative;
       background: linear-gradient(135deg, #011633 0%, #032b61 100%);
       border: 1.5px solid rgba(56, 189, 248, 0.6);
       border-radius: 9999px;
@@ -2188,6 +2196,76 @@
       text-decoration: none;
       user-select: none;
       animation: ocSolutionsPulse 3s ease-in-out infinite;
+    }
+
+    /* Sublinks directly below QuikBok Pioneer & Solutions button */
+    .oc-floating-sublinks {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding-left: 0.35rem;
+    }
+
+    .oc-floating-sublink {
+      background: rgba(1, 22, 51, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 9999px;
+      padding: 0.38rem 0.85rem;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 14px rgba(0, 15, 36, 0.55);
+      transition: all 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .oc-floating-sublink:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+    }
+
+    .oc-floating-sublink.sublink-network {
+      border-color: rgba(56, 189, 248, 0.6);
+      color: #e0f2fe;
+    }
+
+    .oc-floating-sublink.sublink-network svg {
+      color: #38bdf8;
+    }
+
+    .oc-floating-sublink.sublink-network:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+    }
+
+    .oc-floating-sublink.sublink-network:hover svg {
+      color: #ffffff;
+    }
+
+    .oc-floating-sublink.sublink-quote {
+      border-color: rgba(245, 158, 11, 0.6);
+      color: #fef3c7;
+    }
+
+    .oc-floating-sublink.sublink-quote svg {
+      color: #fbbf24;
+    }
+
+    .oc-floating-sublink.sublink-quote:hover {
+      background: #d97706;
+      color: #ffffff;
+      border-color: #fbbf24;
+    }
+
+    .oc-floating-sublink.sublink-quote:hover svg {
+      color: #ffffff;
     }
 
     .oc-solutions-floating-btn:hover {
@@ -2710,15 +2788,148 @@
       color: #ffffff;
     }
 
+    /* Below QuikBok Pioneer & Solutions inside modal: Our Network & Get a Quote */
+    .oc-popup-extra-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .oc-popup-extra-card {
+      background: linear-gradient(135deg, rgba(2, 32, 71, 0.85) 0%, rgba(1, 19, 44, 0.98) 100%);
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      border-radius: 14px;
+      padding: 0.95rem 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: #ffffff;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .oc-popup-extra-card:hover {
+      transform: translateY(-2px);
+      border-color: #38bdf8;
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+      background: linear-gradient(135deg, rgba(2, 42, 95, 0.95) 0%, rgba(1, 26, 60, 0.98) 100%);
+    }
+
+    .oc-popup-extra-card.card-network {
+      border-left: 4px solid #38bdf8;
+    }
+
+    .oc-popup-extra-card.card-quote {
+      border-left: 4px solid #f59e0b;
+    }
+
+    .oc-popup-extra-card.card-quote:hover {
+      border-color: #fbbf24;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+    }
+
+    .oc-popup-extra-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .oc-popup-extra-card:hover .oc-popup-extra-icon {
+      transform: scale(1.08);
+      background: #38bdf8;
+      color: #011633;
+    }
+
+    .oc-popup-extra-icon.quote-icon {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+
+    .oc-popup-extra-card:hover .oc-popup-extra-icon.quote-icon {
+      background: #f59e0b;
+      color: #011633;
+    }
+
+    .oc-popup-extra-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .oc-popup-extra-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      margin-bottom: 0.15rem;
+    }
+
+    .oc-popup-extra-card.card-network .oc-popup-extra-tag {
+      color: #7dd3fc;
+    }
+
+    .oc-popup-extra-card.card-quote .oc-popup-extra-tag {
+      color: #fcd34d;
+    }
+
+    .oc-popup-extra-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .oc-popup-extra-desc {
+      font-size: 0.74rem;
+      color: #94a3b8;
+      margin-top: 0.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .oc-popup-extra-arrow {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.4);
+      transition: transform 0.2s ease, color 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .oc-popup-extra-card:hover .oc-popup-extra-arrow {
+      transform: translateX(3px);
+      color: #ffffff;
+    }
+
     @media (max-width: 640px) {
-      .oc-solutions-floating-btn {
+      .oc-floating-cluster {
         left: 0.75rem;
-        bottom: 1rem;
+        bottom: 0.75rem;
+        gap: 0.35rem;
+      }
+      .oc-solutions-floating-btn {
         padding: 0.45rem 0.85rem;
         max-width: calc(100vw - 85px);
       }
       .oc-solutions-btn-subtitle {
         display: none;
+      }
+      .oc-floating-sublink {
+        font-size: 0.68rem;
+        padding: 0.25rem 0.6rem;
       }
       .oc-solutions-modal-dialog {
         padding: 1.5rem 1.15rem;
@@ -2729,20 +2940,35 @@
       .oc-solutions-grid {
         grid-template-columns: 1fr;
       }
+      .oc-popup-extra-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
-  <!-- Floating Button on Index Page -->
-  <button type="button" class="oc-solutions-floating-btn" id="btnOpenSolutionsPopup" onclick="openSolutionsPopup()" aria-haspopup="dialog" aria-expanded="false" title="Click to view our QuikBok Pioneer &amp; Enterprise Solutions">
-    <div class="oc-solutions-btn-icon-wrap">
-      <span>🏆</span>
-      <span class="oc-solutions-beacon"></span>
+  <!-- Floating Button Cluster on Index Page (QuikBok Pioneer & Solutions with Our Network & Get Quote Below) -->
+  <div class="oc-floating-cluster" id="ocFloatingCluster">
+    <button type="button" class="oc-solutions-floating-btn" id="btnOpenSolutionsPopup" onclick="openSolutionsPopup()" aria-haspopup="dialog" aria-expanded="false" title="Click to view our QuikBok Pioneer &amp; Enterprise Solutions">
+      <div class="oc-solutions-btn-icon-wrap">
+        <span>🏆</span>
+        <span class="oc-solutions-beacon"></span>
+      </div>
+      <div class="oc-solutions-btn-text">
+        <span class="oc-solutions-btn-title">QuikBok Pioneer &amp; Solutions</span>
+        <span class="oc-solutions-btn-subtitle">Looking for SAP, Odoo, Google, M365? ▾</span>
+      </div>
+    </button>
+    <div class="oc-floating-sublinks">
+      <a href="branches.html" class="oc-floating-sublink sublink-network" title="Global Presence &amp; Regional Hubs">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>Our Network</span>
+      </a>
+      <a href="contact.html" class="oc-floating-sublink sublink-quote" title="Get a Quote &bull; Free Scoping Consultation">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Get a Quote</span>
+      </a>
     </div>
-    <div class="oc-solutions-btn-text">
-      <span class="oc-solutions-btn-title">QuikBok Pioneer &amp; Solutions</span>
-      <span class="oc-solutions-btn-subtitle">Looking for SAP, Odoo, Google, M365? ▾</span>
-    </div>
-  </button>
+  </div>
 
   <!-- Modal Popup -->
   <div class="oc-solutions-modal-backdrop" id="ocSolutionsPopupModal" role="dialog" aria-modal="true" aria-labelledby="ocSolutionsModalTitle">
@@ -2880,6 +3106,35 @@
         </div>
       </div>
 
+      <!-- BELOW QUIKBOK PIONEER & SOLUTIONS: OUR NETWORK & GET A QUOTE -->
+      <div class="oc-popup-extra-row">
+        <!-- Our Network Card -->
+        <a href="branches.html" class="oc-popup-extra-card card-network" title="Explore Our Global Hubs &amp; Provincial Network">
+          <div class="oc-popup-extra-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="oc-popup-extra-content">
+            <div class="oc-popup-extra-tag">Global Presence &bull; 7 Hubs</div>
+            <div class="oc-popup-extra-title">Our Network</div>
+            <div class="oc-popup-extra-desc">Kabul HQ &bull; Pakistan &bull; UAE &bull; UK &bull; Canada</div>
+          </div>
+          <div class="oc-popup-extra-arrow">&rarr;</div>
+        </a>
+
+        <!-- Get a Quote Card -->
+        <a href="contact.html" class="oc-popup-extra-card card-quote" title="Request an Executive Quote &amp; Scoping Consultation">
+          <div class="oc-popup-extra-icon quote-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="oc-popup-extra-content">
+            <div class="oc-popup-extra-tag">2-Hour SLA &bull; Free Scoping</div>
+            <div class="oc-popup-extra-title">Get a Quote</div>
+            <div class="oc-popup-extra-desc">Instant Proposal &bull; NDA Protected &bull; Senior Partners</div>
+          </div>
+          <div class="oc-popup-extra-arrow">&rarr;</div>
+        </a>
+      </div>
+
       <!-- FOOTER STRIP -->
       <div class="oc-solutions-modal-footer">
         <div class="oc-modal-hotlines">
@@ -2978,5 +3233,15 @@
       }
     });
   </script>
+
+  <!-- Floating Sticky CTAs (Our Network on Left, Get a quote on Right) -->
+  <a href="branches.html" class="floating-network-btn" aria-label="Our Network" title="Global Presence &amp; Regional Hubs">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span>Our Network</span>
+  </a>
+  <a href="contact.html" class="floating-quote-btn" aria-label="Get a Quote" title="Get a Quote &bull; Free Scoping Consultation">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span>Get a Quote</span>
+  </a>
 </body>
 </html>
