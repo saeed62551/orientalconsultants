@@ -2898,7 +2898,9 @@
   </div>
 
   <script>
-    // Enterprise Solutions & QuickBooks Pioneer Popup Controller
+    // Enterprise Solutions & QuikBok Pioneer Popup Controller (Shows at once, once for a visitor)
+    const POPUP_STORAGE_KEY = 'oc_solutions_popup_viewed_once';
+
     function openSolutionsPopup() {
       const modal = document.getElementById('ocSolutionsPopupModal');
       const triggerBtn = document.getElementById('btnOpenSolutionsPopup');
@@ -2909,6 +2911,11 @@
       if (triggerBtn) {
         triggerBtn.setAttribute('aria-expanded', 'true');
       }
+      // Record that visitor has seen it
+      try {
+        localStorage.setItem(POPUP_STORAGE_KEY, 'true');
+        sessionStorage.setItem(POPUP_STORAGE_KEY, 'true');
+      } catch (e) {}
     }
 
     function closeSolutionsPopup(permanent) {
@@ -2921,29 +2928,43 @@
       if (triggerBtn) {
         triggerBtn.setAttribute('aria-expanded', 'false');
       }
-      if (permanent) {
-        sessionStorage.setItem('oc_solutions_popup_viewed', 'true');
-      }
+      try {
+        localStorage.setItem(POPUP_STORAGE_KEY, 'true');
+        sessionStorage.setItem(POPUP_STORAGE_KEY, 'true');
+      } catch (e) {}
     }
 
-    // Auto-open on load after 1.2s delay if not dismissed this session
-    window.addEventListener('load', () => {
-      const hasViewed = sessionStorage.getItem('oc_solutions_popup_viewed');
+    // Auto-open at once for a visitor as soon as DOM is ready
+    function checkAndShowPopupAtOnce() {
+      let hasViewed = false;
+      try {
+        hasViewed = localStorage.getItem(POPUP_STORAGE_KEY) === 'true' || 
+                    sessionStorage.getItem(POPUP_STORAGE_KEY) === 'true' ||
+                    sessionStorage.getItem('oc_solutions_popup_viewed') === 'true';
+      } catch (e) {}
+
       const hash = window.location.hash.toLowerCase();
       const search = window.location.search.toLowerCase();
-      const shouldForceOpen = hash.includes('quickbooks') || hash.includes('solutions') || hash.includes('erp') || search.includes('popup');
+      const shouldForceOpen = hash.includes('quickbooks') || hash.includes('quikbok') || hash.includes('solutions') || hash.includes('erp') || search.includes('popup');
 
+      // If visitor hasn't viewed it yet, trigger at once (350ms smooth entrance)
       if (shouldForceOpen || !hasViewed) {
         setTimeout(() => {
           openSolutionsPopup();
-        }, 1200);
+        }, 350);
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkAndShowPopupAtOnce);
+    } else {
+      checkAndShowPopupAtOnce();
+    }
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeSolutionsPopup();
+        closeSolutionsPopup(true);
       }
     });
 
@@ -2953,7 +2974,7 @@
       const dialog = document.getElementById('ocSolutionsModalDialog');
       const triggerBtn = document.getElementById('btnOpenSolutionsPopup');
       if (modal && modal.classList.contains('active') && dialog && !dialog.contains(e.target) && triggerBtn && !triggerBtn.contains(e.target)) {
-        closeSolutionsPopup();
+        closeSolutionsPopup(true);
       }
     });
   </script>
