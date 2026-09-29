@@ -2452,8 +2452,8 @@
     }
 
     .oc-qb-pill {
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(1, 22, 51, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       padding: 0.55rem 0.75rem;
       border-radius: 8px;
       font-size: 0.8rem;
@@ -2462,6 +2462,7 @@
       display: flex;
       align-items: center;
       gap: 0.45rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
     }
 
     .oc-qb-pill span.check-mark {
@@ -2532,7 +2533,7 @@
       margin-top: 1.75rem;
       margin-bottom: 1rem;
       padding-top: 1.25rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
     }
 
     .oc-looking-title {
@@ -2559,8 +2560,8 @@
     }
 
     .oc-sol-card {
-      background: rgba(0, 0, 0, 0.38);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(150deg, rgba(3, 35, 78, 0.72) 0%, rgba(2, 20, 48, 0.92) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.32);
       border-radius: 14px;
       padding: 1.15rem;
       display: flex;
@@ -2568,13 +2569,14 @@
       justify-content: space-between;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
 
     .oc-sol-card:hover {
-      border-color: rgba(56, 189, 248, 0.5);
-      background: rgba(14, 165, 233, 0.08);
+      border-color: rgba(56, 189, 248, 0.75);
+      background: linear-gradient(150deg, rgba(4, 55, 120, 0.92) 0%, rgba(2, 30, 70, 0.96) 100%);
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 14px 38px rgba(0, 20, 50, 0.65), 0 0 25px rgba(56, 189, 248, 0.3);
     }
 
     .oc-sol-top {
@@ -2589,7 +2591,9 @@
       width: 36px;
       height: 36px;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(2, 132, 199, 0.22);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2605,27 +2609,27 @@
     }
 
     .badge-sap {
-      background: rgba(2, 132, 199, 0.2);
+      background: rgba(2, 132, 199, 0.25);
       color: #38bdf8;
-      border: 1px solid rgba(2, 132, 199, 0.4);
+      border: 1px solid rgba(2, 132, 199, 0.45);
     }
 
     .badge-odoo {
-      background: rgba(168, 85, 247, 0.2);
+      background: rgba(168, 85, 247, 0.25);
       color: #c084fc;
-      border: 1px solid rgba(168, 85, 247, 0.4);
+      border: 1px solid rgba(168, 85, 247, 0.45);
     }
 
     .badge-google {
-      background: rgba(59, 130, 246, 0.2);
+      background: rgba(59, 130, 246, 0.25);
       color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.4);
+      border: 1px solid rgba(59, 130, 246, 0.45);
     }
 
     .badge-m365 {
-      background: rgba(249, 115, 22, 0.2);
+      background: rgba(249, 115, 22, 0.25);
       color: #fb923c;
-      border: 1px solid rgba(249, 115, 22, 0.4);
+      border: 1px solid rgba(249, 115, 22, 0.45);
     }
 
     .oc-sol-name {
@@ -2668,8 +2672,12 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 0.75rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(56, 189, 248, 0.2);
+      background: rgba(1, 15, 33, 0.65);
+      margin: 0 -2.25rem -1.85rem;
+      padding: 1.15rem 2.25rem;
+      border-bottom-left-radius: 22px;
+      border-bottom-right-radius: 22px;
       font-size: 0.78rem;
       color: #94a3b8;
     }
