@@ -638,10 +638,10 @@
         <!-- Kabul HQ -->
         <div class="card hub-branch-card" id="kabul-hq" style="padding: 2.5rem; border-radius: var(--radius-xl); border-top: 4px solid var(--accent-gold); overflow: hidden;">
           <div class="branch-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80" alt="Kabul Citadel and historic heritage, Afghanistan" loading="lazy">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bagh-e_Babur_garden_in_Kabul_02.jpg?width=800" alt="Babur Gardens &amp; Citadel, Kabul" loading="lazy" onerror="this.onerror=null; this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Kabul_Baghe_Babur.jpg?width=800';">
             <span class="branch-landmark-pill">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-              Babur Gardens &amp; Kabul Citadel
+              Babur Gardens &amp; Citadel, Kabul
             </span>
           </div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
@@ -671,11 +671,27 @@
         <!-- Pakistan Hub (Managed by Saeed Anwar) -->
         <div class="card hub-branch-card" id="pakistan-hub" style="padding: 2.5rem; border-radius: var(--radius-xl); border-top: 4px solid var(--accent-blue); overflow: hidden;">
           <div class="branch-card-img-wrap">
-            <img src="https://images.unsplash.com/photo-1627916607164-7b20241db935?auto=format&fit=crop&w=800&q=80" alt="Faisal Mosque Islamabad, Pakistan" loading="lazy">
-            <span class="branch-landmark-pill">
+            <img id="pkBranchesMainImg" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bala_Hisar_Fort.jpg?width=800" alt="Qilla Bala Hisar, Peshawar" loading="lazy" onerror="this.onerror=null; this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Faisal_Mosque.jpg?width=800';">
+            <span class="branch-landmark-pill" id="pkBranchesLandmarkTitle">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-              Faisal Mosque, Islamabad
+              Qilla Bala Hisar, Peshawar
             </span>
+          </div>
+
+          <!-- Pakistan 4-Landmark Switcher in branches.html -->
+          <div class="pk-landmark-selector-strip" role="tablist" aria-label="Pakistan Landmarks Showcase" style="margin: -1.5rem -2.5rem 1.25rem; border-radius: 0;">
+            <button type="button" class="pk-landmark-btn pk-branches-landmark-btn active" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Bala_Hisar_Fort.jpg?width=800" data-title="Qilla Bala Hisar, Peshawar" title="Qilla Bala Hisar, Peshawar">
+              🏰 Qilla Bala Hisar
+            </button>
+            <button type="button" class="pk-landmark-btn pk-branches-landmark-btn" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Faisal_Mosque.jpg?width=800" data-title="Faisal Masjid, Islamabad" title="Faisal Masjid, Islamabad">
+              🕌 Faisal Masjid
+            </button>
+            <button type="button" class="pk-landmark-btn pk-branches-landmark-btn" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Tomb_of_Allama_Iqbal.jpg?width=800" data-title="Allama Iqbal Mazar, Lahore" title="Allama Iqbal Mazar, Lahore">
+              🏛️ Allama Iqbal Mazar
+            </button>
+            <button type="button" class="pk-landmark-btn pk-branches-landmark-btn" data-img="https://commons.wikimedia.org/wiki/Special:FilePath/Mazar-E-Quaid.jpg?width=800" data-title="Quaid-e-Azam Mazaar, Karachi" title="Quaid-e-Azam Mazaar, Karachi">
+              ⭐ Quaid-e-Azam Mazaar
+            </button>
           </div>
           
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">

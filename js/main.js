@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initModalEngine();
   initNetworkFilter();
+  initHubLiveClocks();
+  initPakistanLandmarkShowcase();
   initWhatsAppChatWidget();
   initSmartConsultationForm();
 });
@@ -658,6 +660,154 @@ function initNetworkFilter() {
       });
     });
   });
+}
+
+/**
+ * Focuses and highlights a hub card when clicked from the interactive map
+ */
+window.focusHubCard = function(cardId, region) {
+  const targetCard = document.getElementById(cardId);
+  if (!targetCard) return;
+
+  if (targetCard.style.display === 'none' && region) {
+    const matchingBtn = document.querySelector(`.network-filter-btn[data-filter="${region}"]`) ||
+                        document.querySelector('.network-filter-btn[data-filter="all"]');
+    if (matchingBtn) {
+      matchingBtn.click();
+    }
+  }
+
+  setTimeout(() => {
+    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    targetCard.classList.remove('hub-card-focused');
+    void targetCard.offsetWidth;
+    targetCard.classList.add('hub-card-focused');
+  }, 80);
+};
+
+/* ==========================================================================
+   11B. SMART GLOBAL NETWORK LIVE CLOCKS (TIMEZONE SYNCHRONIZATION)
+   ========================================================================== */
+function initHubLiveClocks() {
+  const clockNodes = document.querySelectorAll('[data-hub-tz]');
+  if (!clockNodes.length) return;
+
+  function refreshClocks() {
+    const now = new Date();
+    clockNodes.forEach(node => {
+      const tz = node.getAttribute('data-hub-tz');
+      if (!tz) return;
+      try {
+        const formatted = new Intl.DateTimeFormat('en-US', {
+          timeZone: tz,
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true
+        }).format(now);
+        node.textContent = formatted;
+      } catch (err) {
+        // Fallback gracefully
+      }
+    });
+  }
+
+  refreshClocks();
+  setInterval(refreshClocks, 20000);
+}
+
+/* ==========================================================================
+   11C. PAKISTAN STRATEGIC HUB 4-LANDMARK SHOWCASE & KABUL POPULAR PLACES
+   (Qilla Bala Hisar, Faisal Masjid, Allama Iqbal Mazar, Quaid-e-Azam Mazaar)
+   ========================================================================== */
+function initPakistanLandmarkShowcase() {
+  const pkBtns = document.querySelectorAll('.pk-landmark-btn');
+  const pkMainImg = document.getElementById('pkHubMainImg');
+  const pkLandmarkTitle = document.getElementById('pkLandmarkTitle');
+  const pkBranchesImg = document.getElementById('pkBranchesMainImg');
+  const pkBranchesLandmarkTitle = document.getElementById('pkBranchesLandmarkTitle');
+  const pkBranchesBtns = document.querySelectorAll('.pk-branches-landmark-btn');
+
+  // Handle Home Pakistan Hub
+  if (pkBtns.length && pkMainImg) {
+    pkBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        pkBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const newImg = btn.getAttribute('data-img');
+        const newTitle = btn.getAttribute('data-title');
+
+        if (newImg) {
+          pkMainImg.style.opacity = '0.35';
+          setTimeout(() => {
+            pkMainImg.src = newImg;
+            pkMainImg.alt = newTitle;
+            pkMainImg.style.opacity = '1';
+          }, 140);
+        }
+        if (pkLandmarkTitle && newTitle) {
+          pkLandmarkTitle.textContent = newTitle;
+        }
+      });
+    });
+  }
+
+  // Handle Branches Page Pakistan Hub
+  if (pkBranchesBtns.length && pkBranchesImg) {
+    pkBranchesBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        pkBranchesBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const newImg = btn.getAttribute('data-img');
+        const newTitle = btn.getAttribute('data-title');
+
+        if (newImg) {
+          pkBranchesImg.style.opacity = '0.35';
+          setTimeout(() => {
+            pkBranchesImg.src = newImg;
+            pkBranchesImg.alt = newTitle;
+            pkBranchesImg.style.opacity = '1';
+          }, 140);
+        }
+        if (pkBranchesLandmarkTitle && newTitle) {
+          pkBranchesLandmarkTitle.textContent = newTitle;
+        }
+      });
+    });
+  }
+
+  // Kabul popular places switcher
+  const kabulBtns = document.querySelectorAll('.kabul-place-btn');
+  const kabulImg = document.getElementById('kabulFlagshipImg');
+  const kabulTitle = document.getElementById('kabulLandmarkPillText');
+
+  if (kabulBtns.length && kabulImg) {
+    kabulBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        kabulBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const newImg = btn.getAttribute('data-img');
+        const newTitle = btn.getAttribute('data-title');
+
+        if (newImg) {
+          kabulImg.style.opacity = '0.35';
+          setTimeout(() => {
+            kabulImg.src = newImg;
+            kabulImg.alt = newTitle;
+            kabulImg.style.opacity = '1';
+          }, 140);
+        }
+        if (kabulTitle && newTitle) {
+          kabulTitle.textContent = newTitle;
+        }
+      });
+    });
+  }
 }
 
 /* ==========================================================================
