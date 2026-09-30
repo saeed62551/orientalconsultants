@@ -852,25 +852,25 @@ function initWhatsAppChatWidget() {
       msg: 'Hello Oriental Consultants, I am inquiring regarding statutory financial audit (ISA 700/800 compliant), donor grant assurance, and Afghanistan tax clearance.'
     },
     {
+      id: 'domain',
+      icon: '🌐',
+      title: 'Domain & Free Domain Registration (.AF, .COM, .NGO)',
+      desc: 'Official Afghan registrar, free .ngo grant & instant WhatsApp',
+      msg: 'Hello Oriental Consultants, I am searching for domain or free domain or domain registration in Afghanistan (.af, .com, .ngo). Please guide me with instant activation.'
+    },
+    {
       id: 'google',
       icon: '☁️',
-      title: 'Google Workspace in Afghanistan',
-      desc: 'Deployment, cloud tenancy & business email',
-      msg: 'Hello Oriental Consultants, our organization needs Google Workspace official cloud tenancy deployment, business email setup, and administrative support in Afghanistan.'
+      title: 'Google Workspace in Afghanistan (Authorized Dealer)',
+      desc: 'Need Google Workspace, corporate Gmail, or looking for dealer in Kabul',
+      msg: 'Hello Oriental Consultants, I need Google Workspace in Afghanistan / looking for an authorized Google Workspace dealer in Kabul. Please provide deployment & pricing details.'
     },
     {
       id: 'm365',
       icon: '🏢',
-      title: 'Microsoft Office 365 Solutions',
-      desc: 'Enterprise licensing & cloud migration',
-      msg: 'Hello Oriental Consultants, we are looking for Microsoft Office 365 enterprise licensing, Exchange cloud migration, and cloud productivity solutions.'
-    },
-    {
-      id: 'domain',
-      icon: '🌐',
-      title: '.AF Domain & Pro Registration',
-      desc: 'Official .af, .com.af & domain hosting',
-      msg: 'Hello Oriental Consultants, I would like to register / manage our official .af / .com.af professional domain name and cloud hosting via AfghanHoster.'
+      title: 'Microsoft Office 365 Dealer in Afghanistan',
+      desc: 'Looking for dealer, Office 365 licenses & Kabul support',
+      msg: 'Hello Oriental Consultants, I am looking for an authorized Microsoft Office 365 dealer in Afghanistan for corporate licensing, Teams, Word, Excel & local AFN invoicing.'
     },
     {
       id: 'database',
