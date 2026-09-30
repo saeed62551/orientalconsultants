@@ -633,7 +633,7 @@ window.openModalWithService = openModalWithService;
    ========================================================================== */
 function initNetworkFilter() {
   const filterBtns = document.querySelectorAll('.network-filter-btn');
-  const panels = document.querySelectorAll('#networkGrid .network-panel');
+  const panels = document.querySelectorAll('#network-section .network-panel');
   if (!filterBtns.length || !panels.length) return;
 
   filterBtns.forEach(btn => {
@@ -648,9 +648,10 @@ function initNetworkFilter() {
       btn.setAttribute('aria-selected', 'true');
 
       panels.forEach(panel => {
-        const region = panel.getAttribute('data-region');
-        if (filter === 'all' || region === filter) {
-          panel.style.display = 'flex';
+        const regionAttr = panel.getAttribute('data-region') || '';
+        const regions = regionAttr.split(/\s+/);
+        if (filter === 'all' || regions.includes(filter) || regionAttr === filter) {
+          panel.style.display = '';
         } else {
           panel.style.display = 'none';
         }
