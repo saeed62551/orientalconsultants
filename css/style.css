@@ -7690,16 +7690,6 @@ img, svg, iframe, video {
     font-size: 0.95rem !important;
   }
 
-  .oc-floating-sublinks {
-    gap: 0.35rem !important;
-    padding-left: 0.15rem !important;
-  }
-
-  .oc-floating-sublink {
-    font-size: 0.66rem !important;
-    padding: 0.25rem 0.6rem !important;
-  }
-
   /* Floating WhatsApp on Mobile */
   .floating-whatsapp-btn {
     right: 0.65rem !important;
