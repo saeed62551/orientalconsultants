@@ -3947,6 +3947,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-blue);
 }
 
+[data-theme="dark"] .hero-badge-pill-text strong,
+[data-theme="dark"] .proof-sub {
+  color: #fbbf24 !important;
+}
+
 .hero-title-editorial,
 .page-hero-title,
 .display-headline {
@@ -4008,6 +4013,79 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-lead-quote span.italic {
   font-style: italic;
+}
+
+/* Highly-Focused Executive Badge for "⭐ since 2006" */
+.since-2006-focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #001f3f 0%, #032b61 50%, #011633 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 9999px;
+  padding: 0.28rem 0.95rem;
+  margin-left: 0.35rem;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45), 0 2px 8px rgba(0, 31, 63, 0.3);
+  vertical-align: middle;
+  position: relative;
+  animation: since2006Pulse 3s ease-in-out infinite;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.since-2006-focus-badge:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.65), 0 0 20px rgba(251, 191, 36, 0.5);
+  border-color: #fbbf24;
+}
+
+.since-2006-star {
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-block;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.95));
+  animation: starTwinkle 2.5s ease-in-out infinite;
+}
+
+.since-2006-text {
+  font-family: var(--font-poppins), 'Plus Jakarta Sans', sans-serif;
+  color: #fef08a !important;
+  font-size: 1.02rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 0 10px rgba(251, 191, 36, 0.5);
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .since-2006-focus-badge {
+  background: linear-gradient(135deg, #011633 0%, #033675 50%, #011a3c 100%);
+  border-color: #fbbf24;
+  box-shadow: 0 0 22px rgba(251, 191, 36, 0.55), 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .since-2006-text {
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+}
+
+@keyframes since2006Pulse {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45), 0 2px 8px rgba(0, 31, 63, 0.3);
+    border-color: #f59e0b;
+  }
+  50% {
+    box-shadow: 0 6px 28px rgba(245, 158, 11, 0.75), 0 0 18px rgba(251, 191, 36, 0.6);
+    border-color: #fbbf24;
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.25) rotate(15deg);
+  }
 }
 
 .hero-btn-group {
