@@ -8845,6 +8845,241 @@ img, svg, iframe, video {
   }
 }
 
+/* ==========================================================================
+   ADVANCED FULL RESPONSIVENESS SUITE (320px - 1200px)
+   Zero-Overflow, Fluid Scaling, Touch-Optimized Layouts
+   ========================================================================== */
+
+/* Universal Responsive Table Wrapping */
+.table-responsive,
+.table-container,
+.table-wrap,
+.data-table-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  margin-bottom: 1.25rem;
+}
+
+table {
+  max-width: 100%;
+}
+
+/* Universal Typography & Content Break Protection */
+p, span, a, h1, h2, h3, h4, h5, h6, li, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Tablet & Mobile Breakpoints for Network Flagship & Hubs */
+@media (max-width: 991px) {
+  .network-flagship-card {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+    padding: 1.75rem !important;
+  }
+  .flagship-img-card {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Container Safe Padding */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Kabul HQ Flagship Card on Mobile */
+  .network-flagship-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+    margin-bottom: 1.75rem !important;
+    gap: 1.25rem !important;
+  }
+
+  .flagship-title {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .flagship-img-card {
+    height: 210px !important;
+    border-radius: 12px !important;
+  }
+
+  .flagship-actions-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  .btn-flagship-gold,
+  .btn-flagship-wa {
+    width: 100% !important;
+    min-width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .hotline-links {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.4rem !important;
+  }
+
+  .hotline-link {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+    font-size: 0.78rem !important;
+    padding: 0.45rem 0.65rem !important;
+  }
+
+  .flagship-top-badges {
+    gap: 0.4rem !important;
+  }
+
+  .flagship-since-pill,
+  .smart-live-clock-pill,
+  .flagship-beacon {
+    font-size: 0.62rem !important;
+    padding: 0.25rem 0.6rem !important;
+  }
+
+  /* Branches Page Hubs Grid */
+  #hubsGrid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .hub-branch-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 16px !important;
+  }
+
+  .branch-card-img-wrap {
+    height: 190px !important;
+    margin: -1.25rem -1rem 1.25rem -1rem !important;
+  }
+
+  /* Network Hub Cards on Mobile */
+  .network-grid-modern {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .network-hub-card {
+    border-radius: 14px !important;
+  }
+
+  .hub-card-header {
+    height: 170px !important;
+  }
+
+  .hub-card-body {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .hub-card-footer {
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Filter Tabs Fluid Wrapping */
+  .network-filter-tabs {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    padding: 0.4rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .network-filter-btn {
+    font-size: 0.65rem !important;
+    padding: 0.35rem 0.65rem !important;
+  }
+
+  /* Modals & Popups Safe Width */
+  .modal-dialog,
+  .wa-chat-popup,
+  .oc-solutions-modal-dialog {
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-shell {
+    padding: 1.75rem 0.65rem 2.5rem !important;
+  }
+
+  .hero-title-editorial,
+  .page-hero-title {
+    font-size: 1.85rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .flagship-img-card {
+    height: 185px !important;
+  }
+
+  .hub-card-header {
+    height: 155px !important;
+  }
+
+  .network-stats-ribbon {
+    grid-template-columns: 1fr !important;
+    padding: 1.25rem 1rem !important;
+    gap: 1rem !important;
+  }
+
+  .partner-strip-logos {
+    gap: 1.25rem !important;
+  }
+
+  .partner-logo-item img,
+  .partner-logo-item svg {
+    max-height: 28px !important;
+  }
+}
+
+/* Extra Small Phones (320px - 375px) */
+@media (max-width: 375px) {
+  .container {
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+  }
+
+  .network-flagship-card {
+    padding: 1rem 0.75rem !important;
+  }
+
+  .flagship-title {
+    font-size: 1.35rem !important;
+  }
+
+  .brand-logo-img {
+    max-width: 115px !important;
+    height: 26px !important;
+  }
+
+  .btn-header-cta {
+    display: none !important;
+  }
+
+  .top-bar-phone-pill {
+    font-size: 0.62rem !important;
+  }
+}
+
+
 
 
 
