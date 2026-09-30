@@ -57,30 +57,91 @@ function updateThemeIcon(theme) {
 }
 
 /* ==========================================================================
-   2. NAVIGATION & MOBILE DRAWER
+   2. NAVIGATION & MOBILE DRAWER (TOUCH-OPTIMIZED & ROBUST)
    ========================================================================== */
 function initNavigation() {
-  const mobileToggle = document.getElementById('mobileToggleBtn');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+  const mobileToggle = document.getElementById('mobileToggleBtn') || document.querySelector('.mobile-toggle-btn');
+  const mobileDrawer = document.getElementById('mobileDrawer') || document.querySelector('.mobile-drawer');
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn') || (mobileDrawer ? mobileDrawer.querySelector('.modal-close-btn') : null);
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.add('open');
+  if (!mobileDrawer) return;
+
+  // Ensure Mobile Backdrop Exists in DOM
+  let backdrop = document.getElementById('mobileDrawerBackdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'mobileDrawerBackdrop';
+    backdrop.className = 'mobile-drawer-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  function openDrawer() {
+    mobileDrawer.classList.add('open');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (mobileToggle) {
+      mobileToggle.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function closeDrawer() {
+    mobileDrawer.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    if (mobileToggle) {
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  if (mobileToggle) {
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.setAttribute('aria-controls', 'mobileDrawer');
+
+    // Handle click with immediate responsiveness
+    mobileToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (mobileDrawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
   }
 
-  if (drawerCloseBtn && mobileDrawer) {
-    drawerCloseBtn.addEventListener('click', () => {
-      mobileDrawer.classList.remove('open');
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDrawer();
     });
   }
 
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      closeDrawer();
+    });
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  // Close drawer when any mobile nav link is clicked
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (mobileDrawer) mobileDrawer.classList.remove('open');
+      closeDrawer();
     });
+  });
+
+  // Automatically close drawer if user expands to desktop viewport
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && mobileDrawer.classList.contains('open')) {
+      closeDrawer();
+    }
   });
 
   // Highlight active nav item on scroll
@@ -100,7 +161,7 @@ function initNavigation() {
         }
       }
     });
-  });
+  }, { passive: true });
 }
 
 /* ==========================================================================
