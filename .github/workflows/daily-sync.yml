@@ -9,6 +9,8 @@ on:
 jobs:
   sync-portals:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
@@ -24,7 +26,12 @@ jobs:
 
       - name: Commit & Push Synced Data (If Changes Detected)
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action [Daily Sync]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add data/*.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync: Daily Jobs & RFP portals update [$(date -u +'%Y-%m-%d %H:%M UTC')]" && git push)
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-sync: Daily Jobs & RFP portals update [$(date -u +'%Y-%m-%d %H:%M UTC')]"
+            git push
+          else
+            echo "No changes detected in data/*.json to commit."
+          fi

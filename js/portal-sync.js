@@ -310,9 +310,125 @@
     }
   }
 
+  // Setup Unified Jobs Hub Filtering
+  function initJobsHubFilter() {
+    const searchInput = document.getElementById('jobsHubSearchInput');
+    const sourceSelect = document.getElementById('jobsHubSourceSelect');
+    const sectorSelect = document.getElementById('jobsHubSectorSelect');
+    const locationSelect = document.getElementById('jobsHubLocationSelect');
+    const resetBtn = document.getElementById('jobsHubResetBtn');
+    const countDisplay = document.getElementById('jobsHubCountDisplay');
+    const jobRows = document.querySelectorAll('#jobsHubList .job-card-row');
+
+    if (!jobRows.length) return;
+
+    function filterJobsHub() {
+      const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const src = sourceSelect ? sourceSelect.value : 'all';
+      const sector = sectorSelect ? sectorSelect.value : 'all';
+      const loc = locationSelect ? locationSelect.value : 'all';
+      let visibleCount = 0;
+
+      jobRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const rowSrc = row.getAttribute('data-source') || '';
+        const rowSector = row.getAttribute('data-sector') || '';
+        const rowLoc = row.getAttribute('data-location') || '';
+
+        const matchesQuery = !q || text.includes(q);
+        const matchesSrc = src === 'all' || rowSrc === src;
+        const matchesSector = sector === 'all' || rowSector === sector;
+        const matchesLoc = loc === 'all' || rowLoc === loc;
+
+        if (matchesQuery && matchesSrc && matchesSector && matchesLoc) {
+          row.style.display = 'grid';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (countDisplay) countDisplay.textContent = visibleCount;
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterJobsHub);
+    if (sourceSelect) sourceSelect.addEventListener('change', filterJobsHub);
+    if (sectorSelect) sectorSelect.addEventListener('change', filterJobsHub);
+    if (locationSelect) locationSelect.addEventListener('change', filterJobsHub);
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        if (sourceSelect) sourceSelect.value = 'all';
+        if (sectorSelect) sectorSelect.value = 'all';
+        if (locationSelect) locationSelect.value = 'all';
+        filterJobsHub();
+      });
+    }
+  }
+
+  // Setup Unified Tenders Hub Filtering
+  function initTendersHubFilter() {
+    const searchInput = document.getElementById('tendersHubSearchInput');
+    const sourceSelect = document.getElementById('tendersHubSourceSelect');
+    const typeSelect = document.getElementById('tendersHubTypeSelect');
+    const locationSelect = document.getElementById('tendersHubLocationSelect');
+    const resetBtn = document.getElementById('tendersHubResetBtn');
+    const countDisplay = document.getElementById('tendersHubCountDisplay');
+    const tenderRows = document.querySelectorAll('#tendersHubList .tender-card-row');
+
+    if (!tenderRows.length) return;
+
+    function filterTendersHub() {
+      const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const src = sourceSelect ? sourceSelect.value : 'all';
+      const type = typeSelect ? typeSelect.value : 'all';
+      const loc = locationSelect ? locationSelect.value : 'all';
+      let visibleCount = 0;
+
+      tenderRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const rowSrc = row.getAttribute('data-source') || '';
+        const rowType = row.getAttribute('data-type') || '';
+        const rowLoc = row.getAttribute('data-location') || '';
+
+        const matchesQuery = !q || text.includes(q);
+        const matchesSrc = src === 'all' || rowSrc === src;
+        const matchesType = type === 'all' || rowType === type;
+        const matchesLoc = loc === 'all' || rowLoc === loc;
+
+        if (matchesQuery && matchesSrc && matchesType && matchesLoc) {
+          row.style.display = 'grid';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (countDisplay) countDisplay.textContent = visibleCount;
+    }
+
+    if (searchInput) searchInput.addEventListener('input', filterTendersHub);
+    if (sourceSelect) sourceSelect.addEventListener('change', filterTendersHub);
+    if (typeSelect) typeSelect.addEventListener('change', filterTendersHub);
+    if (locationSelect) locationSelect.addEventListener('change', filterTendersHub);
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        if (sourceSelect) sourceSelect.value = 'all';
+        if (typeSelect) typeSelect.value = 'all';
+        if (locationSelect) locationSelect.value = 'all';
+        filterTendersHub();
+      });
+    }
+  }
+
   // Run on DOM ready
   document.addEventListener('DOMContentLoaded', () => {
     initSyncBar();
+    initJobsHubFilter();
+    initTendersHubFilter();
     initAcbarJobsFilter();
     initAcbarRfpsFilter();
     initJobsAfFilter();
