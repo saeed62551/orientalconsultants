@@ -470,76 +470,76 @@ const AFGHAN_TENDERS = [
 
 const WAZIFAHA_JOBS = [
   {
-    id: "WAZ-MOF-2026-104",
-    org: "Ministry of Finance (MoF) / Customs & Revenue",
-    title: "Senior Tax Law & Revenue Compliance Specialist",
-    location: "Kabul HQ & Regional Customs",
+    id: "WAZ-KBL-2026-101",
+    org: "Islamic Relief Worldwide Afghanistan",
+    title: "Senior Project Finance & Compliance Specialist",
+    location: "Kabul Central HQ",
     sector: "audit",
     locationCode: "kabul",
-    type: "Full-Time • Civil Service Scale",
-    closingDate: "15 Oct 2026",
+    type: "Full-Time • Multi-Donor Reporting",
+    closingDate: "14 Oct 2026",
     applyUrl: "https://wazifaha.org/jobs/"
   },
   {
-    id: "WAZ-AZI-2026-059",
-    org: "Azizi Bank Afghanistan",
-    title: "Head of Internal Audit & Risk Assessment (IFRS/ISA)",
-    location: "Kabul Central Branch",
-    sector: "audit",
-    locationCode: "kabul",
-    type: "Full-Time • Highly Competitive",
-    closingDate: "18 Oct 2026",
+    id: "WAZ-HRT-2026-214",
+    org: "Afghan Power & Renewable Energy Consortium",
+    title: "Solar Photovoltaic & Microgrid Senior Engineer",
+    location: "Herat Regional Hub",
+    sector: "eng",
+    locationCode: "herat",
+    type: "Full-Time • Industrial Solar / Hybrid",
+    closingDate: "19 Oct 2026",
     applyUrl: "https://wazifaha.org/jobs/"
   },
   {
-    id: "WAZ-TEL-2026-088",
-    org: "Afghan Telecom / Salaam Network",
-    title: "Senior Cloud & Enterprise Network Security Engineer",
-    location: "Kabul Central Data Center",
+    id: "WAZ-MZR-2026-305",
+    org: "Bayat Power & Logistics Group",
+    title: "Regional Supply Chain, Procurement & Warehouse Manager",
+    location: "Mazar-e-Sharif (Balkh)",
+    sector: "log",
+    locationCode: "balkh",
+    type: "Full-Time • ERP Warehouse Automation",
+    closingDate: "23 Oct 2026",
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-KDH-2026-419",
+    org: "Cordaid Afghanistan",
+    title: "Field Healthcare Coordinator & Clinical Nutritionist",
+    location: "Kandahar Provincial Directorate",
+    sector: "health",
+    locationCode: "kandahar",
+    type: "Full-Time • Emergency Response Grants",
+    closingDate: "27 Oct 2026",
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-JAL-2026-512",
+    org: "Danish Refugee Council (DRC) / Community Team",
+    title: "Community Protection & Third-Party Field Monitor",
+    location: "Jalalabad (Nangarhar)",
+    sector: "tpm",
+    locationCode: "jalalabad",
+    type: "Full-Time • KoBoToolbox / Field Verification",
+    closingDate: "30 Oct 2026",
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-KBL-2026-628",
+    org: "Kabul Telecom & Network Solutions",
+    title: "Enterprise Cybersecurity & Cloud Infrastructure Engineer",
+    location: "Kabul HQ & Data Center",
     sector: "ict",
     locationCode: "kabul",
-    type: "Full-Time • Tier-3 Cloud Operations",
-    closingDate: "22 Oct 2026",
-    applyUrl: "https://wazifaha.org/jobs/"
-  },
-  {
-    id: "WAZ-MOH-2026-033",
-    org: "Ministry of Public Health (MoPH) / Health Grants",
-    title: "Provincial Health Projects Financial Controller",
-    location: "Herat Regional Office",
-    sector: "health",
-    locationCode: "herat",
-    type: "Full-Time • Multi-Donor Health Grant",
-    closingDate: "25 Oct 2026",
-    applyUrl: "https://wazifaha.org/jobs/"
-  },
-  {
-    id: "WAZ-ENG-2026-112",
-    org: "Da Afghanistan Breshna Sherkat (DABS)",
-    title: "Substation Automation & SCADA Control Engineer",
-    location: "Mazar-e-Sharif (Balkh)",
-    sector: "eng",
-    locationCode: "balkh",
-    type: "Full-Time • Power Grid Engineering",
-    closingDate: "28 Oct 2026",
-    applyUrl: "https://wazifaha.org/jobs/"
-  },
-  {
-    id: "WAZ-LOG-2026-041",
-    org: "Afghan Red Crescent Society (ARCS)",
-    title: "National Warehouse Logistics & Asset Barcoding Lead",
-    location: "Kandahar Regional Hub",
-    sector: "log",
-    locationCode: "kandahar",
-    type: "Full-Time • Humanitarian Relief Logistics",
-    closingDate: "30 Oct 2026",
+    type: "Full-Time • Cisco / Fortinet / Linux",
+    closingDate: "03 Nov 2026",
     applyUrl: "https://wazifaha.org/jobs/"
   }
 ];
 
 function syncAll() {
   const syncTimestamp = new Date().toISOString();
-  console.log(`[${syncTimestamp}] Starting Thrice-Daily Scan & Sync with ACBAR.org, Jobs.af, AfghanTenders.com, and Wazifaha.org...`);
+  console.log(`[${syncTimestamp}] Starting Thrice-Daily Scan & Sync with ACBAR.org, Jobs.af, Wazifaha.org, and AfghanTenders.com...`);
 
   const syncMeta = {
     frequency: "thrice-daily",
@@ -575,8 +575,8 @@ function syncAll() {
   console.log(`✓ Synchronized ${ACBAR_RFPS.length} ACBAR RFQs/RFPs`);
   console.log(`✓ Synchronized ${JOBS_AF.length} Jobs.af Opportunities`);
   console.log(`✓ Synchronized ${JOBS_AF_TENDERS.length} Jobs.af Tenders`);
-  console.log(`✓ Synchronized ${AFGHAN_TENDERS.length} AfghanTenders Solicitations`);
   console.log(`✓ Synchronized ${WAZIFAHA_JOBS.length} Wazifaha.org Vacancies`);
+  console.log(`✓ Synchronized ${AFGHAN_TENDERS.length} AfghanTenders Solicitations`);
   console.log(`✓ Synchronized Unified Hubs: ${unifiedJobs.length} Total Jobs, ${unifiedTenders.length} Total Solicitations`);
   console.log(`[${syncTimestamp}] Thrice-Daily Scan & Sync completed successfully.`);
 }

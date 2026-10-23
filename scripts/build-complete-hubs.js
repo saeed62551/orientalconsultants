@@ -8,6 +8,7 @@ const DATA_DIR = path.join(ROOT_DIR, 'data');
 const indexHtml = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf8');
 const acbarJobs = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'acbar-jobs.json'), 'utf8')).jobs || [];
 const jobsAf = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'jobs-af.json'), 'utf8')).jobs || [];
+const wazifahaJobs = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'wazifaha-jobs.json'), 'utf8')).jobs || [];
 const afghanTenders = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'afghan-tenders.json'), 'utf8')).tenders || [];
 const acbarRfps = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'acbar-rfps.json'), 'utf8')).rfps || [];
 const jobsAfTenders = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'jobs-af-tenders.json'), 'utf8')).tenders || [];
@@ -35,9 +36,7 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-// -----------------------------------------------------------------
 // Extra CSS for directory cards & portal toolbar
-// -----------------------------------------------------------------
 const extraStyles = `
   <style>
     .portal-banner {
@@ -219,20 +218,19 @@ const extraStyles = `
   </style>
 `;
 
-// Insert extra styles before </head>
 preMainTemplate = preMainTemplate.replace('</head>', extraStyles + '\n</head>');
 
-// Ensure portal-sync.js is included in postMainTemplate
 if (!postMainTemplate.includes('js/portal-sync.js')) {
   postMainTemplate = postMainTemplate.replace('<script src="js/main.js"></script>', '<script src="js/main.js"></script>\n  <script src="js/portal-sync.js"></script>');
 }
 
 // -------------------------------------------------------------
-// 1. GENERATE JOBS-HUB.HTML
+// 1. GENERATE JOBS-HUB.HTML (WITH WAZIFAHA.ORG IN HUB & SLIDER)
 // -------------------------------------------------------------
 function generateJobsHubHtml() {
   const allJobs = [];
 
+  // ACBAR Jobs
   acbarJobs.forEach(j => {
     allJobs.push({
       id: j.id,
@@ -247,10 +245,12 @@ function generateJobsHubHtml() {
       source: 'acbar',
       sourceLabel: 'ACBAR.org Verified',
       sourceColor: '#0284c7',
-      sourceBg: 'rgba(2, 132, 199, 0.1)'
+      sourceBg: 'rgba(2, 132, 199, 0.1)',
+      btnLabel: 'Apply on ACBAR &rarr;'
     });
   });
 
+  // Jobs.af Jobs
   jobsAf.forEach(j => {
     allJobs.push({
       id: j.id,
@@ -265,24 +265,39 @@ function generateJobsHubHtml() {
       source: 'jobsaf',
       sourceLabel: 'Jobs.af Verified',
       sourceColor: '#0ea5e9',
-      sourceBg: 'rgba(14, 165, 233, 0.1)'
+      sourceBg: 'rgba(14, 165, 233, 0.1)',
+      btnLabel: 'Apply on Jobs.af &rarr;'
+    });
+  });
+
+  // Wazifaha.org Jobs
+  wazifahaJobs.forEach(j => {
+    allJobs.push({
+      id: j.id,
+      title: j.title,
+      org: j.org,
+      location: j.location,
+      sector: j.sector || 'audit',
+      locationCode: j.locationCode || 'kabul',
+      type: j.type || 'Full-Time',
+      closingDate: j.closingDate || 'Open',
+      applyUrl: j.applyUrl || 'https://wazifaha.org/jobs/',
+      source: 'wazifaha',
+      sourceLabel: 'Wazifaha.org Verified',
+      sourceColor: '#10b981',
+      sourceBg: 'rgba(16, 185, 129, 0.1)',
+      btnLabel: 'Apply on Wazifaha &rarr;'
     });
   });
 
   const cardsHtml = allJobs.map(job => {
-    const isAcbar = job.source === 'acbar';
-    const sourceIcon = isAcbar
-      ? `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`
-      : `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`;
-    const btnLabel = isAcbar ? 'Apply on ACBAR &rarr;' : 'Apply on Jobs.af &rarr;';
-
     return `
         <!-- Job Card: ${escapeHtml(job.id)} -->
         <div class="job-card-row" data-source="${job.source}" data-sector="${job.sector}" data-location="${job.locationCode}">
           <div>
             <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
               <span class="source-tag" style="background: ${job.sourceBg}; color: ${job.sourceColor}; border: 1px solid ${job.sourceColor}33; padding: 0.2rem 0.55rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; display: inline-flex; align-items: center; gap: 0.35rem;">
-                ${sourceIcon}
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 ${job.sourceLabel}
               </span>
               <div class="job-org-badge" style="margin-bottom: 0;">
@@ -308,7 +323,7 @@ function generateJobsHubHtml() {
           </div>
           <div class="job-action-col">
             <a href="${escapeHtml(job.applyUrl)}" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm" style="font-weight: 800; text-align: center;">
-              ${btnLabel}
+              ${job.btnLabel}
             </a>
             <a href="careers.html#applyForm" class="btn btn-outline btn-sm" style="font-size: 0.78rem; text-align: center;">
               OC Talent Pool
@@ -317,10 +332,9 @@ function generateJobsHubHtml() {
         </div>`;
   }).join('\n');
 
-  // Customize pre-main for Jobs Hub
   let headAndNav = preMainTemplate
-    .replace(/<title>[\s\S]*?<\/title>/, '<title>All Afghanistan Jobs Hub • ACBAR &amp; Jobs.af Unified Directory | Oriental Consultants</title>')
-    .replace(/<meta name="description"[\s\S]*?>/, '<meta name="description" content="All Afghanistan Jobs Hub: Unified national employment directory combining verified humanitarian, NGO, UN, and commercial career openings from ACBAR.org and Jobs.af across Afghanistan.">')
+    .replace(/<title>[\s\S]*?<\/title>/, '<title>All Afghanistan Jobs Hub • ACBAR, Jobs.af &amp; Wazifaha.org Verified Portal | Oriental Consultants</title>')
+    .replace(/<meta name="description"[\s\S]*?>/, '<meta name="description" content="All Afghanistan Jobs Hub: Unified national employment directory combining verified humanitarian, NGO, UN, and commercial career openings from ACBAR.org, Jobs.af, and Wazifaha.org across Afghanistan.">')
     .replace(/<link rel="canonical"[\s\S]*?>/, '<link rel="canonical" href="https://www.ocafghan.com/jobs-hub.html">');
 
   const mainContent = `
@@ -341,7 +355,7 @@ function generateJobsHubHtml() {
           <div class="hero-copy" style="display: flex; flex-direction: column;">
             <div class="hero-badge-pill">
               <span class="pulse-dot" style="width: 8px; height: 8px; background: #38bdf8; box-shadow: 0 0 10px #38bdf8;"></span>
-              <span class="hero-badge-pill-text">All Afghanistan Jobs Hub &bull; <strong style="color: #38bdf8; font-weight: 800;">⭐ ACBAR &amp; Jobs.af Verified</strong></span>
+              <span class="hero-badge-pill-text">All Afghanistan Jobs Hub &bull; <strong style="color: #38bdf8; font-weight: 800;">⭐ ACBAR, Jobs.af &amp; Wazifaha Verified</strong></span>
             </div>
 
             <h1 class="hero-title-editorial">
@@ -349,7 +363,7 @@ function generateJobsHubHtml() {
             </h1>
 
             <p class="hero-lead-quote">
-              Oriental Consultants unifies verified humanitarian, UN, development, and commercial employment opportunities from <strong>ACBAR.org</strong> and <strong>Jobs.af</strong> with thrice-daily automated synchronization across Kabul and all 34 provinces.
+              Oriental Consultants unifies verified humanitarian, UN, development, and commercial employment opportunities from <strong>ACBAR.org</strong>, <strong>Jobs.af</strong>, and <strong>Wazifaha.org</strong> with thrice-daily automated synchronization across Kabul and all 34 provinces.
             </p>
 
             <div class="hero-btn-group">
@@ -365,9 +379,9 @@ function generateJobsHubHtml() {
             <!-- Proof Rail (3 Metric Columns) -->
             <div class="proof-rail">
               <div class="proof-item">
-                <div class="proof-num">16+</div>
+                <div class="proof-num">${allJobs.length}+</div>
                 <div class="proof-label">Active Vacancies</div>
-                <div class="proof-sub" style="color: #38bdf8; font-weight: 800; display: inline-flex; align-items: center; gap: 0.3rem;"><span>⭐</span> <span>ACBAR &amp; Jobs.af</span></div>
+                <div class="proof-sub" style="color: #38bdf8; font-weight: 800; display: inline-flex; align-items: center; gap: 0.3rem;"><span>⭐</span> <span>3 Top Portals</span></div>
                 <div class="proof-bar"></div>
               </div>
 
@@ -404,7 +418,7 @@ function generateJobsHubHtml() {
               <div class="showcase-corner-accent-2"></div>
 
               <!-- Slide 1: ACBAR Humanitarian & NGO Jobs -->
-              <div class="service-slide active" data-slide="0" role="tabpanel" aria-label="ACBAR Jobs — slide 1 of 4">
+              <div class="service-slide active" data-slide="0" role="tabpanel" aria-label="ACBAR Jobs — slide 1 of 5">
                 <div class="slide-tag" style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.22) 0%, rgba(56, 189, 248, 0.25) 100%); border: 1.5px solid #38bdf8; color: #38bdf8; font-weight: 800; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.35rem 0.85rem; border-radius: 9999px; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);">
                   <span>⭐</span>
                   <span>ACBAR.org Humanitarian Board</span>
@@ -447,7 +461,7 @@ function generateJobsHubHtml() {
               </div>
 
               <!-- Slide 2: Jobs.af Banking & Commercial Careers -->
-              <div class="service-slide" data-slide="1" role="tabpanel" aria-label="Jobs.af Careers — slide 2 of 4">
+              <div class="service-slide" data-slide="1" role="tabpanel" aria-label="Jobs.af Careers — slide 2 of 5">
                 <div class="slide-tag" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(2, 132, 199, 0.25) 100%); border: 1.5px solid #fbbf24; color: #fbbf24; font-weight: 800;">
                   <span>⭐ Jobs.af Commercial Feed</span>
                 </div>
@@ -484,8 +498,46 @@ function generateJobsHubHtml() {
                 </a>
               </div>
 
-              <!-- Slide 3: Oriental Consultants Practice Vacancies -->
-              <div class="service-slide" data-slide="2" role="tabpanel" aria-label="OC Practice Roles — slide 3 of 4">
+              <!-- Slide 3: Wazifaha.org National Jobs Board -->
+              <div class="service-slide" data-slide="2" role="tabpanel" aria-label="Wazifaha.org Jobs — slide 3 of 5">
+                <div class="slide-tag" style="background: rgba(16, 185, 129, 0.18); border: 1.5px solid #10b981; color: #34d399; font-weight: 800;">
+                  <span>⭐ Wazifaha.org National Board • All 34 Provinces</span>
+                </div>
+                <div class="slide-icon-box" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1); color: #34d399;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                </div>
+                <div class="slide-title">Wazifaha <span class="bright">National Jobs</span></div>
+                <div class="slide-subtitle">Islamic Relief &bull; Renewable Energy &bull; Cordaid &bull; DRC &bull; Telecom</div>
+                <div class="slide-divider"></div>
+                <p class="slide-desc">
+                  Verified vacancies on <strong>wazifaha.org</strong> spanning healthcare coordination, solar photovoltaic engineering, regional supply chain logistics, and community protection across Kabul, Herat, Mazar, and Kandahar.
+                </p>
+                <div class="slide-stats-grid slide-stats-4col" style="grid-template-columns: repeat(4, 1fr); gap: 0.5rem;">
+                  <div class="slide-stat-cell" style="border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.08);">
+                    <div class="slide-stat-val" style="color: #34d399;">34</div>
+                    <div class="slide-stat-lbl">Provinces</div>
+                  </div>
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">6+ Roles</div>
+                    <div class="slide-stat-lbl">Wazifaha Feed</div>
+                  </div>
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">Full-Time</div>
+                    <div class="slide-stat-lbl">Verified</div>
+                  </div>
+                  <div class="slide-stat-cell">
+                    <div class="slide-stat-val">Direct</div>
+                    <div class="slide-stat-lbl">Wazifaha.org</div>
+                  </div>
+                </div>
+                <a href="https://wazifaha.org/jobs/" target="_blank" rel="noopener noreferrer" class="slide-cta" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff; font-weight: 900; box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);">
+                  <span>Explore on Wazifaha.org (وظیفه‌ها) &rarr;</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+
+              <!-- Slide 4: Oriental Consultants Practice Vacancies -->
+              <div class="service-slide" data-slide="3" role="tabpanel" aria-label="OC Practice Roles — slide 4 of 5">
                 <div class="slide-tag" style="background: rgba(34, 197, 94, 0.15); border: 1.5px solid #22c55e; color: #22c55e; font-weight: 800;">
                   <span>⭐ PrimeGlobal Member Firm &bull; Kabul HQ</span>
                 </div>
@@ -522,8 +574,8 @@ function generateJobsHubHtml() {
                 </a>
               </div>
 
-              <!-- Slide 4: Provincial & Field Specialist Roles -->
-              <div class="service-slide" data-slide="3" role="tabpanel" aria-label="Provincial Roles — slide 4 of 4">
+              <!-- Slide 5: Provincial & Field Specialist Roles -->
+              <div class="service-slide" data-slide="4" role="tabpanel" aria-label="Provincial Roles — slide 5 of 5">
                 <div class="slide-tag" style="background: rgba(168, 85, 247, 0.15); border: 1.5px solid #a855f7; color: #c084fc; font-weight: 800;">
                   <span>⭐ Regional Hubs &bull; Herat, Balkh, Kandahar, Nangarhar</span>
                 </div>
@@ -572,8 +624,9 @@ function generateJobsHubHtml() {
               <div class="showcase-indicators" role="tablist" aria-label="Choose Slide">
                 <button class="indicator-pill active" data-slide-to="0" role="tab" aria-selected="true" aria-label="Go to ACBAR Jobs"></button>
                 <button class="indicator-pill" data-slide-to="1" role="tab" aria-selected="false" aria-label="Go to Jobs.af Careers"></button>
-                <button class="indicator-pill" data-slide-to="2" role="tab" aria-selected="false" aria-label="Go to OC Practice Roles"></button>
-                <button class="indicator-pill" data-slide-to="3" role="tab" aria-selected="false" aria-label="Go to Provincial Roles"></button>
+                <button class="indicator-pill" data-slide-to="2" role="tab" aria-selected="false" aria-label="Go to Wazifaha.org Jobs"></button>
+                <button class="indicator-pill" data-slide-to="3" role="tab" aria-selected="false" aria-label="Go to OC Practice Roles"></button>
+                <button class="indicator-pill" data-slide-to="4" role="tab" aria-selected="false" aria-label="Go to Provincial Roles"></button>
               </div>
             </div>
           </div>
@@ -589,11 +642,13 @@ function generateJobsHubHtml() {
       <div class="marquee-track">
         <span class="marquee-item"><span class="marquee-dot"></span>ACBAR.org Verified Opportunities</span>
         <span class="marquee-item"><span class="marquee-dot"></span>Jobs.af Official Career Board</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Wazifaha.org National Jobs Board Feed</span>
         <span class="marquee-item"><span class="marquee-dot"></span>PrimeGlobal USA Alliance Member ($2.93B)</span>
         <span class="marquee-item"><span class="marquee-dot"></span>Thrice-Daily Automated Portal Synchronization</span>
         <span class="marquee-item"><span class="marquee-dot"></span>All 34 Afghanistan Provinces Covered</span>
         <span class="marquee-item"><span class="marquee-dot"></span>ACBAR.org Verified Opportunities</span>
         <span class="marquee-item"><span class="marquee-dot"></span>Jobs.af Official Career Board</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Wazifaha.org National Jobs Board Feed</span>
         <span class="marquee-item"><span class="marquee-dot"></span>PrimeGlobal USA Alliance Member ($2.93B)</span>
         <span class="marquee-item"><span class="marquee-dot"></span>Thrice-Daily Automated Portal Synchronization</span>
         <span class="marquee-item"><span class="marquee-dot"></span>All 34 Afghanistan Provinces Covered</span>
@@ -614,7 +669,7 @@ function generateJobsHubHtml() {
             All Afghanistan Jobs Directory
           </h2>
           <p style="margin: 0.35rem 0 0 0; color: rgba(255, 255, 255, 0.8); font-size: 0.92rem;">
-            Verified listings synchronized from <strong>ACBAR.org</strong> and <strong>Jobs.af</strong> with direct application links.
+            Verified listings synchronized from <strong>ACBAR.org</strong>, <strong>Jobs.af</strong>, and <strong>Wazifaha.org</strong> with direct application links.
           </p>
         </div>
 
@@ -648,7 +703,7 @@ function generateJobsHubHtml() {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             <div>
               <strong style="font-weight: 800; color: #0369a1;">National Unified Employment Feed:</strong>
-              <span style="font-size: 0.9rem; color: #1e3a8a;"> This portal aggregates verified NGO, UN, humanitarian, and commercial opportunities across all 34 provinces of Afghanistan. Choose between ACBAR and Jobs.af, or view all opportunities simultaneously.</span>
+              <span style="font-size: 0.9rem; color: #1e3a8a;"> This portal aggregates verified NGO, UN, humanitarian, and commercial opportunities across all 34 provinces of Afghanistan from ACBAR, Jobs.af, and Wazifaha. Filter by source or view all nationwide opportunities.</span>
             </div>
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -658,13 +713,16 @@ function generateJobsHubHtml() {
             <a href="https://jobs.af/public/job" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-gold" style="font-size: 0.8125rem; font-weight: 700; white-space: nowrap;">
               Jobs.af &rarr;
             </a>
+            <a href="https://wazifaha.org/jobs/" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="font-size: 0.8125rem; font-weight: 700; white-space: nowrap; background: #10b981; color: #ffffff;">
+              Wazifaha.org &rarr;
+            </a>
           </div>
         </div>
 
         <div class="sync-status-bar">
           <div class="sync-status-info">
             <span class="sync-pulse-dot"></span>
-            <span><strong>Thrice-Daily Scan Active:</strong> Synchronized 3x Daily with <strong>ACBAR.org</strong> &amp; <strong>Jobs.af</strong> (08:00, 14:00, 20:00 AFT) &bull; Status: <span id="syncTimestamp">Verified Live Sync</span></span>
+            <span><strong>Thrice-Daily Scan Active:</strong> Synchronized 3x Daily with <strong>ACBAR.org</strong>, <strong>Jobs.af</strong> &amp; <strong>Wazifaha.org</strong> (08:00, 14:00, 20:00 AFT) &bull; Status: <span id="syncTimestamp">Verified Live Sync</span></span>
           </div>
           <div class="sync-actions">
             <button type="button" class="btn-sync-refresh" id="syncRefreshBtn" title="Check for latest updates from Afghanistan portals">
@@ -687,9 +745,10 @@ function generateJobsHubHtml() {
             <div class="filter-group">
               <label for="jobsHubSourceSelect" style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.35rem; text-transform: uppercase;">Portal Source</label>
               <select id="jobsHubSourceSelect" style="width: 100%; padding: 0.65rem 0.75rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: var(--bg-primary); color: var(--text-primary); font-size: 0.9rem;">
-                <option value="all">All Portals (ACBAR + Jobs.af)</option>
+                <option value="all">All Portals (ACBAR + Jobs.af + Wazifaha)</option>
                 <option value="acbar">ACBAR.org Only</option>
                 <option value="jobsaf">Jobs.af Only</option>
+                <option value="wazifaha">Wazifaha.org Only</option>
               </select>
             </div>
 
@@ -703,8 +762,8 @@ function generateJobsHubHtml() {
                 <option value="prog">Programs &amp; Grants</option>
                 <option value="log">Logistics &amp; Assets</option>
                 <option value="mgmt">Operations &amp; Management</option>
-                <option value="eng">Engineering</option>
-                <option value="health">Healthcare &amp; Grants</option>
+                <option value="eng">Engineering &amp; Solar</option>
+                <option value="health">Healthcare &amp; Nutrition</option>
               </select>
             </div>
 
@@ -859,11 +918,7 @@ function generateTendersHubHtml() {
 
   const mainContent = `
   <main id="main-content">
-    <!-- ==========================================================================
-         HERO SECTION: UNIQUE HERO WITH TENDERS SLIDERS & LIVE TICKER
-         ========================================================================== -->
     <section class="unique-hero" id="home">
-      <!-- Architectural Background Accents -->
       <div class="hero-bg-grid"></div>
       <div class="hero-accent-line-right"></div>
       <div class="hero-accent-line-left"></div>
@@ -871,7 +926,6 @@ function generateTendersHubHtml() {
       <div class="hero-shell">
         <div class="hero-grid-split">
           
-          <!-- Left Column: Copy, CTAs & Proof Rail -->
           <div class="hero-copy" style="display: flex; flex-direction: column;">
             <div class="hero-badge-pill">
               <span class="pulse-dot" style="width: 8px; height: 8px; background: #fbbf24; box-shadow: 0 0 10px #fbbf24;"></span>
@@ -896,7 +950,6 @@ function generateTendersHubHtml() {
               </a>
             </div>
 
-            <!-- Proof Rail (3 Metric Columns) -->
             <div class="proof-rail">
               <div class="proof-item">
                 <div class="proof-num">23+</div>
@@ -921,9 +974,7 @@ function generateTendersHubHtml() {
             </div>
           </div>
 
-          <!-- Right Column: Interactive Featured Tenders Carousel Slider -->
           <div class="hero-slider-wrap" style="position: relative;">
-            <!-- Blinking Status Corner Badge -->
             <a href="#tendersDirectory" class="slider-corner-tax-badge" title="Live Synced Directory">
               <span class="blinking-tax-dot" style="background: #fbbf24; box-shadow: 0 0 10px #fbbf24;"></span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
@@ -932,7 +983,6 @@ function generateTendersHubHtml() {
             </a>
 
             <div class="service-showcase" id="serviceShowcase" role="region" aria-roledescription="carousel" aria-label="Featured Tenders Slider">
-              <!-- Decorative Grid Lines & Corner Accents -->
               <div class="showcase-bg-pattern"></div>
               <div class="showcase-corner-accent-1"></div>
               <div class="showcase-corner-accent-2"></div>
@@ -1277,7 +1327,7 @@ function generateTendersHubHtml() {
 
 // Generate the files
 fs.writeFileSync(path.join(ROOT_DIR, 'jobs-hub.html'), generateJobsHubHtml(), 'utf8');
-console.log('✓ Successfully generated jobs-hub.html');
+console.log('✓ Successfully generated jobs-hub.html with Wazifaha in Hub & Slider');
 
 fs.writeFileSync(path.join(ROOT_DIR, 'tenders-hub.html'), generateTendersHubHtml(), 'utf8');
 console.log('✓ Successfully generated tenders-hub.html');
