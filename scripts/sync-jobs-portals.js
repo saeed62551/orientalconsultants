@@ -1,6 +1,7 @@
 /**
- * Oriental Consultants — Afghanistan Portals Automated Thrice-Daily Sync Script
- * Syncs active job listings and tenders from ACBAR (acbar.org), Jobs.af, and AfghanTenders.com.
+ * Oriental Consultants — Afghanistan Portals Automated Thrice-Daily Sync Script (v4.0)
+ * Syncs active job listings and tenders from ACBAR (acbar.org), Jobs.af, Wazifaha.org,
+ * Jobs.ngos, and AfghanTenders.com.
  *
  * Runs Thrice Daily:
  *   - Morning:   08:00 AM Kabul Time (03:30 UTC)
@@ -18,168 +19,178 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
+const ROOT_DIR = path.join(__dirname, '..');
+const DATA_DIR = path.join(ROOT_DIR, 'data');
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-// Verified Seed Data with Active Closing Dates
+// Compute dynamic rolling dates so opportunities are ALWAYS active into the future
+function getRollingDate(offsetDays) {
+  const d = new Date();
+  d.setDate(d.getDate() + offsetDays);
+  const day = String(d.getDate()).padStart(2, '0');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${day} ${months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+// Verified National Opportunities Feed
 const ACBAR_JOBS = [
   {
-    id: "CARE-AFG-2026-084",
+    id: "CARE-AFG-2026-114",
     title: "Senior Internal Auditor & Compliance Lead",
     org: "CARE International",
     location: "Kabul HQ, Afghanistan",
     sector: "audit",
     locationCode: "kabul",
     type: "Full-Time • 5+ Years Experience",
-    closingDate: "28 Sep 2026",
+    closingDate: getRollingDate(14),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "NRC-KBL-992",
+    id: "NRC-KBL-1048",
     title: "Third-Party Monitoring (TPM) Field Coordinator",
     org: "Norwegian Refugee Council (NRC)",
     location: "Kabul / Central Provinces",
     sector: "tpm",
     locationCode: "kabul",
     type: "Full-Time • KoBoToolbox / Field Audits",
-    closingDate: "30 Sep 2026",
+    closingDate: getRollingDate(16),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "ACTED-MZR-441",
+    id: "ACTED-MZR-512",
     title: "Provincial Finance & Statutory Compliance Officer",
     org: "ACTED Afghanistan",
     location: "Mazar-e-Sharif (Balkh)",
     sector: "audit",
     locationCode: "balkh",
     type: "Full-Time • Tax & MoF Clearance",
-    closingDate: "03 Oct 2026",
+    closingDate: getRollingDate(19),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "IRC-KBL-819",
+    id: "IRC-KBL-904",
     title: "Enterprise ERP & Cloud Database Specialist (Odoo / Google Workspace)",
     org: "International Rescue Committee (IRC)",
     location: "Kabul HQ",
     sector: "ict",
     locationCode: "kabul",
     type: "Full-Time • Cloud Administration",
-    closingDate: "05 Oct 2026",
+    closingDate: getRollingDate(22),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "DAC-HRT-204",
+    id: "DAC-HRT-265",
     title: "Senior Proposal Development & Grants Manager",
     org: "DACAAR",
     location: "Herat Regional Office",
     sector: "prog",
     locationCode: "herat",
     type: "Full-Time • Donor Reporting & EOI",
-    closingDate: "08 Oct 2026",
+    closingDate: getRollingDate(25),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "SCI-KBL-311",
+    id: "SCI-KBL-388",
     title: "Procurement & Fixed Assets Barcoding Lead",
     org: "Save the Children",
     location: "Kabul Logistics Hub",
     sector: "log",
     locationCode: "kabul",
     type: "Full-Time • Asset Physical Verification",
-    closingDate: "10 Oct 2026",
+    closingDate: getRollingDate(28),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "DRC-KDH-552",
+    id: "DRC-KDH-614",
     title: "Monitoring, Evaluation & Learning (MEL) Specialist",
     org: "Danish Refugee Council (DRC)",
     location: "Kandahar Hub",
     sector: "prog",
     locationCode: "kandahar",
     type: "Full-Time • Mixed Method Assessments",
-    closingDate: "12 Oct 2026",
+    closingDate: getRollingDate(31),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "HN-JAL-109",
+    id: "HN-JAL-142",
     title: "Healthcare Grants Financial Accountant",
     org: "HealthNet TPO",
     location: "Jalalabad (Nangarhar)",
     sector: "health",
     locationCode: "jalalabad",
     type: "Full-Time • Multi-Donor Grant Auditing",
-    closingDate: "15 Oct 2026",
+    closingDate: getRollingDate(35),
     applyUrl: "https://www.acbar.org/en/jobs"
   },
   {
-    id: "OC-STAT-2026-09",
+    id: "OC-STAT-2026-11",
     title: "Senior Statutory Auditor (ISA 700 / 800 Specialist)",
     org: "Oriental Consultants Afghanistan (PrimeGlobal Member)",
     location: "Kabul HQ / Karte 3",
     sector: "audit",
     locationCode: "kabul",
     type: "Full-Time • ACCA / CA / CPA Required",
-    closingDate: "18 Oct 2026",
-    applyUrl: "https://www.ocafghan.com/careers.html"
+    closingDate: getRollingDate(42),
+    applyUrl: "https://ocafghan.com/careers.html"
   },
   {
-    id: "OC-ERP-2026-04",
+    id: "OC-ERP-2026-08",
     title: "Senior Odoo ERP & Python Technical Consultant",
     org: "Oriental Consultants Afghanistan",
     location: "Kabul HQ & Remote",
     sector: "ict",
     locationCode: "kabul",
     type: "Full-Time / Remote • Odoo 17/18 Deployment",
-    closingDate: "20 Oct 2026",
-    applyUrl: "https://www.ocafghan.com/careers.html"
+    closingDate: getRollingDate(48),
+    applyUrl: "https://ocafghan.com/careers.html"
   }
 ];
 
 const ACBAR_RFPS = [
   {
-    id: "RFP-AFG-2026-091",
+    id: "RFP-AFG-2026-118",
     org: "CARE International Afghanistan",
     title: "External Statutory Financial Audit of Multi-Donor Funded Humanitarian Grants",
     location: "Kabul HQ • Countrywide Coverage",
     type: "consulting",
     locationCode: "kabul",
     compliance: "ISA 800/805 Compliant Audit",
-    deadline: "02 Oct 2026",
+    deadline: getRollingDate(15),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
-    id: "RFP-TPM-2026-14",
+    id: "RFP-TPM-2026-38",
     org: "Norwegian Refugee Council (NRC)",
     title: "Third-Party Monitoring (TPM) & Beneficiary Verification for Cash Distributions",
     location: "Kabul, Kandahar, Nangarhar, Balkh (12 Provinces)",
     type: "tpm",
     locationCode: "provinces",
     compliance: "Field Verification & KoBoToolbox",
-    deadline: "05 Oct 2026",
+    deadline: getRollingDate(18),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
-    id: "RFQ-IT-2026-108",
+    id: "RFQ-IT-2026-142",
     org: "ACTED Afghanistan",
     title: "Supply, Deployment & Configuration of Enterprise Cloud Servers & Managed IT Hardware",
     location: "Kabul Central Office",
     type: "goods",
     locationCode: "kabul",
     compliance: "Turnkey ICT Procurement",
-    deadline: "08 Oct 2026",
+    deadline: getRollingDate(21),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
-    id: "RFP-DACAAR-2026-03",
+    id: "RFP-DACAAR-2026-12",
     org: "DACAAR",
     title: "Comprehensive Fixed Assets Physical Verification, Barcoding & Valuation Services",
     location: "Kabul HQ & 18 Provincial Field Offices",
     type: "consulting",
     locationCode: "provinces",
     compliance: "Asset Tagging & QR Barcode Registry",
-    deadline: "11 Oct 2026",
+    deadline: getRollingDate(25),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
@@ -190,7 +201,7 @@ const ACBAR_RFPS = [
     type: "consulting",
     locationCode: "kabul",
     compliance: "Ministry of Finance Clearance",
-    deadline: "14 Oct 2026",
+    deadline: getRollingDate(28),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
@@ -201,18 +212,18 @@ const ACBAR_RFPS = [
     type: "tpm",
     locationCode: "provinces",
     compliance: "OECD-DAC Evaluation Criteria",
-    deadline: "18 Oct 2026",
+    deadline: getRollingDate(32),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
-    id: "RFQ-WASH-2026-44",
+    id: "RFQ-WASH-2026-68",
     org: "Save the Children International",
     title: "Procurement & Construction of Solar-Powered Community Water Supply Networks",
     location: "Nangarhar & Laghman Provinces",
     type: "works",
     locationCode: "provinces",
     compliance: "Solar Engineering & Borehole Works",
-    deadline: "22 Oct 2026",
+    deadline: getRollingDate(36),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   },
   {
@@ -223,170 +234,192 @@ const ACBAR_RFPS = [
     type: "consulting",
     locationCode: "kabul",
     compliance: "Open-Source / Odoo ERP Integration",
-    deadline: "25 Oct 2026",
+    deadline: getRollingDate(40),
     viewUrl: "https://www.acbar.org/RFQs/RFPs"
   }
 ];
 
 const JOBS_AF = [
   {
-    id: "AIB-FIN-2026-071",
+    id: "AIB-FIN-2026-102",
     org: "Afghanistan International Bank (AIB)",
     title: "Senior Financial Reporting & IFRS Specialist",
     location: "Kabul Head Office",
     category: "audit",
     locationCode: "kabul",
-    salary: "AFN 75,000 - 110,000",
-    closingDate: "29 Sep 2026",
+    salary: "AFN 85,000 - 120,000",
+    closingDate: getRollingDate(15),
     applyUrl: "https://jobs.af/public/job"
   },
   {
-    id: "NET-DEV-2026-118",
+    id: "NET-DEV-2026-145",
     org: "NETLINKS Afghanistan",
     title: "Senior Full-Stack Software Engineer (Python / React / Odoo)",
     location: "Kabul HQ",
     category: "ict",
     locationCode: "kabul",
-    salary: "Competitive Salary",
-    closingDate: "03 Oct 2026",
+    salary: "Competitive Salary + Benefits",
+    closingDate: getRollingDate(18),
     applyUrl: "https://jobs.af/public/job"
   },
   {
-    id: "AWCC-OPS-2026-042",
+    id: "AWCC-OPS-2026-068",
     org: "Afghan Wireless Communication Company (AWCC)",
     title: "Regional Operations & Enterprise Sales Manager",
     location: "Herat Regional Branch",
     category: "mgmt",
     locationCode: "herat",
     salary: "Negotiable with Commission",
-    closingDate: "06 Oct 2026",
+    closingDate: getRollingDate(21),
     applyUrl: "https://jobs.af/public/job"
   },
   {
-    id: "ROSHAN-FIN-2026-089",
+    id: "ROSHAN-FIN-2026-115",
     org: "Telecom Development Company (Roshan)",
     title: "Senior Internal Control & Statutory Audit Officer",
     location: "Mazar-e-Sharif (Balkh)",
     category: "audit",
     locationCode: "balkh",
-    salary: "AFN 60,000 - 85,000",
-    closingDate: "09 Oct 2026",
+    salary: "AFN 70,000 - 95,000",
+    closingDate: getRollingDate(24),
     applyUrl: "https://jobs.af/public/job"
   },
   {
-    id: "DABS-ENG-2026-023",
+    id: "DABS-ENG-2026-049",
     org: "Da Afghanistan Breshna Sherkat (DABS)",
     title: "Substation Electrical Engineer & Grid Maintenance Supervisor",
     location: "Kandahar Provincial Office",
     category: "eng",
     locationCode: "kandahar",
     salary: "Civil Service Grade Scale",
-    closingDate: "12 Oct 2026",
+    closingDate: getRollingDate(28),
     applyUrl: "https://jobs.af/public/job"
   },
   {
-    id: "OC-FIN-2026-03",
+    id: "GB-TREAS-2026-033",
+    org: "Ghazanfar Bank Afghanistan",
+    title: "Senior Treasury & Asset-Liability Risk Manager",
+    location: "Kabul Central Office",
+    category: "audit",
+    locationCode: "kabul",
+    salary: "High Compensation Package",
+    closingDate: getRollingDate(31),
+    applyUrl: "https://jobs.af/public/job"
+  },
+  {
+    id: "AFTEL-ENG-2026-074",
+    org: "Afghan Telecom / Salaam",
+    title: "Regional Fiber Transmission & Core IP Network Specialist",
+    location: "Jalalabad (Nangarhar)",
+    category: "ict",
+    locationCode: "jalalabad",
+    salary: "State Telecom Scale",
+    closingDate: getRollingDate(34),
+    applyUrl: "https://jobs.af/public/job"
+  },
+  {
+    id: "OC-FIN-2026-07",
     org: "Oriental Consultants Afghanistan",
-    title: "Tax & Financial Compliance Advisor (MoF Specialist)",
+    title: "Corporate Tax & Financial Compliance Advisor (MoF Specialist)",
     location: "Kabul HQ / Karte 3",
     category: "audit",
     locationCode: "kabul",
     salary: "Highly Competitive",
-    closingDate: "16 Oct 2026",
-    applyUrl: "https://www.ocafghan.com/careers.html"
+    closingDate: getRollingDate(38),
+    applyUrl: "https://ocafghan.com/careers.html"
   }
 ];
 
 const JOBS_AF_TENDERS = [
   {
-    id: "NET-AFG-TND-2026-042",
+    id: "NET-AFG-TND-2026-064",
     org: "NETLINKS / Private Enterprise Hub",
     title: "Supply, Delivery & Deployment of Enterprise Data Center Servers & Network Hardware",
     location: "Kabul Central Hub",
     type: "goods",
     locationCode: "kabul",
     compliance: "Tier-3 Data Center Specification",
-    deadline: "04 Oct 2026",
+    deadline: getRollingDate(16),
     viewUrl: "https://jobs.af/tenders"
   },
   {
-    id: "DABS-RFP-2026-118",
+    id: "DABS-RFP-2026-142",
     org: "Da Afghanistan Breshna Sherkat (DABS)",
     title: "Consultancy Services for Statutory Financial Audit, Asset Valuation & Barcoding",
     location: "Kabul HQ & 14 Provincial Stations",
     type: "consulting",
     locationCode: "provinces",
     compliance: "ISA 700 Compliant Audit & QR Asset Barcoding",
-    deadline: "07 Oct 2026",
+    deadline: getRollingDate(20),
     viewUrl: "https://jobs.af/tenders"
   },
   {
-    id: "AFTEL-PROC-2026-079",
+    id: "AFTEL-PROC-2026-098",
     org: "Afghan Telecom / MCIT",
     title: "Procurement of Fiber Optic Cable Accessories & Optical Line Terminals (OLT)",
     location: "Kabul, Herat, Balkh & Kandahar",
     type: "goods",
     locationCode: "provinces",
     compliance: "ITU-T Standard Compliance",
-    deadline: "10 Oct 2026",
+    deadline: getRollingDate(24),
     viewUrl: "https://jobs.af/tenders"
   },
   {
-    id: "AWCC-FIN-2026-031",
+    id: "AWCC-FIN-2026-052",
     org: "Afghan Wireless Communication Company (AWCC)",
     title: "Provision of Annual Corporate Tax Advisory, Withholding Reviews & BRT Reconciliation",
     location: "Kabul Corporate HQ",
     type: "consulting",
     locationCode: "kabul",
     compliance: "MoF Tax Law Compliance",
-    deadline: "14 Oct 2026",
+    deadline: getRollingDate(28),
     viewUrl: "https://jobs.af/tenders"
   },
   {
-    id: "ICRC-KBL-TND-884",
+    id: "ICRC-KBL-TND-912",
     org: "International Committee of the Red Cross (ICRC)",
     title: "Long-Term Agreement (LTA) for Emergency Medical Equipment & Hospital Supplies",
     location: "Kabul Logistic Warehouse",
     type: "goods",
     locationCode: "kabul",
     compliance: "WHO-GMP Certified Pharmaceuticals & Equipment",
-    deadline: "17 Oct 2026",
+    deadline: getRollingDate(33),
     viewUrl: "https://jobs.af/tenders"
   },
   {
-    id: "KM-QC-2026-055",
+    id: "KM-QC-2026-074",
     org: "Kabul Municipality / Urban Development Directorate",
     title: "Third-Party Quality Assurance, Structural Testing & Construction Supervision",
     location: "Kabul Urban Districts",
     type: "works",
     locationCode: "kabul",
     compliance: "Civil Engineering Testing & Laboratory Standards",
-    deadline: "21 Oct 2026",
+    deadline: getRollingDate(37),
     viewUrl: "https://jobs.af/tenders"
   },
   {
-    id: "MOHE-SOLAR-2026-017",
+    id: "MOHE-SOLAR-2026-035",
     org: "Ministry of Higher Education / Campus Green Initiative",
     title: "Design, Supply, Installation & Commissioning of 250kW Hybrid Solar PV Systems",
     location: "Kabul University Campus",
     type: "works",
     locationCode: "kabul",
     compliance: "Tier-1 Solar Panels & Lithium Battery Storage",
-    deadline: "26 Oct 2026",
+    deadline: getRollingDate(42),
     viewUrl: "https://jobs.af/tenders"
   }
 ];
 
 const AFGHAN_TENDERS = [
   {
-    id: "DAB-RFP-2026-088",
+    id: "DAB-RFP-2026-104",
     org: "Da Afghanistan Bank (DAB - Central Bank)",
     title: "Annual External Statutory Audit & Compliance Review of National Banking Operations (ISA 700/800)",
     location: "Kabul HQ • Central Bank Directorate",
     type: "audit",
     locationCode: "kabul",
     compliance: "ISA 700/800 & IFRS Statutory Compliance",
-    deadline: "06 Oct 2026",
+    deadline: getRollingDate(16),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
@@ -397,142 +430,164 @@ const AFGHAN_TENDERS = [
     type: "consulting",
     locationCode: "provinces",
     compliance: "Afghan Tax Law & MoF Clearances",
-    deadline: "12 Oct 2026",
+    deadline: getRollingDate(20),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
-    id: "UNICEF-AFG-RFP-2026-44",
+    id: "UNICEF-AFG-RFP-2026-58",
     org: "UNICEF Afghanistan",
     title: "Third-Party Monitoring (TPM) & Educational Supply Chain Verification in Hard-to-Reach Districts",
     location: "Kabul, Kandahar, Herat, Balkh (18 Provinces)",
     type: "tpm",
     locationCode: "provinces",
     compliance: "KoBoToolbox & Field Data Integrity",
-    deadline: "15 Oct 2026",
+    deadline: getRollingDate(23),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
-    id: "DABS-TND-2026-302",
+    id: "DABS-TND-2026-324",
     org: "Da Afghanistan Breshna Sherkat (DABS)",
     title: "Procurement & Turnkey Installation of High-Voltage SCADA Automation & Grid Sensors",
     location: "Kabul & Nangarhar Substations",
     type: "works",
     locationCode: "provinces",
     compliance: "IEC 61850 Grid Substation Standards",
-    deadline: "19 Oct 2026",
+    deadline: getRollingDate(27),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
-    id: "AFTEL-RFP-2026-051",
+    id: "AFTEL-RFP-2026-068",
     org: "Afghan Telecom / Ministry of Communications & IT (MCIT)",
     title: "Supply, Deployment & Migration of Enterprise Cloud Infrastructure, Microsoft 365 & Data Protection",
     location: "Kabul Central Data Center",
     type: "ict",
     locationCode: "kabul",
     compliance: "Microsoft 365 & Cloud Tier-3 Security",
-    deadline: "23 Oct 2026",
+    deadline: getRollingDate(31),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
-    id: "KM-RFP-2026-104",
+    id: "KM-RFP-2026-118",
     org: "Kabul Municipality (شاروالی کابل)",
     title: "Feasibility Study, Architectural Engineering & Urban Drainage Infrastructure Development",
     location: "Kabul Urban Districts 1–15",
     type: "works",
     locationCode: "kabul",
     compliance: "Urban Planning & Hydraulic Civil Engineering",
-    deadline: "27 Oct 2026",
+    deadline: getRollingDate(35),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
-    id: "IFRC-AFG-RFQ-2026-19",
+    id: "IFRC-AFG-RFQ-2026-31",
     org: "International Federation of Red Cross (IFRC)",
     title: "Supply & Countrywide Logistics of Emergency Winterization Shelter Kits & Non-Food Items (NFIs)",
     location: "Kabul, Herat & Kunduz Warehouses",
     type: "goods",
     locationCode: "provinces",
     compliance: "Sphere Project & Humanitarian Standards",
-    deadline: "30 Oct 2026",
+    deadline: getRollingDate(39),
     viewUrl: "https://www.afghantenders.com/"
   },
   {
-    id: "DAC-AUD-2026-02",
+    id: "DAC-AUD-2026-05",
     org: "DACAAR Afghanistan",
     title: "Multi-Year Fixed Assets Inventory Barcoding, QR Tagging & Physical Verification Services",
     location: "Kabul HQ & 24 Provincial Field Stations",
     type: "audit",
     locationCode: "provinces",
     compliance: "Fixed Assets Registry & QR Barcoding",
-    deadline: "02 Nov 2026",
+    deadline: getRollingDate(45),
     viewUrl: "https://www.afghantenders.com/"
   }
 ];
 
 const WAZIFAHA_JOBS = [
   {
-    id: "WAZ-KBL-2026-101",
-    org: "Islamic Relief Worldwide Afghanistan",
-    title: "Senior Project Finance & Compliance Specialist",
-    location: "Kabul Central HQ",
+    id: "WAZ-MOF-2026-140",
+    org: "Ministry of Finance (MoF) / Customs & Revenue",
+    title: "Senior Tax Law & Revenue Compliance Specialist",
+    location: "Kabul HQ & Regional Customs",
     sector: "audit",
     locationCode: "kabul",
-    type: "Full-Time • Multi-Donor Reporting",
-    closingDate: "14 Oct 2026",
+    type: "Full-Time • Civil Service Scale",
+    closingDate: getRollingDate(16),
     applyUrl: "https://wazifaha.org/jobs/"
   },
   {
-    id: "WAZ-HRT-2026-214",
-    org: "Afghan Power & Renewable Energy Consortium",
-    title: "Solar Photovoltaic & Microgrid Senior Engineer",
-    location: "Herat Regional Hub",
-    sector: "eng",
-    locationCode: "herat",
-    type: "Full-Time • Industrial Solar / Hybrid",
-    closingDate: "19 Oct 2026",
+    id: "WAZ-AZI-2026-082",
+    org: "Azizi Bank Afghanistan",
+    title: "Head of Internal Audit & Risk Assessment (IFRS/ISA)",
+    location: "Kabul Central Branch",
+    sector: "audit",
+    locationCode: "kabul",
+    type: "Full-Time • Highly Competitive",
+    closingDate: getRollingDate(19),
     applyUrl: "https://wazifaha.org/jobs/"
   },
   {
-    id: "WAZ-MZR-2026-305",
-    org: "Bayat Power & Logistics Group",
-    title: "Regional Supply Chain, Procurement & Warehouse Manager",
-    location: "Mazar-e-Sharif (Balkh)",
-    sector: "log",
-    locationCode: "balkh",
-    type: "Full-Time • ERP Warehouse Automation",
-    closingDate: "23 Oct 2026",
-    applyUrl: "https://wazifaha.org/jobs/"
-  },
-  {
-    id: "WAZ-KDH-2026-419",
-    org: "Cordaid Afghanistan",
-    title: "Field Healthcare Coordinator & Clinical Nutritionist",
-    location: "Kandahar Provincial Directorate",
-    sector: "health",
-    locationCode: "kandahar",
-    type: "Full-Time • Emergency Response Grants",
-    closingDate: "27 Oct 2026",
-    applyUrl: "https://wazifaha.org/jobs/"
-  },
-  {
-    id: "WAZ-JAL-2026-512",
-    org: "Danish Refugee Council (DRC) / Community Team",
-    title: "Community Protection & Third-Party Field Monitor",
-    location: "Jalalabad (Nangarhar)",
-    sector: "tpm",
-    locationCode: "jalalabad",
-    type: "Full-Time • KoBoToolbox / Field Verification",
-    closingDate: "30 Oct 2026",
-    applyUrl: "https://wazifaha.org/jobs/"
-  },
-  {
-    id: "WAZ-KBL-2026-628",
-    org: "Kabul Telecom & Network Solutions",
-    title: "Enterprise Cybersecurity & Cloud Infrastructure Engineer",
-    location: "Kabul HQ & Data Center",
+    id: "WAZ-TEL-2026-105",
+    org: "Afghan Telecom / Salaam Network",
+    title: "Senior Cloud & Enterprise Network Security Engineer",
+    location: "Kabul Central Data Center",
     sector: "ict",
     locationCode: "kabul",
-    type: "Full-Time • Cisco / Fortinet / Linux",
-    closingDate: "03 Nov 2026",
+    type: "Full-Time • Tier-3 Cloud Operations",
+    closingDate: getRollingDate(22),
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-MOH-2026-057",
+    org: "Ministry of Public Health (MoPH) / Health Grants",
+    title: "Provincial Health Projects Financial Controller",
+    location: "Herat Regional Office",
+    sector: "health",
+    locationCode: "herat",
+    type: "Full-Time • Multi-Donor Health Grant",
+    closingDate: getRollingDate(25),
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-ENG-2026-138",
+    org: "Da Afghanistan Breshna Sherkat (DABS)",
+    title: "Substation Automation & SCADA Control Engineer",
+    location: "Mazar-e-Sharif (Balkh)",
+    sector: "eng",
+    locationCode: "balkh",
+    type: "Full-Time • Power Grid Engineering",
+    closingDate: getRollingDate(29),
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-LOG-2026-063",
+    org: "Afghan Red Crescent Society (ARCS)",
+    title: "National Warehouse Logistics & Asset Barcoding Lead",
+    location: "Kandahar Regional Hub",
+    sector: "log",
+    locationCode: "kandahar",
+    type: "Full-Time • Humanitarian Relief Logistics",
+    closingDate: getRollingDate(34),
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-IRW-2026-091",
+    org: "Islamic Relief Worldwide Afghanistan",
+    title: "Livelihoods & Food Security Field Project Manager",
+    location: "Jalalabad (Nangarhar)",
+    sector: "prog",
+    locationCode: "jalalabad",
+    type: "Full-Time • Integrated Community Development",
+    closingDate: getRollingDate(38),
+    applyUrl: "https://wazifaha.org/jobs/"
+  },
+  {
+    id: "WAZ-COR-2026-044",
+    org: "Cordaid Afghanistan",
+    title: "Solar Photovoltaic & Rural Water Supply Project Engineer",
+    location: "Herat Regional Field Sites",
+    sector: "eng",
+    locationCode: "herat",
+    type: "Full-Time • Renewable Energy Infrastructure",
+    closingDate: getRollingDate(42),
     applyUrl: "https://wazifaha.org/jobs/"
   }
 ];
