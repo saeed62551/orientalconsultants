@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020b18" />
+      <stop offset="40%" stop-color="#041633" />
+      <stop offset="100%" stop-color="#0a2558" />
+    </linearGradient>
+
+    <!-- Card Background -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b244d" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#05142e" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Accent Gold / Orange -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <!-- Cyan Accent -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow3d" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="3" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <radialGradient id="orbGrad" cx="35%" cy="30%" r="72%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="25%" stop-color="#0284c7"/>
+      <stop offset="55%" stop-color="#034b9e"/>
+      <stop offset="85%" stop-color="#022557"/>
+      <stop offset="100%" stop-color="#011430"/>
+    </radialGradient>
+
+    <linearGradient id="chromeBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#cbd5e1"/>
+      <stop offset="75%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="chromeFace" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#f8fafc"/>
+      <stop offset="60%" stop-color="#e2e8f0"/>
+      <stop offset="85%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Geometric Grid Accent Lines -->
+  <g opacity="0.08" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="270" x2="1200" y2="270" />
+    <line x1="0" y1="360" x2="1200" y2="360" />
+    <line x1="0" y1="450" x2="1200" y2="450" />
+    <line x1="0" y1="540" x2="1200" y2="540" />
+    <line x1="150" y1="0" x2="150" y2="630" />
+    <line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="450" y1="0" x2="450" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="750" y1="0" x2="750" y2="630" />
+    <line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="1050" y1="0" x2="1050" y2="630" />
+  </g>
+
+  <!-- Glowing background circles -->
+  <circle cx="1050" cy="120" r="280" fill="#0284c7" opacity="0.12" filter="blur(60px)" />
+  <circle cx="150" cy="520" r="240" fill="#034b9e" opacity="0.15" filter="blur(60px)" />
+
+  <!-- Outer Border Frame -->
+  <rect x="25" y="25" width="1150" height="580" rx="16" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5" />
+
+  <!-- Brand Emblem (Scale 1.8) -->
+  <g transform="translate(85, 75) scale(1.65)" filter="url(#shadow3d)">
+    <circle cx="40" cy="40" r="38" fill="url(#chromeBevel)" />
+    <circle cx="39.5" cy="40" r="35" fill="#011633" />
+    <circle cx="39" cy="39" r="34" fill="url(#orbGrad)" />
+    <path d="M 12 36 A 34 34 0 0 1 66 22 A 34 30 0 0 0 15 38 Z" fill="#ffffff" opacity="0.25" />
+    <path d="M 49 14 A 27 27 0 0 0 21 39 A 27 27 0 0 0 49 66 L 49 53 A 15 15 0 0 1 35 39 A 15 15 0 0 1 49 27 Z" fill="url(#chromeBevel)" />
+    <path d="M 48 15.5 A 25.5 25.5 0 0 0 22.5 39.5 A 25.5 25.5 0 0 0 48 64.5 L 48 53 A 14 14 0 0 1 36.5 39.5 A 14 14 0 0 1 48 26 Z" fill="url(#chromeFace)" />
+    <path d="M 33 21 A 25.5 25.5 0 0 1 48 16 L 48 18 A 23.5 23.5 0 0 0 35 23 Z" fill="#ffffff" opacity="0.95" />
+    <circle cx="34" cy="34" r="2.5" fill="#ffffff" opacity="0.5" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(245, 115)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', -apple-system, Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-0.5px">ORIENTAL CONSULTANTS</text>
+    <text x="2" y="32" font-family="'Plus Jakarta Sans', -apple-system, Roboto, sans-serif" font-size="19" font-weight="800" fill="url(#goldGrad)" letter-spacing="4px">AFGHANISTAN &bull; ESTABLISHED 2006</text>
+  </g>
+
+  <!-- Top Badges Pill -->
+  <g transform="translate(850, 80)">
+    <rect width="265" height="42" rx="21" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+    <circle cx="24" cy="21" r="5" fill="#38bdf8" />
+    <text x="38" y="26" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="14" font-weight="700" fill="#e0f2fe">MoCI Lic: I-11011 &bull; Kabul HQ</text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="85" y1="220" x2="1115" y2="220" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1" />
+
+  <!-- Main Headline -->
+  <g transform="translate(85, 290)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', -apple-system, Roboto, sans-serif" font-size="42" font-weight="800" fill="#f8fafc" letter-spacing="-0.5px">
+      Statutory Audit, Tax Advisory &amp; ERP Solutions
+    </text>
+    <text x="0" y="46" font-family="'Plus Jakarta Sans', -apple-system, Roboto, sans-serif" font-size="24" font-weight="500" fill="#94a3b8">
+      Independent Assurance, MoF BRT Tax Clearance &amp; Business Technology in Kabul
+    </text>
+  </g>
+
+  <!-- 3 Service Cards Grid -->
+  <g transform="translate(85, 385)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="320" height="110" rx="12" fill="url(#cardGrad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.2" />
+    <text x="24" y="38" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="17" font-weight="700" fill="#38bdf8">Financial &amp; Audit Practice</text>
+    <text x="24" y="66" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#cbd5e1">Statutory ISA Audits &bull; Donor Projects</text>
+    <text x="24" y="88" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#cbd5e1">Forensic Investigations &bull; Asset Tagging</text>
+
+    <!-- Card 2 -->
+    <rect x="355" y="0" width="320" height="110" rx="12" fill="url(#cardGrad)" stroke="rgba(34, 197, 94, 0.3)" stroke-width="1.2" />
+    <text x="379" y="38" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="17" font-weight="700" fill="#4ade80">MoF Tax &amp; BRT Clearance</text>
+    <text x="379" y="66" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#cbd5e1">BRT 4% / 10% &bull; Withholding Compliance</text>
+    <text x="379" y="88" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#cbd5e1">Dispute Resolution &bull; Annual Filing</text>
+
+    <!-- Card 3 -->
+    <rect x="710" y="0" width="320" height="110" rx="12" fill="url(#cardGrad)" stroke="rgba(251, 191, 36, 0.3)" stroke-width="1.2" />
+    <text x="734" y="38" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="17" font-weight="700" fill="#fbbf24">ERP &amp; Cloud Technology</text>
+    <text x="734" y="66" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#cbd5e1">QuikBok Desktop Enterprise &bull; Odoo ERP</text>
+    <text x="734" y="88" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#cbd5e1">Google Workspace &bull; Microsoft 365</text>
+  </g>
+
+  <!-- Bottom Bar: URL & Contact -->
+  <g transform="translate(85, 555)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="18" font-weight="800" fill="#38bdf8" letter-spacing="0.5px">https://ocafghan.com</text>
+    <text x="320" y="0" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="15" font-weight="600" fill="#94a3b8">&bull; Kabul HQ: House 22, Street 17 Karte 3</text>
+    <text x="780" y="0" font-family="'Plus Jakarta Sans', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">WhatsApp / Tel: +93-799543365</text>
+  </g>
+</svg>

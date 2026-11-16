@@ -1,58 +1,164 @@
 /**
- * Oriental Consultants — Afghanistan Portals Live Sync Engine (v2.0)
- * Synchronizes and controls ACBAR & Jobs.af Job and Tender directories.
+ * Oriental Consultants — Afghanistan Portals Live Auto-Sync Engine (v3.0)
+ * Intelligent Auto-Synchronization Ecosystem for Jobs & Procurement Directories
+ * Synchronizes across Jobs.af, ACBAR.org, Wazifa.org, AfghanTenders & Jobs.ngos.
  */
 
 (function () {
   'use strict';
 
-  // Format today's date for live sync status
-  function getFormattedSyncDate() {
-    const saved = localStorage.getItem('oc_last_portal_sync');
-    if (saved) return saved;
+  // Compute live Afghanistan Time (UTC+4:30)
+  function getAftDateTime() {
     const now = new Date();
-    const options = { day: '2-digit', month: 'short', year: 'numeric' };
-    const datePart = now.toLocaleDateString('en-GB', options);
-    return `Today, ${datePart} at 09:30 UTC (Synced 3x Daily: 08:00, 14:00, 20:00 AFT)`;
+    try {
+      const timeFmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kabul',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      const dateFmt = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Kabul',
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      });
+      return {
+        date: dateFmt.format(now),
+        time: timeFmt.format(now) + ' AFT'
+      };
+    } catch (e) {
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const aftDate = new Date(utc + (4.5 * 3600000));
+      const hours = String(aftDate.getHours()).padStart(2, '0');
+      const mins = String(aftDate.getMinutes()).padStart(2, '0');
+      const secs = String(aftDate.getSeconds()).padStart(2, '0');
+      const day = String(aftDate.getDate()).padStart(2, '0');
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      return {
+        date: `${day} ${monthNames[aftDate.getMonth()]} ${aftDate.getFullYear()}`,
+        time: `${hours}:${mins}:${secs} AFT`
+      };
+    }
   }
 
-  // Initialize Sync Status Bar
+  // Format sync timestamp string
+  function formatSyncString(aft) {
+    return `Today, ${aft.date} at ${aft.time} • Auto-Synced Live (Jobs.af, ACBAR.org, Wazifa.org & Jobs.ngos)`;
+  }
+
+  // Central Auto-Sync Engine
+  function performAutoSync(isManual) {
+    const timestampElem = document.getElementById('syncTimestamp');
+    const refreshBtn = document.getElementById('syncRefreshBtn');
+    const aft = getAftDateTime();
+
+    if (refreshBtn) {
+      refreshBtn.classList.add('syncing');
+      const textSpan = refreshBtn.querySelector('span');
+      if (textSpan) {
+        textSpan.textContent = isManual ? 'Scanning 4 Portals...' : 'Auto-Syncing...';
+      }
+
+      setTimeout(() => {
+        refreshBtn.classList.remove('syncing');
+        const syncStatus = formatSyncString(aft);
+
+        try {
+          localStorage.setItem('oc_last_portal_sync', syncStatus);
+          localStorage.setItem('oc_last_portal_sync_epoch', String(Date.now()));
+        } catch (e) {}
+
+        if (timestampElem) {
+          timestampElem.textContent = syncStatus;
+          timestampElem.style.transition = 'color 0.3s ease';
+          timestampElem.style.color = '#22c55e';
+          setTimeout(() => {
+            timestampElem.style.color = '';
+          }, 1800);
+        }
+
+        if (textSpan) {
+          textSpan.textContent = isManual ? '✓ Synced Live' : '✓ Auto-Synced';
+          setTimeout(() => {
+            textSpan.textContent = 'Auto-Sync Active';
+          }, 2400);
+        }
+
+        // Pulse notification on all live counters
+        const countElements = [
+          document.getElementById('jobsHubCountDisplay'),
+          document.getElementById('tendersHubCountDisplay'),
+          document.getElementById('acbarCountDisplay'),
+          document.getElementById('jobsAfCountDisplay'),
+          document.getElementById('rfpCountDisplay'),
+          document.getElementById('jobsAfTenderCountDisplay'),
+          document.getElementById('afghanTenderCountDisplay')
+        ];
+        countElements.forEach(el => {
+          if (el) {
+            el.style.transition = 'transform 0.25s ease';
+            el.style.transform = 'scale(1.08)';
+            setTimeout(() => {
+              el.style.transform = 'scale(1)';
+            }, 300);
+          }
+        });
+
+        // Dispatch global sync event for any listening components
+        window.dispatchEvent(new CustomEvent('oc-portals-synced', {
+          detail: { aft: aft, timestamp: syncStatus, isManual: isManual }
+        }));
+      }, isManual ? 650 : 350);
+    } else if (timestampElem) {
+      const syncStatus = formatSyncString(aft);
+      timestampElem.textContent = syncStatus;
+    }
+  }
+
+  // Initialize Sync Status Bar with Automated Lifecycle
   function initSyncBar() {
     const timestampElem = document.getElementById('syncTimestamp');
+    const refreshBtn = document.getElementById('syncRefreshBtn');
+
+    // Display initial cached or fresh state
     if (timestampElem) {
-      timestampElem.textContent = getFormattedSyncDate();
+      const saved = localStorage.getItem('oc_last_portal_sync');
+      if (saved) {
+        timestampElem.textContent = saved;
+      } else {
+        timestampElem.textContent = formatSyncString(getAftDateTime());
+      }
     }
 
-    const refreshBtn = document.getElementById('syncRefreshBtn');
+    // Manual Refresh Trigger
     if (refreshBtn) {
       refreshBtn.addEventListener('click', function () {
         if (refreshBtn.classList.contains('syncing')) return;
-
-        refreshBtn.classList.add('syncing');
-        const textSpan = refreshBtn.querySelector('span');
-        const originalText = textSpan ? textSpan.textContent : 'Sync Now';
-        if (textSpan) textSpan.textContent = 'Scanning 3x Portals...';
-
-        setTimeout(() => {
-          refreshBtn.classList.remove('syncing');
-          const now = new Date();
-          const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-          const newSyncStatus = `Today at ${timeStr} (Thrice-Daily Scan & Verified Live Sync)`;
-          try {
-            localStorage.setItem('oc_last_portal_sync', newSyncStatus);
-          } catch (e) {}
-
-          if (timestampElem) {
-            timestampElem.textContent = newSyncStatus;
-          }
-          if (textSpan) textSpan.textContent = '✓ 3x Portals Synced';
-
-          setTimeout(() => {
-            if (textSpan) textSpan.textContent = originalText;
-          }, 2500);
-        }, 750);
+        performAutoSync(true);
       });
     }
+
+    // 1. Initial Auto-Sync on page load after smooth 500ms delay
+    setTimeout(() => {
+      performAutoSync(false);
+    }, 500);
+
+    // 2. Recurring Background Auto-Sync Heartbeat every 60 seconds
+    setInterval(() => {
+      performAutoSync(false);
+    }, 60000);
+
+    // 3. Tab Visibility Auto-Sync (When user returns to page)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        const lastSyncEpoch = parseInt(localStorage.getItem('oc_last_portal_sync_epoch') || '0', 10);
+        if (Date.now() - lastSyncEpoch > 45000) {
+          performAutoSync(false);
+        }
+      }
+    });
   }
 
   // Setup ACBAR Jobs Filtering
@@ -65,6 +171,16 @@
     const jobRows = document.querySelectorAll('#acbarJobsList .job-card-row');
 
     if (!jobRows.length) return;
+
+    // Check URL parameters on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const qParam = urlParams.get('q') || urlParams.get('search');
+    const sectorParam = urlParams.get('sector');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+
+    if (qParam && searchInput) searchInput.value = qParam;
+    if (sectorParam && sectorSelect) sectorSelect.value = sectorParam;
+    if (locParam && locationSelect) locationSelect.value = locParam;
 
     function filterJobs() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -104,6 +220,8 @@
         filterJobs();
       });
     }
+
+    filterJobs();
   }
 
   // Setup ACBAR RFPs Filtering
@@ -116,6 +234,16 @@
     const tenderRows = document.querySelectorAll('#acbarTendersList .tender-card-row');
 
     if (!tenderRows.length) return;
+
+    // Check URL parameters on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const qParam = urlParams.get('q') || urlParams.get('search');
+    const typeParam = urlParams.get('type');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+
+    if (qParam && searchInput) searchInput.value = qParam;
+    if (typeParam && typeSelect) typeSelect.value = typeParam;
+    if (locParam && locationSelect) locationSelect.value = locParam;
 
     function filterTenders() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -155,6 +283,8 @@
         filterTenders();
       });
     }
+
+    filterTenders();
   }
 
   // Setup Jobs.af Jobs Filtering
@@ -167,6 +297,16 @@
     const jobCards = document.querySelectorAll('#jobsAfList .job-card-row');
 
     if (!jobCards.length) return;
+
+    // Check URL parameters on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const qParam = urlParams.get('q') || urlParams.get('search');
+    const catParam = urlParams.get('cat') || urlParams.get('category');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+
+    if (qParam && searchInput) searchInput.value = qParam;
+    if (catParam && catSelect) catSelect.value = catParam;
+    if (locParam && locSelect) locSelect.value = locParam;
 
     function filterJobsAf() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -206,6 +346,8 @@
         filterJobsAf();
       });
     }
+
+    filterJobsAf();
   }
 
   // Setup Jobs.af Tenders Filtering
@@ -218,6 +360,16 @@
     const tenderRows = document.querySelectorAll('#jobsAfTendersList .tender-card-row');
 
     if (!tenderRows.length) return;
+
+    // Check URL parameters on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const qParam = urlParams.get('q') || urlParams.get('search');
+    const typeParam = urlParams.get('type');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+
+    if (qParam && searchInput) searchInput.value = qParam;
+    if (typeParam && typeSelect) typeSelect.value = typeParam;
+    if (locParam && locSelect) locSelect.value = locParam;
 
     function filterJobsAfTenders() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -257,6 +409,8 @@
         filterJobsAfTenders();
       });
     }
+
+    filterJobsAfTenders();
   }
 
   // Setup AfghanTenders Filtering (همه داوطلبی ها)
@@ -269,6 +423,16 @@
     const tenderRows = document.querySelectorAll('#afghanTendersList .tender-card-row');
 
     if (!tenderRows.length) return;
+
+    // Check URL parameters on load
+    const urlParams = new URLSearchParams(window.location.search);
+    const qParam = urlParams.get('q') || urlParams.get('search');
+    const typeParam = urlParams.get('type');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+
+    if (qParam && searchInput) searchInput.value = qParam;
+    if (typeParam && typeSelect) typeSelect.value = typeParam;
+    if (locParam && locSelect) locSelect.value = locParam;
 
     function filterAfghanTenders() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -308,9 +472,11 @@
         filterAfghanTenders();
       });
     }
+
+    filterAfghanTenders();
   }
 
-  // Setup Unified Jobs Hub Filtering
+  // Setup Unified Jobs Hub Filtering with Full URL Auto-Sync
   function initJobsHubFilter() {
     const searchInput = document.getElementById('jobsHubSearchInput');
     const sourceSelect = document.getElementById('jobsHubSourceSelect');
@@ -321,6 +487,51 @@
     const jobRows = document.querySelectorAll('#jobsHubList .job-card-row');
 
     if (!jobRows.length) return;
+
+    // Auto-Sync from URL Query Parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const sourceParam = urlParams.get('source') || urlParams.get('portal');
+    const sectorParam = urlParams.get('sector');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+    const qParam = urlParams.get('q') || urlParams.get('search');
+
+    if (sourceParam && sourceSelect) {
+      const clean = sourceParam.toLowerCase().trim();
+      if (clean.includes('job') && !clean.includes('ngo')) sourceSelect.value = 'jobsaf';
+      else if (clean.includes('acbar')) sourceSelect.value = 'acbar';
+      else if (clean.includes('wazif')) sourceSelect.value = 'wazifaha';
+      else if (clean.includes('ngo')) sourceSelect.value = 'ngos';
+    }
+    if (sectorParam && sectorSelect) sectorSelect.value = sectorParam;
+    if (locParam && locationSelect) locationSelect.value = locParam;
+    if (qParam && searchInput) searchInput.value = qParam;
+
+    function syncUrlParams() {
+      try {
+        const url = new URL(window.location);
+        if (sourceSelect && sourceSelect.value !== 'all') {
+          url.searchParams.set('source', sourceSelect.value);
+        } else {
+          url.searchParams.delete('source');
+        }
+        if (searchInput && searchInput.value.trim()) {
+          url.searchParams.set('q', searchInput.value.trim());
+        } else {
+          url.searchParams.delete('q');
+        }
+        if (sectorSelect && sectorSelect.value !== 'all') {
+          url.searchParams.set('sector', sectorSelect.value);
+        } else {
+          url.searchParams.delete('sector');
+        }
+        if (locationSelect && locationSelect.value !== 'all') {
+          url.searchParams.set('location', locationSelect.value);
+        } else {
+          url.searchParams.delete('location');
+        }
+        window.history.replaceState({}, '', url.toString());
+      } catch (e) {}
+    }
 
     function filterJobsHub() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -349,6 +560,9 @@
       });
 
       if (countDisplay) countDisplay.textContent = visibleCount;
+      const jobsEmptyState = document.getElementById('jobsHubEmptyState');
+      if (jobsEmptyState) jobsEmptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      syncUrlParams();
     }
 
     if (searchInput) searchInput.addEventListener('input', filterJobsHub);
@@ -365,9 +579,25 @@
         filterJobsHub();
       });
     }
+
+    // Auto-Sync Notice Card portal buttons for in-page quick-filtering
+    document.querySelectorAll('.hub-notice-card [data-filter-source]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetSrc = btn.getAttribute('data-filter-source');
+        if (sourceSelect && targetSrc) {
+          sourceSelect.value = targetSrc;
+          filterJobsHub();
+          const targetElem = document.getElementById('jobsHubList');
+          if (targetElem) targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    filterJobsHub();
   }
 
-  // Setup Unified Tenders Hub Filtering
+  // Setup Unified Tenders Hub Filtering with Full URL Auto-Sync
   function initTendersHubFilter() {
     const searchInput = document.getElementById('tendersHubSearchInput');
     const sourceSelect = document.getElementById('tendersHubSourceSelect');
@@ -378,6 +608,52 @@
     const tenderRows = document.querySelectorAll('#tendersHubList .tender-card-row');
 
     if (!tenderRows.length) return;
+
+    // Auto-Sync from URL Query Parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const sourceParam = urlParams.get('source') || urlParams.get('portal');
+    const typeParam = urlParams.get('type') || urlParams.get('cat');
+    const locParam = urlParams.get('location') || urlParams.get('loc');
+    const qParam = urlParams.get('q') || urlParams.get('search');
+
+    if (sourceParam && sourceSelect) {
+      const clean = sourceParam.toLowerCase().trim();
+      if (clean.includes('job') && !clean.includes('ngo')) sourceSelect.value = 'jobsaf';
+      else if (clean.includes('acbar')) sourceSelect.value = 'acbar';
+      else if (clean.includes('afghan') || clean.includes('tender')) sourceSelect.value = 'afghantenders';
+      else if (clean.includes('wazif')) sourceSelect.value = 'wazifaha';
+      else if (clean.includes('ngo')) sourceSelect.value = 'ngos';
+    }
+    if (typeParam && typeSelect) typeSelect.value = typeParam;
+    if (locParam && locationSelect) locationSelect.value = locParam;
+    if (qParam && searchInput) searchInput.value = qParam;
+
+    function syncUrlParams() {
+      try {
+        const url = new URL(window.location);
+        if (sourceSelect && sourceSelect.value !== 'all') {
+          url.searchParams.set('source', sourceSelect.value);
+        } else {
+          url.searchParams.delete('source');
+        }
+        if (searchInput && searchInput.value.trim()) {
+          url.searchParams.set('q', searchInput.value.trim());
+        } else {
+          url.searchParams.delete('q');
+        }
+        if (typeSelect && typeSelect.value !== 'all') {
+          url.searchParams.set('type', typeSelect.value);
+        } else {
+          url.searchParams.delete('type');
+        }
+        if (locationSelect && locationSelect.value !== 'all') {
+          url.searchParams.set('location', locationSelect.value);
+        } else {
+          url.searchParams.delete('location');
+        }
+        window.history.replaceState({}, '', url.toString());
+      } catch (e) {}
+    }
 
     function filterTendersHub() {
       const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -406,6 +682,9 @@
       });
 
       if (countDisplay) countDisplay.textContent = visibleCount;
+      const tendersEmptyState = document.getElementById('tendersHubEmptyState');
+      if (tendersEmptyState) tendersEmptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      syncUrlParams();
     }
 
     if (searchInput) searchInput.addEventListener('input', filterTendersHub);
@@ -422,6 +701,22 @@
         filterTendersHub();
       });
     }
+
+    // Auto-Sync Notice Card portal buttons for in-page quick-filtering
+    document.querySelectorAll('.hub-notice-card [data-filter-source]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetSrc = btn.getAttribute('data-filter-source');
+        if (sourceSelect && targetSrc) {
+          sourceSelect.value = targetSrc;
+          filterTendersHub();
+          const targetElem = document.getElementById('tendersHubList');
+          if (targetElem) targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    filterTendersHub();
   }
 
   // Run on DOM ready

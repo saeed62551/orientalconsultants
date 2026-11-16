@@ -1,12 +1,19 @@
 # robots.txt for Oriental Consultants (https://ocafghan.com)
+# Primary Domain: https://ocafghan.com (non-www)
 # Kabul, Afghanistan Headquarters
 
 User-agent: *
 Allow: /
 
-# Disallow internal scripts
-Disallow: /scripts/
+# Major Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
 
-# Canonical Sitemaps
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Canonical XML Sitemap
 Sitemap: https://ocafghan.com/sitemap.xml
-Sitemap: https://www.ocafghan.com/sitemap.xml
