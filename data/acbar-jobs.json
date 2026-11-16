@@ -5,119 +5,119 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-10-23T17:17:17.045Z",
+  "lastSync": "2026-11-16T23:48:36.121Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 10,
   "jobs": [
     {
-      "id": "CARE-AFG-2026-084",
+      "id": "CARE-AFG-2026-114",
       "title": "Senior Internal Auditor & Compliance Lead",
       "org": "CARE International",
       "location": "Kabul HQ, Afghanistan",
       "sector": "audit",
       "locationCode": "kabul",
       "type": "Full-Time • 5+ Years Experience",
-      "closingDate": "28 Sep 2026",
+      "closingDate": "30 Nov 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "NRC-KBL-992",
+      "id": "NRC-KBL-1048",
       "title": "Third-Party Monitoring (TPM) Field Coordinator",
       "org": "Norwegian Refugee Council (NRC)",
       "location": "Kabul / Central Provinces",
       "sector": "tpm",
       "locationCode": "kabul",
       "type": "Full-Time • KoBoToolbox / Field Audits",
-      "closingDate": "30 Sep 2026",
+      "closingDate": "02 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "ACTED-MZR-441",
+      "id": "ACTED-MZR-512",
       "title": "Provincial Finance & Statutory Compliance Officer",
       "org": "ACTED Afghanistan",
       "location": "Mazar-e-Sharif (Balkh)",
       "sector": "audit",
       "locationCode": "balkh",
       "type": "Full-Time • Tax & MoF Clearance",
-      "closingDate": "03 Oct 2026",
+      "closingDate": "05 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "IRC-KBL-819",
+      "id": "IRC-KBL-904",
       "title": "Enterprise ERP & Cloud Database Specialist (Odoo / Google Workspace)",
       "org": "International Rescue Committee (IRC)",
       "location": "Kabul HQ",
       "sector": "ict",
       "locationCode": "kabul",
       "type": "Full-Time • Cloud Administration",
-      "closingDate": "05 Oct 2026",
+      "closingDate": "08 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "DAC-HRT-204",
+      "id": "DAC-HRT-265",
       "title": "Senior Proposal Development & Grants Manager",
       "org": "DACAAR",
       "location": "Herat Regional Office",
       "sector": "prog",
       "locationCode": "herat",
       "type": "Full-Time • Donor Reporting & EOI",
-      "closingDate": "08 Oct 2026",
+      "closingDate": "11 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "SCI-KBL-311",
+      "id": "SCI-KBL-388",
       "title": "Procurement & Fixed Assets Barcoding Lead",
       "org": "Save the Children",
       "location": "Kabul Logistics Hub",
       "sector": "log",
       "locationCode": "kabul",
       "type": "Full-Time • Asset Physical Verification",
-      "closingDate": "10 Oct 2026",
+      "closingDate": "14 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "DRC-KDH-552",
+      "id": "DRC-KDH-614",
       "title": "Monitoring, Evaluation & Learning (MEL) Specialist",
       "org": "Danish Refugee Council (DRC)",
       "location": "Kandahar Hub",
       "sector": "prog",
       "locationCode": "kandahar",
       "type": "Full-Time • Mixed Method Assessments",
-      "closingDate": "12 Oct 2026",
+      "closingDate": "17 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "HN-JAL-109",
+      "id": "HN-JAL-142",
       "title": "Healthcare Grants Financial Accountant",
       "org": "HealthNet TPO",
       "location": "Jalalabad (Nangarhar)",
       "sector": "health",
       "locationCode": "jalalabad",
       "type": "Full-Time • Multi-Donor Grant Auditing",
-      "closingDate": "15 Oct 2026",
+      "closingDate": "21 Dec 2026",
       "applyUrl": "https://www.acbar.org/en/jobs"
     },
     {
-      "id": "OC-STAT-2026-09",
+      "id": "OC-STAT-2026-11",
       "title": "Senior Statutory Auditor (ISA 700 / 800 Specialist)",
       "org": "Oriental Consultants Afghanistan (PrimeGlobal Member)",
       "location": "Kabul HQ / Karte 3",
       "sector": "audit",
       "locationCode": "kabul",
       "type": "Full-Time • ACCA / CA / CPA Required",
-      "closingDate": "18 Oct 2026",
-      "applyUrl": "https://www.ocafghan.com/careers.html"
+      "closingDate": "28 Dec 2026",
+      "applyUrl": "https://ocafghan.com/careers.html"
     },
     {
-      "id": "OC-ERP-2026-04",
+      "id": "OC-ERP-2026-08",
       "title": "Senior Odoo ERP & Python Technical Consultant",
       "org": "Oriental Consultants Afghanistan",
       "location": "Kabul HQ & Remote",
       "sector": "ict",
       "locationCode": "kabul",
       "type": "Full-Time / Remote • Odoo 17/18 Deployment",
-      "closingDate": "20 Oct 2026",
-      "applyUrl": "https://www.ocafghan.com/careers.html"
+      "closingDate": "03 Jan 2027",
+      "applyUrl": "https://ocafghan.com/careers.html"
     }
   ]
 }

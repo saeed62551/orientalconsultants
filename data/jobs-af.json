@@ -5,75 +5,97 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-10-23T17:17:17.045Z",
+  "lastSync": "2026-11-16T23:48:36.121Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
-  "total": 6,
+  "total": 8,
   "jobs": [
     {
-      "id": "AIB-FIN-2026-071",
+      "id": "AIB-FIN-2026-102",
       "org": "Afghanistan International Bank (AIB)",
       "title": "Senior Financial Reporting & IFRS Specialist",
       "location": "Kabul Head Office",
       "category": "audit",
       "locationCode": "kabul",
-      "salary": "AFN 75,000 - 110,000",
-      "closingDate": "29 Sep 2026",
+      "salary": "AFN 85,000 - 120,000",
+      "closingDate": "01 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
-      "id": "NET-DEV-2026-118",
+      "id": "NET-DEV-2026-145",
       "org": "NETLINKS Afghanistan",
       "title": "Senior Full-Stack Software Engineer (Python / React / Odoo)",
       "location": "Kabul HQ",
       "category": "ict",
       "locationCode": "kabul",
-      "salary": "Competitive Salary",
-      "closingDate": "03 Oct 2026",
+      "salary": "Competitive Salary + Benefits",
+      "closingDate": "04 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
-      "id": "AWCC-OPS-2026-042",
+      "id": "AWCC-OPS-2026-068",
       "org": "Afghan Wireless Communication Company (AWCC)",
       "title": "Regional Operations & Enterprise Sales Manager",
       "location": "Herat Regional Branch",
       "category": "mgmt",
       "locationCode": "herat",
       "salary": "Negotiable with Commission",
-      "closingDate": "06 Oct 2026",
+      "closingDate": "07 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
-      "id": "ROSHAN-FIN-2026-089",
+      "id": "ROSHAN-FIN-2026-115",
       "org": "Telecom Development Company (Roshan)",
       "title": "Senior Internal Control & Statutory Audit Officer",
       "location": "Mazar-e-Sharif (Balkh)",
       "category": "audit",
       "locationCode": "balkh",
-      "salary": "AFN 60,000 - 85,000",
-      "closingDate": "09 Oct 2026",
+      "salary": "AFN 70,000 - 95,000",
+      "closingDate": "10 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
-      "id": "DABS-ENG-2026-023",
+      "id": "DABS-ENG-2026-049",
       "org": "Da Afghanistan Breshna Sherkat (DABS)",
       "title": "Substation Electrical Engineer & Grid Maintenance Supervisor",
       "location": "Kandahar Provincial Office",
       "category": "eng",
       "locationCode": "kandahar",
       "salary": "Civil Service Grade Scale",
-      "closingDate": "12 Oct 2026",
+      "closingDate": "14 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
-      "id": "OC-FIN-2026-03",
+      "id": "GB-TREAS-2026-033",
+      "org": "Ghazanfar Bank Afghanistan",
+      "title": "Senior Treasury & Asset-Liability Risk Manager",
+      "location": "Kabul Central Office",
+      "category": "audit",
+      "locationCode": "kabul",
+      "salary": "High Compensation Package",
+      "closingDate": "17 Dec 2026",
+      "applyUrl": "https://jobs.af/public/job"
+    },
+    {
+      "id": "AFTEL-ENG-2026-074",
+      "org": "Afghan Telecom / Salaam",
+      "title": "Regional Fiber Transmission & Core IP Network Specialist",
+      "location": "Jalalabad (Nangarhar)",
+      "category": "ict",
+      "locationCode": "jalalabad",
+      "salary": "State Telecom Scale",
+      "closingDate": "20 Dec 2026",
+      "applyUrl": "https://jobs.af/public/job"
+    },
+    {
+      "id": "OC-FIN-2026-07",
       "org": "Oriental Consultants Afghanistan",
-      "title": "Tax & Financial Compliance Advisor (MoF Specialist)",
+      "title": "Corporate Tax & Financial Compliance Advisor (MoF Specialist)",
       "location": "Kabul HQ / Karte 3",
       "category": "audit",
       "locationCode": "kabul",
       "salary": "Highly Competitive",
-      "closingDate": "16 Oct 2026",
-      "applyUrl": "https://www.ocafghan.com/careers.html"
+      "closingDate": "24 Dec 2026",
+      "applyUrl": "https://ocafghan.com/careers.html"
     }
   ]
 }

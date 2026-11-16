@@ -5,52 +5,52 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-10-23T17:17:17.045Z",
+  "lastSync": "2026-11-16T23:48:36.121Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 8,
   "rfps": [
     {
-      "id": "RFP-AFG-2026-091",
+      "id": "RFP-AFG-2026-118",
       "org": "CARE International Afghanistan",
       "title": "External Statutory Financial Audit of Multi-Donor Funded Humanitarian Grants",
       "location": "Kabul HQ • Countrywide Coverage",
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "ISA 800/805 Compliant Audit",
-      "deadline": "02 Oct 2026",
+      "deadline": "01 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
-      "id": "RFP-TPM-2026-14",
+      "id": "RFP-TPM-2026-38",
       "org": "Norwegian Refugee Council (NRC)",
       "title": "Third-Party Monitoring (TPM) & Beneficiary Verification for Cash Distributions",
       "location": "Kabul, Kandahar, Nangarhar, Balkh (12 Provinces)",
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "Field Verification & KoBoToolbox",
-      "deadline": "05 Oct 2026",
+      "deadline": "04 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
-      "id": "RFQ-IT-2026-108",
+      "id": "RFQ-IT-2026-142",
       "org": "ACTED Afghanistan",
       "title": "Supply, Deployment & Configuration of Enterprise Cloud Servers & Managed IT Hardware",
       "location": "Kabul Central Office",
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "Turnkey ICT Procurement",
-      "deadline": "08 Oct 2026",
+      "deadline": "07 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
-      "id": "RFP-DACAAR-2026-03",
+      "id": "RFP-DACAAR-2026-12",
       "org": "DACAAR",
       "title": "Comprehensive Fixed Assets Physical Verification, Barcoding & Valuation Services",
       "location": "Kabul HQ & 18 Provincial Field Offices",
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "Asset Tagging & QR Barcode Registry",
-      "deadline": "11 Oct 2026",
+      "deadline": "11 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -61,7 +61,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "Ministry of Finance Clearance",
-      "deadline": "14 Oct 2026",
+      "deadline": "14 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -72,18 +72,18 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "OECD-DAC Evaluation Criteria",
-      "deadline": "18 Oct 2026",
+      "deadline": "18 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
-      "id": "RFQ-WASH-2026-44",
+      "id": "RFQ-WASH-2026-68",
       "org": "Save the Children International",
       "title": "Procurement & Construction of Solar-Powered Community Water Supply Networks",
       "location": "Nangarhar & Laghman Provinces",
       "type": "works",
       "locationCode": "provinces",
       "compliance": "Solar Engineering & Borehole Works",
-      "deadline": "22 Oct 2026",
+      "deadline": "22 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -94,7 +94,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "Open-Source / Odoo ERP Integration",
-      "deadline": "25 Oct 2026",
+      "deadline": "26 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     }
   ]
