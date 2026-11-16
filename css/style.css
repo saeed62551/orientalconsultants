@@ -415,15 +415,14 @@ h1, h2, h3, h4, h5, h6 {
 .top-bar-portals-inner {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important;
+  justify-content: center !important;
   flex-wrap: nowrap !important; /* STRICTLY ONE ROW ALWAYS */
   white-space: nowrap !important;
-  width: max-content !important;
-  min-width: 100% !important;
-  max-width: none !important;
+  width: 100% !important;
+  max-width: 1360px !important;
   margin: 0 auto !important;
-  padding: 0 1rem !important;
-  gap: 0.45rem !important;
+  padding: 0 0.5rem !important;
+  gap: clamp(0.2rem, 0.4vw, 0.45rem) !important;
   box-sizing: border-box;
 }
 
@@ -437,6 +436,9 @@ h1, h2, h3, h4, h5, h6 {
 .top-bar-quick-link,
 .top-bar-portal-btn {
   flex-shrink: 0 !important;
+  font-size: clamp(0.68rem, 0.78vw, 0.76rem) !important;
+  padding: 0.18rem clamp(0.35rem, 0.48vw, 0.55rem) !important;
+  white-space: nowrap !important;
 }
 
 .top-bar-badge {
