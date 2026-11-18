@@ -5,7 +5,7 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-11-17T23:04:42.912Z",
+  "lastSync": "2026-11-18T12:06:34.065Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 7,
   "tenders": [
@@ -17,7 +17,7 @@
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "Tier-3 Data Center Specification",
-      "deadline": "03 Dec 2026",
+      "deadline": "04 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     },
     {
@@ -28,7 +28,7 @@
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "ISA 700 Compliant Audit & QR Asset Barcoding",
-      "deadline": "07 Dec 2026",
+      "deadline": "08 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     },
     {
@@ -39,7 +39,7 @@
       "type": "goods",
       "locationCode": "provinces",
       "compliance": "ITU-T Standard Compliance",
-      "deadline": "11 Dec 2026",
+      "deadline": "12 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     },
     {
@@ -50,7 +50,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "MoF Tax Law Compliance",
-      "deadline": "15 Dec 2026",
+      "deadline": "16 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     },
     {
@@ -61,7 +61,7 @@
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "WHO-GMP Certified Pharmaceuticals & Equipment",
-      "deadline": "20 Dec 2026",
+      "deadline": "21 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     },
     {
@@ -72,7 +72,7 @@
       "type": "works",
       "locationCode": "kabul",
       "compliance": "Civil Engineering Testing & Laboratory Standards",
-      "deadline": "24 Dec 2026",
+      "deadline": "25 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     },
     {
@@ -83,7 +83,7 @@
       "type": "works",
       "locationCode": "kabul",
       "compliance": "Tier-1 Solar Panels & Lithium Battery Storage",
-      "deadline": "29 Dec 2026",
+      "deadline": "30 Dec 2026",
       "viewUrl": "https://jobs.af/tenders"
     }
   ]
