@@ -5,7 +5,7 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-11-18T22:40:01.578Z",
+  "lastSync": "2026-11-19T12:00:38.240Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 8,
   "jobs": [
@@ -17,7 +17,7 @@
       "sector": "audit",
       "locationCode": "kabul",
       "type": "Full-Time • Civil Service Scale",
-      "closingDate": "04 Dec 2026",
+      "closingDate": "05 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -28,7 +28,7 @@
       "sector": "audit",
       "locationCode": "kabul",
       "type": "Full-Time • Highly Competitive",
-      "closingDate": "07 Dec 2026",
+      "closingDate": "08 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -39,7 +39,7 @@
       "sector": "ict",
       "locationCode": "kabul",
       "type": "Full-Time • Tier-3 Cloud Operations",
-      "closingDate": "10 Dec 2026",
+      "closingDate": "11 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -50,7 +50,7 @@
       "sector": "health",
       "locationCode": "herat",
       "type": "Full-Time • Multi-Donor Health Grant",
-      "closingDate": "13 Dec 2026",
+      "closingDate": "14 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -61,7 +61,7 @@
       "sector": "eng",
       "locationCode": "balkh",
       "type": "Full-Time • Power Grid Engineering",
-      "closingDate": "17 Dec 2026",
+      "closingDate": "18 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -72,7 +72,7 @@
       "sector": "log",
       "locationCode": "kandahar",
       "type": "Full-Time • Humanitarian Relief Logistics",
-      "closingDate": "22 Dec 2026",
+      "closingDate": "23 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -83,7 +83,7 @@
       "sector": "prog",
       "locationCode": "jalalabad",
       "type": "Full-Time • Integrated Community Development",
-      "closingDate": "26 Dec 2026",
+      "closingDate": "27 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     },
     {
@@ -94,7 +94,7 @@
       "sector": "eng",
       "locationCode": "herat",
       "type": "Full-Time • Renewable Energy Infrastructure",
-      "closingDate": "30 Dec 2026",
+      "closingDate": "31 Dec 2026",
       "applyUrl": "https://wazifaha.org/jobs/"
     }
   ]
