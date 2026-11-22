@@ -5,7 +5,7 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-11-21T20:59:54.516Z",
+  "lastSync": "2026-11-22T11:51:17.979Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 23,
   "tenders": [
@@ -17,7 +17,7 @@
       "type": "audit",
       "locationCode": "kabul",
       "compliance": "ISA 700/800 & IFRS Statutory Compliance",
-      "deadline": "07 Dec 2026",
+      "deadline": "08 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -29,7 +29,7 @@
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "Afghan Tax Law & MoF Clearances",
-      "deadline": "11 Dec 2026",
+      "deadline": "12 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -41,7 +41,7 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "KoBoToolbox & Field Data Integrity",
-      "deadline": "14 Dec 2026",
+      "deadline": "15 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -53,7 +53,7 @@
       "type": "works",
       "locationCode": "provinces",
       "compliance": "IEC 61850 Grid Substation Standards",
-      "deadline": "18 Dec 2026",
+      "deadline": "19 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -65,7 +65,7 @@
       "type": "ict",
       "locationCode": "kabul",
       "compliance": "Microsoft 365 & Cloud Tier-3 Security",
-      "deadline": "22 Dec 2026",
+      "deadline": "23 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -77,7 +77,7 @@
       "type": "works",
       "locationCode": "kabul",
       "compliance": "Urban Planning & Hydraulic Civil Engineering",
-      "deadline": "26 Dec 2026",
+      "deadline": "27 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -89,7 +89,7 @@
       "type": "goods",
       "locationCode": "provinces",
       "compliance": "Sphere Project & Humanitarian Standards",
-      "deadline": "30 Dec 2026",
+      "deadline": "31 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -101,7 +101,7 @@
       "type": "audit",
       "locationCode": "provinces",
       "compliance": "Fixed Assets Registry & QR Barcoding",
-      "deadline": "05 Jan 2027",
+      "deadline": "06 Jan 2027",
       "viewUrl": "https://www.afghantenders.com/",
       "source": "afghantenders"
     },
@@ -113,7 +113,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "ISA 800/805 Compliant Audit",
-      "deadline": "06 Dec 2026",
+      "deadline": "07 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -125,7 +125,7 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "Field Verification & KoBoToolbox",
-      "deadline": "09 Dec 2026",
+      "deadline": "10 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -137,7 +137,7 @@
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "Turnkey ICT Procurement",
-      "deadline": "12 Dec 2026",
+      "deadline": "13 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -149,7 +149,7 @@
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "Asset Tagging & QR Barcode Registry",
-      "deadline": "16 Dec 2026",
+      "deadline": "17 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -161,7 +161,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "Ministry of Finance Clearance",
-      "deadline": "19 Dec 2026",
+      "deadline": "20 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -173,7 +173,7 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "OECD-DAC Evaluation Criteria",
-      "deadline": "23 Dec 2026",
+      "deadline": "24 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -185,7 +185,7 @@
       "type": "works",
       "locationCode": "provinces",
       "compliance": "Solar Engineering & Borehole Works",
-      "deadline": "27 Dec 2026",
+      "deadline": "28 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -197,7 +197,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "Open-Source / Odoo ERP Integration",
-      "deadline": "31 Dec 2026",
+      "deadline": "01 Jan 2027",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs",
       "source": "acbar"
     },
@@ -209,7 +209,7 @@
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "Tier-3 Data Center Specification",
-      "deadline": "07 Dec 2026",
+      "deadline": "08 Dec 2026",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     },
@@ -221,7 +221,7 @@
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "ISA 700 Compliant Audit & QR Asset Barcoding",
-      "deadline": "11 Dec 2026",
+      "deadline": "12 Dec 2026",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     },
@@ -233,7 +233,7 @@
       "type": "goods",
       "locationCode": "provinces",
       "compliance": "ITU-T Standard Compliance",
-      "deadline": "15 Dec 2026",
+      "deadline": "16 Dec 2026",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     },
@@ -245,7 +245,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "MoF Tax Law Compliance",
-      "deadline": "19 Dec 2026",
+      "deadline": "20 Dec 2026",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     },
@@ -257,7 +257,7 @@
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "WHO-GMP Certified Pharmaceuticals & Equipment",
-      "deadline": "24 Dec 2026",
+      "deadline": "25 Dec 2026",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     },
@@ -269,7 +269,7 @@
       "type": "works",
       "locationCode": "kabul",
       "compliance": "Civil Engineering Testing & Laboratory Standards",
-      "deadline": "28 Dec 2026",
+      "deadline": "29 Dec 2026",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     },
@@ -281,7 +281,7 @@
       "type": "works",
       "locationCode": "kabul",
       "compliance": "Tier-1 Solar Panels & Lithium Battery Storage",
-      "deadline": "02 Jan 2027",
+      "deadline": "03 Jan 2027",
       "viewUrl": "https://jobs.af/tenders",
       "source": "jobsaf"
     }
