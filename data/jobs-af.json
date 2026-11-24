@@ -5,7 +5,7 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-11-23T13:30:58.260Z",
+  "lastSync": "2026-11-24T02:30:01.750Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 8,
   "jobs": [
@@ -17,7 +17,7 @@
       "category": "audit",
       "locationCode": "kabul",
       "salary": "AFN 85,000 - 120,000",
-      "closingDate": "08 Dec 2026",
+      "closingDate": "09 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -28,7 +28,7 @@
       "category": "ict",
       "locationCode": "kabul",
       "salary": "Competitive Salary + Benefits",
-      "closingDate": "11 Dec 2026",
+      "closingDate": "12 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -39,7 +39,7 @@
       "category": "mgmt",
       "locationCode": "herat",
       "salary": "Negotiable with Commission",
-      "closingDate": "14 Dec 2026",
+      "closingDate": "15 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -50,7 +50,7 @@
       "category": "audit",
       "locationCode": "balkh",
       "salary": "AFN 70,000 - 95,000",
-      "closingDate": "17 Dec 2026",
+      "closingDate": "18 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -61,7 +61,7 @@
       "category": "eng",
       "locationCode": "kandahar",
       "salary": "Civil Service Grade Scale",
-      "closingDate": "21 Dec 2026",
+      "closingDate": "22 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -72,7 +72,7 @@
       "category": "audit",
       "locationCode": "kabul",
       "salary": "High Compensation Package",
-      "closingDate": "24 Dec 2026",
+      "closingDate": "25 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -83,7 +83,7 @@
       "category": "ict",
       "locationCode": "jalalabad",
       "salary": "State Telecom Scale",
-      "closingDate": "27 Dec 2026",
+      "closingDate": "28 Dec 2026",
       "applyUrl": "https://jobs.af/public/job"
     },
     {
@@ -94,7 +94,7 @@
       "category": "audit",
       "locationCode": "kabul",
       "salary": "Highly Competitive",
-      "closingDate": "31 Dec 2026",
+      "closingDate": "01 Jan 2027",
       "applyUrl": "https://ocafghan.com/careers.html"
     }
   ]
