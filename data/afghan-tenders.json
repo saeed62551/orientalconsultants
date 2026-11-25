@@ -5,7 +5,7 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-11-24T14:09:36.038Z",
+  "lastSync": "2026-11-25T00:01:51.993Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 8,
   "tenders": [
@@ -17,7 +17,7 @@
       "type": "audit",
       "locationCode": "kabul",
       "compliance": "ISA 700/800 & IFRS Statutory Compliance",
-      "deadline": "10 Dec 2026",
+      "deadline": "11 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -28,7 +28,7 @@
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "Afghan Tax Law & MoF Clearances",
-      "deadline": "14 Dec 2026",
+      "deadline": "15 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -39,7 +39,7 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "KoBoToolbox & Field Data Integrity",
-      "deadline": "17 Dec 2026",
+      "deadline": "18 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -50,7 +50,7 @@
       "type": "works",
       "locationCode": "provinces",
       "compliance": "IEC 61850 Grid Substation Standards",
-      "deadline": "21 Dec 2026",
+      "deadline": "22 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -61,7 +61,7 @@
       "type": "ict",
       "locationCode": "kabul",
       "compliance": "Microsoft 365 & Cloud Tier-3 Security",
-      "deadline": "25 Dec 2026",
+      "deadline": "26 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -72,7 +72,7 @@
       "type": "works",
       "locationCode": "kabul",
       "compliance": "Urban Planning & Hydraulic Civil Engineering",
-      "deadline": "29 Dec 2026",
+      "deadline": "30 Dec 2026",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -83,7 +83,7 @@
       "type": "goods",
       "locationCode": "provinces",
       "compliance": "Sphere Project & Humanitarian Standards",
-      "deadline": "02 Jan 2027",
+      "deadline": "03 Jan 2027",
       "viewUrl": "https://www.afghantenders.com/"
     },
     {
@@ -94,7 +94,7 @@
       "type": "audit",
       "locationCode": "provinces",
       "compliance": "Fixed Assets Registry & QR Barcoding",
-      "deadline": "08 Jan 2027",
+      "deadline": "09 Jan 2027",
       "viewUrl": "https://www.afghantenders.com/"
     }
   ]

@@ -5,7 +5,7 @@
     "14:00 AFT",
     "20:00 AFT"
   ],
-  "lastSync": "2026-11-24T14:09:36.038Z",
+  "lastSync": "2026-11-25T00:01:51.993Z",
   "timezone": "Asia/Kabul (UTC+4:30)",
   "total": 8,
   "rfps": [
@@ -17,7 +17,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "ISA 800/805 Compliant Audit",
-      "deadline": "09 Dec 2026",
+      "deadline": "10 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -28,7 +28,7 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "Field Verification & KoBoToolbox",
-      "deadline": "12 Dec 2026",
+      "deadline": "13 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -39,7 +39,7 @@
       "type": "goods",
       "locationCode": "kabul",
       "compliance": "Turnkey ICT Procurement",
-      "deadline": "15 Dec 2026",
+      "deadline": "16 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -50,7 +50,7 @@
       "type": "consulting",
       "locationCode": "provinces",
       "compliance": "Asset Tagging & QR Barcode Registry",
-      "deadline": "19 Dec 2026",
+      "deadline": "20 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -61,7 +61,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "Ministry of Finance Clearance",
-      "deadline": "22 Dec 2026",
+      "deadline": "23 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -72,7 +72,7 @@
       "type": "tpm",
       "locationCode": "provinces",
       "compliance": "OECD-DAC Evaluation Criteria",
-      "deadline": "26 Dec 2026",
+      "deadline": "27 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -83,7 +83,7 @@
       "type": "works",
       "locationCode": "provinces",
       "compliance": "Solar Engineering & Borehole Works",
-      "deadline": "30 Dec 2026",
+      "deadline": "31 Dec 2026",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     },
     {
@@ -94,7 +94,7 @@
       "type": "consulting",
       "locationCode": "kabul",
       "compliance": "Open-Source / Odoo ERP Integration",
-      "deadline": "03 Jan 2027",
+      "deadline": "04 Jan 2027",
       "viewUrl": "https://www.acbar.org/RFQs/RFPs"
     }
   ]
